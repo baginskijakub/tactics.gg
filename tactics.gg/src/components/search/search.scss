@@ -1,0 +1,109 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.default-search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px 4px;
+    background: $background05;
+    border: 1px solid $divider;
+    border-radius: 2px;
+}
+
+.default-search img{
+    width: 16px;
+    height: 16px;
+}
+
+.default-search input{
+    background-color: transparent;
+    outline: none;
+}
+
+.default-search input:focus{
+    outline: none;
+}
+
+.region-container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 13px 36px 13px 24px;
+    gap: 4px;
+    border-radius: 4px;
+}
+.region-container:hover{
+    background-color: $buttonHover;
+}
+
+.selected{
+    background-color: $buttonSelected
+}
+
+.region-wrapper{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.region-dropdown-container{
+    display: none;
+    flex-direction: column;
+    padding: 4px 0px;
+    background: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
+.specific-search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    gap: 136px;
+    width: 520px;
+    height: min-content;
+}
+
+.specific-search-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 6px;
+}
+
+.specific-search-inner input{
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+}
+
+.specific-search-container img{
+    width: 16px;
+    height: 16px;
+}
+
+.summoner-search-container{
+    //todelete
+    margin: 40px;
+
+    display: inline-flex;
+    flex-direction: row;
+    gap: 16px;
+    background-color: $background05;
+    box-shadow: 0 0 0 1px $divider;
+    border-radius: 4px;
+    height: 65px;
+    overflow: visible;
+}
+
+.summoner-search-divider{
+    width: 1px;
+    height: 36px;
+    background-color: $divider;
+    align-self: center
+}

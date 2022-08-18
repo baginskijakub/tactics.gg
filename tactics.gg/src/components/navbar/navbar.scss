@@ -1,0 +1,68 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.navbar-links-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background05;
+    border: 1px solid #172C49;
+}
+
+.navbar-links-container{
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-inner-container{
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0px;
+}
+
+.navbar-inner-container img{
+    height: 24px;
+    width: auto;
+}
+@media screen and (max-width: 1350px){
+    .navbar-links-container{
+        width: 1000px;
+    }
+    .navbar-inner-container{
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .navbar-links-container{
+        width: 800px;
+    }
+    .navbar-inner-container{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .navbar-links-container{
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-inner-container{
+        width: 100%;
+    }
+}
+

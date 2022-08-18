@@ -1,0 +1,409 @@
+/*background colors*/
+/*primary color*/
+/*button colors*/
+/*divider color*/
+/*typography colors*/
+/* unit colors */
+/* state colors */
+/* component specific colors */
+/*background colors*/
+/*primary color*/
+/*button colors*/
+/*divider color*/
+/*typography colors*/
+/* unit colors */
+/* state colors */
+/* component specific colors */
+@import url("https://rsms.me/inter/inter.css");
+body {
+  margin: 0;
+  background-color: #081D39;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 92px;
+  line-height: 95%;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+h5 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 115%;
+  letter-spacing: -0.02em;
+}
+
+h6 {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.body {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+.body-small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.caption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+.caption-small {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 120%;
+}
+
+@media screen and (max-width: 1350px) {
+  h1 {
+    font-size: 80px;
+    line-height: 95%;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+  }
+  h4 {
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  h5 {
+    font-size: 12px;
+    line-height: 115%;
+    letter-spacing: -0.02em;
+  }
+  h6 {
+    font-size: 10px;
+    line-height: 150%;
+  }
+  .body {
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .body-small {
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+  .caption {
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+  .caption-small {
+    font-size: 8px;
+    line-height: 120%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  h1 {
+    font-size: 36px;
+    line-height: 95%;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+  }
+  h3 {
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+  }
+  h4 {
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  h5 {
+    font-size: 10px;
+    line-height: 115%;
+    letter-spacing: -0.02em;
+  }
+  h6 {
+    font-size: 8px;
+    line-height: 150%;
+  }
+  .body {
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .body-small {
+    font-size: 10px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+  .caption {
+    font-size: 8px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+  .caption-small {
+    font-size: 8px;
+    line-height: 120%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  h1 {
+    font-size: 32px;
+    line-height: 95%;
+    letter-spacing: -0.03em;
+  }
+  h2 {
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+  }
+  h3 {
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+  }
+  h4 {
+    font-size: 10px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  h5 {
+    font-size: 8px;
+    line-height: 115%;
+    letter-spacing: -0.02em;
+  }
+  h6 {
+    font-size: 8px;
+    line-height: 115%;
+  }
+  .body {
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .body-small {
+    font-size: 10px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+  .caption {
+    font-size: 8px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+  .caption-small {
+    font-size: 8px;
+    line-height: 120%;
+  }
+}
+
+.default-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4px 8px 4px;
+  background: #0C1A2D;
+  border: 1px solid #172C49;
+  border-radius: 2px;
+}
+
+.default-search img {
+  width: 16px;
+  height: 16px;
+}
+
+.default-search input {
+  background-color: transparent;
+  outline: none;
+}
+
+.default-search input:focus {
+  outline: none;
+}
+
+.region-container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 13px 36px 13px 24px;
+  gap: 4px;
+  border-radius: 4px;
+}
+
+.region-container:hover {
+  background-color: #1B2F4A;
+}
+
+.selected {
+  background-color: #1E4C94;
+}
+
+.region-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+
+.region-dropdown-container {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4px 0px;
+  background: #0C1A2D;
+  border: 1px solid #172C49;
+  border-radius: 4px;
+}
+
+.specific-search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  gap: 136px;
+  width: 520px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.specific-search-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0px;
+  gap: 6px;
+}
+
+.specific-search-inner input {
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+}
+
+.specific-search-container img {
+  width: 16px;
+  height: 16px;
+}
+
+.summoner-search-container {
+  margin: 40px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 16px;
+  background-color: #0C1A2D;
+  -webkit-box-shadow: 0 0 0 1px #172C49;
+          box-shadow: 0 0 0 1px #172C49;
+  border-radius: 4px;
+  height: 65px;
+  overflow: visible;
+}
+
+.summoner-search-divider {
+  width: 1px;
+  height: 36px;
+  background-color: #172C49;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=search.css.map */
