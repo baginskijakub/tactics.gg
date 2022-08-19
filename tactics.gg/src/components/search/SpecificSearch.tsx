@@ -15,7 +15,7 @@ export const SpecificSearch: React.FC<Props> = ({head, initialValue, fn}) => {
                 <h5>{head}</h5>
                 <input className="body-small" type="text" placeholder={initialValue}></input>
             </div>
-            <img src={searchIcon}></img>
+            <img src={searchIcon} alt="search"></img>
         </div>
     )
 }

@@ -1,0 +1,60 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.unit-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-container{
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: -8px;
+    z-index: 1;
+    filter: drop-shadow(0px 3.28515px 10.5855px rgba(0, 0, 0, 0.262193)) drop-shadow(0px 1.59488px 5.13905px rgba(0, 0, 0, 0.21139)) drop-shadow(0px 0.781839px 2.51926px rgba(0, 0, 0, 0.16861)) drop-shadow(0px 0.30914px 0.996119px rgba(0, 0, 0, 0.117807));
+}
+
+.unit-image{
+    border: 3px solid $divider;
+    border-radius: 4px;
+    background-color: $background07;
+    width: 86px;
+    height: 86px;
+
+}
+
+.item-container{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 7px;
+    margin-top: -8px;
+    filter: drop-shadow(0px 3.28515px 10.5855px rgba(0, 0, 0, 0.262193)) drop-shadow(0px 1.59488px 5.13905px rgba(0, 0, 0, 0.21139)) drop-shadow(0px 0.781839px 2.51926px rgba(0, 0, 0, 0.16861)) drop-shadow(0px 0.30914px 0.996119px rgba(0, 0, 0, 0.117807));
+}
+
+.item-container img{
+    height: 24px;
+    width: 24px;
+    border-radius: 2px;
+}
+
+.grey-border{
+    border: 3px solid $unit1
+}
+
+.green-border{
+    border: 3px solid $unit2
+}
+
+.blue-border{
+    border: 3px solid $unit3
+}
+
+.purple-border{
+    border: 3px solid $unit4
+}
+
+.yellow-border{
+    border: 3px solid $unit4
+}

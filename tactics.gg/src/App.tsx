@@ -6,14 +6,25 @@ import './App.css';
 //import {NavButton} from './components/buttons/NavButton'
 //import {NavbarLinks} from './components/navbar/NavbarLinks'
 import {Navbar} from './components/navbar/Navbar';
-import SummonerSearch from './components/search/SummonerSearch'
+//import SummonerSearch from './components/search/SummonerSearch'
+import Unit from './components/unit/Unit';
+
+ const items = [{id: 3083,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3083_tank_t3_warmogs.png"},{id: 3083,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3083_tank_t3_warmogs.png"}, {id: 3193,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3193_gargoyle_stoneplate.png"}]
 
 
 function App() {
   return (
     <div className="nav-button">
       <Navbar />
-      <SummonerSearch />
+      <Unit 
+        name="Sylas"
+        id={12}
+        url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
+        cost={3}
+        size="big"
+        isLevel3={true}
+        items={items}
+        />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import './search.css';
-import { useState } from 'react';
 import {DropdownButton} from '../buttons/DropdownButton'
 
 interface Region{
