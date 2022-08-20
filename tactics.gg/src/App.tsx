@@ -16,15 +16,33 @@ function App() {
   return (
     <div className="nav-button">
       <Navbar />
-      <Unit 
-        name="Sylas"
-        id={12}
-        url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
-        cost={3}
-        size="big"
-        isLevel3={true}
-        items={items}
-        />
+        <Unit 
+          name="Sylas"
+          id={12}
+          url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
+          cost={3}
+          size="big"
+          isLevel3={true}
+          items={items}
+          />
+        <Unit 
+          name="Sylas"
+          id={12}
+          url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
+          cost={3}
+          size="medium"
+          isLevel3={true}
+          items={items}
+          />
+        <Unit 
+          name="Sylas"
+          id={12}
+          url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
+          cost={3}
+          size="small"
+          isLevel3={true}
+          items={items}
+          />
     </div>
   );
 }

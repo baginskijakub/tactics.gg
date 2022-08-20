@@ -38,22 +38,56 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
             borderColor = "yellow-border";
             break;
     }
-
-    return (
-        <div className="unit-container">
-            {isLevel3 && <div className="star-container">
-                <img src={star} alt="star"/>
-                <img src={star} alt="star"/>
-                <img src={star} alt="star"/>
-            </div>}
-            <img className={`unit-image ${borderColor}`} src={sylas} alt={name}/>
-            <div className="item-container">
-                {items !== null && items.map((itemElement) => (
-                    <img src={itemElement.url} alt={itemElement.name}/>
-                ))}
+    if(size === "big")
+        return (
+            <div className="unit-container">
+                {isLevel3 && <div className="star-container">
+                    <img src={star} alt="star"/>
+                    <img src={star} alt="star"/>
+                    <img src={star} alt="star"/>
+                </div>}
+                <img className={`unit-image ${borderColor}`} src={sylas} alt={name}/>
+                <div className="item-container">
+                    {items !== null && items.map((itemElement) => (
+                        <img src={itemElement.url} alt={itemElement.name}/>
+                    ))}
+                </div>
             </div>
-        </div>
-    )
+        )
+    else if(size === "medium"){
+        return(
+            <div className="unit-container">
+                {isLevel3 && <div className="star-container-medium">
+                    <img src={star} alt="star"/>
+                    <img src={star} alt="star"/>
+                    <img src={star} alt="star"/>
+                </div>}
+                <img className={`unit-image-medium ${borderColor}`} src={sylas} alt={name}/>
+                <div className="item-container-medium">
+                    {items !== null && items.map((itemElement) => (
+                        <img src={itemElement.url} alt={itemElement.name}/>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+    else{
+        return(
+            <div className="unit-container">
+                {isLevel3 && <div className="star-container-small">
+                    <img src={star} alt="star"/>
+                    <img src={star} alt="star"/>
+                    <img src={star} alt="star"/>
+                </div>}
+                <img className={`unit-image-small ${borderColor}`} src={sylas} alt={name}/>
+                <div className="item-container-small">
+                    {items !== null && items.map((itemElement) => (
+                        <img src={itemElement.url} alt={itemElement.name}/>
+                    ))}
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Unit
