@@ -8,6 +8,7 @@ import './App.css';
 import {Navbar} from './components/navbar/Navbar';
 //import SummonerSearch from './components/search/SummonerSearch'
 import Unit from './components/unit/Unit';
+import Trait from './components/trait/Trait';
 
  const items = [{id: 3083,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3083_tank_t3_warmogs.png"},{id: 3083,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3083_tank_t3_warmogs.png"}, {id: 3193,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3193_gargoyle_stoneplate.png"}]
 
@@ -42,6 +43,14 @@ function App() {
           size="small"
           isLevel3={true}
           items={items}
+          />
+        <Trait 
+          size="small"
+          name="Jade"
+          currentTrait={3}
+          traitStyle={3}
+          hasLabel={true}
+          hasValue={true}
           />
     </div>
   );
