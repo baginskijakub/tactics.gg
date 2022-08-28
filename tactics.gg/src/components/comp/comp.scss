@@ -1,0 +1,144 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.comp-foot-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1100px;
+    padding: 12px 100px;
+    background: $background07;
+    border-top: 1px solid $divider;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.green{
+    color: $green;
+    border: transparent;
+}
+
+.yellow{
+    color: $yellow;
+    border: transparent;
+}
+
+.red{
+    color: $red;
+    border: transparent;
+}
+
+.comp-foot-inner{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+}
+
+.comp-wrapper{
+                                            //delete
+                                            margin-top: 120px;
+                                            margin-left: 20px;
+    
+        
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    background-color: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+    padding-top: 12px;
+    gap: 12px
+}
+
+.comp-head-container{
+    width: calc(100% - 16px);
+    padding-left: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comp-head-inner{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comp-traits{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.comp-units{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.expand-button{
+    width: 64px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand-button img{
+    height: 12px;
+    width: 20px;
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1350px) {
+    .comp-wrapper{
+        width: 1000px;
+    }
+    .comp-foot-wrapper{
+        width: 800px;
+    }
+    .comp-traits{
+        gap: 6px;
+    }
+
+    .comp-units{
+        gap: 12px
+    }
+}
+@media screen and (max-width: 1050px) {
+    .comp-wrapper{
+        width: 800px;
+    }
+    .comp-foot-wrapper{
+        width: 600px;
+    }
+    .comp-traits{
+        gap: 6px;
+    }
+
+    .comp-units{
+        gap: 10px
+    }
+}
+@media screen and (max-width: 850px) {
+
+    .comp-wrapper{
+        width: calc(100% - 32px);
+    }
+    .comp-foot-wrapper{
+        width: calc(100% - 32px);
+        padding: 8px 16px;
+    }
+
+    .comp-units{
+        gap: 8px
+    }
+
+    .expand-button img{
+        width: 12px;
+        height: 8px;
+    }
+}

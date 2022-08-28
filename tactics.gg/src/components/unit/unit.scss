@@ -16,14 +16,18 @@
     margin-bottom: -8px;
     z-index: 1;
     filter: drop-shadow(0px 3.28515px 10.5855px rgba(0, 0, 0, 0.262193)) drop-shadow(0px 1.59488px 5.13905px rgba(0, 0, 0, 0.21139)) drop-shadow(0px 0.781839px 2.51926px rgba(0, 0, 0, 0.16861)) drop-shadow(0px 0.30914px 0.996119px rgba(0, 0, 0, 0.117807));
+    min-height: 24px;
+    min-width: 100%;
 }
 
 .star-container-medium{
     display: inline-flex;
     justify-content: center;
     margin-bottom: -6px;
-    z-index: 1;
+    z-index: 1; 
     filter: drop-shadow(0px 3.28515px 10.5855px rgba(0, 0, 0, 0.262193)) drop-shadow(0px 1.59488px 5.13905px rgba(0, 0, 0, 0.21139)) drop-shadow(0px 0.781839px 2.51926px rgba(0, 0, 0, 0.16861)) drop-shadow(0px 0.30914px 0.996119px rgba(0, 0, 0, 0.117807));
+    min-height: 16px;
+    min-width: 100%;
 }
 
 .star-container-small{
@@ -32,6 +36,8 @@
     margin-bottom: -4px;
     z-index: 1;
     filter: drop-shadow(0px 3.28515px 10.5855px rgba(0, 0, 0, 0.262193)) drop-shadow(0px 1.59488px 5.13905px rgba(0, 0, 0, 0.21139)) drop-shadow(0px 0.781839px 2.51926px rgba(0, 0, 0, 0.16861)) drop-shadow(0px 0.30914px 0.996119px rgba(0, 0, 0, 0.117807));
+    min-height: 12px;
+    min-width: 100%;
 }
 
 .star-container img{
@@ -146,6 +152,18 @@
         height: 36px;
     }
 
+    .star-container{
+        min-height: 20px;
+    }
+
+    .star-container-medium{
+        min-height: 16px;
+    }
+
+    .star-container-small{
+        min-height: 12px;
+    }
+
     .star-container img{
         width: 20px;
         height: 20px;
@@ -197,6 +215,14 @@
     .unit-image-medium{
         width: 42px;
         height: 42px;
+    }
+
+    .star-container{
+        min-height: 14px;
+    }
+
+    .star-container-medium{
+        min-height: 12px;
     }
 
     .star-container img{
@@ -262,6 +288,18 @@
         height: 24px;
     }
 
+    .star-container{
+        min-height: 12px;
+    }
+
+    .star-container-medium{
+        min-height: 8px;
+    }
+
+    .star-container-small{
+        min-height: 8px;
+    }
+
     .star-container img{
         width: 12px;
         height: 12px;
@@ -302,6 +340,26 @@
     .item-container-small img{
         height: 8px;
         width: 8px;
+    }
+
+    .grey-border{
+        border: 1px solid $unit1
+    }
+    
+    .green-border{
+        border: 1px solid $unit2
+    }
+    
+    .blue-border{
+        border: 1px solid $unit3
+    }
+    
+    .purple-border{
+        border: 1px solid $unit4
+    }
+    
+    .yellow-border{
+        border: 1px solid $unit4
     }
 }
 

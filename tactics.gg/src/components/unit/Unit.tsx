@@ -1,7 +1,6 @@
 import React from 'react';
 import star from '../../images/icons/star.svg';
 import './unit.css';
-import sylas from '../../images/champions/Sylas_1653029846.jpg'
 
 
 interface Item{
@@ -41,12 +40,12 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
     if(size === "big")
         return (
             <div className="unit-container">
-                {isLevel3 && <div className="star-container">
-                    <img src={star} alt="star"/>
-                    <img src={star} alt="star"/>
-                    <img src={star} alt="star"/>
-                </div>}
-                <img className={`unit-image ${borderColor}`} src={sylas} alt={name}/>
+                <div className="star-container">
+                    {isLevel3 && <img src={star} alt="star"/>}
+                    {isLevel3 && <img src={star} alt="star"/>}
+                    {isLevel3 && <img src={star} alt="star"/>}
+                </div>
+                <img className={`unit-image ${borderColor}`} src={url} alt={name}/>
                 <div className="item-container">
                     {items !== null && items.map((itemElement) => (
                         <img src={itemElement.url} alt={itemElement.name}/>
@@ -57,12 +56,12 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
     else if(size === "medium"){
         return(
             <div className="unit-container">
-                {isLevel3 && <div className="star-container-medium">
-                    <img src={star} alt="star"/>
-                    <img src={star} alt="star"/>
-                    <img src={star} alt="star"/>
-                </div>}
-                <img className={`unit-image-medium ${borderColor}`} src={sylas} alt={name}/>
+                <div className="star-container-medium">
+                    {isLevel3 && <img src={star} alt="star"/>}
+                    {isLevel3 && <img src={star} alt="star"/>}
+                    {isLevel3 && <img src={star} alt="star"/>}
+                </div>
+                <img className={`unit-image-medium ${borderColor}`} src={url} alt={name}/>
                 <div className="item-container-medium">
                     {items !== null && items.map((itemElement) => (
                         <img src={itemElement.url} alt={itemElement.name}/>
@@ -74,12 +73,12 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
     else{
         return(
             <div className="unit-container">
-                {isLevel3 && <div className="star-container-small">
-                    <img src={star} alt="star"/>
-                    <img src={star} alt="star"/>
-                    <img src={star} alt="star"/>
-                </div>}
-                <img className={`unit-image-small ${borderColor}`} src={sylas} alt={name}/>
+                <div className="star-container-small">
+                    {isLevel3 && <img src={star} alt="star"/>}
+                    {isLevel3 && <img src={star} alt="star"/>}
+                    {isLevel3 && <img src={star} alt="star"/>}
+                </div>
+                <img className={`unit-image-small ${borderColor}`} src={url} alt={name}/>
                 <div className="item-container-small">
                     {items !== null && items.map((itemElement) => (
                         <img src={itemElement.url} alt={itemElement.name}/>

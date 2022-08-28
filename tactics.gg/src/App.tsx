@@ -9,48 +9,24 @@ import {Navbar} from './components/navbar/Navbar';
 //import SummonerSearch from './components/search/SummonerSearch'
 import Unit from './components/unit/Unit';
 import Trait from './components/trait/Trait';
+import Comp from './components/comp/Comp';
+import {units, traits} from './sample-comp-data';
 
  const items = [{id: 3083,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3083_tank_t3_warmogs.png"},{id: 3083,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3083_tank_t3_warmogs.png"}, {id: 3193,name: "Warmog", url: "https://raw.communitydragon.org/latest/game/assets/items/icons2d/3193_gargoyle_stoneplate.png"}]
 
 
 function App() {
+
   return (
     <div className="nav-button">
       <Navbar />
-        <Unit 
-          name="Sylas"
-          id={12}
-          url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
-          cost={3}
-          size="big"
-          isLevel3={true}
-          items={items}
-          />
-        <Unit 
-          name="Sylas"
-          id={12}
-          url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
-          cost={3}
-          size="medium"
-          isLevel3={true}
-          items={items}
-          />
-        <Unit 
-          name="Sylas"
-          id={12}
-          url="https://raw.communitydragon.org/latest/game/assets/characters/sylas/hud/sylas_circle_1.png"
-          cost={3}
-          size="small"
-          isLevel3={true}
-          items={items}
-          />
-        <Trait 
-          size="small"
-          name="Jade"
-          currentTrait={3}
-          traitStyle={3}
-          hasLabel={true}
-          hasValue={true}
+        <Comp 
+          units={units}
+          traits={traits}
+          avgPlacement={3.72}
+          winrate={18.1}
+          playrate={1.12}
+          top4Ratio={57.1}
           />
     </div>
   );

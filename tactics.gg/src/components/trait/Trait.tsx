@@ -13,9 +13,10 @@ interface Props{
     name: string;
     currentTrait: number;
     traitStyle: number;
+    url: string;
 }
 
-export const Trait:React.FC<Props> = ({size, hasLabel, hasValue,name, currentTrait, traitStyle}) => {
+export const Trait:React.FC<Props> = ({size, hasLabel, hasValue,name, currentTrait, traitStyle, url}) => {
     var background: string;
     var backgroundColor: string;
     switch(traitStyle){
@@ -45,7 +46,7 @@ export const Trait:React.FC<Props> = ({size, hasLabel, hasValue,name, currentTra
         return (
             <div className="trait-small-container">
                 <div className="trait-hex-small" style={{backgroundImage: `url(${background})`}}>
-                    <img className="trait-small-icon" src={traitIcon} alt="trait"></img>
+                    <img className="trait-small-icon" src={url} alt="trait"></img>
                 </div>
                 {hasValue && <div className="trait-small-value-container" style={{backgroundColor : `${backgroundColor}`}}>
                     <h6>{currentTrait}</h6>
@@ -58,7 +59,7 @@ export const Trait:React.FC<Props> = ({size, hasLabel, hasValue,name, currentTra
         return (
             <div className="trait-big-container">
                     <div className="trait-hex-big" style={{backgroundImage: `url(${background})`}}>
-                    <img className="trait-big-icon" src={traitIcon} alt="trait"></img>
+                    <img className="trait-big-icon" src={url} alt="trait"></img>
                 </div>
                 {hasValue && <div className="trait-big-value-container" style={{backgroundColor : `${backgroundColor}`}}>
                     <h5>{currentTrait}</h5>
