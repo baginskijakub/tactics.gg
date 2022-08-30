@@ -2,7 +2,7 @@ import asol from './images/champions/AurelionSol_1653030178.jpg'
 import sylas from './images/champions/Sylas_1653029846.jpg'
 import illaoi from './images/champions/Illaoi_1653030279.jpg'
 import zoe from './images/champions/Zoe_1653030312.jpg'
-import lulu from './images/champions/Lulu_1653029752 1.jpg'
+import lulu from './images/champions/Lulu_1653029752.jpg'
 import nami from './images/champions/Nami_1653029653.jpg'
 import heimer from './images/champions/Heimerdinger_1653030456.jpg'
 import vlad from './images/champions/Vladimir_1653029808.jpg'
@@ -54,7 +54,25 @@ class Unit {
     isLevel3: boolean;
     items: Item[] | null;
 
-    constructor(id: number, name: string, cost: number, url: string, isLevel3: boolean, items: Item[] | null) {
+    constructor(id: number, name: string, cost: number, url: string , isLevel3: boolean, items: Item[] | null) {
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.url = url;
+        this.isLevel3 = isLevel3;
+        this.items = items;
+    }
+}
+
+class UnitHex {
+    id: number | null;
+    name: string | null;
+    cost: number | null;
+    url: string | null;
+    isLevel3: boolean | null;
+    items: Item[] | null;
+
+    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, isLevel3: boolean | null, items: Item[] | null) {
         this.id = id;
         this.name = name;
         this.cost = cost;
@@ -96,5 +114,17 @@ let traits: Trait[] = [Spell_thief, Astral, Mage, Trainer, Evoker, Bruiser, Myst
 
 let comp = [units, traits];
 
-export {units, traits};
+let empty: UnitHex = new UnitHex(null, null, null, null, null, null);
+
+let row1: UnitHex[] = [empty, empty, empty, Sylas, empty, empty, empty];
+let row2: UnitHex[] = [empty, Illaoi, empty, empty, Vlad, empty, empty];
+let row3: UnitHex[] = [empty, empty, empty, empty, empty, empty, empty];
+let row4: UnitHex[] = [Zoe, Heimer, empty, empty, Nami, Lulu, Asol];
+
+let positioning = [row1, row2, row3, row4];
+
+
+export {units, traits, positioning};
+
+
 

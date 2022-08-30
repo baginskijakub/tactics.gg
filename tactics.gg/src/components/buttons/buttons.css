@@ -411,6 +411,45 @@ h6 {
   background-color: #1B2F4A;
 }
 
+.comp-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 11px 0px 12px;
+  border-bottom: 1px solid #172C49;
+  z-index: 0;
+  width: 25%;
+}
+
+.comp-button:hover {
+  background-color: #1B2F4A;
+}
+
+.comp-button-selected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 11px 0px 12px;
+  width: 25%;
+  background: #0E1828;
+  border-style: solid;
+  border-color: #172C49;
+  border-radius: 0px 4px 0px 4px;
+  z-index: 1;
+}
+
 @media screen and (max-width: 1350px) {
   .primary-button {
     padding: 11px 20px 12px;

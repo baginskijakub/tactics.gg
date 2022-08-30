@@ -113,6 +113,33 @@
     background-color: $buttonHover;
 }
 
+.comp-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 0px 12px;
+    border-bottom: 1px solid $divider;
+    z-index: 0;
+    width: 25%;
+}
+
+.comp-button:hover{
+    background-color: $buttonHover;
+}
+
+.comp-button-selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 0px 12px;
+    width: 25%;
+    background: $background09;
+    border-style: solid;
+    border-color: $divider;
+    border-radius: 0px 4px 0px 4px;
+    z-index: 1;
+}
+
 @media screen and (max-width: 1350px) {
     .primary-button{
         padding: 11px 20px 12px;

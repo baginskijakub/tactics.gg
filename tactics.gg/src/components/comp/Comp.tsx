@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './comp.css';
 import CompFoot from './CompFoot';
 import Unit from '../unit/Unit';
 import Trait from '../trait/Trait';
-import chevron from '../../images/icons/chevron.svg'
+import chevron from '../../images/icons/chevron.svg';
+import HexagonUnit from '../unit/HexagonUnit';
+import { positioning } from '../../sample-comp-data';
+import CompButton from '../buttons/CompButton';
 
 interface Trait{
     name: string;
@@ -27,6 +30,32 @@ interface Item{
     url: string;
 }
 
+interface UnitHex {
+    id: number | null;
+    name: string | null;
+    cost: number | null;
+    url: string | null;
+    isLevel3: boolean | null;
+    items: Item[] | null;
+}
+class UnitHex {
+    id: number | null;
+    name: string | null;
+    cost: number | null;
+    url: string | null;
+    isLevel3: boolean | null;
+    items: Item[] | null;
+
+    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, isLevel3: boolean | null, items: Item[] | null) {
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.url = url;
+        this.isLevel3 = isLevel3;
+        this.items = items;
+    }
+}
+
 interface Props{
     units: Unit[]
     traits: Trait[]
@@ -34,9 +63,16 @@ interface Props{
     top4Ratio: number
     winrate: number
     playrate: number
+    positioning: UnitHex[][] 
 }
 
 export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, winrate, playrate}) => {
+    const[selected, setSelected] = useState("Positioning");
+
+    function handleClick(text: string): void{
+        setSelected(text)
+    }
+
     let labeled = window.innerWidth > 850;
     let size: "big" | "small"= "big"
     if(window.innerWidth < 850){
@@ -79,6 +115,49 @@ export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, w
                 <div className="expand-button">
                     <img src={chevron} alt="expand"></img>
                 </div>
+            </div>
+            <div className="comp-navigation">
+                <CompButton 
+                    text="Positioning"
+                    isSelected={selected === "Positioning"}
+                    position="left"
+                    fn={handleClick}
+                    />
+                <CompButton 
+                    text="Items"
+                    isSelected={selected === "Items"}
+                    position="middle"
+                    fn={handleClick}
+                    />
+                <CompButton 
+                    text="Augments"
+                    isSelected={selected === "Augments"}
+                    position="middle"
+                    fn={handleClick}
+                    />
+                <CompButton 
+                    text="Variations"
+                    isSelected={selected === "Variations"}
+                    position="right"
+                    fn={handleClick}
+                    />
+            </div>
+            <div className="comp-positioning-container">
+                {positioning.map((array) => {
+                    return <div className="comp-positioning-row">
+                                {array.map((element) => {
+                                    return <HexagonUnit 
+                                                id={element.id}
+                                                name={element.name}
+                                                cost={element.cost}
+                                                url={element.url}
+                                                size="big"
+                                                isLevel3={element.isLevel3}
+                                                items={element.items}
+                                                />
+                                })}
+                            </div>
+                })}
             </div>
             <CompFoot 
                 avgPlacement={avgPlacement}
