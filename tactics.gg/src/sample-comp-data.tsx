@@ -19,6 +19,7 @@ import trainer from './images/traits/trainer.svg'
 import evoker from './images/traits/evoker.svg'
 import bruiser from './images/traits/bruiser.svg'
 import mystic from './images/traits/mystic.svg'
+import aug from './images/aug.png'
 
 class Item{
     id: number
@@ -112,8 +113,6 @@ let Mystic = new Trait("Mystic", 2, 1, mystic);
 let units: Unit[] = [Asol, Sylas, Zoe, Illaoi, Lulu, Nami, Heimer, Vlad];
 let traits: Trait[] = [Spell_thief, Astral, Mage, Trainer, Evoker, Bruiser, Mystic];
 
-let comp = [units, traits];
-
 let empty: UnitHex = new UnitHex(null, null, null, null, null, null);
 
 let row1: UnitHex[] = [empty, empty, empty, Sylas, empty, empty, empty];
@@ -123,8 +122,68 @@ let row4: UnitHex[] = [Zoe, Heimer, empty, empty, Nami, Lulu, Asol];
 
 let positioning = [row1, row2, row3, row4];
 
+class UnitItems{
+    unitName: string
+    unitSrc: string
+    cost: number
+    itemsBIS: ItemUnit[]
+    itemsRate: ItemUnit[]
 
-export {units, traits, positioning};
+    constructor(unitName: string, unitSrc: string, cost: number, itemsBIS: ItemUnit[], itemsRate: ItemUnit[]){
+        this.unitName = unitName;
+        this.unitSrc = unitSrc;
+        this.cost = cost;
+        this.itemsBIS = itemsBIS;
+        this.itemsRate = itemsRate;
+    }
+}
+
+class ItemUnit{
+    src: string
+    name: string
+    rate: number | null
+
+    constructor(src: string, name: string, rate: number | null){
+        this.name = name;
+        this.src = src;
+        this.rate = rate;
+    }
+}
+
+let Items_SpearOfShoijn = new ItemUnit(shoijn, "Spear of Shoijn", null);
+let Items_Archangel = new ItemUnit(archangel, "Archangel Staff", null);
+let Items_Hextech= new ItemUnit(hextech, "Hextech Gunblade", null);
+let Items_Rate = new ItemUnit(warmog, "Hextech Gunblade", 17.06);
+let ItemsArrayBIS = [Items_Archangel, Items_Hextech, Items_SpearOfShoijn];
+let ItemsArrayRate = [Items_Rate, Items_Rate, Items_Rate, Items_Rate, Items_Rate, Items_Rate]
+
+let Asol_Items = new UnitItems("Aurelion Sol", asol, 10, ItemsArrayBIS, ItemsArrayRate);
+let Sylas_Items = new UnitItems("Aurelion Sol", sylas, 3, ItemsArrayBIS, ItemsArrayRate);
+let Illaoi_Items = new UnitItems("Aurelion Sol", illaoi, 3, ItemsArrayBIS, ItemsArrayRate);
+let Zoe_Items = new UnitItems("Aurelion Sol", zoe, 5, ItemsArrayBIS, ItemsArrayRate);
+
+class Augment {
+    src: string
+    name: string
+    avgPlacement: number
+    winrate: number
+    frequency: number
+
+    constructor(src: string, name: string, avgPlacement: number, winrate: number, frequency: number) {
+        this.src = src;
+        this.name = name;
+        this.avgPlacement = avgPlacement;
+        this.winrate = winrate;
+        this.frequency = frequency;
+    }
+}
+
+let augmentPlaceholder = new Augment(aug, "Protable Forge", 3.68, 19.9, 3.2);
+let augments = [augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augmentPlaceholder,augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augmentPlaceholder]
+
+let items = [Asol_Items, Sylas_Items, Illaoi_Items, Zoe_Items]
+
+export {units, traits, positioning, items, augments};
 
 
 

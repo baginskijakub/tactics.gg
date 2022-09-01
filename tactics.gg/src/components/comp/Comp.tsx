@@ -4,18 +4,19 @@ import CompFoot from './CompFoot';
 import Unit from '../unit/Unit';
 import Trait from '../trait/Trait';
 import chevron from '../../images/icons/chevron.svg';
-import HexagonUnit from '../unit/HexagonUnit';
-import { positioning } from '../../sample-comp-data';
 import CompButton from '../buttons/CompButton';
+import CompPositioning from './CompPositioning';
+import CompItems from './CompItems';
+import CompAugments from './CompAugments';
 
-interface Trait{
+interface TraitInterface{
     name: string;
     currentTrait: number;
     traitStyle: number;
     url: string;
 }
 
-interface Unit{
+interface UnitInterface{
     id: number;
     name: string;
     cost: number;
@@ -56,17 +57,41 @@ class UnitHex {
     }
 }
 
+interface UnitItems{
+    unitName: string
+    unitSrc: string
+    cost: number
+    itemsBIS: ItemUnit[]
+    itemsRate: ItemUnit[]
+}
+
+interface ItemUnit{
+    src: string
+    name: string
+    rate: number | null
+}
+
+interface Augment{
+    src: string
+    name: string
+    avgPlacement: number
+    winrate: number
+    frequency: number
+}
+
 interface Props{
-    units: Unit[]
-    traits: Trait[]
+    units: UnitInterface[]
+    traits: TraitInterface[]
     avgPlacement: number
     top4Ratio: number
     winrate: number
     playrate: number
     positioning: UnitHex[][] 
+    items: UnitItems[]
+    augments: Augment[]
 }
 
-export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, winrate, playrate}) => {
+export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, winrate, playrate, positioning, items, augments}) => {
     const[selected, setSelected] = useState("Positioning");
 
     function handleClick(text: string): void{
@@ -142,23 +167,16 @@ export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, w
                     fn={handleClick}
                     />
             </div>
-            <div className="comp-positioning-container">
-                {positioning.map((array) => {
-                    return <div className="comp-positioning-row">
-                                {array.map((element) => {
-                                    return <HexagonUnit 
-                                                id={element.id}
-                                                name={element.name}
-                                                cost={element.cost}
-                                                url={element.url}
-                                                size="big"
-                                                isLevel3={element.isLevel3}
-                                                items={element.items}
-                                                />
-                                })}
-                            </div>
-                })}
-            </div>
+            {selected === "Positioning" && <CompPositioning 
+                positioning={positioning}
+                />}
+            {selected === "Items" && <CompItems
+                units={items}
+                />}
+            {selected === "Augments" && <CompAugments
+                augments={augments}
+                />}
+            
             <CompFoot 
                 avgPlacement={avgPlacement}
                 top4Ratio={top4Ratio}

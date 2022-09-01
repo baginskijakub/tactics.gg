@@ -2,12 +2,10 @@ import React from 'react';
 import './App.css';
 import {Navbar} from './components/navbar/Navbar';
 import Comp from './components/comp/Comp';
-import {units, traits, positioning} from './sample-comp-data';
-import HexagonUnit from './components/unit/HexagonUnit';
+import {units, traits, positioning, items, augments} from './sample-comp-data';
 
 
 function App() {
-
   return (
     <div className="nav-button">
       <Navbar />
@@ -19,6 +17,8 @@ function App() {
           playrate={1.12}
           top4Ratio={57.1}
           positioning={positioning}
+          items={items}
+          augments={augments}
           />
     </div>
   );
