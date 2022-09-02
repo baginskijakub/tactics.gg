@@ -8,6 +8,7 @@ import CompButton from '../buttons/CompButton';
 import CompPositioning from './CompPositioning';
 import CompItems from './CompItems';
 import CompAugments from './CompAugments';
+import CompVariations from './CompVariations'
 
 interface TraitInterface{
     name: string;
@@ -79,6 +80,13 @@ interface Augment{
     frequency: number
 }
 
+interface Variation{
+    avgPlacement: number
+    top4ratio: number
+    units: UnitInterface[]
+    traits: TraitInterface[]
+}
+
 interface Props{
     units: UnitInterface[]
     traits: TraitInterface[]
@@ -89,13 +97,27 @@ interface Props{
     positioning: UnitHex[][] 
     items: UnitItems[]
     augments: Augment[]
+    variations: Variation[]
 }
 
-export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, winrate, playrate, positioning, items, augments}) => {
+export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, winrate, playrate, positioning, items, augments, variations}) => {
     const[selected, setSelected] = useState("Positioning");
+    const[state, setState] = useState("closed");
 
     function handleClick(text: string): void{
         setSelected(text)
+    }
+
+    function handleState(){
+        if(state === "open"){
+            setState("closed")
+            document.getElementById("expand-image")!.style.transform = "rotate(0deg)"
+        }
+        else{
+            setState("open")
+            document.getElementById("expand-image")!.style.transform = "rotate(180deg)"
+        }       
+
     }
 
     let labeled = window.innerWidth > 850;
@@ -137,10 +159,11 @@ export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, w
                         {unitList}
                     </div>
                 </div>
-                <div className="expand-button">
+                <div className="expand-button" id="expand-image" onClick={handleState}>
                     <img src={chevron} alt="expand"></img>
                 </div>
             </div>
+            {state === "open" && <div>
             <div className="comp-navigation">
                 <CompButton 
                     text="Positioning"
@@ -167,15 +190,21 @@ export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, w
                     fn={handleClick}
                     />
             </div>
-            {selected === "Positioning" && <CompPositioning 
-                positioning={positioning}
-                />}
-            {selected === "Items" && <CompItems
-                units={items}
-                />}
-            {selected === "Augments" && <CompAugments
-                augments={augments}
-                />}
+            
+            
+                {selected === "Positioning" && <CompPositioning 
+                    positioning={positioning}
+                    />}
+                {selected === "Items" && <CompItems
+                    units={items}
+                    />}
+                {selected === "Augments" && <CompAugments
+                    augments={augments}
+                    />}
+                {selected === "Variations" && <CompVariations
+                    variations={variations}
+                    />}
+            </div>}
             
             <CompFoot 
                 avgPlacement={avgPlacement}

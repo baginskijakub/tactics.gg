@@ -15,11 +15,16 @@ interface Props{
 }
 
 export const CompAugments:React.FC<Props> = ({augments}) => {
+    let avg: string = "Average Place"
+
+    if(window.innerWidth < 500){
+        avg = "Avg. Place"
+    }
     return (
         <div className="comp-augments-container">
             <div className="comp-augments-titles">
                 <h4 className="comp-augments-title">Augment</h4>
-                <h4 className="comp-augments-title-cell">Average Place</h4>
+                <h4 className="comp-augments-title-cell">{avg}</h4>
                 <h4 className="comp-augments-title-cell">Winrate</h4>
                 <h4 className="comp-augments-title-cell">Frequency</h4>
             </div>

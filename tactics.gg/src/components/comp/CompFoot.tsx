@@ -9,7 +9,6 @@ interface Props{
 }
 
 export const CompFoot: React.FC<Props> = ({avgPlacement, top4Ratio, winrate, playrate}) => {
-    // var colors: string[] = ["red", "yellow", "green"];
     var colors: string[] = [];
 
     //setting color of avg placement
@@ -56,11 +55,22 @@ export const CompFoot: React.FC<Props> = ({avgPlacement, top4Ratio, winrate, pla
         colors.push("body red")
     }
 
+    let isMobile = false
+    if(window.innerWidth < 500){
+        isMobile = true
+    }
+
+    let avg: string = "Average Place"
+
+    if(window.innerWidth < 500){
+        avg = "Avg. Place"
+    }
+
     
     return (
         <div className="comp-foot-wrapper">
             <div className="comp-foot-inner">
-                <p className="body">Average Placement:</p>
+                <p className="body">{avg}:</p>
                 <p className={colors[0]}>{avgPlacement}</p>
             </div>
             <div className="comp-foot-inner">
@@ -71,10 +81,10 @@ export const CompFoot: React.FC<Props> = ({avgPlacement, top4Ratio, winrate, pla
                 <p className="body">Winrate:</p>
                 <p className={colors[2]}>{winrate}%</p>
             </div>
-            <div className="comp-foot-inner">
+            {!isMobile && <div className="comp-foot-inner">
                 <p className="body">Playrate:</p>
                 <p className={colors[3]}>{playrate}</p>
-            </div>
+            </div>}
             
         </div>
     )

@@ -183,7 +183,24 @@ let augments = [augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augm
 
 let items = [Asol_Items, Sylas_Items, Illaoi_Items, Zoe_Items]
 
-export {units, traits, positioning, items, augments};
+class Variation{
+    avgPlacement: number
+    top4ratio: number
+    units: Unit[]
+    traits: Trait[]
+
+    constructor(avgPlacement: number, top4ratio: number, units: Unit[], traits: Trait[]){
+        this.avgPlacement = avgPlacement;
+        this.top4ratio = top4ratio;
+        this.units = units;
+        this.traits = traits;
+    }
+}
+
+let variation = new Variation(3.89, 59.68, units, traits);
+let variations = [variation, variation, variation];
+
+export {units, traits, positioning, items, augments, variations};
 
 
 

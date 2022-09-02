@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Navbar} from './components/navbar/Navbar';
 import Comp from './components/comp/Comp';
-import {units, traits, positioning, items, augments} from './sample-comp-data';
+import {units, traits, positioning, items, augments, variations} from './sample-comp-data';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
           positioning={positioning}
           items={items}
           augments={augments}
+          variations={variations}
           />
     </div>
   );

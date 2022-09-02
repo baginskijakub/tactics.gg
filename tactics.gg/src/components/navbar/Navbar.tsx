@@ -14,7 +14,7 @@ export const Navbar: React.FC = () => {
         }
         else
         {
-            setSearch('open')
+            // setSearch('open')
         }
     }
 
@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
         <div className="navbar-container">
             <div className="navbar-inner-container">
                 <img src={logo} alt="Tactics.gg"></img>
-                <div onClick={handleSearch}>
+                <div onClick={handleSearch} style={{zIndex: "1"}}>
                 {search === 'open' ? <DefaultSearch 
                     initialValue = "Search summoner"
                     /> : <SummonerSearch />}
