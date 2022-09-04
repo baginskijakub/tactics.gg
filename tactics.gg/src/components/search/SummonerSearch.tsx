@@ -36,7 +36,7 @@ function SummonerSearch() {
             }
         }
         else{
-            // setIsOpen(false);
+            setIsOpen(false);
             const elements  = document.getElementsByClassName("region-dropdown-container") as HTMLCollectionOf<HTMLElement>;
             if(elements.length > 0)
             {

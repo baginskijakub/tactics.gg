@@ -1,6 +1,47 @@
-@import "../../variables/colors.scss";
-@import "../../styles/index.scss";
+@import "../variables/colors.scss";
+@import "../styles/index.scss";
 
-.xd{
-    display: none;
+.summoner-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 1300px;
 }
+
+.summoner-container-horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1350px){
+    .summoner-wrapper{
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .summoner-wrapper{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .summoner-wrapper{
+        width: 100%;
+    }
+
+    .summoner-container-horizontal{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+}  

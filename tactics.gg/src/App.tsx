@@ -2,12 +2,15 @@ import React from 'react';
 import './App.css';
 import {Navbar} from './components/navbar/Navbar';
 import Comp from './components/comp/Comp';
+import Summoner from './pages/Summoner'
+
+import { profile, stats, placements } from './sample-summoner-data' 
 import {units, traits, positioning, items, augments, variations} from './sample-comp-data';
 
 
 function App() {
   return (
-    <div className="nav-button">
+    <div className="app-container">
       <Navbar />
         <Comp 
           units={units}
@@ -20,6 +23,12 @@ function App() {
           items={items}
           augments={augments}
           variations={variations}
+          />
+        
+        <Summoner 
+          profile={profile}
+          stats={stats}
+          placements={placements}
           />
     </div>
   );
