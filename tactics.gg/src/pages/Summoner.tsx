@@ -5,7 +5,51 @@ import SummonerProfile from '../components/summoner/SummonerProfile'
 import SummonerStats from '../components/summoner/SummonerStats'
 import SummonerLast20 from '../components/summoner/SummonerLast20'
 import SummonerProgress from '../components/summoner/SummonerProgress'
+import SummonerMatch from '../components/summoner/SummonerMatch'
+import { match } from 'assert'
 
+interface Item{
+    id: number
+    name: string
+    url: string
+}
+
+interface Trait{
+    name: string;
+    currentTrait: number;
+    traitStyle: number;
+    url: string;
+}
+
+interface Unit {
+    id: number;
+    name: string;
+    cost: number;
+    url: string;
+    level: 0 | 1 | 2 | 3;
+    items: Item[] | null;
+}
+
+interface Companion{
+    placement: number
+    icon: string
+    name: string
+    roundEliminated: string
+    augments: string[]
+    traits: Trait[]
+    units: Unit[]
+    goldLeft: number
+}
+
+interface Match{
+    placement: number
+    queueType: "Ranked" | "Normal"
+    timeAgo: string
+    augments: string[]
+    units: Unit[]
+    traits: Trait[]
+    companion: Companion[]
+}
 
 interface Profile{
     name: string
@@ -32,9 +76,10 @@ interface Props{
     profile: Profile
     stats: Stats
     placements: number[]
+    matches: Match[]
 }
 
-export const Summoner:React.FC<Props> = ({profile, stats, placements}) => {
+export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) => {
     return (
         <div className="summoner-wrapper">
             <div className="summoner-container-horizontal">
@@ -63,7 +108,16 @@ export const Summoner:React.FC<Props> = ({profile, stats, placements}) => {
                     placements={placements}
                     />
                 <SummonerProgress />
-            </div>            
+            </div>  
+            <SummonerMatch 
+                placement={matches[0].placement}
+                queueType={matches[0].queueType}
+                timeAgo={matches[0].timeAgo}
+                augments={matches[0].augments}
+                units={matches[0].units}
+                traits={matches[0].traits}
+                companion={matches[0].companion}
+                />          
         </div>
     )
 }

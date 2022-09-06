@@ -11,15 +11,15 @@ class UnitHex {
     name: string | null;
     cost: number | null;
     url: string | null;
-    isLevel3: boolean | null;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 
-    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, isLevel3: boolean | null, items: Item[] | null) {
+    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, level: 0 | 1 | 2 | 3, items: Item[] | null) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.url = url;
-        this.isLevel3 = isLevel3;
+        this.level = level;
         this.items = items;
     }
 }
@@ -43,7 +43,7 @@ export const CompPositioning:React.FC<Props> = ({positioning}) => {
                                                 cost={element.cost}
                                                 url={element.url}
                                                 size="big"
-                                                isLevel3={element.isLevel3}
+                                                level={element.level}
                                                 items={element.items}
                                                 />
                                 })}

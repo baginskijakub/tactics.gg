@@ -22,7 +22,7 @@ interface UnitInterface{
     name: string;
     cost: number;
     url: string;
-    isLevel3: boolean;
+    level: 0 | 1 | 2| 3;
     items: Item[] | null;
 }
 
@@ -37,7 +37,7 @@ interface UnitHex {
     name: string | null;
     cost: number | null;
     url: string | null;
-    isLevel3: boolean | null;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 }
 class UnitHex {
@@ -45,15 +45,15 @@ class UnitHex {
     name: string | null;
     cost: number | null;
     url: string | null;
-    isLevel3: boolean | null;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 
-    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, isLevel3: boolean | null, items: Item[] | null) {
+    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, level: 0 | 1 | 2 | 3, items: Item[] | null) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.url = url;
-        this.isLevel3 = isLevel3;
+        this.level = level;
         this.items = items;
     }
 }
@@ -144,7 +144,7 @@ export const Comp: React.FC<Props> = ({units, traits, avgPlacement, top4Ratio, w
             cost={unit.cost}
             url={unit.url}
             size="big"
-            isLevel3={unit.isLevel3}
+            level={unit.level}
             items={unit.items}
             />
     )

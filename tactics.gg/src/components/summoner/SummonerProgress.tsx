@@ -1,6 +1,7 @@
 import React from 'react'
 import './summoner.css'
 
+
 export const SummonerProgress:React.FC = () => {
     return (
         <div className="summoner-progress-wrapper">

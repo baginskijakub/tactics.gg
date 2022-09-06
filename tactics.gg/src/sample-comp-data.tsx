@@ -52,15 +52,15 @@ class Unit {
     name: string;
     cost: number;
     url: string;
-    isLevel3: boolean;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 
-    constructor(id: number, name: string, cost: number, url: string , isLevel3: boolean, items: Item[] | null) {
+    constructor(id: number, name: string, cost: number, url: string , level: 0 | 1 | 2 | 3 , items: Item[] | null) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.url = url;
-        this.isLevel3 = isLevel3;
+        this.level = level;
         this.items = items;
     }
 }
@@ -70,15 +70,15 @@ class UnitHex {
     name: string | null;
     cost: number | null;
     url: string | null;
-    isLevel3: boolean | null;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 
-    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, isLevel3: boolean | null, items: Item[] | null) {
+    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, level: 0 | 1 | 2 | 3, items: Item[] | null) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.url = url;
-        this.isLevel3 = isLevel3;
+        this.level = level;
         this.items = items;
     }
 }
@@ -93,14 +93,14 @@ let SunfireCape: Item = new Item(123, "Gargoyle Stoneplate", sunfire)
 const asol_items: Item[] =  [ArchangelStaff, SpearOfShoijn, HextechGunblade]
 const sylas_items: Item[] = [GargoyleStoneplate, Warmogs, SunfireCape]
 
-let Asol: Unit = new Unit(123, "Aurelion Sol", 10, asol, false, asol_items);
-let Sylas: Unit = new Unit(123, "Sylas", 3, sylas, true, sylas_items);
-let Zoe: Unit = new Unit(123, "Zoe", 5, zoe, false, null);
-let Illaoi: Unit = new Unit(123, "Illaoi", 3, illaoi, false, null);
-let Lulu: Unit = new Unit(123, "Lulu", 3, lulu, false, null);
-let Nami: Unit = new Unit(123, "Nami", 2, nami, false, null);
-let Heimer: Unit = new Unit(123, "Heimerdinger", 1, heimer, false, null);
-let Vlad: Unit = new Unit(123, "Vladimir", 1, vlad, false, null);
+let Asol: Unit = new Unit(123, "Aurelion Sol", 10, asol, 0, asol_items);
+let Sylas: Unit = new Unit(123, "Sylas", 3, sylas, 3, sylas_items);
+let Zoe: Unit = new Unit(123, "Zoe", 5, zoe, 0, null);
+let Illaoi: Unit = new Unit(123, "Illaoi", 3, illaoi, 0, null);
+let Lulu: Unit = new Unit(123, "Lulu", 3, lulu, 2, null);
+let Nami: Unit = new Unit(123, "Nami", 2, nami, 2, null);
+let Heimer: Unit = new Unit(123, "Heimerdinger", 1, heimer, 1, null);
+let Vlad: Unit = new Unit(123, "Vladimir", 1, vlad, 1, null);
 
 let Spell_thief = new Trait("Spell-thief", 1, 3, spell_thief );
 let Astral = new Trait("Astral", 6, 2, astral);
@@ -113,7 +113,7 @@ let Mystic = new Trait("Mystic", 2, 1, mystic);
 let units: Unit[] = [Asol, Sylas, Zoe, Illaoi, Lulu, Nami, Heimer, Vlad];
 let traits: Trait[] = [Spell_thief, Astral, Mage, Trainer, Evoker, Bruiser, Mystic];
 
-let empty: UnitHex = new UnitHex(null, null, null, null, null, null);
+let empty: UnitHex = new UnitHex(null, null, null, null, 0, null);
 
 let row1: UnitHex[] = [empty, empty, empty, Sylas, empty, empty, empty];
 let row2: UnitHex[] = [empty, Illaoi, empty, empty, Vlad, empty, empty];

@@ -4,7 +4,7 @@ import {Navbar} from './components/navbar/Navbar';
 import Comp from './components/comp/Comp';
 import Summoner from './pages/Summoner'
 
-import { profile, stats, placements } from './sample-summoner-data' 
+import { profile, stats, placements, matches} from './sample-summoner-data' 
 import {units, traits, positioning, items, augments, variations} from './sample-comp-data';
 
 
@@ -29,6 +29,7 @@ function App() {
           profile={profile}
           stats={stats}
           placements={placements}
+          matches={matches}
           />
     </div>
   );

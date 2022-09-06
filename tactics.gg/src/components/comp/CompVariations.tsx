@@ -14,7 +14,7 @@ interface UnitInterface{
     name: string;
     cost: number;
     url: string;
-    isLevel3: boolean;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 }
 

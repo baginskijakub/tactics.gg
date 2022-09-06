@@ -15,7 +15,7 @@ interface UnitInterface{
     name: string;
     cost: number;
     url: string;
-    isLevel3: boolean;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 }
 
@@ -80,7 +80,7 @@ export const CompVariationRow:React.FC<Props> = ({avgPlacement, top4ratio, units
                                     url={element.url}
                                     cost={element.cost}
                                     id={element.id}
-                                    isLevel3={element.isLevel3}
+                                    level={element.level}
                                     items={element.items}
                                     />
                             )})}

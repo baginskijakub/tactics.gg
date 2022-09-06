@@ -14,11 +14,11 @@ interface Props{
     cost: number | null;
     url: string | null;
     size: "big" | "medium";
-    isLevel3: boolean | null;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 }
 
-export const HexagonUnit: React.FC<Props> = ({id, name, cost, url, size, isLevel3, items}) => {
+export const HexagonUnit: React.FC<Props> = ({id, name, cost, url, size, level, items}) => {
     var backgroundClass: string = "hexagon-in2";
 
     switch(cost){
@@ -40,14 +40,24 @@ export const HexagonUnit: React.FC<Props> = ({id, name, cost, url, size, isLevel
             backgroundClass += " yellow-fill";
             break;
     }
+    const stars = new  Array<number>();
+
+    for(let i = 0; i<level; i++){
+        stars.push(0)
+    }
+
     if(size === "big")
     {
     return (
         <div className="unit-hex-container">
             <div className="star-container">
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
+                    {    
+                        stars.map(() => {
+                            return(
+                                <img src={star} alt="star"/>
+                            )
+                        })
+                    }
             </div>
             <div className="hexagon hex-image">
                 <div className="hexagon-in1">
@@ -72,9 +82,13 @@ export const HexagonUnit: React.FC<Props> = ({id, name, cost, url, size, isLevel
         return(
             <div className="unit-hex-container-medium">
             <div className="star-container">
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
+                    {    
+                        stars.map(() => {
+                            return(
+                                <img src={star} alt="star"/>
+                            )
+                        })
+                    }
             </div>
             <div className="hexagon hex-border">
                 <div className="hexagon-in1">

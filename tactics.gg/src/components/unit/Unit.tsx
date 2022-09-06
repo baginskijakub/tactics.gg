@@ -15,10 +15,16 @@ interface Props{
     cost: number;
     url: string;
     size: "big" | "medium" | "small";
-    isLevel3: boolean;
+    level: 0 | 1 | 2 | 3;
     items: Item[] | null;
 }
-export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) => {
+export const Unit:React.FC<Props> = ({name, cost, url, size, level, items}) => {
+    let stars = new  Array<number>();
+
+    for(let i = 0; i<level; i++){
+        stars.push(0)
+    }
+
     var borderColor: string = "grey-border";
 
     switch(cost){
@@ -41,9 +47,14 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
         return (
             <div className="unit-container">
                 <div className="star-container">
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
+                    {    
+                        stars.map(() => {
+                            return(
+                                <img src={star} alt="star"/>
+                            )
+                        })
+                    }
+
                 </div>
                 <img className={`unit-image ${borderColor}`} src={url} alt={name}/>
                 <div className="item-container">
@@ -57,9 +68,13 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
         return(
             <div className="unit-container">
                 <div className="star-container-medium">
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
+                    {    
+                        stars.map(() => {
+                            return(
+                                <img src={star} alt="star"/>
+                            )
+                        })
+                    }
                 </div>
                 <img className={`unit-image-medium ${borderColor}`} src={url} alt={name}/>
                 <div className="item-container-medium">
@@ -74,9 +89,13 @@ export const Unit:React.FC<Props> = ({name, cost, url, size, isLevel3, items}) =
         return(
             <div className="unit-container">
                 <div className="star-container-small">
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
-                    {isLevel3 && <img src={star} alt="star"/>}
+                    {    
+                        stars.map(() => {
+                            return(
+                                <img src={star} alt="star"/>
+                            )
+                        })
+                    }
                 </div>
                 <img className={`unit-image-small ${borderColor}`} src={url} alt={name}/>
                 <div className="item-container-small">
