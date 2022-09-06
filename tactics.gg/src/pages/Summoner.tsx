@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './pages.css'
 
 import SummonerProfile from '../components/summoner/SummonerProfile'
@@ -6,6 +6,7 @@ import SummonerStats from '../components/summoner/SummonerStats'
 import SummonerLast20 from '../components/summoner/SummonerLast20'
 import SummonerProgress from '../components/summoner/SummonerProgress'
 import SummonerMatch from '../components/summoner/SummonerMatch'
+import SummonerSearch from '../components/search/SummonerSearch'
 import { match } from 'assert'
 
 interface Item{
@@ -80,8 +81,22 @@ interface Props{
 }
 
 export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) => {
+    const[summonerName, setSummonerName] = useState("")
+
+    function handleSummoner(name: string){
+        setSummonerName(name);
+        //call api function
+    }
+
+    function placeholder(){
+        console.log("TODO")
+    }
+    
     return (
         <div className="summoner-wrapper">
+            <SummonerSearch 
+                handleInput={() => handleSummoner}
+                />
             <div className="summoner-container-horizontal">
                 <SummonerProfile 
                     name={profile.name}

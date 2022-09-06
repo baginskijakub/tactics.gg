@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-        <Comp 
+        {/* <Comp 
           units={units}
           traits={traits}
           avgPlacement={3.72}
@@ -23,7 +23,7 @@ function App() {
           items={items}
           augments={augments}
           variations={variations}
-          />
+          /> */}
         
         <Summoner 
           profile={profile}

@@ -3,7 +3,12 @@ import './search.css';
 import { RegionDropdown } from './RegionDropdown';
 import SpecificSearch from './SpecificSearch';
 
-function SummonerSearch() {
+
+// interface Props{
+//     handleInput: (name: string) => void
+// }
+
+export const SummonerSearch:React.FC = (handleInput) => {
     const [regions, setRegions] = useState([{text:"EUW", size:"big", isSelected:true},{text:"EUNE", size:"big", isSelected:false}, {text:"NA", size:"big", isSelected:false}]);
     const[region, setRegion] = useState("EUW");
     const[isOpen, setIsOpen] = useState(false);
@@ -57,6 +62,7 @@ function SummonerSearch() {
             <SpecificSearch 
                 head="Summoner name"
                 initialValue="Search summoner"
+                handleInput={() => handleInput}
                 />
         </div>
     )
