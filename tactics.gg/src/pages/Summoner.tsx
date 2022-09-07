@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './pages.css'
+import {getSummonersData} from './summoner-logic'
 
 import SummonerProfile from '../components/summoner/SummonerProfile'
 import SummonerStats from '../components/summoner/SummonerStats'
@@ -81,9 +82,11 @@ interface Props{
 
 export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) => {
     const[summonerName, setSummonerName] = useState("")
+    let result
 
     function handleSummoner(name: string){
         setSummonerName(name);
+        console.log(getSummonersData(summonerName));
     }
     
     return (
