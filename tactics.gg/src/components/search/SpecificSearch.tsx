@@ -5,7 +5,7 @@ import './search.css';
 interface Props{
     head: string;
     initialValue: string;
-    handleInput: (name: string)  => {};
+    handleInput: (name: string)  => void;
 }
 
 export const SpecificSearch:React.FC<Props> = ({head, initialValue, handleInput}) => {
@@ -16,12 +16,6 @@ export const SpecificSearch:React.FC<Props> = ({head, initialValue, handleInput}
 
     let input = document.getElementById("summoner-input") as HTMLInputElement;
 
-    input.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("summoner-input-button")?.click();
-        }
-    })
 
     return (
         <div className="specific-search-container">

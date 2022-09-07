@@ -7,7 +7,6 @@ import SummonerLast20 from '../components/summoner/SummonerLast20'
 import SummonerProgress from '../components/summoner/SummonerProgress'
 import SummonerMatch from '../components/summoner/SummonerMatch'
 import SummonerSearch from '../components/search/SummonerSearch'
-import { match } from 'assert'
 
 interface Item{
     id: number
@@ -85,17 +84,12 @@ export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) 
 
     function handleSummoner(name: string){
         setSummonerName(name);
-        //call api function
-    }
-
-    function placeholder(){
-        console.log("TODO")
     }
     
     return (
         <div className="summoner-wrapper">
             <SummonerSearch 
-                handleInput={() => handleSummoner}
+                handleInput={handleSummoner}
                 />
             <div className="summoner-container-horizontal">
                 <SummonerProfile 

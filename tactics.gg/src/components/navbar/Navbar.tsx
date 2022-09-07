@@ -18,6 +18,10 @@ export const Navbar: React.FC = () => {
         }
     }
 
+    function placeholder(){
+        console.log("xd")
+    }
+
     return (
         <div className="navbar-container">
             <div className="navbar-inner-container">
@@ -25,7 +29,9 @@ export const Navbar: React.FC = () => {
                 <div onClick={handleSearch} style={{zIndex: "1"}}>
                 {search === 'open' ? <DefaultSearch 
                     initialValue = "Search summoner"
-                    /> : <SummonerSearch />}
+                    /> : <SummonerSearch 
+                            handleInput={(name: string) => placeholder}
+                            />}
                 </div>
             </div>
             <NavbarLinks />
