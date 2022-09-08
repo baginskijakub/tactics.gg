@@ -8,70 +8,10 @@ import SummonerLast20 from '../components/summoner/SummonerLast20'
 import SummonerProgress from '../components/summoner/SummonerProgress'
 import SummonerMatch from '../components/summoner/SummonerMatch'
 import SummonerSearch from '../components/search/SummonerSearch'
+import SummonerPlaceholder from '../components/summoner/SummonerPlaceholder'
 
-interface Item{
-    id: number
-    name: string
-    url: string
-}
+import {Match, Profile, Stats} from '../classes'
 
-interface Trait{
-    name: string;
-    currentTrait: number;
-    traitStyle: number;
-    url: string;
-}
-
-interface Unit {
-    id: number;
-    name: string;
-    cost: number;
-    url: string;
-    level: 0 | 1 | 2 | 3;
-    items: Item[] | null;
-}
-
-interface Companion{
-    placement: number
-    icon: string
-    name: string
-    roundEliminated: string
-    augments: string[]
-    traits: Trait[]
-    units: Unit[]
-    goldLeft: number
-}
-
-interface Match{
-    placement: number
-    queueType: "Ranked" | "Normal"
-    timeAgo: string
-    augments: string[]
-    units: Unit[]
-    traits: Trait[]
-    companion: Companion[]
-}
-
-interface Profile{
-    name: string
-    region: string
-    icon: string
-    rank: number
-    tier: string
-    lp: number
-    top: number
-    ranking: number
-    rankIcon: string
-}
-
-interface Stats{
-    played: number
-    wins: number
-    percentWins: number
-    top4: number
-    percentTop4: number
-    avgPlacement: number
-}
 
 interface Props{
     profile: Profile
@@ -82,11 +22,33 @@ interface Props{
 
 export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) => {
     const[summonerName, setSummonerName] = useState("")
-    let result
+    const[profileState, setProfile] = useState<undefined | Profile>(undefined)
+    const[statsState, setStats] = useState<undefined | Stats>(undefined)
+    const[matchesState, setMatches] = useState<undefined | Match[]>(undefined)
+
 
     function handleSummoner(name: string){
         setSummonerName(name);
-        console.log(getSummonersData(summonerName));
+        getSummonersData(name).then((res) => {
+            setProfile(new Profile(name, "EU West", profile.icon, res.division, res.tier, res.lp, 21.07, 184, profile.rankIcon))
+            setStats(new Stats(res.gamesOverall, res.winsOverall, stats.percentWins, stats.top4, stats.percentTop4, stats.avgPlacement))
+            console.log(res.last20MatchesData)
+            //setMatches(new Match(res.last20MatchesData.comps[0].playerComposition.placement, "Ranked", res.last20MatchesData.comps[0].playedOn, res.last20MatchesData.comps[0].playerComposition.augments, ))
+            setMatches(res.last20MatchesData.comps.map((comp: any) => {
+                return (
+                    new Match(
+                        comp.playerComposition.placement,
+                        "Ranked",
+                        comp.playedOn,
+                        comp.playerComposition.augments,
+                        comp.playerComposition.units,
+                        comp.playerComposition.traits,
+                        []
+                    )
+                )
+            }))
+            setSummonerName(profile.name);
+        })
     }
     
     return (
@@ -94,42 +56,46 @@ export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) 
             <SummonerSearch 
                 handleInput={handleSummoner}
                 />
-            <div className="summoner-container-horizontal">
-                <SummonerProfile 
-                    name={profile.name}
-                    region={profile.region}
-                    icon={profile.icon}
-                    rank={profile.rank}
-                    tier={profile.tier}
-                    lp={profile.lp}
-                    top={profile.top}
-                    ranking={profile.ranking}
-                    rankIcon={profile.rankIcon}
-                    />
-                <SummonerStats 
-                    played={stats.played}
-                    wins={stats.wins}
-                    percentWins={stats.percentWins}
-                    top4={stats.top4}
-                    percentTop4={stats.percentTop4}
-                    avgPlacement={stats.avgPlacement}
-                    />
-            </div>
-            <div className="summoner-container-horizontal">
-                <SummonerLast20 
-                    placements={placements}
-                    />
-                <SummonerProgress />
-            </div>  
-            <SummonerMatch 
-                placement={matches[0].placement}
-                queueType={matches[0].queueType}
-                timeAgo={matches[0].timeAgo}
-                augments={matches[0].augments}
-                units={matches[0].units}
-                traits={matches[0].traits}
-                companion={matches[0].companion}
-                />          
+           
+            {summonerName === "" ? 
+             <div className="summoner-wrapper">
+                <div className="summoner-container-horizontal">
+                    {profileState !== undefined && <SummonerProfile 
+                        name={summonerName}
+                        region={profileState.region}
+                        icon={profileState.icon}
+                        rank={profileState.rank}
+                        tier={profileState.tier}
+                        lp={profileState.lp}
+                        top={profileState.top}
+                        ranking={profileState.ranking}
+                        rankIcon={profileState.rankIcon}
+                        />}
+                    {statsState !== undefined && <SummonerStats 
+                        played={statsState.played}
+                        wins={statsState.wins}
+                        percentWins={statsState.percentWins}
+                        top4={statsState.top4}
+                        percentTop4={statsState.percentTop4}
+                        avgPlacement={statsState.avgPlacement}
+                        />}
+                    </div>
+                    {matchesState !== undefined &&  <div className="summoner-container-horizontal">
+                        <SummonerLast20 
+                            placements={placements}
+                            />
+                        <SummonerProgress />
+                    </div>}
+            </div> : <SummonerPlaceholder state="notFound"/>}
+            { matchesState !== undefined && <SummonerMatch 
+                placement={matchesState[0].placement}
+                queueType={matchesState[0].queueType}
+                timeAgo={matchesState[0].timeAgo}
+                augments={matchesState[0].augments}
+                units={matchesState[0].units}
+                traits={matchesState[0].traits}
+                companion={matchesState[0].companion}
+                />     }
         </div>
     )
 }

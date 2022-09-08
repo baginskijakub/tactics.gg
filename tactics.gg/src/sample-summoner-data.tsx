@@ -9,12 +9,12 @@ import lulu from './images/champions/Lulu_1653029752.jpg'
 import nami from './images/champions/Nami_1653029653.jpg'
 import heimer from './images/champions/Heimerdinger_1653030456.jpg'
 import vlad from './images/champions/Vladimir_1653029808.jpg'
-import shoijn from './images/items/SpearofShojin_1642015208.jpg'
-import archangel from './images/items/3285_8H5TqcPL1z03UB6hTyP9x6N5hZ9jVJIcf6YhxpUg.jpg'
-import hextech from './images/items/HextechGunblade_1640058876.jpg'
-import warmog from './images/items/3083_C5Y1EvfU08Ug9wCaCJTEp2hNRjh5zSkq9eoY97Uc.jpg'
-import gargoyle from './images/items/IronWill_AnyIyxtEcc5fby5mgL1NNIwzm76wiG0yxwcPQ7nj.jpg'
-import sunfire from './images/items/SunfireCape_1640059158.jpg'
+import shoijn from 'https://ittledul.sirv.com/Images/items/13.png'
+import archangel from 'https://ittledul.sirv.com/Images/items/13.png'
+import hextech from 'https://ittledul.sirv.com/Images/items/13.png'
+import warmog from 'https://ittledul.sirv.com/Images/items/13.png'
+import gargoyle from 'https://ittledul.sirv.com/Images/items/13.png'
+import sunfire from 'https://ittledul.sirv.com/Images/items/13.png'
 import spell_thief from './images/traits/spellthief.svg'
 import astral from './images/traits/astral.svg'
 import mage from './images/traits/mage.svg'
@@ -156,12 +156,12 @@ class Match{
     }
 }
 
-let SpearOfShoijn: Item = new Item(123, "Spear of Shoijn", shoijn)
-let ArchangelStaff: Item = new Item(123, "Archangel Staff", archangel)
-let HextechGunblade: Item = new Item(123, "Hextech Gunblade", hextech)
-let GargoyleStoneplate: Item = new Item(123, "Gargoyle Stoneplate", gargoyle)
-let Warmogs: Item = new Item(123, "Gargoyle Stoneplate", warmog)
-let SunfireCape: Item = new Item(123, "Gargoyle Stoneplate", sunfire)
+let SpearOfShoijn: Item = new Item(123, "Spear of Shoijn", "https://ittledul.sirv.com/Images/items/13.png")
+let ArchangelStaff: Item = new Item(123, "Archangel Staff", "https://ittledul.sirv.com/Images/items/12.png")
+let HextechGunblade: Item = new Item(123, "Hextech Gunblade", "https://ittledul.sirv.com/Images/items/24.png")
+let GargoyleStoneplate: Item = new Item(123, "Gargoyle Stoneplate", "https://ittledul.sirv.com/Images/items/2024.png")
+let Warmogs: Item = new Item(123, "Gargoyle Stoneplate", "https://ittledul.sirv.com/Images/items/13.png")
+let SunfireCape: Item = new Item(123, "Gargoyle Stoneplate", "https://ittledul.sirv.com/Images/items/13.png")
 
 const asol_items: Item[] =  [ArchangelStaff, SpearOfShoijn, HextechGunblade]
 const sylas_items: Item[] = [GargoyleStoneplate, Warmogs, SunfireCape]

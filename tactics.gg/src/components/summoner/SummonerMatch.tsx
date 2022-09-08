@@ -103,7 +103,7 @@ export const SummonerMatch:React.FC<Props> = ({placement, queueType, timeAgo, au
                     </div>}
                 </div>
                 <div className="summoner-match-augments">
-                    {augments.map((element) => {
+                    {augments?.map((element) => {
                         return <img src={element} alt="augment"/>
                     })}
                 </div>
@@ -124,7 +124,7 @@ export const SummonerMatch:React.FC<Props> = ({placement, queueType, timeAgo, au
                         })}
                     </div>
                     <div className="summoner-match-units">
-                        {units.map((element) => {
+                        {units?.map((element) => {
                             return (
                                 <Unit
                                     size="medium"

@@ -6,6 +6,7 @@ import Summoner from './pages/Summoner'
 
 import { profile, stats, placements, matches} from './sample-summoner-data' 
 import {units, traits, positioning, items, augments, variations} from './sample-comp-data';
+import DropDown from './components/buttons/Dropdown'
 
 
 function App() {
@@ -25,12 +26,17 @@ function App() {
           variations={variations}
           /> } */}
         
-        { <Summoner 
+        {/* { <Summoner 
           profile={profile}
           stats={stats}
           placements={placements}
           matches={matches}
-          /> }
+          /> } */}
+          <DropDown 
+            name="Sort"
+            values={["Average Placement", "Top4 Ratio", "Winrate"]}
+            defaultValue="Average Placement"
+            />
     </div>
   );
 }

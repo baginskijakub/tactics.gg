@@ -485,6 +485,19 @@
     text-align: center;
 }
 
+.summoner-placeholder-wrapper{
+    width: 1300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
 @media screen and (max-width: 1350px){
     .summoner-profile-wrapper{
         padding: 12px 12px 12px 12px;

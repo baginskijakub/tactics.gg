@@ -1021,6 +1021,28 @@ h6 {
   text-align: center;
 }
 
+.summoner-placeholder-wrapper {
+  width: 1300px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  background-color: #0C1A2D;
+  border: 1px solid #172C49;
+  border-radius: 4px;
+}
+
 @media screen and (max-width: 1350px) {
   .summoner-profile-wrapper {
     padding: 12px 12px 12px 12px;

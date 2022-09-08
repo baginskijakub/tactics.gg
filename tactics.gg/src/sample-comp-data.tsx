@@ -6,12 +6,12 @@ import lulu from './images/champions/Lulu_1653029752.jpg'
 import nami from './images/champions/Nami_1653029653.jpg'
 import heimer from './images/champions/Heimerdinger_1653030456.jpg'
 import vlad from './images/champions/Vladimir_1653029808.jpg'
-import shoijn from './images/items/SpearofShojin_1642015208.jpg'
-import archangel from './images/items/3285_8H5TqcPL1z03UB6hTyP9x6N5hZ9jVJIcf6YhxpUg.jpg'
-import hextech from './images/items/HextechGunblade_1640058876.jpg'
-import warmog from './images/items/3083_C5Y1EvfU08Ug9wCaCJTEp2hNRjh5zSkq9eoY97Uc.jpg'
-import gargoyle from './images/items/IronWill_AnyIyxtEcc5fby5mgL1NNIwzm76wiG0yxwcPQ7nj.jpg'
-import sunfire from './images/items/SunfireCape_1640059158.jpg'
+import shoijn from './images/items/spear_of_shojin.png'
+import archangel from './images/items/archangel_staff_radiant.png'
+import hextech from './images/items/hextech_gunblade.png'
+import warmog from './images/items/warmogs_armor.png'
+import gargoyle from './images/items/gargoyle_stoneplate.png'
+import sunfire from './images/items/sunfire_cape.png'
 import spell_thief from './images/traits/spellthief.svg'
 import astral from './images/traits/astral.svg'
 import mage from './images/traits/mage.svg'
@@ -21,67 +21,7 @@ import bruiser from './images/traits/bruiser.svg'
 import mystic from './images/traits/mystic.svg'
 import aug from './images/aug.png'
 
-class Item{
-    id: number
-    name: string
-    url: string
-
-    constructor(id: number, name: string, url: string){
-        this.id = id;
-        this.name = name;
-        this.url = url;
-    }
-}
-
-class Trait{
-    name: string;
-    currentTrait: number;
-    traitStyle: number;
-    url: string;
-
-    constructor(name: string, currentTrait: number, traitStyle: number, url: string){
-        this.name = name;
-        this.currentTrait = currentTrait;
-        this.traitStyle = traitStyle;
-        this.url = url;
-    }
-}
-
-class Unit {
-    id: number;
-    name: string;
-    cost: number;
-    url: string;
-    level: 0 | 1 | 2 | 3;
-    items: Item[] | null;
-
-    constructor(id: number, name: string, cost: number, url: string , level: 0 | 1 | 2 | 3 , items: Item[] | null) {
-        this.id = id;
-        this.name = name;
-        this.cost = cost;
-        this.url = url;
-        this.level = level;
-        this.items = items;
-    }
-}
-
-class UnitHex {
-    id: number | null;
-    name: string | null;
-    cost: number | null;
-    url: string | null;
-    level: 0 | 1 | 2 | 3;
-    items: Item[] | null;
-
-    constructor(id: number | null, name: string | null, cost: number | null, url: string | null, level: 0 | 1 | 2 | 3, items: Item[] | null) {
-        this.id = id;
-        this.name = name;
-        this.cost = cost;
-        this.url = url;
-        this.level = level;
-        this.items = items;
-    }
-}
+import {Item, Trait, Unit, UnitHex, Variation, UnitItems, ItemUnit, Augment} from './classes'
 
 let SpearOfShoijn: Item = new Item(123, "Spear of Shoijn", shoijn)
 let ArchangelStaff: Item = new Item(123, "Archangel Staff", archangel)
@@ -122,34 +62,6 @@ let row4: UnitHex[] = [Zoe, Heimer, empty, empty, Nami, Lulu, Asol];
 
 let positioning = [row1, row2, row3, row4];
 
-class UnitItems{
-    unitName: string
-    unitSrc: string
-    cost: number
-    itemsBIS: ItemUnit[]
-    itemsRate: ItemUnit[]
-
-    constructor(unitName: string, unitSrc: string, cost: number, itemsBIS: ItemUnit[], itemsRate: ItemUnit[]){
-        this.unitName = unitName;
-        this.unitSrc = unitSrc;
-        this.cost = cost;
-        this.itemsBIS = itemsBIS;
-        this.itemsRate = itemsRate;
-    }
-}
-
-class ItemUnit{
-    src: string
-    name: string
-    rate: number | null
-
-    constructor(src: string, name: string, rate: number | null){
-        this.name = name;
-        this.src = src;
-        this.rate = rate;
-    }
-}
-
 let Items_SpearOfShoijn = new ItemUnit(shoijn, "Spear of Shoijn", null);
 let Items_Archangel = new ItemUnit(archangel, "Archangel Staff", null);
 let Items_Hextech= new ItemUnit(hextech, "Hextech Gunblade", null);
@@ -162,40 +74,12 @@ let Sylas_Items = new UnitItems("Aurelion Sol", sylas, 3, ItemsArrayBIS, ItemsAr
 let Illaoi_Items = new UnitItems("Aurelion Sol", illaoi, 3, ItemsArrayBIS, ItemsArrayRate);
 let Zoe_Items = new UnitItems("Aurelion Sol", zoe, 5, ItemsArrayBIS, ItemsArrayRate);
 
-class Augment {
-    src: string
-    name: string
-    avgPlacement: number
-    winrate: number
-    frequency: number
-
-    constructor(src: string, name: string, avgPlacement: number, winrate: number, frequency: number) {
-        this.src = src;
-        this.name = name;
-        this.avgPlacement = avgPlacement;
-        this.winrate = winrate;
-        this.frequency = frequency;
-    }
-}
-
 let augmentPlaceholder = new Augment(aug, "Protable Forge", 3.68, 19.9, 3.2);
 let augments = [augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augmentPlaceholder,augmentPlaceholder, augmentPlaceholder, augmentPlaceholder, augmentPlaceholder]
 
 let items = [Asol_Items, Sylas_Items, Illaoi_Items, Zoe_Items]
 
-class Variation{
-    avgPlacement: number
-    top4ratio: number
-    units: Unit[]
-    traits: Trait[]
 
-    constructor(avgPlacement: number, top4ratio: number, units: Unit[], traits: Trait[]){
-        this.avgPlacement = avgPlacement;
-        this.top4ratio = top4ratio;
-        this.units = units;
-        this.traits = traits;
-    }
-}
 
 let variation = new Variation(3.89, 59.68, units, traits);
 let variations = [variation, variation, variation];
