@@ -19,19 +19,19 @@ const getSummonersData = async (name: string) => {
     const lp = summonerLeague['leaguePoints'];
     const tier = summonerLeague['tier'];
     const division = summonerLeague['rank'];
-    const winsOverall = summonerLeague['wins'];
+    const top4Overall = summonerLeague['wins'];
     const gamesOverall = winsOverall + summonerLeague['losses'];
 
     const leagueInfo = await getDetailedLeagueInfoData(id, tier, division, lp);
 
-    const winsProcentage = ((winsOverall / gamesOverall) * 100).toFixed(2);
+    const top4Procentage = ((top4Overall / gamesOverall) * 100).toFixed(2);
 
-    const last20MatchesData = await getPreviousMatchesData(puuid, 20, true);
+    const last20MatchesData = await getPreviousMatchesData(puuid, 20, false);
 
     const totalMatchesData = await getPreviousMatchesData(
       puuid,
       gamesOverall,
-      false
+      true
     );
 
     const result = {
@@ -39,8 +39,8 @@ const getSummonersData = async (name: string) => {
       lp: lp,
       tier: tier,
       division: division,
-      winsOverall: winsOverall,
-      winsProcentage: winsProcentage,
+      top4Overall: top4Overall,
+      top4Procentage: top4Procentage,
       gamesOverall: gamesOverall,
       totalMatchesData: totalMatchesData,
       rankingPosition: leagueInfo + 1
@@ -124,10 +124,10 @@ const getPreviousMatchesData = async (
     if (placement <= 4) {
       top4Placements++;
     }
-    if (generalData) {
-      if (placement == 1) {
-        wins++;
-      }
+    if (placement == 1) {
+      wins++;
+    }
+    if (!generalData) {
       placements.push(placement);
     }
   }
