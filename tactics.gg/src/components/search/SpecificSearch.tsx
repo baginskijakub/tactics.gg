@@ -21,7 +21,7 @@ export const SpecificSearch:React.FC<Props> = ({head, initialValue, handleInput}
         <div className="specific-search-container">
             <div className="specific-search-inner">
                 <h5>{head}</h5>
-                <input id="summoner-input" className="body-small" type="text" placeholder={initialValue}></input>
+                <form autoComplete="off"><input id="summoner-input" className="body-small" type="text" placeholder={initialValue}></input></form>
             </div>
             <img id="summoner-input-button" src={searchIcon} alt="search" onClick={handleClick}></img>
         </div>

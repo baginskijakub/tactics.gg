@@ -29,6 +29,7 @@ export const SummonerSearch:React.FC<Props> = ({handleInput}) => {
             )
         setRegions(temp);
         setRegion(text);
+        handleOpen();
     }
 
     function handleOpen(){

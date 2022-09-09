@@ -26,17 +26,17 @@ function App() {
           variations={variations}
           /> } */}
         
-        {/* { <Summoner 
+        { <Summoner 
           profile={profile}
           stats={stats}
           placements={placements}
           matches={matches}
-          /> } */}
-          <DropDown 
+          /> }
+          {/* <DropDown 
             name="Sort"
             values={["Average Placement", "Top4 Ratio", "Winrate"]}
             defaultValue="Average Placement"
-            />
+            /> */}
     </div>
   );
 }

@@ -11,8 +11,8 @@ interface Props{
 
 export const DefaultSearch: React.FC<Props> = ({initialValue}) => {
     return (
-        <div className="default-search">
-            <input className="body-small" type="text" placeholder={initialValue}/>
+        <div className="default-search" >
+            <form autoComplete="off"><input className="body-small" type="text" list="" placeholder={initialValue}/></form>
             <img src={searchIcon} alt="search"></img>
         </div>
     )
