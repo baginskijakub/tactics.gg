@@ -164,18 +164,16 @@ class Profile{
     name: string
     region: string
     icon: string
-    rank: number
-    tier: string
+    rank: string
     lp: number
     top: number
     ranking: number
     rankIcon: string
 
-    constructor(name: string, region: string, icon: string, rank: number, tier: string, lp: number, top: number, ranking: number, rankIcon: string){
+    constructor(name: string, region: string, icon: string, rank: string, lp: number, top: number, ranking: number, rankIcon: string){
         this.name = name;
         this.icon = icon;
         this.rank = rank;
-        this.tier = tier;
         this.lp = lp;
         this.top = top;
         this.ranking = ranking;
@@ -202,4 +200,22 @@ class Stats{
     }
 }
 
-export {Item, Trait, Unit, UnitHex, Variation, UnitItems, ItemUnit, Augment, Companion, Match, Profile, Stats}
+class Last20{
+    placements: number[]
+    avgPlacement: number
+    top4Placements: number
+    top4Procentage: number
+    wins: number
+    winsProcentage: number
+
+    constructor(    placements: number[], avgPlacement: number, top4Placements: number, top4Procentage: number, wins: number, winsProcentage: number){
+        this.placements = placements;
+        this.avgPlacement = avgPlacement;
+        this.top4Placements = top4Placements;
+        this.top4Procentage = top4Procentage;
+        this.wins = wins;
+        this.winsProcentage = winsProcentage;
+    }
+}
+
+export {Item, Trait, Unit, UnitHex, Variation, UnitItems, ItemUnit, Augment, Companion, Match, Profile, Stats, Last20}

@@ -4,35 +4,23 @@ import SummonerLastSquare from './SummonerLastSquare'
 
 interface Props{
     placements: number[]
+    avgPlacement: number
+    top4Placements: number
+    top4Procentage: number
+    wins: number
+    winsProcentage: number
 }
 
-export const SummonerLast20:React.FC<Props> = ({placements}) => {
+export const SummonerLast20:React.FC<Props> = ({placements, avgPlacement, top4Placements, top4Procentage, wins, winsProcentage}) => {
 
     let first: number[] = placements.slice(0, 9);
     let second: number[] = placements.slice(10, 19);
-    let wins: number = 0;
-    let top4: number = 0;
-    let sum: number = 0;
 
-    for(let i  = 0; i < placements.length; i++){
-        sum += placements[i];
-        if(placements[i] < 5){
-            top4++;
-            if(placements[i] === 1){
-                wins++;
-            }
-        }
-    }
+    let winsBlue: string = winsProcentage + "%"
+    let winsWhite: string = 100 - winsProcentage + "%"
 
-    let percentWins = 100*(wins/placements.length)
-    let percentTop4 = 100*(top4/placements.length)
-    let avgPlacement = sum/placements.length
-
-    let winsBlue: string = percentWins + "%"
-    let winsWhite: string = 100 - percentWins + "%"
-
-    let topBlue: string = percentTop4 + "%"
-    let topWhite: string = 100 - percentTop4 + "%"
+    let topBlue: string = top4Procentage + "%"
+    let topWhite: string = 100 - top4Procentage + "%"
 
     let avgBlue: string = 100*(1 - (avgPlacement - 1)/7) + "%"
     let avgWhite: string = 100*(avgPlacement - 1)/7. + "%"
@@ -64,7 +52,7 @@ export const SummonerLast20:React.FC<Props> = ({placements}) => {
                 <div className="summoner-stats-inner">
                         <div className="summoner-profile-bar-titles">
                             <p className="body-small">Wins</p>
-                            <p className="body-small">{percentWins.toFixed(2)}% <span className="grey-text">({wins})</span></p>
+                            <p className="body-small">{winsProcentage}% <span className="grey-text">({wins})</span></p>
                         </div>
                         <div className="summoner-profile-bar">
                             <div className="summoner-profile-bar-blue" style={{width: winsBlue}}></div>
@@ -74,7 +62,7 @@ export const SummonerLast20:React.FC<Props> = ({placements}) => {
                 <div className="summoner-stats-inner">
                         <div className="summoner-profile-bar-titles">
                             <p className="body-small">Top4</p>
-                            <p className="body-small">{percentTop4.toFixed(2)}% <span className="grey-text">({top4})</span></p>
+                            <p className="body-small">{top4Procentage}% <span className="grey-text">({top4Placements})</span></p>
                         </div>
                         <div className="summoner-profile-bar">
                             <div className="summoner-profile-bar-blue" style={{width: topBlue}}></div>
@@ -84,7 +72,7 @@ export const SummonerLast20:React.FC<Props> = ({placements}) => {
                 <div className="summoner-stats-inner">
                         <div className="summoner-profile-bar-titles">
                             <p className="body-small">Average Placement</p>
-                            <p className="body-small">{avgPlacement.toFixed(2)}</p>
+                            <p className="body-small">{avgPlacement}</p>
                         </div>
                         <div className="summoner-profile-bar">
                             <div className="summoner-profile-bar-blue" style={{width: avgBlue}}></div>

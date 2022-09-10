@@ -26,12 +26,7 @@ function App() {
           variations={variations}
           /> } */}
         
-        { <Summoner 
-          profile={profile}
-          stats={stats}
-          placements={placements}
-          matches={matches}
-          /> }
+        { <Summoner /> }
           {/* <DropDown 
             name="Sort"
             values={["Average Placement", "Top4 Ratio", "Winrate"]}

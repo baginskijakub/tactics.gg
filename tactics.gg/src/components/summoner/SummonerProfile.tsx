@@ -5,15 +5,14 @@ interface Props{
     name: string
     region: string
     icon: string
-    rank: number
-    tier: string
+    rank: string
     lp: number
     top: number
     ranking: number
     rankIcon: string
 }
 
-export const SummonerProfile:React.FC<Props> = ({name, region, rank, tier, lp, top, ranking, icon, rankIcon}) => {
+export const SummonerProfile:React.FC<Props> = ({name, region, rank, lp, top, ranking, icon, rankIcon}) => {
     let blueWidth: number = 100 - top
     let whiteWidth: number = top
     let blueWidthString  = blueWidth + "%"
@@ -29,10 +28,10 @@ export const SummonerProfile:React.FC<Props> = ({name, region, rank, tier, lp, t
                 </div>
             </div>
             <div className="summoner-profile-secondary">
-                <img src={rankIcon} alt={tier}></img>
+                <img src={rankIcon} alt={rank}></img>
                 <div className="summoner-profile-secondary-inner">
                     <div className="summoner-profile-secondary-in">
-                        <h4>{tier} {rank}</h4>
+                        <h4>{rank}</h4>
                         <p className="body">{lp}LP</p>
                     </div>
                     <div className="summoner-profile-bar-container">

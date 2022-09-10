@@ -20,7 +20,7 @@ const getSummonersData = async (name: string) => {
     const tier = summonerLeague['tier'];
     const division = summonerLeague['rank'];
     const top4Overall = summonerLeague['wins'];
-    const gamesOverall = winsOverall + summonerLeague['losses'];
+    const gamesOverall = top4Overall + summonerLeague['losses'];
 
     const leagueInfo = await getDetailedLeagueInfoData(id, tier, division, lp);
 

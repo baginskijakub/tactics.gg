@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './pages.css'
-import {getSummonersData} from './summoner-logic'
+import {searchSummoner} from '../model/Model'
 
 import SummonerProfile from '../components/summoner/SummonerProfile'
 import SummonerStats from '../components/summoner/SummonerStats'
@@ -10,44 +10,96 @@ import SummonerMatch from '../components/summoner/SummonerMatch'
 import SummonerSearch from '../components/search/SummonerSearch'
 import SummonerPlaceholder from '../components/summoner/SummonerPlaceholder'
 
-import {Match, Profile, Stats} from '../classes'
+import {Match, Profile, Stats, Last20, Unit, Trait, Item} from '../classes'
 
 
-interface Props{
-    profile: Profile
-    stats: Stats
-    placements: number[]
-    matches: Match[]
-}
 
-export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) => {
+export const Summoner:React.FC = () => {
     const[summonerName, setSummonerName] = useState("")
     const[profileState, setProfile] = useState<undefined | Profile>(undefined)
     const[statsState, setStats] = useState<undefined | Stats>(undefined)
+    const[last20State, setLast20] = useState<undefined | Last20>(undefined)
     const[matchesState, setMatches] = useState<undefined | Match[]>(undefined)
 
 
     function handleSummoner(name: string){
         setSummonerName(name);
-        getSummonersData(name).then((res) => {
-            setProfile(new Profile(name, "EU West", profile.icon, res.division, res.tier, res.lp, 21.07, 184, profile.rankIcon))
-            setStats(new Stats(res.gamesOverall, res.winsOverall, stats.percentWins, stats.top4, stats.percentTop4, stats.avgPlacement))
-            console.log(res.last20MatchesData)
-            //setMatches(new Match(res.last20MatchesData.comps[0].playerComposition.placement, "Ranked", res.last20MatchesData.comps[0].playedOn, res.last20MatchesData.comps[0].playerComposition.augments, ))
-            setMatches(res.last20MatchesData.comps.map((comp: any) => {
+        searchSummoner("euw1", name).then((res:any) => {
+            console.log(res)
+            setProfile( new Profile(
+                res.data.profile.name,
+                res.data.profile.region,
+                `https://raw.communitydragon.org/latest/game/assets/ux/summonericons/profileicon${res.data.profile.icon}.png`,
+                res.data.profile.rank,
+                res.data.profile.lp,
+                0.027,
+                res.data.profile.ranking,
+                `https://ittledul.sirv.com/Images/tiers/${res.data.profile.rank.split(" ")[0]}.png`
+                ));
+            setStats(new Stats(
+                res.data.stats.gamesPlayed,
+                12,
+                15.12,
+                res.data.stats.top4,
+                res.data.stats.top4Percent,
+                4.12
+            ));
+            setLast20( new Last20(
+                res.data.last20.placements,
+                res.data.last20.avgPlacement,
+                res.data.last20.top4Placements,
+                res.data.last20.top4Procentage,
+                res.data.last20.wins,
+                res.data.last20.winsProcentage,
+            ));
+            setMatches(res.data.matches.map((match:any) => {
+                let traits = match.trait.map((trait:any) => {
+                    let arr = trait.name.split("_");
+                    let traitName = arr[1].toLowerCase();
+                    return (
+                        new Trait(
+                            traitName,
+                            trait.currentTrait,
+                            trait.style,
+                            `https://ittledul.sirv.com/Images/traits/${traitName}.png`
+                        )
+                    )
+                })
+
+                let units  = match.units.map((unit:any) => {
+                    let items = unit.items.map((item:any) => {
+
+                        return new Item(
+                            item.id,
+                            item.name,
+                            `https://ittledul.sirv.com/Images/items/${item.id}.png`
+                        )
+                    })
+                    return (
+                        new Unit(
+                            unit.id,
+                            unit.id, /*TODO*/
+                            unit.cost,
+                            `https://ittledul.sirv.com/Images/units/${unit.id}.png`,
+                            unit.level,
+                            items
+                    ))
+                })
+
                 return (
                     new Match(
-                        comp.playerComposition.placement,
-                        "Ranked",
-                        comp.playedOn,
-                        comp.playerComposition.augments,
-                        comp.playerComposition.units,
-                        comp.playerComposition.traits,
+                        match.placement,
+                        match.queueType,
+                        match.timeAgo,
+                        match.players[0].augments, /*TODO*/
+                        units,
+                        traits,
                         []
                     )
                 )
             }))
-            setSummonerName(profile.name);
+
+            setSummonerName(res.data.profile.name);
         })
     }
     
@@ -57,15 +109,14 @@ export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) 
                 handleInput={handleSummoner}
                 />
            
-            {summonerName === "" ? 
+            {summonerName !== "" ? 
              <div className="summoner-wrapper">
                 <div className="summoner-container-horizontal">
-                    {profileState !== undefined && <SummonerProfile 
+                    {profileState != undefined && <SummonerProfile 
                         name={summonerName}
                         region={profileState.region}
                         icon={profileState.icon}
                         rank={profileState.rank}
-                        tier={profileState.tier}
                         lp={profileState.lp}
                         top={profileState.top}
                         ranking={profileState.ranking}
@@ -78,16 +129,21 @@ export const Summoner:React.FC<Props> = ({profile, stats, placements, matches}) 
                         top4={statsState.top4}
                         percentTop4={statsState.percentTop4}
                         avgPlacement={statsState.avgPlacement}
-                        />}
-                    </div>
-                    {matchesState !== undefined &&  <div className="summoner-container-horizontal">
+                        />} 
+                </div>
+                    { last20State !== undefined &&  <div className="summoner-container-horizontal">
                         <SummonerLast20 
-                            placements={placements}
+                            placements={last20State.placements}
+                            avgPlacement={last20State.avgPlacement}
+                            top4Placements={last20State.top4Placements}
+                            top4Procentage={last20State.top4Procentage}
+                            wins={last20State.wins}
+                            winsProcentage={last20State.winsProcentage}
                             />
                         <SummonerProgress />
-                    </div>}
+                    </div>  }
             </div> : <SummonerPlaceholder state="notFound"/>}
-            { matchesState !== undefined && <SummonerMatch 
+                {matchesState !== undefined && <SummonerMatch 
                 placement={matchesState[0].placement}
                 queueType={matchesState[0].queueType}
                 timeAgo={matchesState[0].timeAgo}
