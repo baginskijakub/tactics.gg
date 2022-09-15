@@ -149,6 +149,15 @@
     gap: 0px;
 }
 
+.dropdown-wrapper-small{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 30px;
+    gap: 0px;
+}
+
 .dropdown-name{
     display: flex;
     flex-direction: row;
@@ -156,6 +165,19 @@
     align-items: center;
     padding: 0px 12px;
     height: 40px;
+    border-radius: 4px 0px 0px 4px;
+    border: 1px solid $divider;
+    background-color: $background05;
+    margin-right: -1px;
+}
+
+.dropdown-name-small{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 12px;
+    height: 28px;
     border-radius: 4px 0px 0px 4px;
     border: 1px solid $divider;
     background-color: $background05;
@@ -171,6 +193,15 @@
     height: 42px;
 }
 
+.dropdown-value-container-small{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    height: 28px;
+}
+
 .dropdown-value{
     display: flex;
     justify-content: center;
@@ -182,11 +213,23 @@
     min-height: 40px;
 }
 
+.dropdown-value-small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $divider;
+    background-color: $background05;
+    padding: 0px 12px;
+    border-radius: 0px 4px 4px 0px;
+    min-height: 28px;
+}
+
 .dropdown-buttons-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
     display: flex;
     padding: 4px 0px;
     background: $background05;

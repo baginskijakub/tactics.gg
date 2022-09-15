@@ -1,0 +1,117 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.builder-board-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 8px;
+    gap: 8px;
+    width: 784px;
+    height: 392px;
+    background: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
+.builder-board-row{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+.builder-board-row:nth-child(even){
+    padding-left: 50px;
+    padding-right: 0px;
+}
+
+.builder-board-row:nth-child(1){
+    margin-top: -20px;
+}
+
+.builder-board-row .unit-hex-container-medium{
+    margin: 0;
+    padding: 0;
+}
+
+.builder-units-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 800px;
+    height: 494px;
+}
+
+.builder-units-navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 800px;
+}
+
+.builder-units-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); 
+    grid-gap: 10px;  
+    padding: 8px 12px 16px 12px;
+    width: calc(800px - 24px);
+    height: auto;
+    background: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
+.builder-traits-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 230px;
+    height: 432px;
+    border: 1px solid $divider;
+    border-radius: 4px;
+    background: $background05;
+}
+
+.builder-items-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 230px;
+    height: 494px;
+}
+
+.buiilder-items-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); 
+    grid-gap: 0px;  
+    padding: 12px 8px;
+    gap: 8px;
+    width: calc(230px - 16px);
+    height: auto;
+    background: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
+.builder-items-item{
+    width: 32px;
+    height: 32px;
+    border-radius: 1px;
+}
+
+.star{
+    position: relative;
+    z-index: 10;
+}

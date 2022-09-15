@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './pages.css'
 import {searchSummoner} from '../model/Model'
+import {useKey} from '../hooks/key'
 
 import SummonerProfile from '../components/summoner/SummonerProfile'
 import SummonerStats from '../components/summoner/SummonerStats'
@@ -10,11 +11,12 @@ import SummonerMatch from '../components/summoner/SummonerMatch'
 import SummonerSearch from '../components/search/SummonerSearch'
 import SummonerPlaceholder from '../components/summoner/SummonerPlaceholder'
 
-import {Match, Profile, Stats, Last20, Unit, Trait, Item} from '../classes'
+import {Match, Profile, Stats, Last20, Unit, Trait, Item, Companion} from '../classes'
 
 
 
 export const Summoner:React.FC = () => {
+    const[placeholder, setPlaceholder] = useState("notFound")
     const[summonerName, setSummonerName] = useState("")
     const[profileState, setProfile] = useState<undefined | Profile>(undefined)
     const[statsState, setStats] = useState<undefined | Stats>(undefined)
@@ -22,9 +24,9 @@ export const Summoner:React.FC = () => {
     const[matchesState, setMatches] = useState<undefined | Match[]>(undefined)
 
 
-    function handleSummoner(name: string){
-        setSummonerName(name);
-        searchSummoner("euw1", name).then((res:any) => {
+    function handleSummoner(name: string, region: string){
+        setPlaceholder("loading")
+        searchSummoner(region , name).then((res:any) => {
             console.log(res)
             setProfile( new Profile(
                 res.data.profile.name,
@@ -53,12 +55,15 @@ export const Summoner:React.FC = () => {
                 res.data.last20.winsProcentage,
             ));
             setMatches(res.data.matches.map((match:any) => {
+                let augments = match.augments.map((augment: any) => {
+                    return `https://ittledul.sirv.com/Images/augments/${augment}.png`
+                });
                 let traits = match.trait.map((trait:any) => {
                     let arr = trait.name.split("_");
                     let traitName = arr[1].toLowerCase();
                     return (
                         new Trait(
-                            traitName,
+                            arr[1],
                             trait.currentTrait,
                             trait.style,
                             `https://ittledul.sirv.com/Images/traits/${traitName}.png`
@@ -86,15 +91,64 @@ export const Summoner:React.FC = () => {
                     ))
                 })
 
+                let players = match.players.map((player: any) =>{
+                    let playerAugments = player.augments.map((augment: any) => {
+                        console.log(augment)
+                        return `https://ittledul.sirv.com/Images/augments/${augment}.png`
+                    })
+                    let playerTraits = player.traits.map((trait:any) => {
+                        let arr = trait.name.split("_");
+                        let traitName = arr[1].toLowerCase();
+                        return (
+                            new Trait(
+                                arr[1],
+                                trait.currentTrait,
+                                trait.style,
+                                `https://ittledul.sirv.com/Images/traits/${traitName}.png`
+                            )
+                        )
+                    })
+
+                    let playerUnits = player.units.map((unit:any) => {
+                        let items = unit.items.map((item:any) => {
+
+                            return new Item(
+                                item.id,
+                                item.name,
+                                `https://ittledul.sirv.com/Images/items/${item.id}.png`
+                            )
+                        })
+                        return (
+                            new Unit(
+                                unit.id,
+                                unit.id, /*TODO*/
+                                unit.cost,
+                                `https://ittledul.sirv.com/Images/units/${unit.id}.png`,
+                                unit.level,
+                                items
+                        ))
+                    })
+                    return ( new Companion(
+                        player.placement,
+                        `https://raw.communitydragon.org/latest/game/assets/ux/summonericons/profileicon${player.summonerIcon}.png`,
+                        player.summonerName,
+                        player.eliminated,
+                        playerAugments,
+                        playerTraits,
+                        playerUnits,
+                        player.goldLeft
+                    ))
+                })
+
                 return (
                     new Match(
                         match.placement,
                         match.queueType,
                         match.timeAgo,
-                        match.players[0].augments, /*TODO*/
+                        augments, 
                         units,
                         traits,
-                        []
+                        players
                     )
                 )
             }))
@@ -102,6 +156,8 @@ export const Summoner:React.FC = () => {
             setSummonerName(res.data.profile.name);
         })
     }
+
+    // useKey("Enter", handleSummoner())
     
     return (
         <div className="summoner-wrapper">
@@ -112,7 +168,7 @@ export const Summoner:React.FC = () => {
             {summonerName !== "" ? 
              <div className="summoner-wrapper">
                 <div className="summoner-container-horizontal">
-                    {profileState != undefined && <SummonerProfile 
+                    {profileState !== undefined && <SummonerProfile 
                         name={summonerName}
                         region={profileState.region}
                         icon={profileState.icon}
@@ -142,7 +198,7 @@ export const Summoner:React.FC = () => {
                             />
                         <SummonerProgress />
                     </div>  }
-            </div> : <SummonerPlaceholder state="notFound"/>}
+            </div> : <SummonerPlaceholder state={placeholder}/>}
                 {matchesState !== undefined && <SummonerMatch 
                 placement={matchesState[0].placement}
                 queueType={matchesState[0].queueType}

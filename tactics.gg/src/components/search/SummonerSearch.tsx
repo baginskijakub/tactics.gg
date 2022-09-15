@@ -5,22 +5,24 @@ import SpecificSearch from './SpecificSearch';
 
 
  interface Props{
-     handleInput: (name: string) => void;
+     handleInput: (name: string, region: string) => void;
  }
 
 export const SummonerSearch:React.FC<Props> = ({handleInput}) => {
-    const [regions, setRegions] = useState([{text:"EUW", size:"big", isSelected:true},{text:"EUNE", size:"big", isSelected:false}, {text:"NA", size:"big", isSelected:false}]);
+    const [regions, setRegions] = useState([{text:"EUW", id:"euw1", size:"big", isSelected:true},{text:"EUNE", size:"big", id:"eun1", isSelected:false}, {text:"NA", size:"big", id:"na1", isSelected:false}]);
     const[region, setRegion] = useState("EUW");
+    const[regionId, setRegionId] = useState("euw1")
     const[isOpen, setIsOpen] = useState(false);
 
     function handleClick(text: string){
         const temp = regions;
         temp.forEach(function (element)
-        {      
+        { 
             if(element.text === text)
             {   
                 element.isSelected = true;
-                console.log(element.isSelected)
+                setRegionId(element.id);
+
             }
             else
             {
@@ -51,6 +53,10 @@ export const SummonerSearch:React.FC<Props> = ({handleInput}) => {
         }
     }
 
+    function handleSearch(name: string){
+        handleInput(name, regionId);
+    }
+
     return (
         <div className="summoner-search-container">  
             <RegionDropdown 
@@ -63,7 +69,7 @@ export const SummonerSearch:React.FC<Props> = ({handleInput}) => {
             <SpecificSearch 
                 head="Summoner name"
                 initialValue="Search summoner"
-                handleInput={handleInput}
+                handleInput={handleSearch}
                 />
         </div>
     )

@@ -120,6 +120,7 @@ input{
     display: inline-flex;
     flex-direction: row;
     gap: 16px;
+    z-index: 2;
     background-color: $background05;
     box-shadow: 0 0 0 1px $divider;
     border-radius: 4px;

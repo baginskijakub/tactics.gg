@@ -21,6 +21,26 @@
     width: 100%;
 }
 
+.builder-vertical-container-secondary{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 230px;
+}
+
+.builder-vertical-container-primary{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 800px;
+}
+
+.builder-horizontal-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 @media screen and (max-width: 1350px){
     .summoner-wrapper{
         width: 1000px;

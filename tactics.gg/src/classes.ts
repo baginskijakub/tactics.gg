@@ -1,3 +1,5 @@
+import json5 from "json5";
+
 class Item{
     id: number
     name: string
@@ -7,6 +9,11 @@ class Item{
         this.id = id;
         this.name = name;
         this.url = url;
+    }
+
+    changeToJSON(){
+        return JSON.stringify(this)
+        
     }
 }
 
@@ -39,6 +46,10 @@ class Unit {
         this.url = url;
         this.level = level;
         this.items = items;
+    }
+
+    changeToJSON(){
+        return JSON.stringify(this)
     }
 }
 
@@ -199,6 +210,7 @@ class Stats{
         this.avgPlacement = avgPlacement;
     }
 }
+
 
 class Last20{
     placements: number[]

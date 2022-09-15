@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
 import {Navbar} from './components/navbar/Navbar';
-import Comp from './components/comp/Comp';
 import Summoner from './pages/Summoner'
-
-import { profile, stats, placements, matches} from './sample-summoner-data' 
-import {units, traits, positioning, items, augments, variations} from './sample-comp-data';
-import DropDown from './components/buttons/Dropdown'
+import TeamBuilder from './pages/TeamBuilder'
 
 
 function App() {
+
   return (
     <div className="app-container">
       <Navbar />
@@ -26,12 +23,9 @@ function App() {
           variations={variations}
           /> } */}
         
-        { <Summoner /> }
-          {/* <DropDown 
-            name="Sort"
-            values={["Average Placement", "Top4 Ratio", "Winrate"]}
-            defaultValue="Average Placement"
-            /> */}
+        {/* {  <Summoner />  } */}
+          <TeamBuilder />
+
     </div>
   );
 }

@@ -82,11 +82,11 @@ export const SummonerMatch:React.FC<Props> = ({placement, queueType, timeAgo, au
         placementBar = "fourth"
     }
     let traitLabel: boolean = true
-    if(window.innerWidth < 650){
+    if(window.innerWidth < 1050){
         traitLabel = false
     }
     let isMobile: boolean = false
-    if(window.innerWidth < 850){
+    if(window.innerWidth < 1050){
         isMobile = true;
     }
 

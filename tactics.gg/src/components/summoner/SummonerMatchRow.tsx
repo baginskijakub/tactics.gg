@@ -60,6 +60,7 @@ export const SummonerMatchRow:React.FC<Props> = ({placement, icon, name, roundEl
     if(window.innerWidth < 850){
         isMobile = true;
     }
+    
     return (
         <div className="summoner-match-row-wrapper">
             <span className={`summoner-match-row-bar ${placementBar}`}></span>
