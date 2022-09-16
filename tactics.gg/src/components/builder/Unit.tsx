@@ -97,7 +97,7 @@ export const Unit:React.FC<Props> = ({id, name, cost, url, size, level, items}) 
                         })
                     }
                 </div>
-                <img className={`unit-image-small draggable ${borderColor}`} src={url} alt={name} id={transferUnit.changeToJSON()}/>
+                <img className={`unit-image-small ${borderColor}`} src={url} alt={name} id={transferUnit.changeToJSON()}/>
                 <div className="item-container-small">
                     {items !== null && items.map((itemElement) => (
                         <img src={itemElement.url} alt={itemElement.name}/>

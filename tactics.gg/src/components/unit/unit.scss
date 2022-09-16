@@ -104,7 +104,10 @@
 
 .item-container{
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+    z-index: 2;
     gap: 7px;
     margin-top: -8px;
     filter: drop-shadow(0px 3.28515px 10.5855px rgba(0, 0, 0, 0.262193)) drop-shadow(0px 1.59488px 5.13905px rgba(0, 0, 0, 0.21139)) drop-shadow(0px 0.781839px 2.51926px rgba(0, 0, 0, 0.16861)) drop-shadow(0px 0.30914px 0.996119px rgba(0, 0, 0, 0.117807));
@@ -220,6 +223,9 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
+    align-items: center;
+    max-height: 95px;
+    min-height: 95px;
 }
 
 .unit-hex-container .star-container{
@@ -244,7 +250,6 @@
 }
 
 .unit-hex-container-medium{
-    margin: 40px;
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -261,7 +266,7 @@
 }
 
 .unit-hex-container-medium .item-container{
-    margin-top: -16px;
+    margin-top: -24px;
     gap: 4px;
 }
 

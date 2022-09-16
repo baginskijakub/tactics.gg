@@ -288,6 +288,8 @@ h6 {
   padding: 0px;
   gap: 20px;
   padding-right: 50px;
+  min-height: 95px;
+  margin-bottom: -20px;
 }
 
 .builder-board-row:nth-child(even) {

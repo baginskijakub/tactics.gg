@@ -15,7 +15,7 @@ export const Units:React.FC = () => {
             size="small"
             url="https://ittledul.sirv.com/Images/units/TFT7_Sylas.png"
             level={0}
-            items={null}
+            items={[]}
             />)}
     
     return (
