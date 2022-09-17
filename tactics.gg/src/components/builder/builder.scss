@@ -74,14 +74,14 @@
 .builder-traits-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
     width: 230px;
     height: 432px;
-    border: 1px solid $divider;
+    // border: 1px solid $divider;
     border-radius: 4px;
-    background: $background05;
+    // background: $background05;
 }
 
 .builder-items-wrapper{
@@ -117,3 +117,107 @@
     position: relative;
     z-index: 10;
 }
+
+.builder-trait-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 0px 6px 16px;
+    gap: 12px;  
+    width: 214px;
+    height: 48px;
+    background: $background05;
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
+.trait-icon-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.hex {
+    position: relative;
+    margin: 1em auto;
+    width: 18px;
+    height: 32px;
+    border-radius: 1px/1px;
+    background: orange;
+    transition: opacity .5s;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hex img{
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      transform: rotate(-30deg);
+  }
+  
+  .hex:before,
+  .hex:after {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: '';
+  }
+  
+  .hex:before {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+  
+  .hex:after {
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+  }
+
+  .hex-rectangle{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 18px;
+      height: 22px;
+      background: orange;
+      border-radius: 0px 2px 2px 0px;
+  }
+
+  .hex-rectangle h5{
+    z-index: 2;
+  }
+  .builder-trait-dot{
+    width: 2px;
+    height: 2px;
+    background: $divider;
+  }
+
+  .builder-trait-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+  }
+
+  .builder-trait-details-inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+  }
+
+  .grey-text{
+      color: $white300;
+  }
+
+  .bold-text{
+    font-weight: 700 !important;
+  }

@@ -9,7 +9,7 @@ import Items from '../components/builder/Items'
 
 export const TeamBuilder:React.FC = () => {
 
-    const forceUpdate = useReducer(() => ({}), {})[1] as () => void
+    const forceUpdate = React.useReducer(() => ({}), {})[1] as () => void
 
     let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
     
