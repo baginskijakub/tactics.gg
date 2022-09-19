@@ -17,8 +17,8 @@
 @import url("https://rsms.me/inter/inter.css");
 body {
   margin: 0;
-  background-color: #081D39;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: #081d39;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,9 +26,9 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -264,8 +264,8 @@ h6 {
           justify-content: space-between;
   width: 1100px;
   padding: 12px 100px;
-  background: #0E1928;
-  border-top: 1px solid #172C49;
+  background: #0e1928;
+  border-top: 1px solid #172c49;
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -284,17 +284,17 @@ h6 {
 }
 
 .green {
-  color: #85E875;
+  color: #85e875;
   border: transparent;
 }
 
 .yellow {
-  color: #E8D575;
+  color: #e8d575;
   border: transparent;
 }
 
 .red {
-  color: #E87575;
+  color: #e87575;
   border: transparent;
 }
 
@@ -307,8 +307,8 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #0C1A2D;
-  border: 1px solid #172C49;
+  background-color: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
   padding-top: 12px;
 }
@@ -419,7 +419,7 @@ h6 {
           align-items: center;
   padding: 32px 0px;
   gap: 16px;
-  background-color: #0E1828;
+  background-color: #0e1828;
 }
 
 .comp-positioning-row {
@@ -460,7 +460,7 @@ h6 {
   gap: 0px;
   width: 100%;
   height: 508px;
-  background-color: #0E1828;
+  background-color: #0e1828;
 }
 
 .comp-items-titles {
@@ -502,7 +502,7 @@ h6 {
 .comp-horizontal-separator {
   width: 100%;
   height: 1px;
-  background-color: #172C49;
+  background-color: #172c49;
 }
 
 .comp-items-unit-wrapper {
@@ -608,27 +608,27 @@ h6 {
 .comp-vertical-separator {
   width: 1px;
   height: 40px;
-  background-color: #172C49;
+  background-color: #172c49;
 }
 
 .grey-border {
-  border: 3px solid #AEAEAE;
+  border: 3px solid #aeaeae;
 }
 
 .green-border {
-  border: 3px solid #70B173;
+  border: 3px solid #70b173;
 }
 
 .blue-border {
-  border: 3px solid #6483F1;
+  border: 3px solid #6483f1;
 }
 
 .purple-border {
-  border: 3px solid #9169C5;
+  border: 3px solid #9169c5;
 }
 
 .yellow-border {
-  border: 3px solid #B1AA64;
+  border: 3px solid #b1aa64;
 }
 
 .augments-row-container {
@@ -643,7 +643,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 100px;
-  border-top: 1px solid #172C49;
+  border-top: 1px solid #172c49;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -689,7 +689,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   height: 508px;
-  background-color: #0E1828;
+  background-color: #0e1828;
 }
 
 .comp-augments-titles {
@@ -730,7 +730,7 @@ h6 {
           justify-content: center;
   gap: 16px;
   padding: 12px 0px 12px 0px;
-  border-top: 1px solid #172C49;
+  border-top: 1px solid #172c49;
 }
 
 .comp-variation-stats {
@@ -831,7 +831,7 @@ h6 {
   padding: 0px;
   width: 100%;
   height: 508px;
-  background: #0E1828;
+  background: #0e1828;
 }
 
 .comp-variation-container:nth-child(1) {

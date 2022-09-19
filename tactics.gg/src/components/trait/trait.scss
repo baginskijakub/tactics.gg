@@ -1,183 +1,180 @@
 @import "../../variables/colors.scss";
 @import "../../styles/index.scss";
 
-.trait-small-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 4px;
+.trait-small-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
 }
 
-.trait-big-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
+.trait-big-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
 }
 
-.trait-hex-small{
-    width: 28px;
-    height: 28px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 24px 27px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.trait-hex-small {
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 27px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.trait-hex-big{
-    width: 42px;
-    height: 42px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 36px 41px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.trait-hex-big {
+  width: 42px;
+  height: 42px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 36px 41px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.trait-small-icon{
-    width: 16px;
-    height: 16px;
+.trait-small-icon {
+  width: 16px;
+  height: 16px;
 }
 
-.trait-big-icon{
-    width: 24px;
-    height: 24px;
+.trait-big-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.trait-small-value-container{
-    display: flex;
-    width: 14px;
-    height: 16px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0px 2px 2px 0px;
-    margin-left: -9px;
+.trait-small-value-container {
+  display: flex;
+  width: 14px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 2px 2px 0px;
+  margin-left: -9px;
 }
 
-.trait-big-value-container{
-    display: flex;
-    width: 16px;
-    height: 22px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0px 2px 2px 0px;
-    margin-left: -14px;
+.trait-big-value-container {
+  display: flex;
+  width: 16px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 2px 2px 0px;
+  margin-left: -14px;
 }
 
 @media screen and (max-width: 1350px) {
+  .trait-hex-big {
+    width: 36px;
+    height: 36px;
+    background-size: 31px 35px;
+  }
 
-    .trait-hex-big{
-        width: 36px;
-        height: 36px;
-        background-size: 31px 35px;
-    }
+  .trait-hex-small {
+    width: 24px;
+    height: 24px;
+    background-size: 21px 23px;
+  }
 
-    .trait-hex-small{
-        width: 24px;
-        height: 24px;
-        background-size: 21px 23px;
-    }
+  .trait-big-icon {
+    height: 20px;
+    width: 20px;
+  }
 
-    .trait-big-icon{
-        height: 20px;
-        width: 20px;
-    }
+  .trait-small-icon {
+    height: 14px;
+    width: 14px;
+  }
 
-    .trait-small-icon{
-        height: 14px;
-        width: 14px;
-    }
+  .trait-big-value-container {
+    width: 15px;
+    height: 20px;
+    margin-left: -14px;
+  }
 
-    .trait-big-value-container{
-        width: 15px;
-        height: 20px;
-        margin-left: -14px;
-    }
-
-    .trait-small-value-container{
-        width: 11px;
-        height: 13px;
-        margin-left: -9px;
-    }
+  .trait-small-value-container {
+    width: 11px;
+    height: 13px;
+    margin-left: -9px;
+  }
 }
 
 @media screen and (max-width: 1050px) {
+  .trait-hex-big {
+    width: 32px;
+    height: 32px;
+    background-size: 28px 31px;
+  }
 
-    .trait-hex-big{
-        width: 32px;
-        height: 32px;
-        background-size: 28px 31px;
-    }
+  .trait-hex-small {
+    width: 20px;
+    height: 20px;
+    background-size: 17px 19px;
+  }
 
-    .trait-hex-small{
-        width: 20px;
-        height: 20px;
-        background-size: 17px 19px;
-    }
+  .trait-big-icon {
+    height: 18px;
+    width: 18px;
+  }
 
-    .trait-big-icon{
-        height: 18px;
-        width: 18px;
-    }
+  .trait-small-icon {
+    height: 12px;
+    width: 12px;
+  }
 
-    .trait-small-icon{
-        height: 12px;
-        width: 12px;
-    }
+  .trait-big-value-container {
+    width: 14px;
+    height: 18px;
+    margin-left: -12px;
+  }
 
-    .trait-big-value-container{
-        width: 14px;
-        height: 18px;
-        margin-left: -12px;
-    }
-
-    .trait-small-value-container{
-        width: 12px;
-        height: 12px;
-        margin-left: -9px;
-    }
+  .trait-small-value-container {
+    width: 12px;
+    height: 12px;
+    margin-left: -9px;
+  }
 }
 
 @media screen and (max-width: 850px) {
+  .trait-hex-big {
+    width: 28px;
+    height: 28px;
+    background-size: 24px 27px;
+  }
 
-    .trait-hex-big{
-        width: 28px;
-        height: 28px;
-        background-size: 24px 27px;
-    }
+  .trait-hex-small {
+    width: 16px;
+    height: 16px;
+    background-size: 13px 15px;
+  }
 
-    .trait-hex-small{
-        width: 16px;
-        height: 16px;
-        background-size: 13px 15px;
-    }
+  .trait-big-icon {
+    height: 16px;
+    width: 16px;
+  }
 
-    .trait-big-icon{
-        height: 16px;
-        width: 16px;
-    }
+  .trait-small-icon {
+    height: 8px;
+    width: 8px;
+  }
 
-    .trait-small-icon{
-        height: 8px;
-        width: 8px;
-    }
+  .trait-big-value-container {
+    width: 12px;
+    height: 16px;
+    margin-left: -12px;
+  }
 
-    .trait-big-value-container{
-        width: 12px;
-        height: 16px;
-        margin-left: -12px;
-    }
-
-    .trait-small-value-container{
-        width: 10px;
-        height: 10px;
-        margin-left: -9px;
-    }
+  .trait-small-value-container {
+    width: 10px;
+    height: 10px;
+    margin-left: -9px;
+  }
 }

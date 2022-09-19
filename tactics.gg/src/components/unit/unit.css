@@ -17,8 +17,8 @@
 @import url("https://rsms.me/inter/inter.css");
 body {
   margin: 0;
-  background-color: #081D39;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: #081d39;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,9 +26,9 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -353,25 +353,25 @@ h6 {
 }
 
 .unit-image {
-  border: 3px solid #172C49;
+  border: 3px solid #172c49;
   border-radius: 4px;
-  background-color: #0E1928;
+  background-color: #0e1928;
   width: 86px;
   height: 86px;
 }
 
 .unit-image-medium {
-  border: 2px solid #172C49;
+  border: 2px solid #172c49;
   border-radius: 3px;
-  background-color: #0E1928;
+  background-color: #0e1928;
   width: 72px;
   height: 72px;
 }
 
 .unit-image-small {
-  border: 1px solid #172C49;
+  border: 1px solid #172c49;
   border-radius: 2px;
-  background-color: #0E1928;
+  background-color: #0e1928;
   width: 42px;
   height: 42px;
 }
@@ -444,23 +444,23 @@ h6 {
 }
 
 .grey-border {
-  border: 3px solid #AEAEAE;
+  border: 3px solid #aeaeae;
 }
 
 .green-border {
-  border: 3px solid #70B173;
+  border: 3px solid #70b173;
 }
 
 .blue-border {
-  border: 3px solid #6483F1;
+  border: 3px solid #6483f1;
 }
 
 .purple-border {
-  border: 3px solid #9169C5;
+  border: 3px solid #9169c5;
 }
 
 .yellow-border {
-  border: 3px solid #B1AA64;
+  border: 3px solid #b1aa64;
 }
 
 .hexagon {
@@ -485,7 +485,7 @@ h6 {
   height: 100%;
   background-position: 50%;
   background-size: 112px;
-  background-color: #0E1928;
+  background-color: #0e1928;
   visibility: visible;
   -webkit-transform: rotate(-60deg);
   transform: rotate(-60deg);
@@ -504,7 +504,7 @@ h6 {
 }
 
 .hex-border .hexagon-in2 {
-  background-color: #172C49;
+  background-color: #172c49;
 }
 
 .unit-hex-container {
@@ -594,23 +594,23 @@ h6 {
 }
 
 .grey-fill {
-  background-color: #AEAEAE !important;
+  background-color: #aeaeae !important;
 }
 
 .green-fill {
-  background-color: #70B173 !important;
+  background-color: #70b173 !important;
 }
 
 .blue-fill {
-  background-color: #6483F1 !important;
+  background-color: #6483f1 !important;
 }
 
 .purple-fill {
-  background-color: #9169C5 !important;
+  background-color: #9169c5 !important;
 }
 
 .yellow-fill {
-  background-color: #B1AA64 !important;
+  background-color: #b1aa64 !important;
 }
 
 @media screen and (max-width: 1350px) {
@@ -756,19 +756,19 @@ h6 {
     width: 12px;
   }
   .grey-border {
-    border: 2px solid #AEAEAE;
+    border: 2px solid #aeaeae;
   }
   .green-border {
-    border: 2px solid #70B173;
+    border: 2px solid #70b173;
   }
   .blue-border {
-    border: 2px solid #6483F1;
+    border: 2px solid #6483f1;
   }
   .purple-border {
-    border: 2px solid #9169C5;
+    border: 2px solid #9169c5;
   }
   .yellow-border {
-    border: 2px solid #9169C5;
+    border: 2px solid #9169c5;
   }
   .hexagon {
     width: 62px;
@@ -878,19 +878,19 @@ h6 {
     width: 8px;
   }
   .grey-border {
-    border: 1px solid #AEAEAE;
+    border: 1px solid #aeaeae;
   }
   .green-border {
-    border: 1px solid #70B173;
+    border: 1px solid #70b173;
   }
   .blue-border {
-    border: 1px solid #6483F1;
+    border: 1px solid #6483f1;
   }
   .purple-border {
-    border: 1px solid #9169C5;
+    border: 1px solid #9169c5;
   }
   .yellow-border {
-    border: 1px solid #9169C5;
+    border: 1px solid #9169c5;
   }
   .hexagon {
     width: 36px;

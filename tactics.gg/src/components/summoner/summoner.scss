@@ -1,992 +1,991 @@
 @import "../../variables/colors.scss";
 @import "../../styles/index.scss";
 
-.summoner-profile-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px;
-    gap: 16px;
-    background: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
-    width: 614px;
+.summoner-profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 16px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
+  width: 614px;
 }
 
-.summoner-profile-head{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    gap: 16px;
+.summoner-profile-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
 }
 
-.summoner-profile-head img{
-    width: 72px;
-    height: 72px;
+.summoner-profile-head img {
+  width: 72px;
+  height: 72px;
 }
 
-.summoner-profile-head-inner{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 2px 0px;
-    gap: 12px;
+.summoner-profile-head-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2px 0px;
+  gap: 12px;
 }
 
-.summoner-profile-secondary{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 12px;
-    gap: 16px;
-    background: $background09;
-    border: 1px solid $divider;
-    border-radius: 4px;
-    width: calc(100% - 24px);
+.summoner-profile-secondary {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+  gap: 16px;
+  background: $background09;
+  border: 1px solid $divider;
+  border-radius: 4px;
+  width: calc(100% - 24px);
 }
 
-.summoner-profile-secondary-inner{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 12px;
-    width: 100%;
+.summoner-profile-secondary-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 100%;
 }
 
-.summoner-profile-secondary img{
-    width: 90px;
-    height: 68px;
+.summoner-profile-secondary img {
+  width: 90px;
+  height: 68px;
 }
 
-.summoner-profile-secondary-in{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0px;
-    width: 100%;
+.summoner-profile-secondary-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  width: 100%;
 }
 
-.summoner-profile-bar-container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    width: 100%;
+.summoner-profile-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 100%;
 }
 
-.summoner-profile-bar-titles{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0px;
-    width: 100%;
+.summoner-profile-bar-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  width: 100%;
 }
 
-.summoner-profile-bar{
-    width: 100%;
-    height: 10px;
-    display: flex;
-    flex-direction: row;
+.summoner-profile-bar {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
-.summoner-profile-bar-blue{
-    border-radius: 2px 0px 0px 2px;
-    height: 100%;
-    background-color: $primary;
+.summoner-profile-bar-blue {
+  border-radius: 2px 0px 0px 2px;
+  height: 100%;
+  background-color: $primary;
 }
 
-.summoner-profile-bar-white{
-    border-radius: 0px 2px 2px 0px;
-    height: 100%;
-    background-color: $white300;
+.summoner-profile-bar-white {
+  border-radius: 0px 2px 2px 0px;
+  height: 100%;
+  background-color: $white300;
 }
 
-.summoner-stats-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 12px;
-    gap: 20px;
-    width: 608px;
-    height: 184px;
-    background: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-stats-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 20px;
+  width: 608px;
+  height: 184px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
-.summoner-stats-container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 16px;
-    width: 100%;
+.summoner-stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 100%;
 }
 
-.summoner-stats-inner{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    width: 100%;
+.summoner-stats-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 100%;
 }
 
-.grey-text{
-    color: $white300;
+.grey-text {
+  color: $white300;
 }
 
-.summoner-last-square{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 2px;
+.summoner-last-square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
 }
 
-.first{
-    background: $traitGold;
+.first {
+  background: $traitGold;
 }
 
-.second{
-    background: $traitSilver;
+.second {
+  background: $traitSilver;
 }
 
-.third{
-    background: $traitBronze;
+.third {
+  background: $traitBronze;
 }
 
-.fourth{
-    background: $buttonDisabled;
+.fourth {
+  background: $buttonDisabled;
 }
 
-.bottom{
-    border: 1px solid $divider;
+.bottom {
+  border: 1px solid $divider;
 }
 
-.bottom-bar{
-    background: $background09;
+.bottom-bar {
+  background: $background09;
 }
 
-.summoner-last-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 12px;
-    gap: 16px;
-    width: 513px;
-    background: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-last-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 16px;
+  width: 513px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
-.summoner-last-squares-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
+.summoner-last-squares-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
 }
 
-.summoner-last-squares-container{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
+.summoner-last-squares-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
 }
 
-.summoner-progress-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 12px;
-    width: 741px;
-    height: 259px;
-    background: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  width: 741px;
+  height: 259px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
-.summoner-progress-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    gap: 10px;
-    width: calc(100% - 24px);
-    height: 180px;
-    background: $background09;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  width: calc(100% - 24px);
+  height: 180px;
+  background: $background09;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
-.summoner-match-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    width: 1298px;
-    background: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-match-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 1298px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
-.summoner-match-head{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    width: 100%;
-    background: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-match-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
-.summoner-match-placement-bar{
-    width: 8px;
-    height: 180px;
-    border-radius: 4px 0px 0px 4px;
+.summoner-match-placement-bar {
+  width: 8px;
+  height: 180px;
+  border-radius: 4px 0px 0px 4px;
 }
 
-.summoner-match-info-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 4px;
-    margin-left: -40px;
+.summoner-match-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  margin-left: -40px;
 }
 
-.summoner-match-info-inner{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
+.summoner-match-info-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
 }
 
-.summoner-match-info-separator{
-    width: 4px;
-    height: 4px;
-    border-radius: 4px;
-    background: $divider;
+.summoner-match-info-separator {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: $divider;
 }
 
-.summoner-match-augments{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 0px;
-    gap: 4px;
+.summoner-match-augments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+  gap: 4px;
 }
 
-.summoner-match-augments img{
-    width: 36px;
-    height: 36px;
-    background: $background09;
-    border: 1px solid $divider;
-    border-radius: 2px;
+.summoner-match-augments img {
+  width: 36px;
+  height: 36px;
+  background: $background09;
+  border: 1px solid $divider;
+  border-radius: 2px;
 }
 
-.summoner-match-board{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 20px;
-    width: 800px;
+.summoner-match-board {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+  width: 800px;
 }
 
-.summoner-match-traits{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
+.summoner-match-traits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
 }
 
-.summoner-match-units{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 12px;
+.summoner-match-units {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
 }
 
-.summoner-expand-button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 64px;
-    height: 180px;
-    border-radius: 0px 8px 0px 0px;
-    transform: rotate(180deg);
+.summoner-expand-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 180px;
+  border-radius: 0px 8px 0px 0px;
+  transform: rotate(180deg);
 }
 
-.summoner-expand-button img{
-    width: 16px;
-    height: 10px;
+.summoner-expand-button img {
+  width: 16px;
+  height: 10px;
 }
 
-.summoner-match-row-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 1300px;
-    border-top: 1px solid $divider;
+.summoner-match-row-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1300px;
+  border-top: 1px solid $divider;
 }
 
-.summoner-match-row-bar{
-    width: 4px;
-    height: 116px;  
+.summoner-match-row-bar {
+  width: 4px;
+  height: 116px;
 }
 
-.summoner-match-row-placement{
-    width: 40px;
-    margin-left: -40px;
+.summoner-match-row-placement {
+  width: 40px;
+  margin-left: -40px;
 }
 
-.summoner-match-row-summoner-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
-    width: 180px;
+.summoner-match-row-summoner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 180px;
 }
 
-.summoner-match-row-summoner-container img{
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
+.summoner-match-row-summoner-container img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
 }
 
-.summoner-match-row-eliminated{
-    width: 40px;
+.summoner-match-row-eliminated {
+  width: 40px;
 }
 
-.summoner-match-row-augments{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-    gap: 4px;
+.summoner-match-row-augments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
 }
 
-.summoner-match-row-augments img{
-    width: 28px;
-    height: 28px;
-    background: $background09;
-    border: 1px solid $divider;
-    border-radius: 1px;
+.summoner-match-row-augments img {
+  width: 28px;
+  height: 28px;
+  background: $background09;
+  border: 1px solid $divider;
+  border-radius: 1px;
 }
 
-.summoner-match-row-board{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    width: 540px;
+.summoner-match-row-board {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 540px;
 }
 
-.summoner-match-row-traits{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
+.summoner-match-row-traits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
 }
 
-.summoner-match-row-units{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 12px;
+.summoner-match-row-units {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
 }
 
-.summoner-match-row-gold{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    gap: 4px;
-    padding-right: 12px;
-    width: 50px;
+.summoner-match-row-gold {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+  padding-right: 12px;
+  width: 50px;
 }
 
-.summoner-match-row-gold img{
-    width: 16px;
-    height: 16px;
+.summoner-match-row-gold img {
+  width: 16px;
+  height: 16px;
 }
 
-.summoner-match-placement-summoner{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: center;
+.summoner-match-placement-summoner {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
 }
 
-.summoner-match-expanded{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.summoner-match-expanded {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.summoner-match-expanded-titles{
-    display: flex;
-    flex-direction: row;
-    width: calc(100% - 24px);
-    gap: 20px;
-    align-items: center;
-    height: 30px;
-    background-color: $background09;
-    padding: 0px 12px;
+.summoner-match-expanded-titles {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 24px);
+  gap: 20px;
+  align-items: center;
+  height: 30px;
+  background-color: $background09;
+  padding: 0px 12px;
 }
 
-.summoner-match-titles-summoner{
-    width: 150px;
-    text-align: center;
+.summoner-match-titles-summoner {
+  width: 150px;
+  text-align: center;
 }
 
-.summoner-match-titles-eliminated{
-    width: 250px;
-    text-align: center;
+.summoner-match-titles-eliminated {
+  width: 250px;
+  text-align: center;
 }
 
-.summoner-match-titles-board{
-    width: 550px;
-    text-align: center;   
+.summoner-match-titles-board {
+  width: 550px;
+  text-align: center;
 }
 
-.summoner-match-titles-gold{
-    width: 200px;
-    text-align: end;   
+.summoner-match-titles-gold {
+  width: 200px;
+  text-align: end;
 }
 
-.summoner-match-titles-all{
-    width: 100%;
-    text-align: center;
+.summoner-match-titles-all {
+  width: 100%;
+  text-align: center;
 }
 
-.summoner-placeholder-wrapper{
-    width: 1300px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    background-color: $background05;
-    border: 1px solid $divider;
-    border-radius: 4px;
+.summoner-placeholder-wrapper {
+  width: 1300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
 }
 
 .lds-dual-ring {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
   }
-  .lds-dual-ring:after {
-    content: " ";
-    display: block;
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .summoner-profile-wrapper {
+    padding: 12px 12px 12px 12px;
+    gap: 16px;
+    width: 462px;
+  }
+
+  .summoner-stats-wrapper {
+    padding: 12px;
+    gap: 20px;
+    width: 458px;
+    height: 184px;
+  }
+
+  .summoner-last-square {
+    width: 24px;
+    height: 24px;
+  }
+
+  .summoner-last-wrapper {
+    width: 379px;
+  }
+
+  .summoner-progress-wrapper {
+    width: 549px;
+    height: 239px;
+  }
+
+  .summoner-progress-container {
+    height: 180px;
+  }
+
+  .summoner-match-wrapper {
+    width: 998px;
+  }
+
+  .summoner-match-placement-bar {
+    height: 164px;
+  }
+
+  .summoner-match-augments img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .summoner-match-board {
+    gap: 20px;
+    width: 650px;
+  }
+
+  .summoner-expand-button {
+    width: 64px;
+    height: 164px;
+  }
+
+  .summoner-expand-button img {
+    width: 16px;
+    height: 10px;
+  }
+
+  .summoner-match-info-container {
+    margin-left: 0px;
+  }
+
+  .summoner-match-row-wrapper {
+    width: 1000px;
+  }
+
+  .summoner-match-row-bar {
+    width: 4px;
+    height: 102px;
+  }
+
+  .summoner-match-row-placement {
+    width: 32px;
+    margin-left: -32px;
+  }
+
+  .summoner-match-row-summoner-container {
+    gap: 6px;
+    width: 160px;
+  }
+
+  .summoner-match-row-summoner-container img {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+  }
+
+  .summoner-match-row-eliminated {
+    width: 32px;
+  }
+
+  .summoner-match-row-augments {
+    gap: 4px;
+  }
+
+  .summoner-match-row-augments img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .summoner-match-row-board {
+    gap: 8px;
+    width: 440px;
+  }
+
+  .summoner-match-row-traits {
+    gap: 6px;
+  }
+
+  .summoner-match-row-units {
+    gap: 8px;
+  }
+
+  .summoner-match-row-gold {
+    gap: 4px;
+    padding-right: 10px;
+    width: 42px;
+  }
+
+  .summoner-match-row-gold img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .summoner-match-expanded-titles {
+    width: calc(100% - 16px);
+    gap: 0px;
+    height: 24px;
+    padding: 0px 8px;
+  }
+
+  .summoner-match-titles-placement {
+    width: 80px;
+    text-align: start;
+  }
+
+  .summoner-match-titles-summoner {
+    width: 100px;
+    text-align: center;
+  }
+
+  .summoner-match-titles-eliminated {
+    width: 250px;
+    text-align: center;
+  }
+
+  .summoner-match-titles-board {
+    width: 370px;
+    text-align: center;
+  }
+
+  .summoner-match-titles-gold {
+    width: 184px;
+    text-align: end;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .summoner-profile-wrapper {
+    padding: 8px;
+    gap: 16px;
+    width: 372px;
+  }
+
+  .summoner-stats-wrapper {
+    padding: 8px;
+    gap: 20px;
+    width: 372px;
+    height: 176px;
+  }
+
+  .summoner-profile-head img {
     width: 64px;
     height: 64px;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
-  }
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
   }
 
-@media screen and (max-width: 1350px){
-    .summoner-profile-wrapper{
-        padding: 12px 12px 12px 12px;
-        gap: 16px;
-        width: 462px;
-    }
+  .summoner-last-square {
+    width: 20px;
+    height: 20px;
+  }
 
-    .summoner-stats-wrapper{
-        padding: 12px;
-        gap: 20px;
-        width: 458px;
-        height: 184px;
-    }
+  .summoner-last-wrapper {
+    width: 296px;
+  }
 
-    .summoner-last-square{
-        width: 24px;
-        height: 24px;
-    }
+  .summoner-progress-wrapper {
+    width: 430px;
+    height: 215px;
+  }
 
-    .summoner-last-wrapper{
-        width: 379px;
-    }
+  .summoner-progress-container {
+    height: 162px;
+    width: calc(100% - 2px);
+  }
 
-    .summoner-progress-wrapper{
-        width: 549px;
-        height: 239px;
-    }
+  .summoner-stats-container {
+    gap: 12px;
+  }
 
-    .summoner-progress-container{
-        height: 180px;
-    }
+  .summoner-match-wrapper {
+    width: 798px;
+  }
 
-    .summoner-match-wrapper{
-        width: 998px;
-    }
-    
-    .summoner-match-placement-bar{
-        height: 164px;
-    }
-    
-    .summoner-match-augments img{
-        width: 32px;
-        height: 32px;
-    }
-    
-    .summoner-match-board{
-        gap: 20px;
-        width: 650px;
-    }
-    
-    .summoner-expand-button{
-        width: 64px;
-        height: 164px;
-    }
-    
-    .summoner-expand-button img{
-        width: 16px;
-        height: 10px;
-    }
+  .summoner-match-placement-bar {
+    height: 132px;
+  }
 
-    .summoner-match-info-container{
-        margin-left: 0px;
-    }
+  .summoner-match-augments img {
+    width: 32px;
+    height: 32px;
+  }
 
-    .summoner-match-row-wrapper{
-        width: 1000px;
-    }
-    
-    .summoner-match-row-bar{
-        width: 4px;
-        height: 102px;  
-    }
-    
-    .summoner-match-row-placement{
-        width: 32px;
-        margin-left: -32px;
-    }
-    
-    .summoner-match-row-summoner-container{
-        gap: 6px;
-        width: 160px;
-    }
-    
-    .summoner-match-row-summoner-container img{
-        width: 28px;
-        height: 28px;
-        border-radius: 4px;
-    }
-    
-    .summoner-match-row-eliminated{
-        width: 32px;
-    }
-    
-    .summoner-match-row-augments{
-        gap: 4px;
-    }
-    
-    .summoner-match-row-augments img{
-        width: 24px;
-        height: 24px;
-    }
-    
-    .summoner-match-row-board{
-        gap: 8px;
-        width: 440px;
-    }
-    
-    .summoner-match-row-traits{
-        gap: 6px;
-    }
-    
-    .summoner-match-row-units{
-        gap: 8px;
-    }
-    
-    .summoner-match-row-gold{
-        gap: 4px;
-        padding-right: 10px;
-        width: 42px;
-    }
-    
-    .summoner-match-row-gold img{
-        width: 14px;
-        height: 14px;
-    }
+  .summoner-match-board {
+    gap: 12px;
+    width: 480px;
+  }
 
-    .summoner-match-expanded-titles{
-        width: calc(100% - 16px);
-        gap: 0px;
-        height: 24px;
-        padding: 0px 8px;
-    }
+  .summoner-expand-button {
+    width: 48px;
+    height: 132px;
+  }
 
-    .summoner-match-titles-placement{
-        width: 80px;
-        text-align: start;
-    }
-    
-    .summoner-match-titles-summoner{
-        width: 100px;
-        text-align: center;
-    }
-    
-    .summoner-match-titles-eliminated{
-        width: 250px;
-        text-align: center;
-    }
-    
-    .summoner-match-titles-board{
-        width: 370px;
-        text-align: center;   
-    }
-    
-    .summoner-match-titles-gold{
-        width: 184px;
-        text-align: end;   
-    }
+  .summoner-expand-button img {
+    width: 12px;
+    height: 8px;
+  }
+
+  .summoner-match-row-wrapper {
+    width: 800px;
+  }
+
+  .summoner-match-row-bar {
+    width: 4px;
+    height: 98px;
+  }
+
+  .summoner-match-row-placement {
+    width: 24px;
+    margin-left: -16px;
+  }
+
+  .summoner-match-row-summoner-container {
+    gap: 6px;
+    width: 120px;
+  }
+
+  .summoner-match-row-summoner-container img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+
+  .summoner-match-row-eliminated {
+    width: 20px;
+  }
+
+  .summoner-match-row-augments {
+    gap: 3px;
+  }
+
+  .summoner-match-row-augments img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .summoner-match-row-board {
+    gap: 8px;
+    width: 410px;
+  }
+
+  .summoner-match-row-traits {
+    gap: 4px;
+  }
+
+  .summoner-match-row-units {
+    gap: 6px;
+  }
+
+  .summoner-match-row-gold {
+    gap: 4px;
+    padding-right: 10px;
+    width: 36px;
+  }
+
+  .summoner-match-row-gold img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .summoner-match-titles-placement {
+    width: 60px;
+    text-align: start;
+  }
+
+  .summoner-match-titles-summoner {
+    width: 80px;
+    text-align: center;
+  }
+
+  .summoner-match-titles-eliminated {
+    width: 170px;
+    text-align: center;
+  }
+
+  .summoner-match-titles-board {
+    width: 300px;
+    text-align: center;
+  }
+
+  .summoner-match-titles-gold {
+    width: 174px;
+    text-align: end;
+  }
 }
 
-@media screen and (max-width: 1050px){
-    .summoner-profile-wrapper{
-        padding: 8px;
-        gap: 16px;
-        width: 372px;
-    }
+@media screen and (max-width: 850px) {
+  .summoner-profile-wrapper {
+    padding: 8px;
+    gap: 16px;
+    width: calc(100% - 32px);
+  }
 
-    .summoner-stats-wrapper{
-        padding: 8px;
-        gap: 20px;
-        width: 372px;
-        height: 176px;
-    }
+  .summoner-stats-wrapper {
+    padding: 8px;
+    gap: 16px;
+    width: calc(100% - 32px);
+    height: auto;
+  }
 
-    .summoner-profile-head img{
-        width: 64px;
-        height: 64px;
-    }
+  .summoner-profile-head img {
+    width: 56px;
+    height: 56px;
+  }
 
-    .summoner-last-square{
-        width: 20px;
-        height: 20px;
-    }
+  .summoner-last-square {
+    width: 18px;
+    height: 18px;
+  }
 
-    .summoner-last-wrapper{
-        width: 296px;
-    }
+  .summoner-last-wrapper {
+    width: calc(100% - 32px);
+  }
 
-    .summoner-progress-wrapper{
-        width: 430px;
-        height: 215px;
-    }
+  .summoner-progress-wrapper {
+    width: calc(100% - 32px);
+    height: 215px;
+  }
 
-    .summoner-progress-container{
-        height: 162px;
-        width: calc(100% - 2px);
-    }
+  .summoner-progress-container {
+    height: 162px;
+    width: calc(100% - 2px);
+  }
 
-    .summoner-stats-container{
-        gap: 12px;
-    }
+  .summoner-stats-container {
+    gap: 12px;
+  }
 
-    .summoner-match-wrapper{
-        width: 798px;
-    }
-    
-    .summoner-match-placement-bar{
-        height: 132px;
-    }
-    
-    .summoner-match-augments img{
-        width: 32px;
-        height: 32px;
-    }
-    
-    .summoner-match-board{
-        gap: 12px;
-        width: 480px;
-    }
-    
-    .summoner-expand-button{
-        width: 48px;
-        height: 132px;
-    }
-    
-    .summoner-expand-button img{
-        width: 12px;
-        height: 8px;
-    }
+  .summoner-match-wrapper {
+    width: calc(100% - 32px);
+  }
 
-    .summoner-match-row-wrapper{
-        width: 800px;
-    }
-    
-    .summoner-match-row-bar{
-        width: 4px;
-        height: 98px;  
-    }
-    
-    .summoner-match-row-placement{
-        width: 24px;
-        margin-left: -16px;
-    }
-    
-    .summoner-match-row-summoner-container{
-        gap: 6px;
-        width: 120px;
-    }
-    
-    .summoner-match-row-summoner-container img{
-        width: 24px;
-        height: 24px;
-        border-radius: 4px;
-    }
-    
-    .summoner-match-row-eliminated{
-        width: 20px;
-    }
-    
-    .summoner-match-row-augments{
-        gap: 3px;
-    }
-    
-    .summoner-match-row-augments img{
-        width: 20px;
-        height: 20px;
-    }
-    
-    .summoner-match-row-board{
-        gap: 8px;
-        width: 410px;
-    }
-    
-    .summoner-match-row-traits{
-        gap: 4px;
-    }
-    
-    .summoner-match-row-units{
-        gap: 6px;
-    }
-    
-    .summoner-match-row-gold{
-        gap: 4px;
-        padding-right: 10px;
-        width: 36px;
-    }
-    
-    .summoner-match-row-gold img{
-        width: 12px;
-        height: 12px;
-    }
+  .summoner-match-placement-bar {
+    height: 86px;
+    width: 4px;
+  }
 
-    .summoner-match-titles-placement{
-        width: 60px;
-        text-align: start;
-    }
-    
-    .summoner-match-titles-summoner{
-        width: 80px;
-        text-align: center;
-    }
-    
-    .summoner-match-titles-eliminated{
-        width: 170px;
-        text-align: center;
-    }
-    
-    .summoner-match-titles-board{
-        width: 300px;
-        text-align: center;   
-    }
-    
-    .summoner-match-titles-gold{
-        width: 174px;
-        text-align: end;   
-    }
+  .summoner-match-augments img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .summoner-match-board {
+    gap: 10px;
+    width: auto;
+  }
+
+  .summoner-match-traits {
+    gap: 4px;
+  }
+
+  .summoner-match-units {
+    gap: 4px;
+  }
+
+  .summoner-expand-button {
+    width: 24px;
+    height: 86px;
+  }
+
+  .summoner-expand-button img {
+    width: 8px;
+    height: 5px;
+  }
+
+  .summoner-match-row-wrapper {
+    width: 100%;
+  }
+
+  .summoner-match-row-bar {
+    width: 4px;
+    height: 86px;
+  }
+
+  .summoner-match-row-placement {
+    width: 16px;
+    margin-left: 0px;
+  }
+
+  .summoner-match-row-summoner-container {
+    gap: 6px;
+    max-width: 60px;
+  }
+
+  .summoner-match-row-augments {
+    gap: 3px;
+  }
+
+  .summoner-match-row-augments img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .summoner-match-row-board {
+    gap: 8px;
+    width: 70%;
+  }
+
+  .summoner-match-row-traits {
+    gap: 2px;
+  }
+
+  .summoner-match-row-units {
+    gap: 2px;
+  }
+  .summoner-match-placement-summoner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: -0px;
+    align-items: flex-start;
+  }
 }
 
-@media screen and (max-width: 850px){
-    .summoner-profile-wrapper{
-        padding: 8px;
-        gap: 16px;
-        width: calc(100% - 32px);
-    }
+@media screen and (max-width: 650px) {
+  .summoner-match-info-container {
+    gap: 8px;
+  }
 
-    .summoner-stats-wrapper{
-        padding: 8px;
-        gap: 16px;
-        width: calc(100% - 32px);
-        height: auto;
-    }
+  .summoner-match-info-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 
-    .summoner-profile-head img{
-        width: 56px;
-        height: 56px;
-    }
-
-    .summoner-last-square{
-        width: 18px;
-        height: 18px;
-    }
-
-    .summoner-last-wrapper{
-        width: calc(100% - 32px);
-    }
-
-    .summoner-progress-wrapper{
-        width: calc(100% - 32px);
-        height: 215px;
-    }
-
-    .summoner-progress-container{
-        height: 162px;
-        width: calc(100% - 2px);
-    }
-
-    .summoner-stats-container{
-        gap: 12px;
-    }
-
-    .summoner-match-wrapper{
-        width: calc(100% - 32px);
-    }
-    
-    .summoner-match-placement-bar{
-        height: 86px;
-        width: 4px;
-    }
-    
-    .summoner-match-augments img{
-        width: 16px;
-        height: 16px;
-    }
-    
-    .summoner-match-board{
-        gap: 10px;
-        width: auto;
-    }
-
-    .summoner-match-traits{
-        gap: 4px
-    }
-
-    .summoner-match-units{
-        gap: 4px
-    }
-    
-    .summoner-expand-button{
-        width: 24px;
-        height: 86px;
-    }
-    
-    .summoner-expand-button img{
-        width: 8px;
-        height: 5px;
-    }
-
-    .summoner-match-row-wrapper{
-        width: 100%;
-    }
-    
-    .summoner-match-row-bar{
-        width: 4px;
-        height: 86px;  
-    }
-    
-    .summoner-match-row-placement{
-        width: 16px;
-        margin-left: 0px;
-    }
-    
-    .summoner-match-row-summoner-container{
-        gap: 6px;
-        max-width: 60px;
-    }
-    
-    .summoner-match-row-augments{
-        gap: 3px;
-    }
-    
-    .summoner-match-row-augments img{
-        width: 14px;
-        height: 14px;
-    }
-    
-    .summoner-match-row-board{
-        gap: 8px;
-        width: 70%;
-
-    }
-    
-    .summoner-match-row-traits{
-        gap: 2px;
-    }
-    
-    .summoner-match-row-units{
-        gap: 2px;
-    }
-    .summoner-match-placement-summoner{
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin-left: -0px;
-        align-items: flex-start;
-    }
-} 
-
-@media screen and (max-width: 650px){
-    .summoner-match-info-container{
-        gap: 8px;
-    }
-
-    .summoner-match-info-inner{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-    }
-    
-    .summoner-match-info-separator{
-        display: none;
-    }
+  .summoner-match-info-separator {
+    display: none;
+  }
 }

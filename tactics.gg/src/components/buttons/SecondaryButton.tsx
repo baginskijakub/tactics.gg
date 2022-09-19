@@ -6,9 +6,9 @@ interface Props {
   fn?: () => void;
 }
 
-export const PrimaryButton: React.FC<Props> = ({ text, fn }) => {
+export const SecondaryButton: React.FC<Props> = ({ text, fn }) => {
   return (
-    <div className="primary-button">
+    <div className="secondary-button">
       <p className="body">{text}</p>
     </div>
   );

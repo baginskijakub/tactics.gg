@@ -3,241 +3,238 @@
 body {
   margin: 0;
   background-color: $background00;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
-
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   color: $white900;
 }
 
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
-h1{
+h1 {
   font-weight: 600;
   font-size: 92px;
   line-height: 95%;
   letter-spacing: -0.03em;
 }
 
-h2{
+h2 {
   font-weight: 600;
   font-size: 36px;
   line-height: 100%;
   letter-spacing: -0.03em;
-
 }
 
-h3{
+h3 {
   font-weight: 600;
   font-size: 24px;
   line-height: 120%;
   letter-spacing: -0.03em;
 }
 
-h4{
+h4 {
   font-weight: 600;
   font-size: 16px;
   line-height: 120%;
   letter-spacing: -0.02em;
 }
 
-h5{
+h5 {
   font-weight: 600;
   font-size: 14px;
   line-height: 115%;
   letter-spacing: -0.02em;
 }
 
-h6{
+h6 {
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
 }
 
-.body{
+.body {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
   letter-spacing: -0.02em;
 }
 
-.body-small{
+.body-small {
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
 }
 
-.caption{
+.caption {
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
   letter-spacing: -0.01em;
 }
 
-.caption-small{
+.caption-small {
   font-weight: 400;
   font-size: 10px;
   line-height: 120%;
 }
 
 @media screen and (max-width: 1350px) {
-  h1{
+  h1 {
     font-size: 80px;
     line-height: 95%;
     letter-spacing: -0.03em;
   }
-  h2{
+  h2 {
     font-size: 32px;
     line-height: 100%;
     letter-spacing: -0.03em;
   }
-  h3{
+  h3 {
     font-size: 20px;
     line-height: 120%;
     letter-spacing: -0.03em;
   }
-  h4{
+  h4 {
     font-size: 14px;
     line-height: 120%;
     letter-spacing: -0.02em;
   }
-  h5{
+  h5 {
     font-size: 12px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
-  h6{
+  h6 {
     font-size: 10px;
     line-height: 150%;
   }
-  .body{
+  .body {
     font-size: 14px;
     line-height: 120%;
     letter-spacing: -0.02em;
   }
-  .body-small{
+  .body-small {
     font-size: 12px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
-  .caption{
+  .caption {
     font-size: 10px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
-  .caption-small{
+  .caption-small {
     font-size: 8px;
     line-height: 120%;
   }
 }
 
 @media screen and (max-width: 1050px) {
-  h1{
+  h1 {
     font-size: 36px;
     line-height: 95%;
     letter-spacing: -0.03em;
   }
-  h2{
+  h2 {
     font-size: 20px;
     line-height: 100%;
     letter-spacing: -0.03em;
   }
-  h3{
+  h3 {
     font-size: 14px;
     line-height: 120%;
     letter-spacing: -0.03em;
   }
-  h4{
+  h4 {
     font-size: 12px;
     line-height: 120%;
     letter-spacing: -0.02em;
   }
-  h5{
+  h5 {
     font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
-  h6{
+  h6 {
     font-size: 8px;
     line-height: 150%;
   }
-  .body{
+  .body {
     font-size: 12px;
     line-height: 120%;
     letter-spacing: -0.02em;
   }
-  .body-small{
+  .body-small {
     font-size: 10px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
-  .caption{
+  .caption {
     font-size: 8px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
-  .caption-small{
+  .caption-small {
     font-size: 8px;
     line-height: 120%;
   }
 }
 
 @media screen and (max-width: 850px) {
-  h1{
+  h1 {
     font-size: 32px;
     line-height: 95%;
     letter-spacing: -0.03em;
   }
-  h2{
+  h2 {
     font-size: 18px;
     line-height: 100%;
     letter-spacing: -0.03em;
   }
-  h3{
+  h3 {
     font-size: 12px;
     line-height: 120%;
     letter-spacing: -0.03em;
   }
-  h4{
+  h4 {
     font-size: 10px;
     line-height: 120%;
     letter-spacing: -0.02em;
-
   }
-  h5{
+  h5 {
     font-size: 8px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
-  h6{
+  h6 {
     font-size: 8px;
     line-height: 115%;
   }
-  .body{
+  .body {
     font-size: 12px;
     line-height: 120%;
     letter-spacing: -0.02em;
   }
-  .body-small{
+  .body-small {
     font-size: 10px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
-  .caption{
+  .caption {
     font-size: 8px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
-  .caption-small{
+  .caption-small {
     font-size: 8px;
     line-height: 120%;
   }

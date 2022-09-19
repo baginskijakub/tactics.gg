@@ -1,22 +1,22 @@
-import {useRef, useEffect} from 'react';
+import { useRef, useEffect } from "react";
 
-function useKey(key, cb){
-    const callbackRef = useRef(cb);
+function useKey(key, cb) {
+  const callbackRef = useRef(cb);
 
-    useEffect(() => {
-        callbackRef.current = cb;
-    })
+  useEffect(() => {
+    callbackRef.current = cb;
+  });
 
-    useEffect(() => {
-        function handle(event){
-            if(event.code === key){
-                callbackRef.current(event)
-            }
-        }
+  useEffect(() => {
+    function handle(event) {
+      if (event.code === key) {
+        callbackRef.current(event);
+      }
+    }
 
     document.addEventListener("keypress", handle);
     return () => document.removeEventListener("keypress", handle);
-    }, [key]);
+  }, [key]);
 }
 
-export {useKey};
+export { useKey };

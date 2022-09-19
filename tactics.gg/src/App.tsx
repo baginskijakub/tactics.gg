@@ -1,16 +1,14 @@
-import React from 'react';
-import './App.css';
-import {Navbar} from './components/navbar/Navbar';
-import Summoner from './pages/Summoner'
-import TeamBuilder from './pages/TeamBuilder'
-
+import React from "react";
+import "./App.css";
+import { Navbar } from "./components/navbar/Navbar";
+import Summoner from "./pages/Summoner";
+import TeamBuilder from "./pages/TeamBuilder";
 
 function App() {
-
   return (
     <div className="app-container">
       <Navbar />
-        {/* { <Comp 
+      {/* { <Comp 
           units={units}
           traits={traits}
           avgPlacement={3.72}
@@ -22,10 +20,9 @@ function App() {
           augments={augments}
           variations={variations}
           /> } */}
-        
-        {/* {  <Summoner />  } */}
-          <TeamBuilder />
 
+      {/* {  <Summoner />  } */}
+      <TeamBuilder />
     </div>
   );
 }

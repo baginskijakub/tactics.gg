@@ -17,8 +17,8 @@
 @import url("https://rsms.me/inter/inter.css");
 body {
   margin: 0;
-  background-color: #081D39;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: #081d39;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,9 +26,9 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -264,8 +264,8 @@ h6 {
           align-items: flex-start;
   padding: 12px;
   gap: 16px;
-  background: #0C1A2D;
-  border: 1px solid #172C49;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
   width: 614px;
 }
@@ -324,8 +324,8 @@ h6 {
           justify-content: flex-start;
   padding: 12px;
   gap: 16px;
-  background: #0E1828;
-  border: 1px solid #172C49;
+  background: #0e1828;
+  border: 1px solid #172c49;
   border-radius: 4px;
   width: calc(100% - 24px);
 }
@@ -421,13 +421,13 @@ h6 {
 .summoner-profile-bar-blue {
   border-radius: 2px 0px 0px 2px;
   height: 100%;
-  background-color: #377DF7;
+  background-color: #377df7;
 }
 
 .summoner-profile-bar-white {
   border-radius: 0px 2px 2px 0px;
   height: 100%;
-  background-color: #B8B8B8;
+  background-color: #b8b8b8;
 }
 
 .summoner-stats-wrapper {
@@ -448,8 +448,8 @@ h6 {
   gap: 20px;
   width: 608px;
   height: 184px;
-  background: #0C1A2D;
-  border: 1px solid #172C49;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
@@ -486,7 +486,7 @@ h6 {
 }
 
 .grey-text {
-  color: #B8B8B8;
+  color: #b8b8b8;
 }
 
 .summoner-last-square {
@@ -509,27 +509,27 @@ h6 {
 }
 
 .first {
-  background: #A48B4D;
+  background: #a48b4d;
 }
 
 .second {
-  background: #737E81;
+  background: #737e81;
 }
 
 .third {
-  background: #775A43;
+  background: #775a43;
 }
 
 .fourth {
-  background: #102B55;
+  background: #102b55;
 }
 
 .bottom {
-  border: 1px solid #172C49;
+  border: 1px solid #172c49;
 }
 
 .bottom-bar {
-  background: #0E1828;
+  background: #0e1828;
 }
 
 .summoner-last-wrapper {
@@ -549,8 +549,8 @@ h6 {
   padding: 12px;
   gap: 16px;
   width: 513px;
-  background: #0C1A2D;
-  border: 1px solid #172C49;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
@@ -601,8 +601,8 @@ h6 {
   padding: 12px;
   width: 741px;
   height: 259px;
-  background: #0C1A2D;
-  border: 1px solid #172C49;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
@@ -624,8 +624,8 @@ h6 {
   gap: 10px;
   width: calc(100% - 24px);
   height: 180px;
-  background: #0E1828;
-  border: 1px solid #172C49;
+  background: #0e1828;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
@@ -642,8 +642,8 @@ h6 {
           align-items: flex-start;
   padding: 0px;
   width: 1298px;
-  background: #0C1A2D;
-  border: 1px solid #172C49;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
@@ -663,8 +663,8 @@ h6 {
           align-items: center;
   padding: 0px;
   width: 100%;
-  background: #0C1A2D;
-  border: 1px solid #172C49;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
@@ -712,7 +712,7 @@ h6 {
   width: 4px;
   height: 4px;
   border-radius: 4px;
-  background: #172C49;
+  background: #172c49;
 }
 
 .summoner-match-augments {
@@ -733,8 +733,8 @@ h6 {
 .summoner-match-augments img {
   width: 36px;
   height: 36px;
-  background: #0E1828;
-  border: 1px solid #172C49;
+  background: #0e1828;
+  border: 1px solid #172c49;
   border-radius: 2px;
 }
 
@@ -825,7 +825,7 @@ h6 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 1300px;
-  border-top: 1px solid #172C49;
+  border-top: 1px solid #172c49;
 }
 
 .summoner-match-row-bar {
@@ -882,8 +882,8 @@ h6 {
 .summoner-match-row-augments img {
   width: 28px;
   height: 28px;
-  background: #0E1828;
-  border: 1px solid #172C49;
+  background: #0e1828;
+  border: 1px solid #172c49;
   border-radius: 1px;
 }
 
@@ -997,7 +997,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   height: 30px;
-  background-color: #0E1828;
+  background-color: #0e1828;
   padding: 0px 12px;
 }
 
@@ -1043,8 +1043,8 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 12px;
-  background-color: #0C1A2D;
-  border: 1px solid #172C49;
+  background-color: #0c1a2d;
+  border: 1px solid #172c49;
   border-radius: 4px;
 }
 
