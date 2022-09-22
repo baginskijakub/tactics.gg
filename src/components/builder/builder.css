@@ -288,14 +288,14 @@ h6 {
           align-items: flex-start;
   padding: 0px;
   gap: 20px;
-  padding-right: 50px;
+  padding-left: 50px;
   min-height: 95px;
   margin-bottom: -20px;
 }
 
 .builder-board-row:nth-child(even) {
-  padding-left: 50px;
-  padding-right: 0px;
+  padding-left: 0px;
+  padding-right: 50px;
 }
 
 .builder-board-row:nth-child(1) {

@@ -3,7 +3,6 @@ import "./builder.css";
 import { Item as ItemClass } from "../../classes";
 import { styled } from "@mui/material/styles";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
-import JSON from "json5";
 
 const DefaultTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />

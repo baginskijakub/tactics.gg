@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect} from "react";
 import "./pages.css";
 import Board from "../components/builder/Board";
 import Units from "../components/builder/Units";
@@ -12,7 +12,6 @@ import Analysis from "../components/builder/Analysis";
 import { postComp } from "../model/Model";
 
 export const TeamBuilder: React.FC = () => {
-  const forceUpdate = React.useReducer(() => ({}), {})[1] as () => void;
 
   let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
   const initialState = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]] 
@@ -25,9 +24,9 @@ export const TeamBuilder: React.FC = () => {
     const arr:any = []
     board.forEach(row => {
       row.forEach(unit => {
-          if(unit.name != null){
+          if(unit.name !== null){
             let items: any = []
-            if(unit.items != null){
+            if(unit.items !== null){
               unit.items.map( item =>
                 items.push({"id" : item.id, "name" : item.name})
               )
@@ -68,14 +67,11 @@ export const TeamBuilder: React.FC = () => {
 
   function clearBoard(){
     updateBoard(initialState)
-    console.log(board)
   }
 
   function changeStarLevel(row: number, column: number, level: 0 | 1 | 2 | 3) {
-    forceUpdate();
     var tempBoard: UnitHex[][] = board;
     tempBoard[row][column].level = level;
-    forceUpdate();
     setBoard(tempBoard);
   }
 
@@ -152,10 +148,12 @@ export const TeamBuilder: React.FC = () => {
     setTraits(tempTraits)
   }
 
-
-
   function dragStart(event: any) {
-    event.dataTransfer.setData("text", event.target.id);
+    let obj = event.target
+    if(!obj.closest('.draggable')){
+      return;
+    }
+    event.dataTransfer.setData("text", obj.id);
   }
 
   function dragOver(event: any) {
@@ -163,10 +161,12 @@ export const TeamBuilder: React.FC = () => {
   }
 
   function drop(event: any) {
+    let dropzone = event.target;
+    if(!dropzone.classList.contains('droppable')){
+      return
+    }
     event.preventDefault();
     var tempBoard: UnitHex[][] = board;
-    console.log("inside drop fn")
-    console.log(tempBoard);
 
     if (event.dataTransfer.getData("text")[1] === "-") {
       if (event.target.id.length === 3) {
@@ -219,7 +219,6 @@ export const TeamBuilder: React.FC = () => {
       const position = event.target.id;
       const row = position[0];
       const column = position[2];
-      console.log(event.dataTransfer.getData("text"))
       const data = JSON.parse(event.dataTransfer.getData("text"));
 
       if (data.cost !== undefined) {
@@ -244,38 +243,37 @@ export const TeamBuilder: React.FC = () => {
         }
       }
     }
-
-    forceUpdate();
     updateBoard(tempBoard);
     tempBoard = [];
-    forceUpdate();
     event.stopImmediatePropagation();
-  }
+}
 
 useEffect(() => {
-    const draggableElements = document.querySelectorAll(".draggable");
-    const droppableElements = document.querySelectorAll(".droppable");
+      const draggableElements = document.getElementsByClassName("draggable");
+      const droppableElements = document.getElementsByClassName("droppable");
 
-    droppableElements.forEach((element) => {
-        element.addEventListener("dragover", dragOver);
-        element.addEventListener("drop", drop);
-    });
+      for(let i = 0; i< draggableElements.length; i++){
+            draggableElements[i].addEventListener("dragstart", dragStart);
+      }
 
-    draggableElements.forEach((element) => {
-        element.addEventListener("dragstart", dragStart);
-    });
-    
-    return () => { // Cleanup callback
-        droppableElements.forEach((element) => {
-            element.removeEventListener("dragover", dragOver);
-            element.removeEventListener("drop", drop);
-        });
+      for(let i = 0; i< droppableElements.length; i++){
+            droppableElements[i].addEventListener("dragover", dragOver);
+            droppableElements[i].addEventListener("drop", drop);
+      }
+      
+      return () => { // Cleanup callback
 
-        draggableElements.forEach((element) => {
-            element.removeEventListener("dragstart", dragStart);
-        });
-    };
-}, [board]);
+        for(let i = 0; i< draggableElements.length; i++){
+              draggableElements[i].removeEventListener("dragstart", dragStart);
+        }
+
+        for(let i = 0; i< droppableElements.length; i++){
+              droppableElements[i].removeEventListener("dragover", dragOver);
+              droppableElements[i].removeEventListener("drop", drop);
+        }
+      }
+
+}, [board, traits]);
 
   return (
     <div>

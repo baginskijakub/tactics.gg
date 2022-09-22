@@ -251,7 +251,7 @@ export const HexUnit: React.FC<Props> = ({
           <div className="hexagon hex-image">
             <div className="hexagon-in1">
               <div
-                className="hexagon-in2"
+                className="hexagon-in2 droppable"
                 style={{ backgroundImage: `url(${url})` }}
                 id={`${row}-${column}`}
               ></div>

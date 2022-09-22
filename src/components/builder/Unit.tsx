@@ -115,13 +115,14 @@ export const Unit: React.FC<Props> = ({
           ],
         }}
       >
-        <div className="unit-container draggable" draggable={true}>
+        <div className="unit-container draggable" draggable={true} id={transferUnit.changeToJSON()}>
           <div className="star-container-small">
             {stars.map(() => {
               return <img src={star} alt="star" />;
             })}
           </div>
           <img
+            draggable={true}
             className={`unit-image-small ${borderColor}`}
             src={url}
             alt={name}

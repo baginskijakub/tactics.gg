@@ -6,9 +6,23 @@ import Unit from "./Unit";
 import data from './units-data.json'
 
 export const Units: React.FC = () => {
+  let arr: any = [];
+      data.forEach((unit: any) => {
+        arr.push(
+          <Unit
+            id={unit.id}
+            name={unit.name}
+            cost={unit.cost}
+            size="small"
+            url={`https://ittledul.sirv.com/Images/units/${unit.id}.png`}
+            level={0}
+            items={[]}
+          />
+        );
+      });
   const [searched, setSearched] = useState("");
-  const [allUnits, setAllUnits] = useState<any[]>([]);
-  const [units, setUnits] = useState<any[]>([]);
+  const [allUnits, setAllUnits] = useState<any[]>(arr);
+  const [units, setUnits] = useState<any[]>(arr);
   const [sort, setSort] = useState("Cost");
 
   function sortChange(value: string) {
@@ -26,7 +40,6 @@ export const Units: React.FC = () => {
     setUnits(tempArr);
   }
   function handleSearch(value: string) {
-    console.log();
     setSearched(value);
     let arr: any = [];
     allUnits.forEach((unit) => {
@@ -46,28 +59,6 @@ export const Units: React.FC = () => {
     });
     setUnits(arr);
   }
-
-  const fetchUnits = () => {
-      let arr: any = [];
-      data.forEach((unit: any) => {
-        arr.push(
-          <Unit
-            id={unit.id}
-            name={unit.name}
-            cost={unit.cost}
-            size="small"
-            url={`https://ittledul.sirv.com/Images/units/${unit.id}.png`}
-            level={0}
-            items={[]}
-          />
-        );
-      });
-      setUnits(arr);
-      setAllUnits(arr);
-    ;
-  };
-
-  React.useEffect(() => fetchUnits(), []);
 
   return (
     <div className="builder-units-wrapper">
