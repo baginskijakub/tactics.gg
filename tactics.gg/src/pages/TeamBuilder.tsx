@@ -2,21 +2,81 @@ import React, { useState, useEffect, useReducer } from "react";
 import "./pages.css";
 import Board from "../components/builder/Board";
 import Units from "../components/builder/Units";
-import { Item, UnitHex, BuilderTrait } from "../classes";
+import { Item, UnitHex, BuilderTrait, Analysis as AnalysisClass, AnalysisItem, AnalysisUnit, Augment } from "../classes";
 import Traits from "../components/builder/Traits";
-import ItemsEquipped from "../components/builder/ItemsEquipped";
+import Analyze from "../components/builder/Analyze";
 import Items from "../components/builder/Items";
 import unitsData from '../components/builder/units-data.json'
 import traitsData from '../components/builder/Tratis.json'
-import { units } from "../sample-comp-data";
+import Analysis from "../components/builder/Analysis";
+import { postComp } from "../model/Model";
 
 export const TeamBuilder: React.FC = () => {
-  const forceUpdate = React.useReducer(() => ({}), {})[1] as () => void;
+  const forceUpdate = useReducer(() => ({}), {})[1] as () => void;
 
   let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
 
   const [board, setBoard] = useState([[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],]);
-    const [traits, setTraits] = useState<any[]>([])
+  const [traits, setTraits] = useState<any[]>([])
+  const [analysis, setAnalysis] = useState<any>("Waiting for button click")
+
+  function analyze(){
+    setAnalysis("Loading")
+    const arr:any = []
+    board.forEach(row => {
+      row.forEach(unit => {
+          if(unit.name != null){
+            let items: any = []
+            if(unit.items != null){
+              unit.items.map( item =>
+                items.push({"id" : item.id, "name" : item.name})
+              )
+            }
+            arr.push({
+              "name": unit.id,
+              "level": unit.level,
+              "items": items
+            })
+          }
+        }
+      )
+    })
+    postComp(arr).then((res:any) => {
+      if(res.data === ""){
+        setAnalysis("Wait one minute before pulling another request")
+      }
+      else if(res.data?.info === "no matches with this composition were found"){
+        setAnalysis("No matches with this composition were found")
+      }
+      else{
+        let units: AnalysisUnit[] = []
+        res.data.units.forEach((unit: any) => {
+          let items: AnalysisItem[] = [];
+          unit.items.forEach((item: any) => {
+            items.push(new AnalysisItem(item.name, item.id, item.avgPlace, item.playRate))
+          })
+          units.push(new AnalysisUnit(unit.name, unit.id, items))
+        });
+        let augments: Augment[] = []
+        res.data.augments.forEach((augment: any) => {
+          augments.push(new Augment(augment.name, augment.name, augment.avgPlace, augment.winRate, augment.playRate))
+        })
+        setAnalysis(new AnalysisClass(res.data.top4Ratio, res.data.winRate, res.data.avgPlace, res.data.playRate, units, augments ))
+      }
+    })
+  }
+
+  function clearBoard(){
+    forceUpdate()
+    const tempBoard: UnitHex[][] = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]];
+    forceUpdate()
+    updateBoard(tempBoard)
+
+  }
+
+  useEffect(() => {
+    console.log(board)
+  }, [board])
 
   function changeStarLevel(row: number, column: number, level: 0 | 1 | 2 | 3) {
     forceUpdate();
@@ -53,7 +113,6 @@ export const TeamBuilder: React.FC = () => {
         })
         return temp;
     }
-    console.log("chuj dupa")
     uniqueUnits.forEach(unit => {
         unitsData.forEach(unitData => {
             if(unit === unitData.id){
@@ -65,11 +124,8 @@ export const TeamBuilder: React.FC = () => {
                                 let tempValue = tempTrait.active
                                 traitsData.traits.forEach(traitData => {
                                     if(traitData.name === trait.name){
-                                        console.log(trait.name)
                                         traitData.effects.forEach(effect => {
-                                            console.log(effect.minUnits)
                                             if(effect.minUnits <= (tempValue + trait.value)){
-                                                console.log(effect.style + "  to styl")
                                                 style = effect.style;
                                             }
                                         })
@@ -117,8 +173,8 @@ export const TeamBuilder: React.FC = () => {
   function drop(event: any) {
     event.preventDefault();
     var tempBoard: UnitHex[][] = board;
-
-    console.log(event.dataTransfer.getData("text"));
+    console.log("drop")
+    console.log(tempBoard)
 
     if (event.dataTransfer.getData("text")[1] === "-") {
       if (event.target.id.length === 3) {
@@ -142,11 +198,9 @@ export const TeamBuilder: React.FC = () => {
       } else {
         const dataDropped = event.target.id;
         let arrDropped = dataDropped.split("-");
-        console.log(arrDropped);
         const rowDropped = arrDropped[0];
         const columnDropped = arrDropped[1];
         const unitDropped: UnitHex = JSON.parse(arrDropped[2]);
-        // console.log(event.dataTransfer.getData("text"))
         let data = event.dataTransfer.getData("text");
         let arrDragged = data.split("-");
         const rowDragged = arrDragged[0];
@@ -197,8 +251,10 @@ export const TeamBuilder: React.FC = () => {
         }
       }
     }
+
     forceUpdate();
     updateBoard(tempBoard);
+    tempBoard = [];
     forceUpdate();
     event.stopImmediatePropagation();
   }
@@ -215,17 +271,24 @@ export const TeamBuilder: React.FC = () => {
   }, [board, draggableElements, droppableElements]);
 
   return (
-    <div className="builder-horizontal-wrapper">
-      <div className="builder-vertical-container-secondary">
-        <Traits traits={traits}/>
-      </div>
-      <div className="builder-vertical-container-primary">
-        <Board matrix={board} changeLevel={changeStarLevel} />
-        <Units />
-      </div>
-      <div className="builder-vertical-container-secondary">
-        <ItemsEquipped />
-        <Items />
+    <div>
+        <Analysis 
+          analysis={analysis}
+          />
+      <div className="builder-horizontal-wrapper">
+        <div className="builder-vertical-container-secondary">
+          <Traits traits={traits}/>
+        </div>
+        <div className="builder-vertical-container-primary">
+          <Board matrix={board} changeLevel={changeStarLevel} clearBoard={clearBoard}/>
+          <Units />
+        </div>
+        <div className="builder-vertical-container-secondary">
+          <Analyze 
+            buttonClick={analyze}
+            />
+          <Items />
+        </div>
       </div>
     </div>
   );

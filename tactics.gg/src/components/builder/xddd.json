@@ -1,0 +1,340 @@
+{
+    "top4Ratio": 100,
+    "winRate": 20,
+    "avgPlace": 2.4,
+    "playRate": 1,
+    "units": [
+        {
+            "name": "TFT7_Aphelios",
+            "level": 3,
+            "items": [
+                {
+                    "id": "12",
+                    "name": "TFT_Item_MadredsBloodrazor",
+                    "playRate": "20.00",
+                    "avgPlace": "4.00"
+                },
+                {
+                    "id": "11",
+                    "name": "TFT_Item_Deathblade",
+                    "playRate": "20.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "22",
+                    "name": "TFT_Item_RapidFireCannon",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "17",
+                    "name": "TFT_Item_ZekesHerald",
+                    "playRate": "140.00",
+                    "avgPlace": "2.14"
+                },
+                {
+                    "id": "29",
+                    "name": "TFT_Item_LastWhisper",
+                    "playRate": "100.00",
+                    "avgPlace": "2.40"
+                }
+            ]
+        },
+        {
+            "name": "TFT7_Graves",
+            "level": 2,
+            "items": [
+                {
+                    "id": "12",
+                    "name": "TFT_Item_MadredsBloodrazor",
+                    "playRate": "60.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "49",
+                    "name": "TFT_Item_UnstableConcoction",
+                    "playRate": "40.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "16",
+                    "name": "TFT_Item_Bloodthirster",
+                    "playRate": "40.00",
+                    "avgPlace": "2.50"
+                },
+                {
+                    "id": "2307",
+                    "name": "TFT7_Item_CavalierEmblemItem",
+                    "playRate": "20.00",
+                    "avgPlace": "4.00"
+                },
+                {
+                    "id": "94",
+                    "name": "TFT_Item_GuardianAngel",
+                    "playRate": "20.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "26",
+                    "name": "TFT_Item_RunaansHurricane",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "69",
+                    "name": "TFT_Item_Quicksilver",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "2015",
+                    "name": "TFT5_Item_GuardianAngelRadiant",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                }
+            ]
+        },
+        {
+            "name": "TFT7_Graves",
+            "level": 2,
+            "items": [
+                {
+                    "id": "12",
+                    "name": "TFT_Item_MadredsBloodrazor",
+                    "playRate": "60.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "49",
+                    "name": "TFT_Item_UnstableConcoction",
+                    "playRate": "40.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "16",
+                    "name": "TFT_Item_Bloodthirster",
+                    "playRate": "40.00",
+                    "avgPlace": "2.50"
+                },
+                {
+                    "id": "2307",
+                    "name": "TFT7_Item_CavalierEmblemItem",
+                    "playRate": "20.00",
+                    "avgPlace": "4.00"
+                },
+                {
+                    "id": "94",
+                    "name": "TFT_Item_GuardianAngel",
+                    "playRate": "20.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "26",
+                    "name": "TFT_Item_RunaansHurricane",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "69",
+                    "name": "TFT_Item_Quicksilver",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "2015",
+                    "name": "TFT5_Item_GuardianAngelRadiant",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                }
+            ]
+        },
+        {
+            "name": "TFT7_Graves",
+            "level": 2,
+            "items": [
+                {
+                    "id": "12",
+                    "name": "TFT_Item_MadredsBloodrazor",
+                    "playRate": "60.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "49",
+                    "name": "TFT_Item_UnstableConcoction",
+                    "playRate": "40.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "16",
+                    "name": "TFT_Item_Bloodthirster",
+                    "playRate": "40.00",
+                    "avgPlace": "2.50"
+                },
+                {
+                    "id": "2307",
+                    "name": "TFT7_Item_CavalierEmblemItem",
+                    "playRate": "20.00",
+                    "avgPlace": "4.00"
+                },
+                {
+                    "id": "94",
+                    "name": "TFT_Item_GuardianAngel",
+                    "playRate": "20.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "26",
+                    "name": "TFT_Item_RunaansHurricane",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "69",
+                    "name": "TFT_Item_Quicksilver",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "2015",
+                    "name": "TFT5_Item_GuardianAngelRadiant",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                }
+            ]
+        },
+        {
+            "name": "TFT7_Graves",
+            "level": 2,
+            "items": [
+                {
+                    "id": "12",
+                    "name": "TFT_Item_MadredsBloodrazor",
+                    "playRate": "60.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "49",
+                    "name": "TFT_Item_UnstableConcoction",
+                    "playRate": "40.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "16",
+                    "name": "TFT_Item_Bloodthirster",
+                    "playRate": "40.00",
+                    "avgPlace": "2.50"
+                },
+                {
+                    "id": "2307",
+                    "name": "TFT7_Item_CavalierEmblemItem",
+                    "playRate": "20.00",
+                    "avgPlace": "4.00"
+                },
+                {
+                    "id": "94",
+                    "name": "TFT_Item_GuardianAngel",
+                    "playRate": "20.00",
+                    "avgPlace": "3.00"
+                },
+                {
+                    "id": "26",
+                    "name": "TFT_Item_RunaansHurricane",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "69",
+                    "name": "TFT_Item_Quicksilver",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                },
+                {
+                    "id": "2015",
+                    "name": "TFT5_Item_GuardianAngelRadiant",
+                    "playRate": "20.00",
+                    "avgPlace": "2.00"
+                }
+            ]
+        }
+    ],
+    "augments": [
+        {
+            "name": "TFT7_Augment_CannoneerHotShot",
+            "avgPlace": "4.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT7_Augment_UrfsGrabBag1",
+            "avgPlace": "4.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_MeleeStarBlade1",
+            "avgPlace": "3.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_PandorasItems",
+            "avgPlace": "3.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_CelestialBlessing2",
+            "avgPlace": "3.00",
+            "winRate": "0.00",
+            "playRate": "40.00"
+        },
+        {
+            "name": "TFT7_Augment_CannoneerRicochet",
+            "avgPlace": "2.50",
+            "winRate": "0.00",
+            "playRate": "40.00"
+        },
+        {
+            "name": "TFT7_Augment_DarkflightTrait",
+            "avgPlace": "2.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_JeweledLotus",
+            "avgPlace": "2.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_MeleeStarBlade2",
+            "avgPlace": "2.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT7_Augment_CannoneerEmblem",
+            "avgPlace": "2.00",
+            "winRate": "0.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_Twins2",
+            "avgPlace": "1.00",
+            "winRate": "100.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_CyberneticShell3",
+            "avgPlace": "1.00",
+            "winRate": "100.00",
+            "playRate": "20.00"
+        },
+        {
+            "name": "TFT6_Augment_SalvageBin",
+            "avgPlace": "1.00",
+            "winRate": "100.00",
+            "playRate": "20.00"
+        }
+    ]
+}

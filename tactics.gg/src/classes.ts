@@ -317,6 +317,70 @@ class BuilderTrait{
   }
 }
 
+class AnalysisItem{
+  name: string;
+  id: number;
+  avgPlacement: string;
+  playRatio: string; 
+
+  constructor(name: string, id: number, avgPlacement: string, playRatio: string){
+    this.name = name;
+    this.id = id;
+    this.avgPlacement = avgPlacement;
+    this.playRatio = playRatio;
+  }
+}
+
+class AnalysisUnit{
+  name: string;
+  id: string;
+  items: AnalysisItem[];
+  constructor(  name: string, id: string, items: AnalysisItem[]){
+    this.name = name;
+    this.id = id;
+    this.items = items;
+  }
+}
+
+class Analysis{
+  top4Ratio: number;
+  winRate: number;
+  avgPlace: number;
+  playRate: number;
+  units: AnalysisUnit[]
+  augments: Augment[]
+  constructor(  top4Ratio: number, winRate: number, avgPlace: number, playRate: number, units: AnalysisUnit[],augments: Augment[]){
+    this.augments = augments;
+    this.avgPlace = avgPlace;
+    this.winRate = winRate;
+    this.top4Ratio = top4Ratio;
+    this.playRate = playRate;
+    this.units = units;
+  }
+}
+
+class AnalysisAugment {
+  src: string;
+  name: string;
+  avgPlacement: string;
+  winrate: string;
+  frequency: string;
+
+  constructor(
+    src: string,
+    name: string,
+    avgPlacement: string,
+    winrate: string,
+    frequency: string
+  ) {
+    this.src = src;
+    this.name = name;
+    this.avgPlacement = avgPlacement;
+    this.winrate = winrate;
+    this.frequency = frequency;
+  }
+}
+
 export {
   Item,
   Trait,
@@ -332,4 +396,8 @@ export {
   Stats,
   Last20,
   BuilderTrait,
+  AnalysisUnit,
+  AnalysisItem,
+  Analysis,
+  AnalysisAugment
 };

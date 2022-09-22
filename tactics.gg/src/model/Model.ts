@@ -10,4 +10,8 @@ function getUnitsData() {
   return axios.get("http://tactixgg-server.herokuapp.com/units");
 }
 
-export { searchSummoner, getUnitsData };
+function postComp(inputData: any){
+  return axios.post('http://tactixgg-server.herokuapp.com/comps', {"inputData": inputData})
+}
+
+export { searchSummoner, getUnitsData, postComp };

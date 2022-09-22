@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
 import Summoner from "./pages/Summoner";
 import TeamBuilder from "./pages/TeamBuilder";
+import Analysis from "./components/builder/Analysis";
 
 function App() {
   return (

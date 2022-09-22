@@ -2,6 +2,7 @@
 @import "../../styles/index.scss";
 
 .builder-board-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -258,4 +259,264 @@
 
 .bold-text {
   font-weight: 700 !important;
+}
+
+.green {
+  color: $green;
+  border: transparent;
+}
+
+.yellow {
+  color: $yellow;
+  border: transparent;
+}
+
+.red {
+  color: $red;
+  border: transparent;
+}
+
+.analysis-performance-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 12px;
+  width: 208px;
+  height: 274px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
+}
+
+.analysis-performance-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+  width: 100%;
+}
+
+.analysis-performance-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  width: 100%;
+}
+
+.analysis-units-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  width: 514px;
+  height: 308px;
+  background: $background05;
+  outline: 1px solid $divider;
+  border-radius: 4px;
+}
+
+.analysis-units-units {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.analysis-units-units img {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 12px;
+  width: 42px;
+  height: 42px;
+  background: $background09;
+  border-right: 1px solid #172c49;
+}
+
+.analysis-units-units img:nth-child(1) {
+  border-radius: 4px 0px 0px 0px;
+}
+
+.analysis-units-units img:nth-child(5) {
+  border-radius: 0px 0px 0px 4px;
+}
+
+.analysis-unit-selected {
+  z-index: 1;
+  border-width: 1px 0px 1px 1px !important;
+  background-color: $background05 !important;
+  padding: 9px 12px 9px 11px !important;
+  border-style: solid;
+  border-color: $divider;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.analysis-units-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 14px 0px 14px 40px;
+  overflow-y: scroll;
+  height: calc(100% - 40px);
+}
+
+.analysis-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 7px;
+  padding: 12px 0px;
+  border-bottom: 1px solid $divider;
+}
+
+.analysis-item-container img {
+  width: 32px;
+  height: 32px;
+}
+
+.analysis-item-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.analysis-item-bar {
+  display: flex;
+  width: 290px;
+}
+
+.analysis-item-blue {
+  width: 185px;
+  height: 10px;
+  background-color: $primary;
+}
+
+.analysis-item-white {
+  height: 10px;
+  width: 105px;
+  background-color: $white600;
+}
+
+.analysis-augments-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 514px;
+  height: 306px;
+  border: 1px solid $divider;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.analysis-augments-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 18px;
+  gap: 74px;
+  width: 478px;
+  height: 30px;
+  background: $background09;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid $divider;
+}
+
+.analysis-augments-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 30px);
+  overflow-y: scroll;
+}
+
+.analysis-augments-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 18px;
+  width: 478px;
+  height: 28px;
+  background: $background05;
+  border-bottom: 1px solid $divider;
+  z-index: -1;
+}
+
+.analysis-augments-row img {
+  width: 51px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.analysis-augments-row .avg {
+  width: 108px;
+}
+
+.analysis-augments-row .winrate {
+  width: 44px;
+}
+
+.analysis-augments-row .freq {
+  width: 46px;
+}
+
+.analysis-augments-row:nth-child(even) {
+  background-color: $background09;
+}
+
+.analysis-augments-row p {
+  text-align: center;
+}
+
+.analysis-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
+  height: 308px;
+  margin-bottom: 20px;
+}
+
+.analysis-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.builder-board-clear-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 2px;
+  border: 1px solid $divider;
+  background-color: $background09;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.builder-board-clear-button img {
+  width: 18px;
+  height: 18px;
 }

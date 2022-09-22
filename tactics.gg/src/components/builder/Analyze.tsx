@@ -3,7 +3,11 @@ import infoIcon from "../../images/icons/info.svg";
 import "./builder.css";
 import { SecondaryButton } from "../buttons/SecondaryButton";
 
-export const ItemsEquipped: React.FC = () => {
+interface Props{
+  buttonClick: () => void
+}
+
+export const Analyze: React.FC<Props> = ({buttonClick}) => {
   return (
     <div className="builder-analyze-wrapper">
       <h4>Analyze Performance</h4>
@@ -17,7 +21,7 @@ export const ItemsEquipped: React.FC = () => {
         <li className="body-small">Best Augments</li>
         <li className="body-small">Best Items</li>
       </ul>
-      <SecondaryButton text="Analyze Performance" />
+      <SecondaryButton text="Analyze Performance" fn={buttonClick}/>
       <p className="caption-small grey-text">
         That’s a lot of data to traverse, this process might take a while.
       </p>
@@ -25,4 +29,4 @@ export const ItemsEquipped: React.FC = () => {
   );
 };
 
-export default ItemsEquipped;
+export default Analyze;
