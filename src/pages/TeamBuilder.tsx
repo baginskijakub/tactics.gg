@@ -12,7 +12,7 @@ import Analysis from "../components/builder/Analysis";
 import { postComp } from "../model/Model";
 
 export const TeamBuilder: React.FC = () => {
-  const forceUpdate = useReducer(() => ({}), {})[1] as () => void;
+  const forceUpdate = React.useReducer(() => ({}), {})[1] as () => void;
 
   let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
   const initialState = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]] 
