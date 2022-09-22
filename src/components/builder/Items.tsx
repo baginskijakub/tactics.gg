@@ -2,9 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./builder.css";
 import Dropdown from "../buttons/Dropdown";
 import Item from "./Item";
-import json5 from "json5";
 import itemsData from "./Items.json"
-import { func } from "prop-types";
 
 export const Items: React.FC = () => {
   let radiantItems:any[] = []

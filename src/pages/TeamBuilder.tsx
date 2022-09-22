@@ -15,8 +15,8 @@ export const TeamBuilder: React.FC = () => {
   const forceUpdate = useReducer(() => ({}), {})[1] as () => void;
 
   let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
-
-  const [board, setBoard] = useState([[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],]);
+  const initialState = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]] 
+  const [board, setBoard] = useState(initialState);
   const [traits, setTraits] = useState<any[]>([])
   const [analysis, setAnalysis] = useState<any>("Waiting for button click")
 
@@ -67,16 +67,9 @@ export const TeamBuilder: React.FC = () => {
   }
 
   function clearBoard(){
-    forceUpdate()
-    const tempBoard: UnitHex[][] = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]];
-    forceUpdate()
-    updateBoard(tempBoard)
-
-  }
-
-  useEffect(() => {
+    updateBoard(initialState)
     console.log(board)
-  }, [board])
+  }
 
   function changeStarLevel(row: number, column: number, level: 0 | 1 | 2 | 3) {
     forceUpdate();
@@ -159,8 +152,7 @@ export const TeamBuilder: React.FC = () => {
     setTraits(tempTraits)
   }
 
-  const draggableElements = document.querySelectorAll(".draggable");
-  const droppableElements = document.querySelectorAll(".droppable");
+
 
   function dragStart(event: any) {
     event.dataTransfer.setData("text", event.target.id);
@@ -173,8 +165,8 @@ export const TeamBuilder: React.FC = () => {
   function drop(event: any) {
     event.preventDefault();
     var tempBoard: UnitHex[][] = board;
-    console.log("drop")
-    console.log(tempBoard)
+    console.log("inside drop fn")
+    console.log(tempBoard);
 
     if (event.dataTransfer.getData("text")[1] === "-") {
       if (event.target.id.length === 3) {
@@ -227,6 +219,7 @@ export const TeamBuilder: React.FC = () => {
       const position = event.target.id;
       const row = position[0];
       const column = position[2];
+      console.log(event.dataTransfer.getData("text"))
       const data = JSON.parse(event.dataTransfer.getData("text"));
 
       if (data.cost !== undefined) {
@@ -259,16 +252,30 @@ export const TeamBuilder: React.FC = () => {
     event.stopImmediatePropagation();
   }
 
-  useEffect(() => {
+useEffect(() => {
+    const draggableElements = document.querySelectorAll(".draggable");
+    const droppableElements = document.querySelectorAll(".droppable");
+
     droppableElements.forEach((element) => {
-      element.addEventListener("dragover", dragOver);
-      element.addEventListener("drop", drop);
+        element.addEventListener("dragover", dragOver);
+        element.addEventListener("drop", drop);
     });
 
     draggableElements.forEach((element) => {
-      element.addEventListener("dragstart", dragStart);
+        element.addEventListener("dragstart", dragStart);
     });
-  }, [board, draggableElements, droppableElements]);
+    
+    return () => { // Cleanup callback
+        droppableElements.forEach((element) => {
+            element.removeEventListener("dragover", dragOver);
+            element.removeEventListener("drop", drop);
+        });
+
+        draggableElements.forEach((element) => {
+            element.removeEventListener("dragstart", dragStart);
+        });
+    };
+}, [board]);
 
   return (
     <div>

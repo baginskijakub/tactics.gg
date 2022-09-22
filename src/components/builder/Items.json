@@ -527,6 +527,22 @@
             "type": "radiant"
         },
         {
+            "desc": "Grant %i:scaleAP% @BonusAP@ bonus Ability Power.",
+            "effects": {
+                "AP": 20.0,
+                "{d49caf5d}": 60.0
+            },
+            "from": [
+                3,
+                3
+            ],
+            "icon": "ASSETS/Maps/Particles/TFT/Item_Icons/Standard/Rabadons_Deathcap.dds",
+            "id": 33,
+            "name": "Rabadon's Deathcap",
+            "unique": false,
+            "type": "normal"
+        },
+        {
             "desc": "Grant %i:scaleCritMult% <TFTRadiantItemBonus>@CritDamageAmp@%</TFTRadiantItemBonus> Critical Strike Damage and %i:scaleAP% <TFTRadiantItemBonus>@BonusAP@</TFTRadiantItemBonus> bonus Ability Power. <br><br>Magic and true damage from an Ability can critically strike.",
             "effects": {
                 "AP": 10.0,
