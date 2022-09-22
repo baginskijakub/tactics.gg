@@ -3,7 +3,7 @@ import "./builder.css";
 import { DefaultSearch } from "../search/DefaultSearch";
 import Dropdown from "../buttons/Dropdown";
 import Unit from "./Unit";
-import { getUnitsData } from "../../model/Model";
+import data from './units-data.json'
 
 export const Units: React.FC = () => {
   const [searched, setSearched] = useState("");
@@ -48,9 +48,8 @@ export const Units: React.FC = () => {
   }
 
   const fetchUnits = () => {
-    getUnitsData().then((res: any) => {
       let arr: any = [];
-      res.data.forEach((unit: any) => {
+      data.forEach((unit: any) => {
         arr.push(
           <Unit
             id={unit.id}
@@ -65,7 +64,7 @@ export const Units: React.FC = () => {
       });
       setUnits(arr);
       setAllUnits(arr);
-    });
+    ;
   };
 
   React.useEffect(() => fetchUnits(), []);
