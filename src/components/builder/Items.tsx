@@ -27,8 +27,6 @@ export const Items: React.FC = () => {
       }
     })
 
-
-  const [dropdown, setDropdown] = useState("Normal");
   const [items, setItems] = useState<any[]>(normalItems)
 
   function changeState(value: string){

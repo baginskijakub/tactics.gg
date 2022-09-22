@@ -150,6 +150,7 @@ export const TeamBuilder: React.FC = () => {
 
   function dragStart(event: any) {
     let obj = event.target
+
     if(!obj.closest('.draggable')){
       return;
     }
@@ -162,9 +163,6 @@ export const TeamBuilder: React.FC = () => {
 
   function drop(event: any) {
     let dropzone = event.target;
-    if(!dropzone.classList.contains('droppable')){
-      return
-    }
     event.preventDefault();
     var tempBoard: UnitHex[][] = board;
 
