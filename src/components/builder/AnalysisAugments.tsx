@@ -20,8 +20,8 @@ export const AnalysisAugments:React.FC<Props> = ({augments}) => {
                         <div className="analysis-augments-row">
                             <img src={augment.src} alt={augment.name}></img>
                             <p className="caption avg">{augment.avgPlacement}</p>
-                            <p className="caption winrate">{augment.winrate}</p>
-                            <p className="caption freq">{augment.frequency}</p>
+                            <p className="caption winrate">{augment.winrate}%</p>
+                            <p className="caption freq">{augment.frequency}%</p>
                         </div>
                     )
                 })}

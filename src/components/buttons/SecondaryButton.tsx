@@ -9,14 +9,9 @@ interface Props {
 export const SecondaryButton: React.FC<Props> = ({ text, fn }) => {
 
   function handleClick(){
-    console.log("button clicked")
     if(fn !== undefined){
           fn();
     }
-    else{
-      console.log("nie doszlo do buttona")
-    }
-
   }
 
   return (

@@ -245,6 +245,34 @@
       "name": "Mage"
     },
     {
+      "apiName": "Set7_Lagoon",
+      "desc": "Lagoon desc",
+      "effects": [
+        {
+          "maxUnits": 5,
+          "minUnits": 3,
+          "style": 1
+        },
+        {
+          "maxUnits": 8,
+          "minUnits": 6,
+          "style": 2
+        },
+        {
+          "maxUnits": 11,
+          "minUnits": 9,
+          "style": 3
+        },
+        {
+          "maxUnits": 25000,
+          "minUnits": 12,
+          "style": 4
+        }
+      ],
+      "icon": "ASSETS/UX/TraitIcons/Trait_Icon_2_Lagoon.tex",
+      "name": "Lagoon"
+    },
+    {
       "apiName": "Set7_Evoker",
       "desc": "Evokers gain Mana whenever an ally or enemy casts an Ability.<br><br><expandRow>(@MinUnits@) @ManaAmount@ Mana</expandRow>",
       "effects": [

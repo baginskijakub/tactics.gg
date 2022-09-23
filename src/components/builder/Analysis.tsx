@@ -2,7 +2,6 @@ import React from 'react'
 import AnalysisPerformance from './AnalysisPerformance'
 import AnalysisUnits from './AnalysisUnits'
 import AnalysisAugments from './AnalysisAugments'
-import data from './xddd.json'
 import './builder.css'
 import { AnalysisUnit, AnalysisItem, Augment, Analysis as AnalysisClass } from '../../classes'
 
@@ -44,8 +43,8 @@ export const Analysis:React.FC<Props> = ({analysis}) => {
         units.push(new AnalysisUnit(unit.name, unit.name, items))
     })
     let augments: Augment[] = []
-    data.augments.forEach(augment => {
-        augments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.name}.png`, augment.name, parseFloat(augment.avgPlace), parseFloat(augment.winRate), parseFloat(augment.playRate)))
+    analysis.augments.forEach(augment => {
+        augments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.name}.png`, augment.name, augment.avgPlacement, augment.winrate, augment.frequency))
     })
     return (
         <div className="analysis-wrapper">

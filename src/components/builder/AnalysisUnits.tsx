@@ -26,7 +26,6 @@ export const AnalysisUnits:React.FC<Props> = ({units}) => {
             <div className="analysis-units-items">
                 {units[selectedUnit].items.map((item, index) => {
                     let blueWidth = parseFloat(item.playRatio)
-                    console.log(blueWidth)
                     if(blueWidth > 100){
                         blueWidth = 100
                     }
