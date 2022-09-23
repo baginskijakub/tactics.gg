@@ -12,11 +12,27 @@ interface Props{
 export const Analysis:React.FC<Props> = ({analysis}) => {
 
     if(typeof analysis === 'string'){
-        return(
-            <div className="analysis-placeholder">
-                <h4>{analysis}</h4>
-            </div>
-        )
+        if(analysis === "Loading"){
+                return(
+                    <div className="analysis-placeholder">
+                        <h4>Loading</h4>
+                        <div className="lds-dual-ring"></div>
+                    </div>
+            )
+        }
+        else if(analysis === "Wait"){
+                return(
+                    <div className="analysis-placeholder">
+                        <h5>Please, wait one minute before analysing another comp.</h5>
+                    </div>
+                )
+        }
+        else{
+            return(
+                <div></div>
+            )
+        }
+
     }   
     else{
     let units:AnalysisUnit[] = [] 

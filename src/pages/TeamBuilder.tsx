@@ -17,7 +17,7 @@ export const TeamBuilder: React.FC = () => {
   const initialState = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]] 
   const [board, setBoard] = useState(initialState);
   const [traits, setTraits] = useState<any[]>([])
-  const [analysis, setAnalysis] = useState<any>("Waiting for button click")
+  const [analysis, setAnalysis] = useState<any>("")
 
   function analyze(){
     setAnalysis("Loading")
@@ -41,8 +41,9 @@ export const TeamBuilder: React.FC = () => {
       )
     })
     postComp(arr).then((res:any) => {
+      console.log(res)
       if(res.data === ""){
-        setAnalysis("Wait one minute before pulling another request")
+        setAnalysis("Wait")
       }
       else if(res.data?.info === "no matches with this composition were found"){
         setAnalysis("No matches with this composition were found")

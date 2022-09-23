@@ -1,3 +1,4 @@
+import { blue } from '@mui/material/colors';
 import React, {useState} from 'react'
 import {AnalysisUnit as Unit} from '../../classes'
 import './builder.css'
@@ -24,6 +25,13 @@ export const AnalysisUnits:React.FC<Props> = ({units}) => {
             </div>
             <div className="analysis-units-items">
                 {units[selectedUnit].items.map((item, index) => {
+                    let blueWidth = parseFloat(item.playRatio)
+                    console.log(blueWidth)
+                    if(blueWidth > 100){
+                        blueWidth = 100
+                    }
+                    let whiteWidth = 100 - blueWidth;
+                    
                     return(
                         <div className="analysis-item-container">
                             <img src={`https://ittledul.sirv.com/Images/items/${item.id}.png`}></img>     
@@ -32,8 +40,8 @@ export const AnalysisUnits:React.FC<Props> = ({units}) => {
                                 <p className="caption-small">{item.playRatio}%</p>
                             </div>                                                          
                             <div className="analysis-item-bar">
-                                <span className="analysis-item-blue"/>
-                                <span className="analysis-item-white"/>
+                                <span className="analysis-item-blue" style={{width: `${blueWidth}%`}}/>
+                                <span className="analysis-item-white" style={{width: `${whiteWidth}%`}}/>
                             </div>
                         </div>
                     )
