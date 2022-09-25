@@ -15,11 +15,11 @@ function postComp(inputData: any){
 }
 
 function getAugmentsRanking(){
-  return axios.get('http://tactixgg-server.herokuapp.com/augments-ranking')
+  return axios.get('https://tactixgg-server.herokuapp.com/augments-ranking')
 }
 
 function getUnitsRanking(){
-  return axios.get('http://tactixgg-server.herokuapp.com/units-ranking')
+  return axios.get('https://tactixgg-server.herokuapp.com/units-ranking')
 }
 
 export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking };
