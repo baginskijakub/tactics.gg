@@ -8,18 +8,20 @@ interface Props {
   link: string;
   isSelected: boolean;
   path: string;
+  index: number;
+  handleSelection: (key: number) => void
 }
 
-export const NavButton: React.FC<Props> = ({ text, link, isSelected, path }) => {
+export const NavButton: React.FC<Props> = ({ text, link, isSelected, path, index, handleSelection}) => {
   if (!isSelected) {
     return (
-      <div className="navbutton">
+      <div className="navbutton" onClick={() => handleSelection(index)}>
         <Link className="body" to={path}>{text}</Link>
       </div>
     );
   } else {
     return (
-      <div className="navbutton-selected">
+      <div className="navbutton-selected" onClick={() => handleSelection(index)}>
         <Link className="body" to={path}>{text}</Link>
       </div>
     );

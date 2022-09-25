@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./pages.css";
 import { searchSummoner } from "../model/Model";
 import { useKey } from "../hooks/key";
@@ -22,7 +22,12 @@ import {
   Companion,
 } from "../classes";
 
-export const Summoner: React.FC = () => {
+interface Props{
+  name?: string
+  region?: string
+}
+
+export const Summoner: React.FC<Props> = ({name, region}) => {
   const [placeholder, setPlaceholder] = useState("notFound");
   const [summonerName, setSummonerName] = useState("");
   const [profileState, setProfile] = useState<undefined | Profile>(undefined);
@@ -162,6 +167,12 @@ export const Summoner: React.FC = () => {
       setSummonerName(res.data.profile.name);
     });
   }
+  useEffect(() => {
+      if(name !== undefined && region !== undefined){
+    handleSummoner(name, region)
+  }
+  }, [])
+
 
   // useKey("Enter", handleSummoner())
 

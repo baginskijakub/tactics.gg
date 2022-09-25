@@ -1,6 +1,8 @@
 [
   {"id": "TFT7_Braum", "name": "Braum","cost": 2, "traits": [{"name": "Scalescorn", "value": 1}, {"name": "Guardian", "value": 1}]},
-  {"id": "TFT7_Nilah", "name": "Nilah","cost": 4, "traits": [{"name": "Lagoon", "value": 1}, {"name": "Assasin", "value": 1}]},
+  {"id": "TFT7_Nidalee", "name": "Nidalee","cost": 1, "traits": [{"name": "Astral", "value": 1}, {"name": "Shapeshifter", "value": 1}]},
+  {"id": "TFT7_Wukong", "name": "Wukong","cost": 1, "traits": [{"name": "Jade", "value": 1}, {"name": "Warrior", "value": 1}]},
+  {"id": "TFT7_Nilah", "name": "Nilah","cost": 4, "traits": [{"name": "Lagoon", "value": 1}, {"name": "Assassin", "value": 1}]},
   {"id": "TFT7_Diana", "name": "Diana","cost": 3, "traits": [{"name": "Scalescorn", "value": 1}, {"name": "Assassin", "value": 1}]},
   {"id": "TFT7_Olaf", "name": "Olaf","cost": 3, "traits": [{"name": "Scalescorn", "value": 1}, {"name": "Warrior", "value": 1}]},
   {"id": "TFT7_Jax", "name": "Jax","cost": 2, "traits": [{"name": "Shimmerscale", "value": 1}, {"name": "Jade", "value": 1}, {"name": "Bruiser", "value": 1}]},

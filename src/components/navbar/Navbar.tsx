@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+
 import "./navbar.css";
 import NavbarLinks from "./NavbarLinks";
 import logo from "../../images/logo.svg";
 import { DefaultSearch } from "../search/DefaultSearch";
 import SummonerSearch from "../search/SummonerSearch";
 
-export const Navbar: React.FC = () => {
+interface Props{
+  handleSummonerSearch: (name: string, region:string) => void
+}
+export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
   const [search, setSearch] = useState("open");
+
   function handleSearch() {
     if (search === "open") {
       setSearch("closed");
@@ -15,8 +20,9 @@ export const Navbar: React.FC = () => {
     }
   }
 
-  function placeholder() {
-    console.log("xd");
+  function handleSummoner(name: string, region: string) {
+    console.log("navbar")
+    handleSummonerSearch(name, region)
   }
 
   return (
@@ -30,7 +36,7 @@ export const Navbar: React.FC = () => {
               inputChange={() => {}}
             />
           ) : (
-            <SummonerSearch handleInput={(name: string) => placeholder} />
+            <SummonerSearch handleInput={handleSummoner} />
           )}
         </div>
       </div>
