@@ -7,6 +7,7 @@ import TeamBuilder from "./pages/TeamBuilder";
 import { Route, Routes} from 'react-router-dom'
 import  Augments  from "./pages/Augments";
 import Units from "./pages/Units";
+import Items from "./pages/Items"
 
 function App() {
   const[summonerName, setSummonerName] = useState<any>(undefined)
@@ -26,6 +27,7 @@ function App() {
         <Navbar handleSummonerSearch={handleSummonerSearch}/>
         <Routes >
           <Route path='/units' element={<Units/>}/>
+          <Route path='/items' element={<Items/>}/>
           <Route path='/augments' element={<Augments/>}/>
           <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
           <Route path='/' element={<TeamBuilder />}/>

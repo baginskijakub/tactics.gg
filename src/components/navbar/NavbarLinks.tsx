@@ -32,7 +32,7 @@ export const NavbarLinks: React.FC = () => {
         <NavButton index={2} text="Summoner Search " isSelected={selected[2]} link="" path="/summoner" handleSelection={handleSelected}/>
         <NavButton index={3} text="Augments" isSelected={selected[3]} link="" path="/augments" handleSelection={handleSelected}/>
         <NavButton index={4} text="Units" isSelected={selected[4]} link="" path="/units" handleSelection={handleSelected}/>
-        <NavButton index={5} text="Items" isSelected={selected[5]} link="" path="" handleSelection={handleSelected}/>
+        <NavButton index={5} text="Items" isSelected={selected[5]} link="" path="/items" handleSelection={handleSelected}/>
         <NavButton index={6} text="Leaderboards" isSelected={selected[6]} link="" path="" handleSelection={handleSelected}/>
       </div>
     </div>

@@ -322,6 +322,11 @@ h6 {
   text-align: center;
 }
 
+.item-row-image {
+  width: 36px !important;
+  height: 36px !important;
+}
+
 @media screen and (max-width: 1350px) {
   .augment-row-wrapper {
     padding: 0px 30px;
@@ -331,6 +336,10 @@ h6 {
   .augment-row-inner img {
     width: 48px;
     height: 48px;
+  }
+  .item-row-image {
+    width: 32px !important;
+    height: 32px !important;
   }
 }
 
@@ -343,6 +352,10 @@ h6 {
   .augment-row-inner img {
     width: 42px;
     height: 42px;
+  }
+  .item-row-image {
+    width: 28px !important;
+    height: 28px !important;
   }
 }
 
@@ -361,6 +374,10 @@ h6 {
   }
   .augment-row-inner {
     width: 100px;
+  }
+  .item-row-image {
+    width: 24px !important;
+    height: 24px !important;
   }
 }
 /*# sourceMappingURL=augments.css.map */

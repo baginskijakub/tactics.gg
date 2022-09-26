@@ -39,6 +39,7 @@ export const Units: React.FC = () => {
     }
     setUnits(tempArr);
   }
+  
   function handleSearch(value: string) {
     setSearched(value);
     let arr: any = [];

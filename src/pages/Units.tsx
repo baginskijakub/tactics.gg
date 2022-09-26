@@ -5,11 +5,14 @@ import Dropdown from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getUnitsRanking } from '../model/Model'
 import unitsData from '../components/builder/units-data.json'
+import { DefaultSearch } from "../components/search/DefaultSearch";
 
 export const Units:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
     const[toRender, setToRender] = useState(20);
     const[units, setUnits] = useState<any[]>([])
+    const[allUnits, setAllUnits] = useState<any[]>([])
+    const [searched, setSearched] = useState("");
 
     function handleSort(value: string){
         setSort(value)
@@ -95,6 +98,7 @@ export const Units:React.FC = () => {
                 tempUnits.push({"name": unitName, "id": unit.id, "avgPlacement": unit.avg_place, "winrate": unit.winrate, "playrate": unit.frequency, "traits": unitTraits})
             })
             setUnits(tempUnits)
+            setAllUnits(tempUnits)
             setToRender(20)
         })
 
@@ -105,15 +109,40 @@ export const Units:React.FC = () => {
         setToRender(temp + 20);
     }
 
+    function handleSearch(value: string) {
+        setSearched(value);
+        let arr: any = [];
+        allUnits.forEach((unit) => {
+        if (unit.name.toLowerCase().includes(value.toLowerCase())) {
+            arr.push(unit);
+        }
+        else{
+            let condition = false
+            unit.traits.forEach((trait: any) => {
+                if(trait.toLowerCase().includes(value.toLowerCase())){
+                    condition = true
+                }
+            })
+            if(condition){
+                arr.push(unit);
+            }
+        }
+        });
+        setUnits(arr);
+    }
+
     let isMobile  = window.innerWidth > 1050
     return (
         <div className="augments-wrapper">
-            <Dropdown 
-                name="Sort"
-                values={["Average Placement", "Winrate", "Playrate"]}
-                defaultValue="Average Placement"
-                onChange={handleSort}
-                />
+            <div className="sort-navigation-container">
+                    <Dropdown 
+                        name="Sort"
+                        values={["Average Placement", "Winrate", "Playrate"]}
+                        defaultValue="Average Placement"
+                        onChange={handleSort}
+                        />
+                <DefaultSearch initialValue="Search unit or trait" inputChange={handleSearch}/>
+            </div>
             <div className="augments-container">
                 <div className="units-titles">
                     <h4>Unit</h4>

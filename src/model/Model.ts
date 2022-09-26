@@ -22,4 +22,8 @@ function getUnitsRanking(){
   return axios.get('https://tactixgg-server.herokuapp.com/units-ranking')
 }
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking };
+function getItemsRanking(){
+  return axios.get('https://tactixgg-server.herokuapp.com/items-ranking')
+}
+
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking };
