@@ -48,6 +48,9 @@ export const TeamBuilder: React.FC = () => {
       else if(res.data?.info === "no matches with this composition were found"){
         setAnalysis("No matches with this composition were found")
       }
+      else if(res.data.info === "No matches"){
+        setAnalysis("No matches with this composition were found")
+      }
       else{
         let units: AnalysisUnit[] = []
         res.data.units.forEach((unit: any) => {
