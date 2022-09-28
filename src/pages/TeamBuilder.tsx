@@ -18,6 +18,12 @@ export const TeamBuilder: React.FC = () => {
   const [board, setBoard] = useState(initialState);
   const [traits, setTraits] = useState<any[]>([])
   const [analysis, setAnalysis] = useState<any>("")
+  const [unitsSupport, setUnitsSupport] = useState(0)
+
+  function onUnitsChange(){
+    let temp = unitsSupport;
+    setUnitsSupport(temp+1);
+  }
 
   function analyze(){
     setAnalysis("Loading")
@@ -42,14 +48,19 @@ export const TeamBuilder: React.FC = () => {
     })
     postComp(arr).then((res:any) => {
       console.log(res)
+      console.log(res.data.info)
+      console.log(res.data.error)
       if(res.data === ""){
         setAnalysis("Wait")
       }
-      else if(res.data?.info === "no matches with this composition were found"){
+      else if(res.data.info === "no matches with this composition were found"){
         setAnalysis("No matches with this composition were found")
       }
       else if(res.data.info === "No matches"){
         setAnalysis("No matches with this composition were found")
+      }
+      else if(res.data.error === "error - Request failed with status code 429"){
+        setAnalysis("Wait")
       }
       else{
         let units: AnalysisUnit[] = []
@@ -275,7 +286,7 @@ useEffect(() => {
         }
       }
 
-}, [board, traits]);
+}, [board, traits, unitsSupport]);
 
   return (
     <div>
@@ -288,7 +299,7 @@ useEffect(() => {
         </div>
         <div className="builder-vertical-container-primary">
           <Board matrix={board} changeLevel={changeStarLevel} clearBoard={clearBoard}/>
-          <Units />
+          <Units onChange={onUnitsChange}/>
         </div>
         <div className="builder-vertical-container-secondary">
           <Analyze 

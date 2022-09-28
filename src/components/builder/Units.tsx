@@ -5,7 +5,11 @@ import Dropdown from "../buttons/Dropdown";
 import Unit from "./Unit";
 import data from './units-data.json'
 
-export const Units: React.FC = () => {
+interface Props{
+  onChange: () => void
+}
+
+export const Units: React.FC<Props> = ({onChange}) => {
   let arr: any = [];
       data.forEach((unit: any) => {
         arr.push(
@@ -60,6 +64,10 @@ export const Units: React.FC = () => {
     });
     setUnits(arr);
   }
+
+  useEffect(() => {
+    onChange();
+  }, [units])
 
   return (
     <div className="builder-units-wrapper">

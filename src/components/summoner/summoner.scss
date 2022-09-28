@@ -685,6 +685,10 @@
     width: 184px;
     text-align: end;
   }
+
+  .summoner-placeholder-wrapper {
+    width: 1000px;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -843,6 +847,10 @@
     width: 174px;
     text-align: end;
   }
+
+  .summoner-placeholder-wrapper {
+    width: 800px;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -970,6 +978,11 @@
     gap: 8px;
     margin-left: -0px;
     align-items: flex-start;
+  }
+
+  .summoner-placeholder-wrapper {
+    width: calc(100% - 32px);
+    height: 120px;
   }
 }
 

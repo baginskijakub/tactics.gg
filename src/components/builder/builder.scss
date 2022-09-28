@@ -542,6 +542,7 @@
   border-color: #fff transparent #fff transparent;
   animation: lds-dual-ring 2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -549,4 +550,13 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.table-loader-wrapper {
+  width: 100%;
+  background-color: $background05;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }

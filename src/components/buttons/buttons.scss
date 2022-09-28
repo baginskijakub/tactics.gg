@@ -263,6 +263,22 @@
   width: calc(100% - 24px);
 }
 
+.navbutton-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0px;
+}
+
+.navbutton-selected-mobile a {
+  color: $primary;
+}
+
+.navbutton-selected-mobile p {
+  color: $primary;
+}
+
 @media screen and (max-width: 1350px) {
   .primary-button {
     padding: 11px 20px 12px;

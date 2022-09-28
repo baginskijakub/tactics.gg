@@ -5,6 +5,7 @@ import Dropdown from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getAugmentsRanking } from '../model/Model'
 import './pages.css'
+import TableLoader from '../components/table/TableLoader'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -111,13 +112,13 @@ export const Augments:React.FC = () => {
                     <h4>Winrate</h4>
                     <h4>Playrate</h4>
                 </div>
-                {augments.map((augment, index) => {
+                {augments.length > 0 ? augments.map((augment, index) => {
                     if(index <= toRender){
                     return (
                     <AugmentRow augment={augment}/>
                     )
                     }
-                })}
+                }) : <TableLoader />}
             </div>
             <PrimaryButton 
                 text="Load more"

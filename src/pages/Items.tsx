@@ -6,6 +6,7 @@ import { getItemsRanking } from '../model/Model'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import itemsData from '../components/builder/Items.json'
+import TableLoader from '../components/table/TableLoader'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -163,13 +164,13 @@ export const Augments:React.FC = () => {
                     <h4>Winrate</h4>
                     <h4>Playrate</h4>
                 </div>
-                {items.map((item, index) => {
+                {items.length > 0 ? items.map((item, index) => {
                     if(index <= toRender){
                         return (
                         <ItemRow id={item.id} name={item.name} avgPlacement={item.avgPlacement} winrate={item.winrate} playrate={item.playrate}/>
                         )
                     }
-                })}
+                }) : <TableLoader/>}
             </div>
             <PrimaryButton 
                 text="Load more"

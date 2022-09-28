@@ -317,6 +317,11 @@ h6 {
   height: 56px;
 }
 
+.augment-row-inner p {
+  text-align: left !important;
+  width: 200px !important;
+}
+
 .augment-row-wrapper p {
   width: 150px;
   text-align: center;

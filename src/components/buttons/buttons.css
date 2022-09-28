@@ -649,6 +649,28 @@ h6 {
   width: calc(100% - 24px);
 }
 
+.navbutton-mobile {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 0px;
+}
+
+.navbutton-selected-mobile a {
+  color: #377df7;
+}
+
+.navbutton-selected-mobile p {
+  color: #377df7;
+}
+
 @media screen and (max-width: 1350px) {
   .primary-button {
     padding: 11px 20px 12px;

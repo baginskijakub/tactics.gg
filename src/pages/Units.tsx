@@ -6,6 +6,7 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getUnitsRanking } from '../model/Model'
 import unitsData from '../components/builder/units-data.json'
 import { DefaultSearch } from "../components/search/DefaultSearch";
+import TableLoader from '../components/table/TableLoader'
 
 export const Units:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -151,13 +152,13 @@ export const Units:React.FC = () => {
                     <h4>Winrate</h4>
                     <h4>Playrate</h4>
                 </div>
-                {units.map((unit, index) => {
+                {units.length > 0 ? units.map((unit, index) => {
                     if(index < toRender){
                         return (
                             <UnitRow name={unit.name} id={unit.id} avgPlacement={unit.avgPlacement} winrate={unit.winrate} playrate={unit.playrate} traits={unit.traits}/>
                         )
                     }
-                })}
+                }) : <TableLoader />}
             </div>
             <PrimaryButton 
                 text="Load more"

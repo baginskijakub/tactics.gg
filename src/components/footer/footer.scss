@@ -1,0 +1,24 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  gap: 16px;
+  background: $background05;
+  border-top: 1px solid $divider;
+}
+
+.footer-wrapper p {
+  width: 800px;
+  text-align: center;
+}
+
+.grey {
+  color: $white100;
+  border: none;
+}
