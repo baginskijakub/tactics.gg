@@ -23,7 +23,7 @@ function getItemsRanking(){
 }
 
 function getComps(){
-  return axios.get('http://tactixgg-server.herokuapp.com/preparedComps')
+  return axios.get('https://tactixgg-server.herokuapp.com/preparedComps')
 }
 
 export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps };
