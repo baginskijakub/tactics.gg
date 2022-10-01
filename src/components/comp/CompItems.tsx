@@ -34,6 +34,7 @@ export const CompItems: React.FC<Props> = ({ units }) => {
         </div>
       </div>
       <span className="comp-horizontal-separator"></span>
+      <div className="comp-items-scrollable">
       {units.map((element) => {
         let border: string = "grey-border";
         switch (element.cost) {
@@ -85,10 +86,11 @@ export const CompItems: React.FC<Props> = ({ units }) => {
                 })}
               </div>
             </div>
-            {counter < 4 && <span className="comp-horizontal-separator"></span>}
+            {counter < units.length && <span className="comp-horizontal-separator"></span>}
           </div>
         );
       })}
+      </div>
     </div>
   );
 };

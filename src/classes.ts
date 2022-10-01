@@ -381,6 +381,33 @@ class AnalysisAugment {
   }
 }
 
+class Comp{
+  units: Unit[];
+  traits: Trait[];
+  avgPlacement: number;
+  top4Ratio: number;
+  winrate: number;
+  playrate: number;
+  positioning: UnitHex[][];
+  items: UnitItems[];
+  augments: Augment[];
+  variations: Variation[];
+
+  constructor(units: Unit[], traits: Trait[], avgPlacement: number, top4Ratio: number, winrate: number, playrate: number, positioning: UnitHex[][], items: UnitItems[], augments: Augment[], variations: Variation[]){
+    this.units = units;
+    this.traits = traits;
+    this.avgPlacement = avgPlacement;
+    this.top4Ratio = top4Ratio;
+    this.winrate = winrate;
+    this.playrate = playrate;
+    this.positioning = positioning;
+    this.items = items;
+    this.augments = augments;
+    this.variations = variations
+
+}
+}
+
 export {
   Item,
   Trait,
@@ -399,5 +426,6 @@ export {
   AnalysisUnit,
   AnalysisItem,
   Analysis,
-  AnalysisAugment
+  AnalysisAugment,
+  Comp
 };

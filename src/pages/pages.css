@@ -336,6 +336,18 @@ h6 {
   width: 1300px;
 }
 
+.comps-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 72px;
+  width: 1300px;
+}
+
 .augments-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -453,6 +465,33 @@ h6 {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 12px;
+}
+
+.leaderboard-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 12px 30px;
+  width: calc(100% - 60px);
+  background-color: #0c1a2d;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.leaderboard-titles h5 {
+  width: 100px;
+  text-align: center;
+}
+
+.leaderboard-titles h5:nth-child(1) {
+  width: 300px !important;
+  text-align: left !important;
 }
 
 @media screen and (max-width: 1350px) {

@@ -64,7 +64,7 @@ export const HexagonUnit: React.FC<Props> = ({
           })}
         </div>
         <div className="hexagon hex-image">
-          <div className="hexagon-in1">
+          <div className="hexagon-in1" style={{backgroundColor: "red", zIndex: 3}}>
             <div
               className="hexagon-in2"
               style={{ backgroundImage: `url(${url})` }}
@@ -76,7 +76,6 @@ export const HexagonUnit: React.FC<Props> = ({
             <div className={backgroundClass}></div>
           </div>
         </div>
-
         <div className="item-container">
           {items !== null &&
             items.map((itemElement) => (

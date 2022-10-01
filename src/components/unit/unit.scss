@@ -259,6 +259,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 0px;
+  overflow: visible;
   margin-top: -20px;
   gap: 6px;
   z-index: 2;

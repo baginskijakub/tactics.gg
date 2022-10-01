@@ -540,15 +540,16 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 12px;
   gap: 16px;
   width: 513px;
+  height: 261px;
   background: #0c1a2d;
   border: 1px solid #172c49;
   border-radius: 4px;
@@ -1107,6 +1108,7 @@ h6 {
   }
   .summoner-last-wrapper {
     width: 379px;
+    height: 241px;
   }
   .summoner-progress-wrapper {
     width: 549px;
@@ -1242,6 +1244,7 @@ h6 {
   }
   .summoner-last-wrapper {
     width: 296px;
+    height: 217px;
   }
   .summoner-progress-wrapper {
     width: 430px;

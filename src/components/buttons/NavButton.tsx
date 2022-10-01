@@ -1,6 +1,7 @@
 import React from "react";
 import "./buttons.css";
 import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 
 interface Props {
@@ -13,16 +14,24 @@ interface Props {
 }
 
 export const NavButton: React.FC<Props> = ({ text, link, isSelected, path, index, handleSelection}) => {
+
+  let navigate = useNavigate()
+
+  function handleClick(){
+    handleSelection(index)
+    navigate(path)
+  }
+
   if (!isSelected) {
     return (
-      <div className="navbutton" onClick={() => handleSelection(index)}>
-        <Link className="body" to={path}>{text}</Link>
+      <div className="navbutton" onClick={() => handleClick()}>
+        <a className="body" >{text}</a>
       </div>
     );
   } else {
     return (
-      <div className="navbutton-selected" onClick={() => handleSelection(index)}>
-        <Link className="body" to={path}>{text}</Link>
+      <div className="navbutton-selected">
+        <a className="body" >{text}</a>
       </div>
     );
   }

@@ -6,10 +6,6 @@ function searchSummoner(region: string, summoner: string) {
   );
 }
 
-// function getUnitsData() {
-//   return axios.get("http://tactixgg-server.herokuapp.com/units");
-// }
-
 function postComp(inputData: any){
   return axios.post('https://tactixgg-server.herokuapp.com/comps', {"inputData": inputData})
 }
@@ -26,4 +22,8 @@ function getItemsRanking(){
   return axios.get('https://tactixgg-server.herokuapp.com/items-ranking')
 }
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking };
+function getComps(){
+  return axios.get('http://tactixgg-server.herokuapp.com/preparedComps')
+}
+
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps };

@@ -1,0 +1,45 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.leader-row-wrapper {
+  width: calc(100% - 60px);
+  padding: 8px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background05;
+  border-top: 1px solid $divider;
+}
+
+.leader-row-wrapper:nth-child(even) {
+  background-color: $background09;
+}
+
+.leader-row-wrapper:nth-last-child(1) {
+  border-radius: 0px 0px 4px 4px;
+}
+
+.leader-row-summoner {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 300px;
+  align-items: center;
+}
+
+.leader-row-summoner p {
+  width: auto !important;
+  text-align: left !important;
+}
+
+.leader-row-summoner img {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+}
+
+.leader-row-wrapper p {
+  width: 100px;
+  text-align: center;
+}

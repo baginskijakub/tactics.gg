@@ -1,7 +1,6 @@
 import React from 'react'
 import './augments.css'
 import {Augment} from '../../classes'
-import { augments } from '../../sample-comp-data';
 
 interface Props{
     augment: Augment

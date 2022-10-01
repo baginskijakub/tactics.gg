@@ -28,6 +28,8 @@ export const CompAugments: React.FC<Props> = ({ augments }) => {
         <h4 className="comp-augments-title-cell">Winrate</h4>
         <h4 className="comp-augments-title-cell">Frequency</h4>
       </div>
+      <span className="comp-horizontal-separator"></span>
+      <div className="comp-items-scrollable">
       {augments.map((element) => {
         return (
           <CompAugmentsRow
@@ -39,6 +41,7 @@ export const CompAugments: React.FC<Props> = ({ augments }) => {
           />
         );
       })}
+      </div>
     </div>
   );
 };

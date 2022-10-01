@@ -167,6 +167,10 @@
   align-items: center;
 }
 
+.comp-items-unit-wrapper:nth-child(odd) {
+  background-color: $background05;
+}
+
 .comp-items-unit {
   display: inline-flex;
   flex-direction: row;
@@ -258,6 +262,10 @@
   width: 100%;
   justify-content: center;
   padding: 1px 0px;
+}
+
+.augments-row-container:nth-child(odd) {
+  background-color: $background05;
 }
 
 .augment-name-container {
@@ -369,6 +377,24 @@
 
 .comp-variation-container:nth-child(1) {
   border-top: transparent;
+}
+
+.comp-items-scrollable {
+  width: 100%;
+  height: 475px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comp-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
 }
 
 @media screen and (max-width: 1350px) {

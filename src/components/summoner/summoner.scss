@@ -182,11 +182,12 @@
 .summoner-last-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 12px;
   gap: 16px;
   width: 513px;
+  height: 261px;
   background: $background05;
   border: 1px solid $divider;
   border-radius: 4px;
@@ -549,6 +550,7 @@
 
   .summoner-last-wrapper {
     width: 379px;
+    height: 241px;
   }
 
   .summoner-progress-wrapper {
@@ -717,6 +719,7 @@
 
   .summoner-last-wrapper {
     width: 296px;
+    height: 217px;
   }
 
   .summoner-progress-wrapper {

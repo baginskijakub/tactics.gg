@@ -39,7 +39,7 @@ export const NavbarMobile:React.FC = () => {
                 <img className="nav-mobile-hamburger" src={hamburger} alt="Menu" onClick={() => handleOpen()}></img>
             </div>
             <div className={`nav-mobile-links ${state}`}>
-                        <NavButtonMobile text="Comps" isSelected={selected[0]} link="" path="" index={0} handleSelection={handleSelected}/>
+                        <NavButtonMobile text="Comps" isSelected={selected[0]} link="" path="/" index={0} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Summoner Search " isSelected={selected[1]} link="" path="/summoner" index={1} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Augments" isSelected={selected[2]} link="" path="/augments" index={2} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Units" isSelected={selected[3]} link="" path="/units" index={3} handleSelection={handleSelected}/>

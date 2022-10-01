@@ -545,6 +545,8 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 0px;
+  overflow: visible;
   margin-top: -20px;
   gap: 6px;
   z-index: 2;
