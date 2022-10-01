@@ -129,11 +129,11 @@ export const Comp: React.FC<Props> = ({
   function handleState() {
     if (state === "open") {
       setState("closed");
-      document.getElementById("expand-image")!.style.transform = "rotate(0deg)";
+      // document.getElementById("expand-image")!.style.transform = "rotate(0deg)";
     } else {
       setState("open");
-      document.getElementById("expand-image")!.style.transform =
-        "rotate(180deg)";
+      // document.getElementById("expand-image")!.style.transform =
+        // "rotate(180deg)";
     }
   }
 
@@ -144,7 +144,7 @@ export const Comp: React.FC<Props> = ({
   }
   const traitList = traits.map((trait) => (
     <Trait
-      size={size}
+      size="small"
       hasValue={true}
       hasLabel={labeled}
       name={trait.name}
@@ -160,7 +160,7 @@ export const Comp: React.FC<Props> = ({
       name={unit.name}
       cost={unit.cost}
       url={unit.url}
-      size="big"
+      size="medium"
       level={unit.level}
       items={unit.items}
     />

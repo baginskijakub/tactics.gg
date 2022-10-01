@@ -27,29 +27,29 @@ export const CompFoot: React.FC<Props> = ({
 
   //setting color of top 4 ratio
   if (top4Ratio > 55) {
-    colors.push("body green");
+    colors.push("body-small green");
   } else if (top4Ratio > 45) {
-    colors.push("body yellow");
+    colors.push("body-small yellow");
   } else {
-    colors.push("body red");
+    colors.push("body-small red");
   }
 
   //setting color of winrate
   if (winrate > 15) {
-    colors.push("body green");
+    colors.push("body-small green");
   } else if (winrate > 11) {
-    colors.push("body yellow");
+    colors.push("body-small yellow");
   } else {
-    colors.push("body red");
+    colors.push("body-small red");
   }
 
   //setting color of playrate
   if (playrate < 0.5) {
-    colors.push("body green");
+    colors.push("body-small green");
   } else if (playrate < 0.8) {
-    colors.push("body yellow");
+    colors.push("body-small yellow");
   } else {
-    colors.push("body red");
+    colors.push("body-small red");
   }
 
   let isMobile = false;
@@ -66,20 +66,20 @@ export const CompFoot: React.FC<Props> = ({
   return (
     <div className="comp-foot-wrapper">
       <div className="comp-foot-inner">
-        <p className="body">{avg}:</p>
+        <p className="body-small">{avg}:</p>
         <p className={colors[0]}>{avgPlacement}</p>
       </div>
       <div className="comp-foot-inner">
-        <p className="body">TOP4 Ratio:</p>
+        <p className="body-small">TOP4 Ratio:</p>
         <p className={colors[1]}>{top4Ratio}%</p>
       </div>
       <div className="comp-foot-inner">
-        <p className="body">Winrate:</p>
+        <p className="body-small">Winrate:</p>
         <p className={colors[2]}>{winrate}%</p>
       </div>
       {!isMobile && (
         <div className="comp-foot-inner">
-          <p className="body">Playrate:</p>
+          <p className="body-small">Playrate:</p>
           <p className={colors[3]}>{playrate}</p>
         </div>
       )}
