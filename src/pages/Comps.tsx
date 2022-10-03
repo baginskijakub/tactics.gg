@@ -5,6 +5,7 @@ import { DefaultSearch } from "../components/search/DefaultSearch";
 import {Comp as CompClass} from "../classes"
 import Comp from "../components/comp/Comp"
 import CompLoader from "../components/comp/CompLoader"
+import PageHead from './PageHead'
 import './pages.css'
 
 
@@ -14,6 +15,13 @@ export const Comps = () => {
     const[allComps, setAllComps] = useState<CompClass[]>([])
     const[comps, setComps] = useState<CompClass[]>([])
     const [searched, setSearched] = useState("");
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    //change navbar on breakpoint
+    React.useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
+
     
 
     function handleSort(value:string){
@@ -116,6 +124,10 @@ export const Comps = () => {
 
     return (
         <div className="comps-wrapper">
+            <PageHead 
+                title="TFT Meta Team Comps"
+                text="Teamfight Tactics data-driven composition tier list based on current meta"
+                />
             <div className="sort-navigation-container">
                 <Dropdown 
                     name="Sort"
@@ -123,7 +135,7 @@ export const Comps = () => {
                     defaultValue="Average Placement"
                     onChange={handleSort}
                     />
-                <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>
+                {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
             </div>
             {comps.length > 0 ? comps.map((comp) => {
                 return(

@@ -22,3 +22,9 @@
   color: $white100;
   border: none;
 }
+
+@media screen and (max-width: 850px) {
+  .footer-wrapper p {
+    width: calc(100% - 32px);
+  }
+}

@@ -299,7 +299,7 @@ h6 {
 }
 
 .comp-wrapper {
-  width: 1298px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -901,7 +901,7 @@ h6 {
 
 @media screen and (max-width: 1350px) {
   .comp-wrapper {
-    width: 1000px;
+    width: 100%;
   }
   .comp-foot-wrapper {
     width: 800px;
@@ -1013,7 +1013,7 @@ h6 {
 
 @media screen and (max-width: 1050px) {
   .comp-wrapper {
-    width: 800px;
+    width: 100%;
   }
   .comp-foot-wrapper {
     width: 600px;
@@ -1153,7 +1153,7 @@ h6 {
 
 @media screen and (max-width: 850px) {
   .comp-wrapper {
-    width: calc(100% - 32px);
+    width: 100%;
   }
   .comp-foot-wrapper {
     width: calc(100% - 32px);

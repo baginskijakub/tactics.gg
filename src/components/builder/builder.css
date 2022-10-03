@@ -988,7 +988,6 @@ h6 {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 20px;
-  margin-bottom: 20px;
 }
 
 .builder-board-clear-button {

@@ -281,4 +281,10 @@ h6 {
   color: #898988;
   border: none;
 }
+
+@media screen and (max-width: 850px) {
+  .footer-wrapper p {
+    width: calc(100% - 32px);
+  }
+}
 /*# sourceMappingURL=footer.css.map */

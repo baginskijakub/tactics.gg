@@ -7,12 +7,10 @@ interface Props{
     name: string
     rank: string
     lp: number
-    avgPlace: number
-    winrate: number
     top4ratio: number
     played: number
 }
-export const LeaderRow:React.FC<Props> = ({ranking, icon, name, rank, lp, avgPlace, winrate, top4ratio, played}) => {
+export const LeaderRow:React.FC<Props> = ({ranking, icon, name, rank, lp, top4ratio, played}) => {
     return (
         <div className="leader-row-wrapper">
             <div className="leader-row-summoner">
@@ -22,8 +20,6 @@ export const LeaderRow:React.FC<Props> = ({ranking, icon, name, rank, lp, avgPla
             </div>
             <p className="body">{rank}</p>
             <p className="body">{lp}</p>
-            <p className="body">{avgPlace}</p>
-            <p className="body">{winrate}%</p>
             <p className="body">{top4ratio}%</p>
             <p className="body">{played}</p>
 

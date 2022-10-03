@@ -6,6 +6,7 @@ import { getItemsRanking } from '../model/Model'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import itemsData from '../components/builder/Items.json'
+import PageHead from './PageHead'
 import TableLoader from '../components/table/TableLoader'
 
 export const Augments:React.FC = () => {
@@ -15,6 +16,12 @@ export const Augments:React.FC = () => {
     const[items, setItems] = useState<any[]>([])
     const[type, setType] = useState("Normal")
     const [searched, setSearched] = useState("");
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    //change navbar on breakpoint
+    React.useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
 
 
 
@@ -140,6 +147,10 @@ export const Augments:React.FC = () => {
     
     return (
         <div className="augments-wrapper">
+            <PageHead 
+                title="TFT Items Tier List"
+                text="Data-driven Teamfight Tactics items tier list"
+                />
             <div className="sort-navigation-container">
                 <div className="sort-dropdown-container">
                     <Dropdown 
@@ -155,7 +166,7 @@ export const Augments:React.FC = () => {
                         onChange={handleType}
                         />
                 </div>
-                <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>
+                {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
             </div>
             <div className="augments-container">
                 <div className="augments-titles">

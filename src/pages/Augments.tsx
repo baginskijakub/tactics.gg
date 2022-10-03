@@ -6,12 +6,12 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getAugmentsRanking } from '../model/Model'
 import './pages.css'
 import TableLoader from '../components/table/TableLoader'
+import PageHead from './PageHead'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
     const[toRender, setToRender] = useState(0);
     const[augments, setAugments] = useState<Augment[]>([])
-
     
     useEffect(() => {
         getAugmentsRanking().then((res) => {
@@ -93,6 +93,10 @@ export const Augments:React.FC = () => {
     
     return (
         <div className="augments-wrapper">
+            <PageHead 
+                title="TFT Augments Tier List"
+                text="Data-driven Teamfight Tactics Hextech Augments tier list"
+                />
             <Dropdown 
                 name="Sort"
                 values={["Average Placement", "Winrate", "Playrate"]}

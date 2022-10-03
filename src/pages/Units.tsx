@@ -6,6 +6,7 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getUnitsRanking } from '../model/Model'
 import unitsData from '../components/builder/units-data.json'
 import { DefaultSearch } from "../components/search/DefaultSearch";
+import PageHead from './PageHead'
 import TableLoader from '../components/table/TableLoader'
 
 export const Units:React.FC = () => {
@@ -14,6 +15,12 @@ export const Units:React.FC = () => {
     const[units, setUnits] = useState<any[]>([])
     const[allUnits, setAllUnits] = useState<any[]>([])
     const [searched, setSearched] = useState("");
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    //change navbar on breakpoint
+    React.useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
 
     function handleSort(value: string){
         setSort(value)
@@ -135,6 +142,10 @@ export const Units:React.FC = () => {
     let isMobile  = window.innerWidth > 1050
     return (
         <div className="augments-wrapper">
+            <PageHead 
+                title="TFT Units Tier List"
+                text="Data-driven Teamfight Tactics units tier list"
+                />
             <div className="sort-navigation-container">
                     <Dropdown 
                         name="Sort"
@@ -142,7 +153,7 @@ export const Units:React.FC = () => {
                         defaultValue="Average Placement"
                         onChange={handleSort}
                         />
-                <DefaultSearch initialValue="Search unit or trait" inputChange={handleSearch}/>
+               {width > 500 && <DefaultSearch initialValue="Search unit or trait" inputChange={handleSearch}/>}
             </div>
             <div className="augments-container">
                 <div className="units-titles">

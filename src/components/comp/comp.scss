@@ -35,7 +35,7 @@
 }
 
 .comp-wrapper {
-  width: 1298px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: $background05;
@@ -408,7 +408,7 @@
 
 @media screen and (max-width: 1350px) {
   .comp-wrapper {
-    width: 1000px;
+    width: 100%;
   }
   .comp-foot-wrapper {
     width: 800px;
@@ -547,7 +547,7 @@
 
 @media screen and (max-width: 1050px) {
   .comp-wrapper {
-    width: 800px;
+    width: 100%;
   }
   .comp-foot-wrapper {
     width: 600px;
@@ -721,7 +721,7 @@
 }
 @media screen and (max-width: 850px) {
   .comp-wrapper {
-    width: calc(100% - 32px);
+    width: 100%;
   }
   .comp-foot-wrapper {
     width: calc(100% - 32px);

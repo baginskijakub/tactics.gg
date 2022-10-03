@@ -30,6 +30,7 @@ export const NavbarMobile:React.FC = () => {
         }
         })
         setSelected(arr)
+        setState("closed")
     }
 
     return (

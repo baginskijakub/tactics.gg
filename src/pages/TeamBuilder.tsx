@@ -9,6 +9,7 @@ import Items from "../components/builder/Items";
 import unitsData from '../components/builder/units-data.json'
 import traitsData from '../components/builder/Tratis.json'
 import Analysis from "../components/builder/Analysis";
+import PageHead from './PageHead'
 import { postComp } from "../model/Model";
 
 export const TeamBuilder: React.FC = () => {
@@ -289,7 +290,11 @@ useEffect(() => {
 }, [board, traits, unitsSupport]);
 
   return (
-    <div>
+    <div className="builder-wrapper-outer">
+        <PageHead 
+          title="TFT Team Builder and Analyzer"
+          text="Create your own composition and analyze its performance."
+          />
         <Analysis 
           analysis={analysis}
           />

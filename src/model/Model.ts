@@ -26,4 +26,8 @@ function getComps(){
   return axios.get('https://tactixgg-server.herokuapp.com/preparedComps')
 }
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps };
+function getLeaderboard(region: string){
+  return axios.get(`https://tactixgg-server.herokuapp.com/leaderboard/${region}`)
+}
+
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard };

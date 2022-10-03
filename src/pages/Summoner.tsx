@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./pages.css";
 import { searchSummoner } from "../model/Model";
 import { useKey } from "../hooks/key";
-
+import PageHead from './PageHead'
 import SummonerProfile from "../components/summoner/SummonerProfile";
 import SummonerStats from "../components/summoner/SummonerStats";
 import SummonerLast20 from "../components/summoner/SummonerLast20";
@@ -176,8 +176,11 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
 
   return (
     <div className="summoner-wrapper">
+      <PageHead 
+          title="TFT Summoner Search"
+          text="Search a player and analyze his performance."
+          />
       <SummonerSearch handleInput={handleSummoner} />
-
       {summonerName !== "" ? (
         <div className="summoner-wrapper">
           <div className="summoner-container-horizontal">
