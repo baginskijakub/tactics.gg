@@ -18,12 +18,9 @@ export const Comps = () => {
 
     function handleSort(value:string){
         setSort(value)
-        console.log("sort")
         let tempComps: CompClass[] = comps
         if(value === "Average Placement"){
-                console.log("avg")
              for(var i = 0; i < tempComps.length; i++){
-                console.log(tempComps[i])
                 // Last i elements are already in place 
                 for(var j = 0; j < ( tempComps.length - i -1 ); j++){
                     
@@ -39,7 +36,6 @@ export const Comps = () => {
             }
         }}
         else if(value === "Winrate"){
-            console.log("wr")
             for(var i = 0; i < tempComps.length; i++){
                     
                 // Last i elements are already in place 
@@ -47,8 +43,7 @@ export const Comps = () => {
                     
                     // Checking if the item at present iteration
                     // is greater than the next iteration
-                    if(parseFloat(tempComps[j].winrate.toString()) > parseFloat(tempComps[j+1].winrate.toString())){
-                        console.log(typeof tempComps[j].winrate)
+                    if(parseFloat(tempComps[j].winrate.toString()) < parseFloat(tempComps[j+1].winrate.toString())){
                     // If the condition is true then swap them
                     var temp = tempComps[j]
                     tempComps[j] = tempComps[j + 1]
@@ -58,7 +53,6 @@ export const Comps = () => {
             }
         }
         else if(value === "Playrate"){
-            console.log("pr")
             for(var i = 0; i < tempComps.length; i++){
                 
                 // Last i elements are already in place 
@@ -110,7 +104,6 @@ export const Comps = () => {
 
     useEffect(() => {
         getComps().then(res => {
-            console.log(res)
             let tempComps: CompClass[] = []
             res.data.forEach((comp: any) => {
                 tempComps.push(comp)

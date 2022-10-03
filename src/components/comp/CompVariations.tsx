@@ -38,6 +38,7 @@ interface Props {
 export const CompVariations: React.FC<Props> = ({ variations }) => {
   return (
     <div className="comp-variations-wrapper">
+      <div className="comp-variations-container">
       {variations.map((element) => {
         return (
           <CompVariationRow
@@ -48,6 +49,7 @@ export const CompVariations: React.FC<Props> = ({ variations }) => {
           />
         );
       })}
+      </div>
     </div>
   );
 };

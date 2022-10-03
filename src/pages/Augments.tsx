@@ -16,7 +16,6 @@ export const Augments:React.FC = () => {
     useEffect(() => {
         getAugmentsRanking().then((res) => {
             let tempAugments: Augment[] = []
-            console.log(res)
             res.data.forEach((augment: any) => {
                 tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, augment.id, augment.avg_place, augment.winrate, augment.frequency))
             })
@@ -28,10 +27,8 @@ export const Augments:React.FC = () => {
 
     function handleSort(value: string){
         setSort(value)
-        console.log("sort")
         let tempAugments = augments
         if(value === "Average Placement"){
-                    console.log("avg")
              for(var i = 0; i < tempAugments.length; i++){
                 console.log(tempAugments[i])
                 // Last i elements are already in place 
@@ -50,7 +47,6 @@ export const Augments:React.FC = () => {
         }
         }
         else if(value === "Winrate"){
-            console.log("wr")
             for(var i = 0; i < tempAugments.length; i++){
                     
                 // Last i elements are already in place 
@@ -58,8 +54,7 @@ export const Augments:React.FC = () => {
                     
                     // Checking if the item at present iteration
                     // is greater than the next iteration
-                    if(parseFloat(tempAugments[j].winrate.toString()) > parseFloat(tempAugments[j+1].winrate.toString())){
-                        console.log(typeof tempAugments[j].winrate)
+                    if(parseFloat(tempAugments[j].winrate.toString()) < parseFloat(tempAugments[j+1].winrate.toString())){
                     // If the condition is true then swap them
                     var temp = tempAugments[j]
                     tempAugments[j] = tempAugments[j + 1]
@@ -69,7 +64,6 @@ export const Augments:React.FC = () => {
             }
         }
         else if(value === "Playrate"){
-            console.log("pr")
             for(var i = 0; i < tempAugments.length; i++){
                 
                 // Last i elements are already in place 
@@ -77,7 +71,7 @@ export const Augments:React.FC = () => {
                     
                     // Checking if the item at present iteration
                     // is greater than the next iteration
-                    if(tempAugments[j].frequency > tempAugments[j+1].frequency){
+                    if(tempAugments[j].frequency < tempAugments[j+1].frequency){
                         
                     // If the condition is true then swap them
                     var temp = tempAugments[j]

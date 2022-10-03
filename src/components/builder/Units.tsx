@@ -32,15 +32,22 @@ export const Units: React.FC<Props> = ({onChange}) => {
   function sortChange(value: string) {
     setSort(value);
     let tempArr = units;
-    for (var i = 0; i < tempArr.length; i++) {
-      for (var j = 0; j < tempArr.length - i - 1; j++) {
-        if (tempArr[j].props.cost > tempArr[j + 1].props.cost) {
-          var temp = tempArr[j];
-          tempArr[j] = tempArr[j + 1];
-          tempArr[j + 1] = temp;
+    if(value === "Cost"){
+      for (var i = 0; i < tempArr.length; i++) {
+        for (var j = 0; j < tempArr.length - i - 1; j++) {
+          if (tempArr[j].props.cost > tempArr[j + 1].props.cost) {
+            var temp = tempArr[j];
+            tempArr[j] = tempArr[j + 1];
+            tempArr[j + 1] = temp;
+          }
         }
       }
     }
+    else{
+      tempArr.sort((a, b) => a.name.localeCompare(b.name))
+    }
+
+
     setUnits(tempArr);
   }
   
@@ -67,8 +74,9 @@ export const Units: React.FC<Props> = ({onChange}) => {
 
   useEffect(() => {
     onChange();
+    sortChange("Cost")
   }, [units])
-
+  
   return (
     <div className="builder-units-wrapper">
       <div className="builder-units-navigation">

@@ -471,6 +471,22 @@
       "icon": "ASSETS/UX/TraitIcons/Trait_Icon_7_Trainers.tex",
       "name": "Trainer"
     },
+                    {
+                    "apiName": "Set7_Monolith",
+                    "desc": "(@MinUnits@) Terra empowers 3 hexes on the battlefield. Combat start: units standing in the hex at the start of combat gain @DamageReductionPercent@% damage reduction.",
+                    "effects": [
+                        {
+                            "maxUnits": 25000,
+                            "minUnits": 3,
+                            "style": 3,
+                            "variables": {
+                                "{5064373e}": 18.0
+                            }
+                        }
+                    ],
+                    "icon": "ASSETS/UX/TraitIcons/Trait_Icon_Monolith.TFT_Set7_Stage2.tex",
+                    "name": "Monolith"
+                },
     {
       "apiName": "Set7_Mystic",
       "desc": "Your team gains Magic Resist. <br><br><expandRow>(@MinUnits@) @MagicResist@ Magic Resist</expandRow>",

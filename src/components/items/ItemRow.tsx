@@ -29,15 +29,6 @@ export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playra
     colors.push("body red");
   }
 
-  //setting color of playrate
-  if (playrate < 0.5) {
-    colors.push("body green");
-  } else if (playrate < 0.8) {
-    colors.push("body yellow");
-  } else {
-    colors.push("body red");
-  }
-
     return (
         <div className="augment-row-wrapper">
             <div className="augment-row-inner">
@@ -46,7 +37,7 @@ export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playra
             </div>
             <p className={colors[0]}>{avgPlacement}</p>
             <p className={colors[1]}>{winrate}%</p>
-            <p className={colors[2]}>{playrate}%</p>
+            <p className="body">{playrate}%</p>
         </div>
     )
 }

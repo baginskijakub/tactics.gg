@@ -29,11 +29,11 @@ export const AugmentRow:React.FC<Props> = ({augment}) => {
 
   //setting color of playrate
   if (augment.frequency < 0.5) {
-    colors.push("body green");
+    colors.push("body red");
   } else if (augment.frequency < 0.8) {
     colors.push("body yellow");
   } else {
-    colors.push("body red");
+    colors.push("body green");
   }
 
     return (

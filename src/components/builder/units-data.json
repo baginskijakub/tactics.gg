@@ -51,7 +51,7 @@
   { "id": "TFT7_Bard", "name": "Bard", "cost": 5, "traits": [{"name": "Bard", "value": 1}, {"name": "Guild", "value": 1}, {"name": "Mystic", "value": 1}]  },
   { "id": "TFT7_DragonEarth", "name": "Terra", "cost": 8, "traits": [{"name": "Monolith", "value": 3}, {"name": "Dragon", "value": 1}]  },
   { "id": "TFT7_AoShin", "name": "Ao Shin", "cost": 8, "traits": [{"name": "Tempest", "value": 3}, {"name": "Dragon", "value": 1}]   },
-  { "id": "TFT7_Zyra", "name": "Zyrra", "cost": 2, "traits": [{"name": "Whispers", "value": 1}, {"name": "Evoker", "value": 1}]   },
+  { "id": "TFT7_Zyra", "name": "Zyra", "cost": 2, "traits": [{"name": "Whispers", "value": 1}, {"name": "Evoker", "value": 1}]   },
   { "id": "TFT7_NomsyEvoker", "name": "Nomsy", "cost": 6, "traits": [{"name": "Prodigy", "value": 3}, {"name": "Evoker", "value": 1}, {"name": "Dragon", "value": 1}] },
   { "id": "TFT7b_Lulu", "name": "Lulu", "cost": 3, "traits": [{"name": "Evoker", "value": 1}] },
   { "id": "TFT7_Seraphine", "name": "Seraphine", "cost": 3, "traits": [{"name": "Lagoon", "value": 1}, {"name": "Evoker", "value": 1}, {"name": "Mystic", "value": 1}] },

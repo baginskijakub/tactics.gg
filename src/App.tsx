@@ -31,7 +31,6 @@ function App() {
   function handleSummonerSearch(name: string, region: string){
     setRegion(region);
     setSummonerName(name)
-    console.log("app")
     navigate("/summoner")
   }
   

@@ -19,7 +19,6 @@ export const NavbarLinks: React.FC = () => {
   }
 
   useEffect(() => {
-    console.log(selected)
   },[selected])
 
 

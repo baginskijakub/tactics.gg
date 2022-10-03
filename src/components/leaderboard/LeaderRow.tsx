@@ -23,8 +23,8 @@ export const LeaderRow:React.FC<Props> = ({ranking, icon, name, rank, lp, avgPla
             <p className="body">{rank}</p>
             <p className="body">{lp}</p>
             <p className="body">{avgPlace}</p>
-            <p className="body">{winrate}</p>
-            <p className="body">{top4ratio}</p>
+            <p className="body">{winrate}%</p>
+            <p className="body">{top4ratio}%</p>
             <p className="body">{played}</p>
 
         </div>

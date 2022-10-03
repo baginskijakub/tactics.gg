@@ -17,12 +17,12 @@ export const CompFoot: React.FC<Props> = ({
   var colors: string[] = [];
 
   //setting color of avg placement
-  if (avgPlacement > 3.7) {
-    colors.push("body green");
-  } else if (avgPlacement > 4.6) {
-    colors.push("body yellow");
+  if (avgPlacement < 4.2) {
+    colors.push("body-small green");
+  } else if (avgPlacement < 4.7) {
+    colors.push("body-small yellow");
   } else {
-    colors.push("body red");
+    colors.push("body-small red");
   }
 
   //setting color of top 4 ratio

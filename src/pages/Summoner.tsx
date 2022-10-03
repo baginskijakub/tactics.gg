@@ -38,7 +38,6 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
   function handleSummoner(name: string, region: string) {
     setPlaceholder("loading");
     searchSummoner(region, name).then((res: any) => {
-      console.log(res);
       setProfile(
         new Profile(
           res.data.profile.name,
@@ -109,7 +108,6 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
 
           let players = match.players.map((player: any) => {
             let playerAugments = player.augments.map((augment: any) => {
-              console.log(augment);
               return `https://ittledul.sirv.com/Images/augments/${augment}.png`;
             });
             let playerTraits = player.traits.map((trait: any) => {
