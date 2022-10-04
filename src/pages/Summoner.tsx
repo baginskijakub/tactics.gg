@@ -224,17 +224,20 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
       ) : (
         <SummonerPlaceholder state={placeholder} />
       )}
-      {matchesState !== undefined && (
-        <SummonerMatch
-          placement={matchesState[0].placement}
-          queueType={matchesState[0].queueType}
-          timeAgo={matchesState[0].timeAgo}
-          augments={matchesState[0].augments}
-          units={matchesState[0].units}
-          traits={matchesState[0].traits}
-          companion={matchesState[0].companion}
-        />
-      )}
+      {matchesState !== undefined && matchesState.map(match => {
+          return(
+            <SummonerMatch
+              placement={match.placement}
+              queueType={match.queueType}
+              timeAgo={match.timeAgo}
+              augments={match.augments}
+              units={match.units}
+              traits={match.traits}
+              companion={match.companion}
+            />
+          )
+      })
+      }
     </div>
   );
 };
