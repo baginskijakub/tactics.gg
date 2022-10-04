@@ -24,13 +24,14 @@
     "heroku": "^7.63.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.8.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -54,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.5",
     "prettier": "2.7.1"
   }
 }
