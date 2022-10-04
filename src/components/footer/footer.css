@@ -282,6 +282,17 @@ h6 {
   border: none;
 }
 
+.footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 16px;
+}
+
 @media screen and (max-width: 850px) {
   .footer-wrapper p {
     width: calc(100% - 32px);

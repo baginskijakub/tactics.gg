@@ -13,6 +13,7 @@ import Units from "./pages/Units";
 import Items from "./pages/Items"
 import Comps from "./pages/Comps"
 import Leaderboard from './pages/Leaderboard'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 import Footer from './components/footer/Footer'
 
@@ -45,6 +46,7 @@ function App() {
           <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
           <Route path='/teambuilder' element={<TeamBuilder />}/>
           <Route path='/leaderboard' element={<Leaderboard />}/>
+          <Route path='/privacy' element={<PrivacyPolicy />}/>
         </Routes>
         <Footer />
     </div>

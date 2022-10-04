@@ -170,6 +170,24 @@
   gap: 20px;
 }
 
+.privacy-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 1000px;
+}
+
+.privacy-wrapper p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+}
+
+.privacy-wrapper h4 {
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 1350px) {
   .summoner-wrapper {
     width: 1000px;
