@@ -40,7 +40,7 @@ export const AugmentRow:React.FC<Props> = ({augment}) => {
         <div className="augment-row-wrapper">
             <div className="augment-row-inner">
                 <img src={augment.src} alt={augment.name}/>
-                {/* <h4>{augment.name}</h4> */}
+                 <h4>{augment.name}</h4>
             </div>
             <p className={colors[0]}>{augment.avgPlacement}</p>
             <p className={colors[1]}>{augment.winrate}%</p>

@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import star from "../../images/icons/star.svg";
 import starHover from "../../images/icons/star-hover.svg";
+import remove from "../../images/icons/cancel.png"
 import "../unit/unit.css";
 import "./builder.css";
 
@@ -61,6 +62,7 @@ interface Props {
   row: number;
   column: number;
   changeStarLevel?: (level: 0 | 1 | 2 | 3) => void;
+  removeFromBoard?: (row: number, column: number) => void
 }
 
 export const HexUnit: React.FC<Props> = ({
@@ -74,6 +76,7 @@ export const HexUnit: React.FC<Props> = ({
   row,
   column,
   changeStarLevel,
+  removeFromBoard
 }) => {
   const [starsState, setStars] = useState(level);
 
@@ -233,6 +236,11 @@ export const HexUnit: React.FC<Props> = ({
                 </DefaultTooltip>
               ))}
           </div>
+          {removeFromBoard !== undefined &&
+          <div className="unit-hex-remove-button" onClick={() => removeFromBoard(row, column)}>
+                <img src={remove} alt="remove"></img>
+          </div>}
+          
         </div>
       );
     } else {

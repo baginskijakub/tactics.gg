@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import "./pages.css";
 import Board from "../components/builder/Board";
 import Units from "../components/builder/Units";
-import { Item, UnitHex, BuilderTrait, Analysis as AnalysisClass, AnalysisItem, AnalysisUnit, Augment } from "../classes";
+import { Item, UnitHex, BuilderTrait, Analysis as AnalysisClass, AnalysisItem, AnalysisUnit, Augment, Unit } from "../classes";
 import Traits from "../components/builder/Traits";
 import Analyze from "../components/builder/Analyze";
 import Items from "../components/builder/Items";
@@ -83,6 +83,21 @@ export const TeamBuilder: React.FC = () => {
 
   function clearBoard(){
     updateBoard(initialState)
+  }
+
+  function removeFromBoard(row: number, column: number){
+    let tempBoard: UnitHex[][] = initialState;
+    board.forEach((boardRow, rowNo) => {
+      boardRow.forEach((boardColumn, columnNo) => {
+        if(row === rowNo && column === columnNo){
+          tempBoard[row][column] = placeholder;
+        }
+        else{
+          tempBoard[rowNo][columnNo] = board[rowNo][columnNo];
+        }
+      })
+    })
+    updateBoard(tempBoard);
   }
 
   function changeStarLevel(row: number, column: number, level: 0 | 1 | 2 | 3) {
@@ -293,7 +308,7 @@ useEffect(() => {
     <div className="builder-wrapper-outer">
         <PageHead 
           title="TFT Team Builder and Analyzer"
-          text="Create your own composition and analyze its performance."
+          text="Create your own composition and analyze its performance. Drag and drop units to create your own comp!"
           />
         <Analysis 
           analysis={analysis}
@@ -303,7 +318,7 @@ useEffect(() => {
           <Traits traits={traits}/>
         </div>
         <div className="builder-vertical-container-primary">
-          <Board matrix={board} changeLevel={changeStarLevel} clearBoard={clearBoard}/>
+          <Board matrix={board} changeLevel={changeStarLevel} removeFromBoard={removeFromBoard} clearBoard={clearBoard}/>
           <Units onChange={onUnitsChange}/>
         </div>
         <div className="builder-vertical-container-secondary">

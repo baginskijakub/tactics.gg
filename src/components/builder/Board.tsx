@@ -8,9 +8,10 @@ interface Props {
   matrix: UnitHex[][];
   changeLevel: (row: number, column: number, level: 0 | 1 | 2 | 3) => void;
   clearBoard: () => void;
+  removeFromBoard: (row:number, column:number) => void
 }
 
-export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard }) => {
+export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, removeFromBoard }) => {
   return (
     <div className="builder-board-wrapper">
       <div className="builder-board-clear-button" onClick={() => clearBoard()}>
@@ -36,6 +37,7 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard }) => {
                   row={i}
                   column={j}
                   changeStarLevel={changeStarLevel}
+                  removeFromBoard={removeFromBoard}
                 />
               );
             })}

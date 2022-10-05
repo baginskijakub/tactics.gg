@@ -4,22 +4,39 @@ import { Augment } from '../classes'
 import Dropdown from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getAugmentsRanking } from '../model/Model'
+import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import TableLoader from '../components/table/TableLoader'
 import PageHead from './PageHead'
+import data from '../components/augments/augments-data.json'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
     const[toRender, setToRender] = useState(0);
+    const [searched, setSearched] = useState("");
     const[augments, setAugments] = useState<Augment[]>([])
+    const[allAugments, setAllAugments] = useState<Augment[]>([])
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    //change navbar on breakpoint
+    React.useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
     
     useEffect(() => {
         getAugmentsRanking().then((res) => {
             let tempAugments: Augment[] = []
             res.data.forEach((augment: any) => {
-                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, augment.id, augment.avg_place, augment.winrate, augment.frequency))
+                let name = augment.id
+                data.items.forEach(augmentData => {
+                    if(augmentData.apiName === augment.id){
+                        name = augmentData.name
+                    }
+                })
+                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, name, augment.avg_place, augment.winrate, augment.frequency))
             })
             setAugments(tempAugments)
+            setAllAugments(tempAugments)
             setToRender(20)
         })
 
@@ -85,6 +102,26 @@ export const Augments:React.FC = () => {
         setAugments(tempAugments)
     }
 
+        function handleSearch(value:string){
+
+            let BreakException = {};
+
+            setSearched(value);
+            let arr: Augment[] = [];
+            allAugments.forEach((augment) => {
+                try{
+                        if(augment.name.toLowerCase().includes(value.toLowerCase())){
+                            arr.push(augment);
+                            throw BreakException;
+                        }
+                }
+                catch (e){
+                    if (e !== BreakException) throw e;
+                }
+            })
+        setAugments(arr)     
+        }
+
     function handleRenderMore(){
         let temp  = toRender;
         setToRender(temp + 20);
@@ -97,12 +134,15 @@ export const Augments:React.FC = () => {
                 title="TFT Augments Tier List"
                 text="Data-driven Teamfight Tactics Hextech Augments tier list"
                 />
-            <Dropdown 
-                name="Sort"
-                values={["Average Placement", "Winrate", "Playrate"]}
-                defaultValue="Average Placement"
-                onChange={handleSort}
-                />
+            <div className="sort-navigation-container">
+                <Dropdown 
+                    name="Sort"
+                    values={["Average Placement", "Winrate", "Playrate"]}
+                    defaultValue="Average Placement"
+                    onChange={handleSort}
+                    />
+                {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
+            </div>
             <div className="augments-container">
                 <div className="augments-titles">
                     <h4>Augments</h4>

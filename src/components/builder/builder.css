@@ -1079,4 +1079,38 @@ h6 {
           align-items: center;
   height: 200px;
 }
+
+.unit-hex-remove-button {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2px;
+  position: absolute;
+  right: -8px;
+  top: 14px;
+  background-color: #b83d3d;
+  z-index: 10;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.unit-hex-container-medium:hover .unit-hex-remove-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.unit-hex-remove-button:hover {
+  opacity: 0.7;
+}
+
+.unit-hex-remove-button img {
+  height: 14px;
+  width: 14px;
+}
 /*# sourceMappingURL=builder.css.map */
