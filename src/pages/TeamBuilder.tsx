@@ -48,8 +48,6 @@ export const TeamBuilder: React.FC = () => {
       )
     })
     postComp(arr).then((res:any) => {
-      console.log(res)
-      console.log(res.data.info)
       console.log(res.data.error)
       if(res.data === ""){
         setAnalysis("Wait")
