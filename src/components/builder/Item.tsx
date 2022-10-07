@@ -43,6 +43,8 @@ export const Item: React.FC<Props> = ({ id, name }) => {
         id={itemObj.changeToJSON()}
         alt="item"
         draggable={true}
+        loading="lazy"
+        title="Item"
       />
     </DefaultTooltip>
   );

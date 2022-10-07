@@ -48,7 +48,7 @@ export const UnitRow:React.FC<Props> = ({name, id, avgPlacement, winrate, playra
     return (
         <div className="unit-row-wrapper">
             <div className="unit-row-unit">
-                <img src={`https://ittledul.sirv.com/Images/units/${id}.png`}/>
+                <img src={`https://ittledul.sirv.com/Images/units/${id}.png`} alt={name} loading="lazy" title="Unit"/>
                 <h4>{name}</h4>
             </div>
             {isMobile && <div className="unit-row-traits">

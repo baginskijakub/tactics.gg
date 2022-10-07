@@ -127,6 +127,7 @@ export const Comps = () => {
             <PageHead 
                 title="TFT Meta Team Comps"
                 text="Teamfight Tactics data-driven composition tier list based on current meta"
+                canonical="/comps"
                 />
             <div className="sort-navigation-container">
                 <Dropdown 

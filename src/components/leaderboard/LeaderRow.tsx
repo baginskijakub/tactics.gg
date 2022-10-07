@@ -15,7 +15,7 @@ export const LeaderRow:React.FC<Props> = ({ranking, icon, name, rank, lp, top4ra
         <div className="leader-row-wrapper">
             <div className="leader-row-summoner">
                 <h5>{ranking}</h5>
-                <img src={`https://raw.communitydragon.org/latest/game/assets/ux/summonericons/profileicon${icon}.png`}/>
+                <img src={`https://raw.communitydragon.org/latest/game/assets/ux/summonericons/profileicon${icon}.png`} alt={name} loading="lazy" title="Summoner name"/>
                 <h4>{name}</h4>
             </div>
             <p className="body">{rank}</p>

@@ -56,7 +56,7 @@ export const Trait: React.FC<Props> = ({
           className="trait-hex-small"
           style={{ backgroundImage: `url(${background})` }}
         >
-          <img className="trait-small-icon" src={url} alt="trait"></img>
+          <img className="trait-small-icon" src={url} alt={name} loading="lazy" title="Trait"></img>
         </div>
         {hasValue && (
           <div
@@ -76,7 +76,7 @@ export const Trait: React.FC<Props> = ({
           className="trait-hex-big"
           style={{ backgroundImage: `url(${background})` }}
         >
-          <img className="trait-big-icon" src={url} alt="trait"></img>
+          <img className="trait-big-icon" src={url} alt={name} loading="lazy" title="Trait"></img>
         </div>
         {hasValue && (
           <div

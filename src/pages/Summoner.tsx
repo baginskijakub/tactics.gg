@@ -179,6 +179,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
       <PageHead 
           title="TFT Summoner Search"
           text="Search a player and analyze his performance."
+          canonical="/summoner"
           />
       <SummonerSearch handleInput={handleSummoner} />
       {summonerName !== "" ? (

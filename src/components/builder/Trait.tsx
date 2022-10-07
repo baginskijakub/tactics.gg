@@ -63,6 +63,9 @@ export const Trait: React.FC<Props> = ({
         <div className="hex" style={{ backgroundColor: `${backgroundColor}` }}>
           <img
             src={`https://ittledul.sirv.com/Images/traits/${name.toLowerCase()}.png`}
+            alt={name}
+            title="Trait"
+            loading="lazy"
           ></img>
         </div>
         <div

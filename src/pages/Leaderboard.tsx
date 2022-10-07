@@ -72,6 +72,7 @@ export const Leaderboard:React.FC = () => {
             <PageHead 
                 title="TFT Leaderboards"
                 text="The best Teamfight Tactics players by region"
+                canonical="/leaderboard"
                 />
             <Dropdown 
                 name="Region"

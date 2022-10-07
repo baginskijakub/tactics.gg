@@ -145,6 +145,7 @@ export const Units:React.FC = () => {
             <PageHead 
                 title="TFT Units Tier List"
                 text="Data-driven Teamfight Tactics units tier list"
+                canonical="/units"
                 />
             <div className="sort-navigation-container">
                     <Dropdown 

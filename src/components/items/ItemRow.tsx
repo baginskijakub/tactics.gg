@@ -32,7 +32,7 @@ export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playra
     return (
         <div className="augment-row-wrapper">
             <div className="augment-row-inner">
-                <img className="item-row-image" src={`https://ittledul.sirv.com/Images/items/${id}.png`} alt={name}/>
+                <img className="item-row-image" src={`https://ittledul.sirv.com/Images/items/${id}.png`} alt={name} loading="lazy" title="Item"/>
                 <p className="body">{name}</p>
             </div>
             <p className={colors[0]}>{avgPlacement}</p>

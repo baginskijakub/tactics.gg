@@ -133,6 +133,7 @@ export const Augments:React.FC = () => {
             <PageHead 
                 title="TFT Augments Tier List"
                 text="Data-driven Teamfight Tactics Hextech Augments tier list"
+                canonical="/augments"
                 />
             <div className="sort-navigation-container">
                 <Dropdown 

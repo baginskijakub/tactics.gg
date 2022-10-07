@@ -118,7 +118,7 @@ export const Unit: React.FC<Props> = ({
         <div className="unit-container draggable" draggable={true} id={transferUnit.changeToJSON()}>
           <div className="star-container-small">
             {stars.map(() => {
-              return <img src={star} alt="star" />;
+              return <img src={star} alt="star" loading="lazy" title="start"/>;
             })}
           </div>
           <img
@@ -127,6 +127,8 @@ export const Unit: React.FC<Props> = ({
             src={url}
             alt={name}
             id={transferUnit.changeToJSON()}
+            loading="lazy"
+            title="Unit"
           />
           <div className="item-container-small">
             {items !== null &&

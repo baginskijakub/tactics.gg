@@ -38,7 +38,7 @@ export const CompAugmentsRow: React.FC<Props> = ({
   return (
     <div className="augments-row-container">
       <div className="augment-name-container">
-        <img src={src} alt="Augment"></img>
+        <img src={src} alt="Augment" loading="lazy" title="Augment"></img>
         {/* <h4>{name}</h4> */}
       </div>
       <p className={`body augemnts-row-cell ${colors[0]}`}>{avgPlacement}</p>

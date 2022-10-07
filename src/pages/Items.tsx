@@ -150,6 +150,7 @@ export const Augments:React.FC = () => {
             <PageHead 
                 title="TFT Items Tier List"
                 text="Data-driven Teamfight Tactics items tier list"
+                canonical="/items"
                 />
             <div className="sort-navigation-container">
                 <div className="sort-dropdown-container">

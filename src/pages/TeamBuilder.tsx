@@ -307,6 +307,7 @@ useEffect(() => {
         <PageHead 
           title="TFT Team Builder and Analyzer"
           text="Create your own composition and analyze its performance. Drag and drop units to create your own comp!"
+          canonical="/teambuilder"
           />
         <Analysis 
           analysis={analysis}
