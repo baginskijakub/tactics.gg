@@ -154,13 +154,38 @@ class Augment {
     name: string,
     avgPlacement: number,
     winrate: number,
-    frequency: number
+    frequency: number,
   ) {
     this.src = src;
     this.name = name;
     this.avgPlacement = avgPlacement;
     this.winrate = winrate;
     this.frequency = frequency;
+  }
+}
+
+class AugmentRow {
+  src: string;
+  name: string;
+  avgPlacement: number;
+  winrate: number;
+  frequency: number;
+  tier: number
+
+  constructor(
+    src: string,
+    name: string,
+    avgPlacement: number,
+    winrate: number,
+    frequency: number,
+    tier: number
+  ) {
+    this.src = src;
+    this.name = name;
+    this.avgPlacement = avgPlacement;
+    this.winrate = winrate;
+    this.frequency = frequency;
+    this.tier = tier
   }
 }
 
@@ -427,5 +452,6 @@ export {
   AnalysisItem,
   Analysis,
   AnalysisAugment,
-  Comp
+  Comp,
+  AugmentRow
 };

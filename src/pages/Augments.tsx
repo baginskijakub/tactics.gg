@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import AugmentRow from '../components/augments/AugmentRow'
-import { Augment } from '../classes'
+import { AugmentRow as Augment } from '../classes'
 import Dropdown from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getAugmentsRanking } from '../model/Model'
@@ -12,6 +12,7 @@ import data from '../components/augments/augments-data.json'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
+    const[tier, setTier] = useState("All")
     const[toRender, setToRender] = useState(0);
     const [searched, setSearched] = useState("");
     const[augments, setAugments] = useState<Augment[]>([])
@@ -28,12 +29,14 @@ export const Augments:React.FC = () => {
             let tempAugments: Augment[] = []
             res.data.forEach((augment: any) => {
                 let name = augment.id
+                let tier = 0
                 data.items.forEach(augmentData => {
                     if(augmentData.apiName === augment.id){
                         name = augmentData.name
+                        tier = augmentData.tier
                     }
                 })
-                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, name, augment.avg_place, augment.winrate, augment.frequency))
+                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, name, augment.avg_place, augment.winrate, augment.frequency, tier))
             })
             setAugments(tempAugments)
             setAllAugments(tempAugments)
@@ -108,7 +111,7 @@ export const Augments:React.FC = () => {
 
             setSearched(value);
             let arr: Augment[] = [];
-            allAugments.forEach((augment) => {
+            augments.forEach((augment) => {
                 try{
                         if(augment.name.toLowerCase().includes(value.toLowerCase())){
                             arr.push(augment);
@@ -127,6 +130,36 @@ export const Augments:React.FC = () => {
         setToRender(temp + 20);
     }
 
+    function handleTier(value: string){
+        setTier(value);
+        let tempArr: Augment[] = []
+        if(value === "All"){
+            tempArr = allAugments
+        }
+        else if(value === "Silver"){
+            allAugments.forEach(augment => {
+                if(augment.tier === 1){
+                    tempArr.push(augment)
+                }
+            })
+        }
+        else if(value === "Gold"){
+            allAugments.forEach(augment => {
+                if(augment.tier === 2){
+                    tempArr.push(augment)
+                }
+            })
+        }
+        else if(value === "Prismatic"){
+            allAugments.forEach(augment => {
+                if(augment.tier === 3){
+                    tempArr.push(augment)
+                }
+            })
+        }
+        setAugments(tempArr)
+    }
+
     
     return (
         <div className="augments-wrapper">
@@ -136,12 +169,20 @@ export const Augments:React.FC = () => {
                 canonical="/augments"
                 />
             <div className="sort-navigation-container">
+                <div className="sort-dropdown-container">
                 <Dropdown 
                     name="Sort"
                     values={["Average Placement", "Winrate", "Playrate"]}
                     defaultValue="Average Placement"
                     onChange={handleSort}
                     />
+                <Dropdown 
+                    name="Tier"
+                    values={["All", "Silver", "Gold", "Prismatic"]}
+                    defaultValue="All"
+                    onChange={handleTier}
+                    />
+                </div>
                 {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
             </div>
             <div className="augments-container">
