@@ -2,32 +2,32 @@ import axios from "axios";
 
 function searchSummoner(region: string, summoner: string) {
   return axios.get(
-    `http://46.101.212.232/summoner/${region}/${summoner}`
+    `https://server-tactixgg.com/summoner/${region}/${summoner}`
   );
 }
 
 function postComp(inputData: any){
-  return axios.post('http://46.101.212.232/comps', {"inputData": inputData})
+  return axios.post('https://server-tactixgg.com/comps', {"inputData": inputData})
 }
 
 function getAugmentsRanking(){
-  return axios.get('http://46.101.212.232/augments-ranking')
+  return axios.get('https://server-tactixgg.com/augments-ranking')
 }
 
 function getUnitsRanking(){
-  return axios.get('http://46.101.212.232/units-ranking')
+  return axios.get('https://server-tactixgg.com/units-ranking')
 }
 
 function getItemsRanking(){
-  return axios.get('http://46.101.212.232/items-ranking')
+  return axios.get('https://server-tactixgg.com/items-ranking')
 }
 
 function getComps(){
-  return axios.get('http://46.101.212.232/preparedComps')
+  return axios.get('https://server-tactixgg.com/preparedComps')
 }
 
 function getLeaderboard(region: string){
-  return axios.get(`http://46.101.212.232/leaderboard/${region}`)
+  return axios.get(`https://server-tactixgg.com/leaderboard/${region}`)
 }
 
 export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard };
