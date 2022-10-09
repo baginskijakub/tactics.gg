@@ -2,32 +2,32 @@ import axios from "axios";
 
 function searchSummoner(region: string, summoner: string) {
   return axios.get(
-    `https://tactixgg-server.herokuapp.com/summoner/${region}/${summoner}`
+    `http://46.101.212.232/summoner/${region}/${summoner}`
   );
 }
 
 function postComp(inputData: any){
-  return axios.post('https://tactixgg-server.herokuapp.com/comps', {"inputData": inputData})
+  return axios.post('http://46.101.212.232/comps', {"inputData": inputData})
 }
 
 function getAugmentsRanking(){
-  return axios.get('https://tactixgg-server.herokuapp.com/augments-ranking')
+  return axios.get('http://46.101.212.232/augments-ranking')
 }
 
 function getUnitsRanking(){
-  return axios.get('https://tactixgg-server.herokuapp.com/units-ranking')
+  return axios.get('http://46.101.212.232/units-ranking')
 }
 
 function getItemsRanking(){
-  return axios.get('https://tactixgg-server.herokuapp.com/items-ranking')
+  return axios.get('http://46.101.212.232/items-ranking')
 }
 
 function getComps(){
-  return axios.get('https://tactixgg-server.herokuapp.com/preparedComps')
+  return axios.get('http://46.101.212.232/preparedComps')
 }
 
 function getLeaderboard(region: string){
-  return axios.get(`https://tactixgg-server.herokuapp.com/leaderboard/${region}`)
+  return axios.get(`http://46.101.212.232/leaderboard/${region}`)
 }
 
 export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard };
