@@ -26,8 +26,23 @@ function getComps(){
   return axios.get('https://server-tactixgg.com/preparedComps')
 }
 
+function getAugmentsRankingByStage(stage: string){
+  if(stage == "2-1 (First)"){
+    return axios.get('https://server-tactixgg.com/first-augments-ranking')
+  }
+  else if(stage == "3-2 (Second)"){
+    return axios.get('https://server-tactixgg.com/second-augments-ranking')
+  }
+  else if(stage == "4-2 (Third)"){
+    return axios.get('https://server-tactixgg.com/third-augments-ranking')
+  }
+  else{
+    return getAugmentsRanking();
+  }
+}
+
 function getLeaderboard(region: string){
   return axios.get(`https://server-tactixgg.com/leaderboard/${region}`)
 }
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard };
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage };

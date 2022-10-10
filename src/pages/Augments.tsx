@@ -3,7 +3,7 @@ import AugmentRow from '../components/augments/AugmentRow'
 import { AugmentRow as Augment } from '../classes'
 import Dropdown from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
-import { getAugmentsRanking } from '../model/Model'
+import { getAugmentsRanking, getAugmentsRankingByStage } from '../model/Model'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import TableLoader from '../components/table/TableLoader'
@@ -13,6 +13,7 @@ import data from '../components/augments/augments-data.json'
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
     const[tier, setTier] = useState("All")
+    const[stage, setStage] = useState("All")
     const[toRender, setToRender] = useState(0);
     const [searched, setSearched] = useState("");
     const[augments, setAugments] = useState<Augment[]>([])
@@ -45,12 +46,10 @@ export const Augments:React.FC = () => {
 
     }, [])
 
-    function handleSort(value: string){
-        setSort(value)
+    function sortAugments(augments: Augment[], value: string){
         let tempAugments = augments
         if(value === "Average Placement"){
              for(var i = 0; i < tempAugments.length; i++){
-                console.log(tempAugments[i])
                 // Last i elements are already in place 
                 for(var j = 0; j < ( tempAugments.length - i -1 ); j++){
                     
@@ -102,10 +101,16 @@ export const Augments:React.FC = () => {
             }
 
         }
-        setAugments(tempAugments)
+        return tempAugments
     }
 
-        function handleSearch(value:string){
+    function handleSort(value: string){
+        setSort(value)
+        
+        setAugments(sortAugments(augments, value))
+    }
+
+    function handleSearch(value:string){
 
             let BreakException = {};
 
@@ -123,42 +128,76 @@ export const Augments:React.FC = () => {
                 }
             })
         setAugments(arr)     
-        }
+    }
 
     function handleRenderMore(){
         let temp  = toRender;
         setToRender(temp + 20);
     }
 
-    function handleTier(value: string){
-        setTier(value);
+    function getAugmentsByTier(augments: Augment[], value: string){
         let tempArr: Augment[] = []
         if(value === "All"){
-            tempArr = allAugments
+            tempArr = augments
         }
         else if(value === "Silver"){
-            allAugments.forEach(augment => {
+            augments.forEach(augment => {
                 if(augment.tier === 1){
                     tempArr.push(augment)
                 }
             })
         }
         else if(value === "Gold"){
-            allAugments.forEach(augment => {
+            augments.forEach(augment => {
                 if(augment.tier === 2){
                     tempArr.push(augment)
                 }
             })
         }
         else if(value === "Prismatic"){
-            allAugments.forEach(augment => {
+            augments.forEach(augment => {
                 if(augment.tier === 3){
                     tempArr.push(augment)
                 }
             })
         }
-        setAugments(tempArr)
+        return tempArr
     }
+
+    function handleTier(value: string){
+        setTier(value);
+        setAugments(getAugmentsByTier(allAugments, value))
+    }
+
+    function handleStage(value: string){
+                    setStage(value);
+        getAugmentsRankingByStage(value).then((res) => {
+            let tempAugments: Augment[] = []
+            res.data.forEach((augment: any) => {
+                let name = augment.id
+                let tier = 0
+                data.items.forEach(augmentData => {
+                    if(augmentData.apiName === augment.id){
+                        name = augmentData.name
+                        tier = augmentData.tier
+                    }
+                })
+                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, name, augment.avg_place, augment.winrate, augment.frequency, tier))
+            })
+            let tierApplied = getAugmentsByTier(tempAugments, tier);
+            let sortApplied = sortAugments(tierApplied, sort)
+
+            setAugments(sortApplied)
+            setAllAugments(tempAugments)
+
+        })
+
+    }
+
+    // useEffect(() => {
+    //     handleTier(tier)
+    //     handleSort(sort)
+    // }, [stage])
 
     
     return (
@@ -181,6 +220,12 @@ export const Augments:React.FC = () => {
                     values={["All", "Silver", "Gold", "Prismatic"]}
                     defaultValue="All"
                     onChange={handleTier}
+                    />
+                <Dropdown 
+                    name="Stage"
+                    values={["All", "2-1 (First)", "3-2 (Second)", "4-2 (Third)"]}
+                    defaultValue="All"
+                    onChange={handleStage}
                     />
                 </div>
                 {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
