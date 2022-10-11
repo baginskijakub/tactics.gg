@@ -42,6 +42,7 @@ function App() {
           <Route path='/units' element={<Units/>}/>
           <Route path='/items' element={<Items/>}/>
           <Route path='/' element={<Comps/>}/>
+          <Route path='/comps' element={<Comps/>}/>
           <Route path='/augments' element={<Augments/>}/>
           <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
           <Route path='/teambuilder' element={<TeamBuilder />}/>
