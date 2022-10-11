@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 import "./navbar.css";
-import NavbarLinks from "./NavbarLinks";
+import {NavbarLinks} from "./NavbarLinks";
 import logo from "../../images/logo.svg";
 import { DefaultSearch } from "../search/DefaultSearch";
-import SummonerSearch from "../search/SummonerSearch";
+import {SummonerSearch} from "../search/SummonerSearch";
 
 interface Props{
   handleSummonerSearch: (name: string, region:string) => void

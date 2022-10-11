@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import Dropdown from '../components/buttons/Dropdown'
+import {Dropdown} from '../components/buttons/Dropdown'
 import './pages.css'
-import LeaderRow from '../components/leaderboard/LeaderRow'
-import PageHead from './PageHead'
+import {LeaderRow} from '../components/leaderboard/LeaderRow'
+import {PageHead} from './PageHead'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getLeaderboard } from '../model/Model'
-import TableLoader from '../components/table/TableLoader'
+import {TableLoader} from '../components/table/TableLoader'
 
 export const Leaderboard:React.FC = () => {
     const[region, setRegion] = useState("euw1")
@@ -114,5 +114,3 @@ export const Leaderboard:React.FC = () => {
         </div>
     )
 }
-
-export default Leaderboard

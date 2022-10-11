@@ -29,5 +29,3 @@ export const AnalysisAugments:React.FC<Props> = ({augments}) => {
         </div>
     )
 }
-
-export default AnalysisAugments

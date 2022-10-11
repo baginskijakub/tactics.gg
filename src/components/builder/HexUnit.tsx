@@ -276,5 +276,3 @@ export const HexUnit: React.FC<Props> = ({
     }
   }
 };
-
-export default HexUnit;

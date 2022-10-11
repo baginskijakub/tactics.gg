@@ -38,5 +38,3 @@ export const CompButton: React.FC<Props> = ({
     </div>
   );
 };
-
-export default CompButton;

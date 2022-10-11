@@ -1,23 +1,23 @@
 import React, {useState} from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
-import NavbarMobile from './components/navbar/NavbarMobile'
+import {NavbarMobile} from './components/navbar/NavbarMobile'
 import { Route, Routes} from 'react-router-dom'
 
 //pages
-import Summoner from "./pages/Summoner";
-import TeamBuilder from "./pages/TeamBuilder";
-import  Augments  from "./pages/Augments";
-import Units from "./pages/Units";
-import Items from "./pages/Items"
-import Comps from "./pages/Comps"
-import Leaderboard from './pages/Leaderboard'
-import PrivacyPolicy from './pages/PrivacyPolicy'
+import {Summoner} from "./pages/Summoner";
+import {TeamBuilder} from "./pages/TeamBuilder";
+import  {Augments}  from "./pages/Augments";
+import {Units} from "./pages/Units";
+import {Items} from "./pages/Items"
+import {Comps} from "./pages/Comps"
+import {Leaderboard} from './pages/Leaderboard'
+import {PrivacyPolicy} from './pages/PrivacyPolicy'
 
-import Footer from './components/footer/Footer'
+import {Footer} from './components/footer/Footer'
 
-function App() {
+export const App:React.FC = () => {
   const[summonerName, setSummonerName] = useState<any>(undefined)
   const[region, setRegion] = useState<any>(undefined)
   let navigate = useNavigate();
@@ -35,7 +35,7 @@ function App() {
     navigate("/summoner")
   }
   
-  return (
+  return(
     <div className="app-container">
         { width > 850 ? <Navbar handleSummonerSearch={handleSummonerSearch}/> : <NavbarMobile/>}
         <Routes >
@@ -51,7 +51,5 @@ function App() {
         </Routes>
         <Footer />
     </div>
-  );
+  )
 }
-
-export default App;

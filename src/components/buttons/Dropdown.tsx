@@ -111,5 +111,3 @@ export const Dropdown: React.FC<Props> = ({
     );
   }
 };
-
-export default Dropdown;

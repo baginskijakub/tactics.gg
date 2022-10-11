@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react'
-import ItemRow from '../components/items/ItemRow'
-import Dropdown from '../components/buttons/Dropdown'
+import {ItemRow} from '../components/items/ItemRow'
+import{ Dropdown} from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getItemsRanking } from '../model/Model'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import itemsData from '../components/builder/Items.json'
-import PageHead from './PageHead'
-import TableLoader from '../components/table/TableLoader'
+import {PageHead} from './PageHead'
+import {TableLoader} from '../components/table/TableLoader'
 
-export const Augments:React.FC = () => {
+export const Items:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
     const[toRender, setToRender] = useState(0);
     const[allItems, setAllItems] = useState<any[]>([])
@@ -191,5 +191,3 @@ export const Augments:React.FC = () => {
         </div>
     )
 }
-
-export default Augments

@@ -1,6 +1,6 @@
 import React from "react";
 import "./comp.css";
-import CompAugmentsRow from "./CompAugmentsRow";
+import {CompAugmentsRow} from "./CompAugmentsRow";
 
 interface Augment {
   src: string;
@@ -45,5 +45,3 @@ export const CompAugments: React.FC<Props> = ({ augments }) => {
     </div>
   );
 };
-
-export default CompAugments;

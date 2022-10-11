@@ -41,5 +41,3 @@ export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playra
         </div>
     )
 }
-
-export default ItemRow

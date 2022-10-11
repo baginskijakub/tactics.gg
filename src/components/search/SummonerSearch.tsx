@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./search.css";
 import { RegionDropdown } from "./RegionDropdown";
-import SpecificSearch from "./SpecificSearch";
+import {SpecificSearch} from "./SpecificSearch";
 
 interface Props {
   handleInput: (name: string, region: string) => void;
@@ -73,5 +73,3 @@ export const SummonerSearch: React.FC<Props> = ({ handleInput }) => {
     </div>
   );
 };
-
-export default SummonerSearch;

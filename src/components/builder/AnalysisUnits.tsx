@@ -51,5 +51,3 @@ export const AnalysisUnits:React.FC<Props> = ({units}) => {
         </div>
     )
 }
-
-export default AnalysisUnits

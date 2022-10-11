@@ -1,15 +1,15 @@
 import React, { useState, useEffect} from "react";
 import "./pages.css";
-import Board from "../components/builder/Board";
-import Units from "../components/builder/Units";
+import {Board} from "../components/builder/Board";
+import {Units} from "../components/builder/Units";
 import { Item, UnitHex, BuilderTrait, Analysis as AnalysisClass, AnalysisItem, AnalysisUnit, Augment, Unit } from "../classes";
-import Traits from "../components/builder/Traits";
-import Analyze from "../components/builder/Analyze";
-import Items from "../components/builder/Items";
+import {Traits} from "../components/builder/Traits";
+import {Analyze} from "../components/builder/Analyze";
+import {Items} from "../components/builder/Items";
 import unitsData from '../components/builder/units-data.json'
 import traitsData from '../components/builder/Tratis.json'
-import Analysis from "../components/builder/Analysis";
-import PageHead from './PageHead'
+import {Analysis} from "../components/builder/Analysis";
+import {PageHead} from './PageHead'
 import { postComp } from "../model/Model";
 
 export const TeamBuilder: React.FC = () => {
@@ -330,5 +330,3 @@ useEffect(() => {
     </div>
   );
 };
-
-export default TeamBuilder;

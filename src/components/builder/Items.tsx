@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./builder.css";
-import Dropdown from "../buttons/Dropdown";
-import Item from "./Item";
+import {Dropdown} from "../buttons/Dropdown";
+import {Item} from "./Item";
 import itemsData from "./Items.json"
 
 export const Items: React.FC = () => {
@@ -63,5 +63,3 @@ export const Items: React.FC = () => {
     </div>
   );
 };
-
-export default Items;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./builder.css";
 import { DefaultSearch } from "../search/DefaultSearch";
-import Dropdown from "../buttons/Dropdown";
-import Unit from "./Unit";
+import {Dropdown} from "../buttons/Dropdown";
+import {Unit} from "./Unit";
 import data from './units-data.json'
 
 interface Props{
@@ -93,5 +93,3 @@ export const Units: React.FC<Props> = ({onChange}) => {
     </div>
   );
 };
-
-export default Units;

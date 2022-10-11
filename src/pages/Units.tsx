@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import UnitRow from '../components/units/UnitRow'
+import {UnitRow} from '../components/units/UnitRow'
 import './pages.css'
-import Dropdown from '../components/buttons/Dropdown'
+import {Dropdown} from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getUnitsRanking } from '../model/Model'
 import unitsData from '../components/builder/units-data.json'
 import { DefaultSearch } from "../components/search/DefaultSearch";
-import PageHead from './PageHead'
-import TableLoader from '../components/table/TableLoader'
+import {PageHead} from './PageHead'
+import {TableLoader} from '../components/table/TableLoader'
 
 export const Units:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -180,4 +180,3 @@ export const Units:React.FC = () => {
     )
 }
 
-export default Units

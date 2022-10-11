@@ -12,5 +12,3 @@ export const SummonerProgress: React.FC = () => {
     </div>
   );
 };
-
-export default SummonerProgress;

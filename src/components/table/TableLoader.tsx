@@ -8,5 +8,3 @@ export const TableLoader:React.FC = () => {
         </div>
     )
 }
-
-export default TableLoader

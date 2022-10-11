@@ -1,7 +1,7 @@
 import React from 'react'
-import AnalysisPerformance from './AnalysisPerformance'
-import AnalysisUnits from './AnalysisUnits'
-import AnalysisAugments from './AnalysisAugments'
+import {AnalysisPerformance} from './AnalysisPerformance'
+import {AnalysisUnits} from './AnalysisUnits'
+import {AnalysisAugments} from './AnalysisAugments'
 import './builder.css'
 import { AnalysisUnit, AnalysisItem, Augment, Analysis as AnalysisClass } from '../../classes'
 
@@ -64,5 +64,3 @@ export const Analysis:React.FC<Props> = ({analysis}) => {
     )
     }
 }
-
-export default Analysis

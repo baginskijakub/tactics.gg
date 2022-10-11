@@ -1,6 +1,6 @@
 import React from "react";
 import "./summoner.css";
-import SummonerLastSquare from "./SummonerLastSquare";
+import {SummonerLastSquare} from "./SummonerLastSquare";
 
 interface Props {
   placements: number[];
@@ -104,5 +104,3 @@ export const SummonerLast20: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SummonerLast20;

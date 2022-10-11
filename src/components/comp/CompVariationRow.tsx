@@ -1,7 +1,7 @@
 import React from "react";
 import "./comp.css";
-import Unit from "../unit/Unit";
-import Trait from "../trait/Trait";
+import {Unit} from "../unit/Unit";
+import {Trait} from "../trait/Trait";
 
 interface TraitInterface {
   name: string;
@@ -96,5 +96,3 @@ export const CompVariationRow: React.FC<Props> = ({
     </div>
   );
 };
-
-export default CompVariationRow;

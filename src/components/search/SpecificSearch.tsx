@@ -45,5 +45,3 @@ export const SpecificSearch: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SpecificSearch;

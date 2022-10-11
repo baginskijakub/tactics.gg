@@ -73,5 +73,3 @@ export const AnalysisPerformance:React.FC<Props> = ({avgPlacement, winrate, play
         </div>
     )
 }
-
-export default AnalysisPerformance

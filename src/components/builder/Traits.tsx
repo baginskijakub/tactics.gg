@@ -1,7 +1,7 @@
 import React from "react";
 import infoIcon from "../../images/icons/info.svg";
 import "./builder.css";
-import Trait from "./Trait";
+import { Trait } from "./Trait";
 import { BuilderTrait } from "../../classes";
 
 interface Props{
@@ -56,5 +56,3 @@ export const Traits: React.FC<Props> = ({traits}) => {
    }
 
 };
-
-export default Traits;

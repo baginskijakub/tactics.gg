@@ -64,5 +64,3 @@ export const SummonerProfile: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SummonerProfile;

@@ -94,5 +94,3 @@ export const CompItems: React.FC<Props> = ({ units }) => {
     </div>
   );
 };
-
-export default CompItems;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./builder.css";
 import { UnitHex } from "../../classes";
-import HexUnit from "./HexUnit";
+import {HexUnit} from "./HexUnit";
 import deleteIcon from '../../images/icons/delete.svg'
 
 interface Props {
@@ -47,5 +47,3 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, remove
     </div>
   );
 };
-
-export default Board;

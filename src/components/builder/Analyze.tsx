@@ -28,5 +28,3 @@ export const Analyze: React.FC<Props> = ({buttonClick}) => {
     </div>
   );
 };
-
-export default Analyze;

@@ -30,5 +30,3 @@ export const SummonerLastSquare: React.FC<Props> = ({ placement }) => {
     </div>
   );
 };
-
-export default SummonerLastSquare;

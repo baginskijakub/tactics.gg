@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./summoner.css";
-import Unit from "../unit/Unit";
-import Trait from "../trait/Trait";
+import {Unit} from "../unit/Unit";
+import {Trait} from "../trait/Trait";
 import chevron from "../../images/icons/chevron.svg";
-import SummonerMatchRow from "./SummonerMatchRow";
+import {SummonerMatchRow} from "./SummonerMatchRow";
 
 interface Item {
   id: number;
@@ -193,5 +193,3 @@ export const SummonerMatch: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SummonerMatch;

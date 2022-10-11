@@ -51,5 +51,3 @@ export const NavbarMobile:React.FC = () => {
         </div>
     )
 }
-
-export default NavbarMobile

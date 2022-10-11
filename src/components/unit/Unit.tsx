@@ -115,5 +115,3 @@ export const Unit: React.FC<Props> = ({
     );
   }
 };
-
-export default Unit;

@@ -22,5 +22,3 @@ export const PageHead:React.FC<Props> = ({title, text, canonical}) => {
         </div>
     )
 }
-
-export default PageHead

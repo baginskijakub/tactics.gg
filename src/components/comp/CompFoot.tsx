@@ -86,5 +86,3 @@ export const CompFoot: React.FC<Props> = ({
     </div>
   );
 };
-
-export default CompFoot;

@@ -28,5 +28,3 @@ export const SummonerPlaceholder: React.FC<Props> = ({ state }) => {
     );
   }
 };
-
-export default SummonerPlaceholder;

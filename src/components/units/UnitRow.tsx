@@ -1,6 +1,6 @@
 import React from 'react'
 import './units.css'
-import Trait from '../trait/Trait'
+import {Trait} from '../trait/Trait'
 
 
 interface Props{
@@ -72,5 +72,3 @@ export const UnitRow:React.FC<Props> = ({name, id, avgPlacement, winrate, playra
         </div>
     )
 }
-
-export default UnitRow

@@ -9,5 +9,3 @@ export const CompLoader:React.FC = () => {
         </div>
     )
 }
-
-export default CompLoader

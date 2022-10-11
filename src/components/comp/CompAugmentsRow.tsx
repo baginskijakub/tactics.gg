@@ -47,5 +47,3 @@ export const CompAugmentsRow: React.FC<Props> = ({
     </div>
   );
 };
-
-export default CompAugmentsRow;

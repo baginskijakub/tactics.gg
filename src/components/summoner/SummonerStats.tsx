@@ -86,5 +86,3 @@ export const SummonerStats: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SummonerStats;

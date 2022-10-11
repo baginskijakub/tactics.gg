@@ -49,5 +49,3 @@ export const Item: React.FC<Props> = ({ id, name }) => {
     </DefaultTooltip>
   );
 };
-
-export default Item;

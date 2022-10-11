@@ -1,8 +1,8 @@
 import React from "react";
 import "./summoner.css";
 import goldIcon from "../../images/icons/gold.svg";
-import Unit from "../unit/Unit";
-import Trait from "../trait/Trait";
+import {Unit} from "../unit/Unit";
+import {Trait} from "../trait/Trait";
 
 interface Item {
   id: number;
@@ -129,5 +129,3 @@ export const SummonerMatchRow: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SummonerMatchRow;

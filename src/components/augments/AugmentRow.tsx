@@ -48,5 +48,3 @@ export const AugmentRow:React.FC<Props> = ({augment}) => {
         </div>
     )
 }
-
-export default AugmentRow

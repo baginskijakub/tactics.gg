@@ -115,5 +115,3 @@ export const HexagonUnit: React.FC<Props> = ({
     );
   }
 };
-
-export default HexagonUnit;

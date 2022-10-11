@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import AugmentRow from '../components/augments/AugmentRow'
+import {AugmentRow} from '../components/augments/AugmentRow'
 import { AugmentRow as Augment } from '../classes'
-import Dropdown from '../components/buttons/Dropdown'
+import {Dropdown} from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getAugmentsRanking, getAugmentsRankingByStage } from '../model/Model'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
-import TableLoader from '../components/table/TableLoader'
-import PageHead from './PageHead'
+import {TableLoader} from '../components/table/TableLoader'
+import {PageHead} from './PageHead'
 import data from '../components/augments/augments-data.json'
 
 export const Augments:React.FC = () => {
@@ -252,5 +252,3 @@ export const Augments:React.FC = () => {
         </div>
     )
 }
-
-export default Augments

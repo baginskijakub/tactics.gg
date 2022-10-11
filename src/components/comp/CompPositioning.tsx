@@ -1,6 +1,6 @@
 import React from "react";
 import "./comp.css";
-import HexagonUnit from "../unit/HexagonUnit";
+import {HexagonUnit} from "../unit/HexagonUnit";
 
 interface Props {
   positioning: UnitHex[][];
@@ -62,5 +62,3 @@ export const CompPositioning: React.FC<Props> = ({ positioning }) => {
     </div>
   );
 };
-
-export default CompPositioning;

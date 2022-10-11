@@ -82,5 +82,3 @@ export const Trait: React.FC<Props> = ({
     </div>
   );
 };
-
-export default Trait;

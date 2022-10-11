@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./comp.css";
-import CompFoot from "./CompFoot";
-import Unit from "../unit/Unit";
-import Trait from "../trait/Trait";
+import {CompFoot} from "./CompFoot";
+import {Unit} from "../unit/Unit";
+import {Trait} from "../trait/Trait";
 import chevron from "../../images/icons/chevron.svg";
-import CompButton from "../buttons/CompButton";
-import CompPositioning from "./CompPositioning";
-import CompItems from "./CompItems";
-import CompAugments from "./CompAugments";
-import CompVariations from "./CompVariations";
+import {CompButton} from "../buttons/CompButton";
+import {CompPositioning} from "./CompPositioning";
+import {CompItems} from "./CompItems";
+import {CompAugments} from "./CompAugments";
+import {CompVariations} from "./CompVariations";
 
 interface TraitInterface {
   name: string;
@@ -225,5 +225,3 @@ export const Comp: React.FC<Props> = ({
     </div>
   );
 };
-
-export default Comp;

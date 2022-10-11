@@ -26,5 +26,3 @@ export const LeaderRow:React.FC<Props> = ({ranking, icon, name, rank, lp, top4ra
         </div>
     )
 }
-
-export default LeaderRow

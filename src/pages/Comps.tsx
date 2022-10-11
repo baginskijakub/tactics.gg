@@ -1,11 +1,11 @@
 import React,{useState, useEffect} from 'react'
-import Dropdown from '../components/buttons/Dropdown'
+import {Dropdown} from '../components/buttons/Dropdown'
 import {getComps} from "../model/Model"
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import {Comp as CompClass} from "../classes"
-import Comp from "../components/comp/Comp"
-import CompLoader from "../components/comp/CompLoader"
-import PageHead from './PageHead'
+import {Comp} from "../components/comp/Comp"
+import {CompLoader} from "../components/comp/CompLoader"
+import {PageHead} from './PageHead'
 import './pages.css'
 
 
@@ -157,5 +157,3 @@ export const Comps = () => {
         </div>
     )
 }
-
-export default Comps

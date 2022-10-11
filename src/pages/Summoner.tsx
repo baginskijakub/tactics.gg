@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./pages.css";
 import { searchSummoner } from "../model/Model";
 import { useKey } from "../hooks/key";
-import PageHead from './PageHead'
-import SummonerProfile from "../components/summoner/SummonerProfile";
-import SummonerStats from "../components/summoner/SummonerStats";
-import SummonerLast20 from "../components/summoner/SummonerLast20";
-import SummonerProgress from "../components/summoner/SummonerProgress";
-import SummonerMatch from "../components/summoner/SummonerMatch";
-import SummonerSearch from "../components/search/SummonerSearch";
-import SummonerPlaceholder from "../components/summoner/SummonerPlaceholder";
+import {PageHead} from './PageHead'
+import {SummonerProfile} from "../components/summoner/SummonerProfile";
+import {SummonerStats} from "../components/summoner/SummonerStats";
+import {SummonerLast20} from "../components/summoner/SummonerLast20";
+import {SummonerProgress} from "../components/summoner/SummonerProgress";
+import {SummonerMatch} from "../components/summoner/SummonerMatch";
+import {SummonerSearch} from "../components/search/SummonerSearch";
+import {SummonerPlaceholder} from "../components/summoner/SummonerPlaceholder";
 
 import {
   Match,
@@ -242,5 +242,3 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
     </div>
   );
 };
-
-export default Summoner;

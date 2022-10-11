@@ -1,6 +1,6 @@
 import React from "react";
 import "./comp.css";
-import CompVariationRow from "./CompVariationRow";
+import {CompVariationRow} from "./CompVariationRow";
 
 interface TraitInterface {
   name: string;
@@ -53,5 +53,3 @@ export const CompVariations: React.FC<Props> = ({ variations }) => {
     </div>
   );
 };
-
-export default CompVariations;
