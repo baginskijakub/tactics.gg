@@ -119,6 +119,7 @@ export const Comp: React.FC<Props> = ({
   augments,
   variations,
 }) => {
+    const window = require('global')
   const [selected, setSelected] = useState("Positioning");
   const [state, setState] = useState("closed");
 

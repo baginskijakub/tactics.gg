@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
 import {NavbarMobile} from './components/navbar/NavbarMobile'
-import { Route, Routes} from 'react-router-dom'
+import { Route, Routes, BrowserRouter} from 'react-router-dom'
 
 //pages
 import {Summoner} from "./pages/Summoner";
@@ -17,7 +17,8 @@ import {PrivacyPolicy} from './pages/PrivacyPolicy'
 
 import {Footer} from './components/footer/Footer'
 
-export const App:React.FC = () => {
+const App:React.FC = () => {
+  const window = require('global')
   const[summonerName, setSummonerName] = useState<any>(undefined)
   const[region, setRegion] = useState<any>(undefined)
   let navigate = useNavigate();
@@ -37,7 +38,7 @@ export const App:React.FC = () => {
   
   return(
     <div className="app-container">
-        { width > 850 ? <Navbar handleSummonerSearch={handleSummonerSearch}/> : <NavbarMobile/>}
+        { width < 850 ? <NavbarMobile/> : <Navbar handleSummonerSearch={handleSummonerSearch}/>}
         <Routes >
           <Route path='/units' element={<Units/>}/>
           <Route path='/items' element={<Items/>}/>
@@ -53,3 +54,5 @@ export const App:React.FC = () => {
     </div>
   )
 }
+
+export default App;

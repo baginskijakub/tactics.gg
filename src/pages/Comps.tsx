@@ -10,6 +10,7 @@ import './pages.css'
 
 
 export const Comps = () => {
+    const window = require('global')
     const[sort, setSort] = useState("Average Placement")
     const[toRender, setToRender] = useState(0);
     const[allComps, setAllComps] = useState<CompClass[]>([])
