@@ -15,7 +15,7 @@ export const PageHead:React.FC<Props> = ({title, text, canonical}) => {
                 <title>{title}</title>
                 <link rel="icon" href={ggIcon}></link>
                 <link rel="canonical" href={canonical}></link>
-                <meta name="description" content={`${text}. Improve your decision making with our always-up-to-date TFT compositions and rankings.`} data-rh="true"></meta>
+                <meta name="description" content={`${text}. Climb faster with our up to date TFT compositions and rankings.`} data-rh="true"></meta>
             </Helmet>
             <h1>{title}</h1>
             {text !== undefined && <p className="body">{text}</p>}

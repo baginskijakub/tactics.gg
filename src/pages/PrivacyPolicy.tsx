@@ -8,7 +8,7 @@ export const PrivacyPolicy:React.FC = () => {
 
         <div className="privacy-wrapper">
             <PageHead
-                title="Privacy Policy"
+                title="Tactix.gg Privacy Policy"
                 canonical="/privacy"
                 />
 
