@@ -25,7 +25,8 @@ export const NavButton: React.FC<Props> = ({ text, link, isSelected, path, index
   if (!isSelected) {
     return (
       <div className="navbutton" onClick={() => handleClick()}>
-        <a className="body" >{text}</a>
+        <Link to={path}>{text}</Link>
+        {/* <a className="body" >{text}</a> */}
       </div>
     );
   } else {
