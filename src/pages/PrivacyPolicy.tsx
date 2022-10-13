@@ -1,10 +1,16 @@
 import React from 'react'
 import './pages.css'
+import { PageHead } from './PageHead'
+
 
 export const PrivacyPolicy:React.FC = () => {
     return (
+
         <div className="privacy-wrapper">
-            <h3>Privacy Policy for tactix.gg</h3>
+            <PageHead
+                title="Privacy Policy"
+                canonical="/privacy"
+                />
 
             <p>At tactix.gg, accessible from tactix.gg, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by tactix.gg and how we use it.</p>
 
