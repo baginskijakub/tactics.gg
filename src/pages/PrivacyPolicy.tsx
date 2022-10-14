@@ -66,7 +66,6 @@ export const PrivacyPolicy:React.FC = () => {
             <h4>Consent</h4>
 
             <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
-            
         </div>
     )
 }
