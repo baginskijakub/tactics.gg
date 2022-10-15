@@ -8,7 +8,7 @@ import express from 'express';
 
 import App from '../src/App';
 
-const PORT = process.env.PORT || 3008;
+const PORT = process.env.PORT || 4009;
 const app = express();
 
 app.get('/', (req, res) => {

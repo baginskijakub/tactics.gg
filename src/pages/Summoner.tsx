@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./pages.css";
 import { searchSummoner } from "../model/Model";
-import { useKey } from "../hooks/key";
 import {PageHead} from './PageHead'
 import {SummonerProfile} from "../components/summoner/SummonerProfile";
 import {SummonerStats} from "../components/summoner/SummonerStats";
@@ -170,9 +169,6 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
     handleSummoner(name, region)
   }
   }, [])
-
-
-  // useKey("Enter", handleSummoner())
 
   return (
     <div className="summoner-wrapper">

@@ -2,6 +2,7 @@ import React from 'react'
 import {AnalysisPerformance} from './AnalysisPerformance'
 import {AnalysisUnits} from './AnalysisUnits'
 import {AnalysisAugments} from './AnalysisAugments'
+import info from '../../images/icons/info.svg'
 import './builder.css'
 import { AnalysisUnit, AnalysisItem, Augment, Analysis as AnalysisClass } from '../../classes'
 
@@ -14,7 +15,7 @@ export const Analysis:React.FC<Props> = ({analysis}) => {
         if(analysis === "Loading"){
                 return(
                     <div className="analysis-placeholder">
-                        <h4>Loading</h4>
+                        <h4>Analyzing matches...</h4>
                         <div className="lds-dual-ring"></div>
                     </div>
             )
@@ -22,7 +23,17 @@ export const Analysis:React.FC<Props> = ({analysis}) => {
         else if(analysis === "Wait"){
                 return(
                     <div className="analysis-placeholder">
+                        <img src={info} alt="warning"></img>
                         <h5>Please, wait one minute before analysing another comp.</h5>
+                    </div>
+                )
+        }
+        else if(analysis === "No matches"){
+                return(
+                    <div className="analysis-placeholder">
+                        <img src={info} alt="warning"></img>
+                        <h4>No matches with this composition were found.</h4>
+                        <p className="body-small">Consider removing less important units that may vary across other players compositions.</p>
                     </div>
                 )
         }

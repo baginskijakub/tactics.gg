@@ -48,15 +48,12 @@ export const TeamBuilder: React.FC = () => {
       )
     })
     postComp(arr).then((res:any) => {
-      console.log(res.data.error)
+      console.log(res)
       if(res.data === ""){
         setAnalysis("Wait")
       }
-      else if(res.data.info === "no matches with this composition were found"){
-        setAnalysis("No matches with this composition were found")
-      }
       else if(res.data.info === "No matches"){
-        setAnalysis("No matches with this composition were found")
+        setAnalysis("No matches")
       }
       else if(res.data.error === "error - Request failed with status code 429"){
         setAnalysis("Wait")
