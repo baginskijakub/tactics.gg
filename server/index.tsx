@@ -25,7 +25,8 @@ app.get('/', (req, res) => {
       console.error('Something went wrong:', err);
       return res.status(500).send('Oops, better luck next time!');
     }
-
+    res.set('location', 'https://www.tactix.gg');
+    res.status(301).send()
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
     );
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.static('./build'));
+app.disable('x-powered-by');
 
 app.use(express.static(path.resolve(__dirname, '../dist')));
   app.get('*', function (req, res) {

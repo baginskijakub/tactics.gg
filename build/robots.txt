@@ -1,5 +1,3 @@
-User-agent: Googlebot
-Disallow:
-
-User-agent: Googlebot-image
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
 Disallow:
