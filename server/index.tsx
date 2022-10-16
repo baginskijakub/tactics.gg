@@ -8,7 +8,7 @@ import express from 'express';
 
 import App from '../src/App';
 
-const PORT = process.env.PORT || 4009;
+const PORT = process.env.PORT || 4008;
 const app = express();
 
 app.get('/', (req, res) => {
@@ -25,7 +25,8 @@ app.get('/', (req, res) => {
       console.error('Something went wrong:', err);
       return res.status(500).send('Oops, better luck next time!');
     }
-    res.set('location', 'https://www.tactix.gg');
+    // console.log(req.path)
+    res.set('location', `https://tactix.gg${req.path}`);
     res.status(301).send()
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
