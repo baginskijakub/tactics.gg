@@ -45,4 +45,14 @@ function getLeaderboard(region: string){
   return axios.get(`https://server-tactixgg.com/leaderboard/${region}`)
 }
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage };
+function getCreatedComp(id: string){
+  return axios.get(`https://server-tactixgg.com/comps/${id}`)
+}
+
+function saveCreatedComp(id: string, inputData: any){
+  return axios.post(`https://server-tactixgg.com/comps/${id}`, {"composition": inputData})
+}
+
+
+
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp };

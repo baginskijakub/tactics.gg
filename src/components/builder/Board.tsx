@@ -3,20 +3,38 @@ import "./builder.css";
 import { UnitHex } from "../../classes";
 import {HexUnit} from "./HexUnit";
 import deleteIcon from '../../images/icons/delete.svg'
+import linkIcon from '../../images/icons/link.svg'
 
 interface Props {
   matrix: UnitHex[][];
   changeLevel: (row: number, column: number, level: 0 | 1 | 2 | 3) => void;
   clearBoard: () => void;
+  copyLink: () => void
   removeFromBoard: (row:number, column:number) => void
 }
 
-export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, removeFromBoard }) => {
+export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, removeFromBoard, copyLink }) => {
+
+  function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+   async function handleCopy(){
+    copyLink();
+    let element = document.getElementById("copy-link") as HTMLElement;
+    element.innerHTML = "Link copied!"
+    await sleep(2000);
+    element.innerHTML = "Copy link"
+  }
   return (
     <div className="builder-board-wrapper">
       <div className="builder-board-clear-button" onClick={() => clearBoard()}>
           <img src={deleteIcon} alt="delete"/>
           <h5>Clear board</h5>
+      </div>
+      <div className="builder-board-copy-button" onClick={() => handleCopy()}>
+          <img src={linkIcon} alt="delete"/>
+          <h5 id="copy-link">Copy link</h5>
       </div>
       {matrix.map((array, i) => {
         return (

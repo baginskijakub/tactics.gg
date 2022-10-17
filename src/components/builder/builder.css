@@ -1001,7 +1001,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 6px;
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid #172c49;
   background-color: #0e1828;
   padding: 6px 12px 6px 8px;
@@ -1009,9 +1009,47 @@ h6 {
   position: absolute;
   right: 8px;
   top: 8px;
+  -webkit-transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.builder-board-copy-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  border: 1px solid #172c49;
+  background-color: #377df7;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  position: absolute;
+  right: 140px;
+  top: 8px;
+  -webkit-transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.builder-board-copy-button:hover {
+  background-color: #1e4c94;
+}
+
+.builder-board-clear-button:hover {
+  background-color: #1b2f4a;
 }
 
 .builder-board-clear-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.builder-board-copy-button img {
   width: 18px;
   height: 18px;
 }

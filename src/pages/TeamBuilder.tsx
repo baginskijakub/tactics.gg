@@ -1,4 +1,7 @@
 import React, { useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+
 import "./pages.css";
 import {Board} from "../components/builder/Board";
 import {Units} from "../components/builder/Units";
@@ -10,7 +13,7 @@ import unitsData from '../components/builder/units-data.json'
 import traitsData from '../components/builder/Tratis.json'
 import {Analysis} from "../components/builder/Analysis";
 import {PageHead} from './PageHead'
-import { postComp } from "../model/Model";
+import { getCreatedComp, saveCreatedComp, postComp} from "../model/Model";
 
 export const TeamBuilder: React.FC = () => {
 
@@ -20,8 +23,37 @@ export const TeamBuilder: React.FC = () => {
   const [traits, setTraits] = useState<any[]>([])
   const [analysis, setAnalysis] = useState<any>("")
   const [unitsSupport, setUnitsSupport] = useState(0)
+  const { id } = useParams();
 
-  function onUnitsChange(){
+  //fetching data from server if id of comp that someone has created is passed to url
+  useEffect(() => {
+
+    if(id !== undefined){
+      let tempBoard:UnitHex[][] = initialState;
+      getCreatedComp(id).then(res => {
+        res.data.json.forEach((row:any, rowNo:number) => {
+          row.forEach((unit:any, columnNo:number) => {
+            if(unit.id !== null){
+              tempBoard[rowNo][columnNo] = new UnitHex(unit.id, unit.name, unit.cost, unit.url, unit.level, unit.items)
+            }
+          })
+        })
+      updateBoard(tempBoard)
+      onUnitsChange();
+      })
+
+    }
+  }, [])
+
+  function handleCopyLink(){
+    if(board !== initialState){
+      let id = uuidv4();
+      saveCreatedComp(id, board);
+      navigator.clipboard.writeText(`https://www.tactix.gg/teambuilder/${id}`)
+    }
+  }
+
+    function onUnitsChange(){
     let temp = unitsSupport;
     setUnitsSupport(temp+1);
   }
@@ -48,7 +80,6 @@ export const TeamBuilder: React.FC = () => {
       )
     })
     postComp(arr).then((res:any) => {
-      console.log(res)
       if(res.data === ""){
         setAnalysis("Wait")
       }
@@ -314,7 +345,7 @@ useEffect(() => {
           <Traits traits={traits}/>
         </div>
         <div className="builder-vertical-container-primary">
-          <Board matrix={board} changeLevel={changeStarLevel} removeFromBoard={removeFromBoard} clearBoard={clearBoard}/>
+          <Board matrix={board} changeLevel={changeStarLevel} removeFromBoard={removeFromBoard} clearBoard={clearBoard} copyLink={handleCopyLink}/>
           <Units onChange={onUnitsChange}/>
         </div>
         <div className="builder-vertical-container-secondary">

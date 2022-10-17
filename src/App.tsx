@@ -44,10 +44,11 @@ const App:React.FC = () => {
         <Routes >
           <Route path='/units' element={<Units/>}/>
           <Route path='/items' element={<Items/>}/>
-          <Route path='/' element={<Comps/>}/>
+          <Route index element={<Comps/>}/>
           <Route path='/comps' element={<Comps/>}/>
           <Route path='/augments' element={<Augments/>}/>
           <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
+          <Route path='/teambuilder/:id' element={<TeamBuilder />}/>
           <Route path='/teambuilder' element={<TeamBuilder />}/>
           <Route path='/leaderboard' element={<Leaderboard />}/>
           <Route path='/guides' element={<Guides />}/>
