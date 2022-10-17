@@ -11,7 +11,8 @@ export const Footer:React.FC = () => {
         <div className="footer-wrapper">
             <div className="footer-links">
                 <Link to="/privacy" style={linksStyle}>Privacy Policy</Link>
-                <Link to="/privacy" style={linksStyle}>Terms &#38; Conditions</Link>
+                {/* <Link to="/privacy" style={linksStyle}>Terms &#38; Conditions</Link> */}
+                <Link to="/contact" style={linksStyle}>Contact</Link>
             </div>
             <p className="caption-small">TACTIX.GG isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</p>
             <p className="caption-small grey">© TACTIX.GG 2022</p>

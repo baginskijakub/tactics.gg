@@ -85,7 +85,7 @@ export const SummonerMatchRow: React.FC<Props> = ({
       )}
       <div className="summoner-match-row-augments">
         {augments.map((element) => {
-          return <img src={element} alt={name} loading="lazy" title="Augment"/>;
+          return <img src={element} alt={name} title="Augment"/>;
         })}
       </div>
       <div className="summoner-match-row-board">

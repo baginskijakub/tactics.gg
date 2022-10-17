@@ -15,6 +15,34 @@
             "tier": 1
         },
         {
+            "apiName": "TFT7_Augment_BruiserPersonalTrainerHR",
+            "desc": "At the end of combat, champions that started combat adjacent to Bruisers permanently gain @Health@ Health, increased by @BonusHealth@ if they survived. Gain a Olaf.",
+            "effects": {
+                "BonusHealth": 40.0,
+                "Health": 80.0
+            },
+            "from": [],
+            "icon": "ASSETS/Maps/TFT/Icons/Augments/Hexcore/Personal-Training-II.TFT_Set7.dds",
+            "id": 2476,
+            "name": "Personal Training",
+            "unique": false,
+            "tier": 2
+        },
+                {
+            "apiName": "TFT7_Augment_BruiserPersonalTrainer",
+            "desc": "At the end of combat, champions that started combat adjacent to Bruisers permanently gain @Health@ Health, increased by @BonusHealth@ if they survived. Gain a Olaf.",
+            "effects": {
+                "BonusHealth": 40.0,
+                "Health": 80.0
+            },
+            "from": [],
+            "icon": "ASSETS/Maps/TFT/Icons/Augments/Hexcore/Personal-Training-II.TFT_Set7.dds",
+            "id": 2476,
+            "name": "Personal Training",
+            "unique": false,
+            "tier": 2
+        },
+        {
             "apiName": "TFT6_Augment_Diversify2",
             "desc": "Your units gain @AD@ Attack Damage and @AP@ Ability Power per Trait active across your army.",
             "effects": {
@@ -3522,6 +3550,21 @@
         },
         {
             "apiName": "TFT7_Augment_Preparation1HR",
+            "desc": "Champions on your bench permanently gain @HPBonus@ Health, @Stats@ Attack Damage, and @Stats@ Ability Power every round. Stacks up to @MaxStacks@ times.",
+            "effects": {
+                "MaxStacks": 3.0,
+                "{6a311cec}": 6.0,
+                "{9c718664}": 40.0
+            },
+            "from": [],
+            "icon": "ASSETS/Maps/TFT/Icons/Augments/Hexcore/Preparation-I.TFT_Set7.dds",
+            "id": 2473,
+            "name": "Preparation I",
+            "unique": false,
+            "tier": 1
+        },
+                {
+            "apiName": "TFT7_Augment_Preparation1",
             "desc": "Champions on your bench permanently gain @HPBonus@ Health, @Stats@ Attack Damage, and @Stats@ Ability Power every round. Stacks up to @MaxStacks@ times.",
             "effects": {
                 "MaxStacks": 3.0,

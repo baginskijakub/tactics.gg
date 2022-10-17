@@ -437,6 +437,11 @@ h6 {
   border-radius: 4px 4px 0px 0px;
 }
 
+.contact-email {
+  color: #377df7;
+  text-decoration: none;
+}
+
 .units-titles h4 {
   width: 150px;
   text-align: center;
@@ -542,6 +547,17 @@ h6 {
   margin-top: 20px;
 }
 
+.guides-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
 @media screen and (max-width: 1350px) {
   .summoner-wrapper {
     width: 1000px;
@@ -616,7 +632,7 @@ h6 {
 
 @media screen and (max-width: 850px) {
   .summoner-wrapper {
-    width: 100%;
+    width: calc(100% - 32px);
   }
   .summoner-container-horizontal {
     -webkit-box-orient: vertical;
@@ -665,6 +681,9 @@ h6 {
     width: 80px;
   }
   .comps-wrapper {
+    width: calc(100% - 32px);
+  }
+  .guides-wrapper {
     width: calc(100% - 32px);
   }
 }

@@ -44,7 +44,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
           `https://raw.communitydragon.org/latest/game/assets/ux/summonericons/profileicon${res.data.profile.icon}.png`,
           res.data.profile.rank,
           res.data.profile.lp,
-          0.027,
+          res.data.profile.top,
           res.data.profile.ranking,
           `https://ittledul.sirv.com/Images/tiers/${
             res.data.profile.rank.split(" ")[0]
@@ -54,11 +54,11 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
       setStats(
         new Stats(
           res.data.stats.gamesPlayed,
-          12,
-          15.12,
+          res.data.stats.wins,
+          res.data.stats.winsPercent,
           res.data.stats.top4,
           res.data.stats.top4Percent,
-          4.12
+          res.data.stats.avgPlacement
         )
       );
       setLast20(
@@ -160,8 +160,8 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
           );
         })
       );
-
-      setSummonerName(res.data.profile.name);
+      setPlaceholder("none")
+      setSummonerName(res.data.profile.name);   
     });
   }
   useEffect(() => {
@@ -178,7 +178,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
           canonical="/summoner"
           />
       <SummonerSearch handleInput={handleSummoner} />
-      {summonerName !== "" ? (
+      {placeholder === "none" ? (
         <div className="summoner-wrapper">
           <div className="summoner-container-horizontal">
             {profileState !== undefined && (
@@ -221,7 +221,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
       ) : (
         <SummonerPlaceholder state={placeholder} />
       )}
-      {matchesState !== undefined && matchesState.map(match => {
+      {(matchesState !== undefined) && matchesState.map(match => {
           return(
             <SummonerMatch
               placement={match.placement}

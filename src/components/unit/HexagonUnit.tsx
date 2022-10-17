@@ -60,7 +60,7 @@ export const HexagonUnit: React.FC<Props> = ({
       <div className="unit-hex-container">
         <div className="star-container">
           {stars.map(() => {
-            return <img src={star} alt="star" loading="lazy" title="Star" />;
+            return <img src={star} alt="star" title="Star" />;
           })}
         </div>
         <div className="hexagon hex-image">
@@ -79,7 +79,7 @@ export const HexagonUnit: React.FC<Props> = ({
         <div className="item-container">
           {items !== null &&
             items.map((itemElement) => (
-              <img src={itemElement.url} alt={itemElement.name} loading="lazy" title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
             ))}
         </div>
       </div>
@@ -89,7 +89,7 @@ export const HexagonUnit: React.FC<Props> = ({
       <div className="unit-hex-container-medium">
         <div className="star-container">
           {stars.map(() => {
-            return <img src={star} alt="star" loading="lazy" title="Star" />;
+            return <img src={star} alt="star" title="Star" />;
           })}
         </div>
         <div className="hexagon hex-border">
@@ -108,7 +108,7 @@ export const HexagonUnit: React.FC<Props> = ({
         <div className="item-container">
           {items !== null &&
             items.map((itemElement) => (
-              <img src={itemElement.url} alt={itemElement.name} loading="lazy" title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
             ))}
         </div>
       </div>

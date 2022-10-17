@@ -112,6 +112,11 @@
   border-radius: 4px 4px 0px 0px;
 }
 
+.contact-email {
+  color: $primary;
+  text-decoration: none;
+}
+
 .units-titles h4 {
   width: 150px;
   text-align: center;
@@ -186,6 +191,12 @@
 
 .privacy-wrapper h4 {
   margin-top: 20px;
+}
+
+.guides-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1350px) {
@@ -278,7 +289,7 @@
 
 @media screen and (max-width: 850px) {
   .summoner-wrapper {
-    width: 100%;
+    width: calc(100% - 32px);
   }
 
   .summoner-container-horizontal {
@@ -331,6 +342,10 @@
   }
 
   .comps-wrapper {
+    width: calc(100% - 32px);
+  }
+
+  .guides-wrapper {
     width: calc(100% - 32px);
   }
 }

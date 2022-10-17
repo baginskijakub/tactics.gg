@@ -14,6 +14,8 @@ import {Items} from "./pages/Items"
 import {Comps} from "./pages/Comps"
 import {Leaderboard} from './pages/Leaderboard'
 import {PrivacyPolicy} from './pages/PrivacyPolicy'
+import {Guides} from './pages/Guides'
+import {Contact} from './pages/Contact'
 
 import {Footer} from './components/footer/Footer'
 
@@ -48,7 +50,9 @@ const App:React.FC = () => {
           <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
           <Route path='/teambuilder' element={<TeamBuilder />}/>
           <Route path='/leaderboard' element={<Leaderboard />}/>
+          <Route path='/guides' element={<Guides />}/>
           <Route path='/privacy' element={<PrivacyPolicy />}/>
+          <Route path='/contact' element={<Contact />}/>
         </Routes>
         <Footer />
     </div>

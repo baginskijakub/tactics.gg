@@ -33,6 +33,7 @@ export const NavbarLinks: React.FC = () => {
         <NavButton index={4} text="Units" isSelected={selected[4]} link="" path="/units" handleSelection={handleSelected}/>
         <NavButton index={5} text="Items" isSelected={selected[5]} link="" path="/items" handleSelection={handleSelected}/>
         <NavButton index={6} text="Leaderboards" isSelected={selected[6]} link="" path="/leaderboard" handleSelection={handleSelected}/>
+        {/* <NavButton index={7} text="Guides" isSelected={selected[7]} link="" path="/guides" handleSelection={handleSelected}/> */}
       </div>
     </div>
   );

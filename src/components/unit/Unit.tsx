@@ -55,14 +55,14 @@ export const Unit: React.FC<Props> = ({
       <div className="unit-container">
         <div className="star-container">
           {stars.map(() => {
-            return <img src={star} alt="star" loading="lazy" title="Unit"/>;
+            return <img src={star} alt="star" title="Unit"/>;
           })}
         </div>
-        <img className={`unit-image ${borderColor}`} src={url} alt={name} loading="lazy" title="Unit"/>
+        <img className={`unit-image ${borderColor}`} src={url} alt={name} title="Unit"/>
         <div className="item-container">
           {items !== null &&
             items.map((itemElement) => (
-              <img src={itemElement.url} alt={itemElement.name} loading="lazy" title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
             ))}
         </div>
       </div>
@@ -72,7 +72,7 @@ export const Unit: React.FC<Props> = ({
       <div className="unit-container">
         <div className="star-container-medium">
           {stars.map(() => {
-            return <img src={star} alt="star" loading="lazy" title="Unit"/>;
+            return <img src={star} alt="star" title="Unit"/>;
           })}
         </div>
         <img
@@ -85,7 +85,7 @@ export const Unit: React.FC<Props> = ({
         <div className="item-container-medium">
           {items !== null &&
             items.map((itemElement) => (
-              <img src={itemElement.url} alt={itemElement.name} loading="lazy" title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
             ))}
         </div>
       </div>
@@ -95,20 +95,19 @@ export const Unit: React.FC<Props> = ({
       <div className="unit-container">
         <div className="star-container-small">
           {stars.map(() => {
-            return <img src={star} alt="star" loading="lazy" title="Unit"/>;
+            return <img src={star} alt="star" title="Unit"/>;
           })}
         </div>
         <img
           className={`unit-image-small ${borderColor}`}
           src={url}
           alt={name}
-          loading="lazy"
           title="Unit"
         />
         <div className="item-container-small">
           {items !== null &&
             items.map((itemElement) => (
-              <img src={itemElement.url} alt={itemElement.name} loading="lazy" title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
             ))}
         </div>
       </div>
