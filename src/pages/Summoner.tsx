@@ -47,7 +47,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
           res.data.profile.top,
           res.data.profile.ranking,
           `https://ittledul.sirv.com/Images/tiers/${
-            res.data.profile.rank.split(" ")[0]
+          res.data.profile.rank.split(" ")[0]
           }.png`
         )
       );
@@ -183,7 +183,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
           <div className="summoner-container-horizontal">
             {profileState !== undefined && (
               <SummonerProfile
-                name={summonerName}
+                name={profileState.name}
                 region={profileState.region}
                 icon={profileState.icon}
                 rank={profileState.rank}
