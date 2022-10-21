@@ -36,6 +36,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
 
   function handleSummoner(name: string, region: string) {
     setPlaceholder("loading");
+    setMatches(undefined)
     searchSummoner(region, name).then((res: any) => {
       setProfile(
         new Profile(

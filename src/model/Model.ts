@@ -49,8 +49,8 @@ function getCreatedComp(id: string){
   return axios.get(`https://server-tactixgg.com/comps/${id}`)
 }
 
-function saveCreatedComp(id: string, inputData: any){
-  return axios.post(`https://server-tactixgg.com/comps/${id}`, {"composition": inputData})
+function saveCreatedComp(id: string, composition: any, analysis: any){
+  return axios.post(`https://server-tactixgg.com/comps/${id}`, {"composition": composition, "analysis": analysis})
 }
 
 

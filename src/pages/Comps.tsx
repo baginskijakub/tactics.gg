@@ -6,6 +6,7 @@ import {Comp as CompClass} from "../classes"
 import {Comp} from "../components/comp/Comp"
 import {CompLoader} from "../components/comp/CompLoader"
 import {PageHead} from './PageHead'
+import {CompHowTo} from '../components/howToUse/CompHowTo'
 import './pages.css'
 
 
@@ -155,6 +156,7 @@ export const Comps = () => {
                     />
                 )
             }) : <CompLoader/>}
+            <CompHowTo/>
         </div>
     )
 }

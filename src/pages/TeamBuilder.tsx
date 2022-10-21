@@ -31,13 +31,15 @@ export const TeamBuilder: React.FC = () => {
     if(id !== undefined){
       let tempBoard:UnitHex[][] = initialState;
       getCreatedComp(id).then(res => {
-        res.data.json.forEach((row:any, rowNo:number) => {
+        console.log(res)
+        res.data.composition.forEach((row:any, rowNo:number) => {
           row.forEach((unit:any, columnNo:number) => {
             if(unit.id !== null){
               tempBoard[rowNo][columnNo] = new UnitHex(unit.id, unit.name, unit.cost, unit.url, unit.level, unit.items)
             }
           })
         })
+        setAnalysis(res.data.analysis)
       updateBoard(tempBoard)
       onUnitsChange();
       })
@@ -48,7 +50,7 @@ export const TeamBuilder: React.FC = () => {
   function handleCopyLink(){
     if(board !== initialState){
       let id = uuidv4();
-      saveCreatedComp(id, board);
+      saveCreatedComp(id, board, analysis);
       navigator.clipboard.writeText(`https://www.tactix.gg/teambuilder/${id}`)
     }
   }
