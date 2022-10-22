@@ -1,8 +1,10 @@
 import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import io from "socket.io-client"
 
 import "./pages.css";
+import { BuilderHowTo} from "../components/howToUse/BuilderHowTo"
 import {Board} from "../components/builder/Board";
 import {Units} from "../components/builder/Units";
 import { Item, UnitHex, BuilderTrait, Analysis as AnalysisClass, AnalysisItem, AnalysisUnit, Augment, Unit } from "../classes";
@@ -15,6 +17,9 @@ import {Analysis} from "../components/builder/Analysis";
 import {PageHead} from './PageHead'
 import { getCreatedComp, saveCreatedComp, postComp} from "../model/Model";
 
+
+const thisSessionId = Math.random().toString(36).substring(2,9);
+
 export const TeamBuilder: React.FC = () => {
 
   let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
@@ -22,12 +27,18 @@ export const TeamBuilder: React.FC = () => {
   const [board, setBoard] = useState(initialState);
   const [traits, setTraits] = useState<any[]>([])
   const [analysis, setAnalysis] = useState<any>("")
+  const [progress, setProgress] = useState(undefined)
   const [unitsSupport, setUnitsSupport] = useState(0)
   const { id } = useParams();
+  const [width, setWidth] = React.useState(window.innerWidth);
 
-  //fetching data from server if id of comp that someone has created is passed to url
+  //change view on breakpoint
   useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
 
+  useEffect(() => {
+    //fetching data from server if id of comp that someone has created is passed to url
     if(id !== undefined){
       let tempBoard:UnitHex[][] = initialState;
       getCreatedComp(id).then(res => {
@@ -43,9 +54,24 @@ export const TeamBuilder: React.FC = () => {
       updateBoard(tempBoard)
       onUnitsChange();
       })
-
     }
-  }, [])
+
+      try{
+          const socket = io("https://server-tactixgg.com/");
+
+          console.log(thisSessionId)
+          socket.emit("connectInit", thisSessionId)
+          socket.on("uploadProgress", (data) => {
+            console.log(data)
+            setProgress(data)
+            setAnalysis("Loading")
+          })
+      }
+      catch{
+        console.log("Something went wrong")
+      }
+
+  }, [analysis])
 
   function handleCopyLink(){
     if(board !== initialState){
@@ -81,7 +107,7 @@ export const TeamBuilder: React.FC = () => {
         }
       )
     })
-    postComp(arr).then((res:any) => {
+    postComp(arr, thisSessionId).then((res:any) => {
       if(res.data === ""){
         setAnalysis("Wait")
       }
@@ -105,6 +131,7 @@ export const TeamBuilder: React.FC = () => {
           augments.push(new Augment(augment.name, augment.name, augment.avgPlace, augment.winRate, augment.playRate))
         })
         setAnalysis(new AnalysisClass(res.data.top4Ratio, res.data.winRate, res.data.avgPlace, res.data.playRate, units, augments))
+        setProgress(undefined)
       }
     })
   }
@@ -341,22 +368,24 @@ useEffect(() => {
           />
         <Analysis 
           analysis={analysis}
+          progres={progress}
           />
       <div className="builder-horizontal-wrapper">
         <div className="builder-vertical-container-secondary">
-          <Traits traits={traits}/>
+          {width > 1050 && <Traits traits={traits}/>}
         </div>
         <div className="builder-vertical-container-primary">
           <Board matrix={board} changeLevel={changeStarLevel} removeFromBoard={removeFromBoard} clearBoard={clearBoard} copyLink={handleCopyLink}/>
-          <Units onChange={onUnitsChange}/>
+          {width > 1050 && <Units onChange={onUnitsChange}/>}
         </div>
         <div className="builder-vertical-container-secondary">
-          <Analyze 
+          {width > 1050 && <><Analyze 
             buttonClick={analyze}
             />
-          <Items />
+          <Items /></>}
         </div>
       </div>
+      <BuilderHowTo/>
     </div>
   );
 };

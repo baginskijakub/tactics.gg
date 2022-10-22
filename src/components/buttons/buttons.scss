@@ -16,7 +16,9 @@
   padding: 11px 20px 12px;
   background-color: $primary;
   border-radius: 4px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
   cursor: pointer;

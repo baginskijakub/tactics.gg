@@ -592,6 +592,12 @@ h6 {
   .comps-wrapper {
     width: 1000px;
   }
+  .builder-wrapper-outer {
+    width: 1000px;
+  }
+  .builder-horizontal-wrapper {
+    gap: 12px;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -626,6 +632,9 @@ h6 {
     width: 120px;
   }
   .comps-wrapper {
+    width: 800px;
+  }
+  .builder-wrapper-outer {
     width: 800px;
   }
 }
@@ -684,6 +693,9 @@ h6 {
     width: calc(100% - 32px);
   }
   .guides-wrapper {
+    width: calc(100% - 32px);
+  }
+  .builder-wrapper-outer {
     width: calc(100% - 32px);
   }
 }

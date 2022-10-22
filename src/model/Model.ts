@@ -6,8 +6,8 @@ function searchSummoner(region: string, summoner: string) {
   );
 }
 
-function postComp(inputData: any){
-  return axios.post('https://server-tactixgg.com/comps', {"inputData": inputData})
+function postComp(inputData: any, id:any){
+  return axios.post('https://server-tactixgg.com/comps', {"inputData": inputData, "socketSessionId": id})
 }
 
 function getAugmentsRanking(){

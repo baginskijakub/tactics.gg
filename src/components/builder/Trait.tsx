@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./builder.css";
 
 interface Props {
@@ -14,6 +14,14 @@ export const Trait: React.FC<Props> = ({
   active,
   breakpoints,
 }) => {
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+  //change view on breakpoint
+  useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
+
   var backgroundColor: string;
   switch (style) {
     case 0:
@@ -77,7 +85,7 @@ export const Trait: React.FC<Props> = ({
       </div>
       <div className="builder-trait-details">
         <h4>{name}</h4>
-        <div className="builder-trait-details-inner">{arr}</div>
+        {width > 1350 && <div className="builder-trait-details-inner">{arr}</div>}
       </div>
     </div>
   );

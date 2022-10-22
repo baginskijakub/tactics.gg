@@ -8,12 +8,24 @@ import { AnalysisUnit, AnalysisItem, Augment, Analysis as AnalysisClass } from '
 
 interface Props{
     analysis: AnalysisClass | string
+    progres?: number
 }
-export const Analysis:React.FC<Props> = ({analysis}) => {
+export const Analysis:React.FC<Props> = ({analysis, progres}) => {
 
     if(typeof analysis === 'string'){
-        if(analysis === "Loading"){
+        if(analysis === "Loading" && progres !== undefined){
                 return(
+                    <div className="analysis-placeholder">
+                        <h4>Analyzing matches...</h4>
+                        <p>{progres}%</p>
+                        <div className="loading-bar-container">
+                            <span className="loading-bar-loaded" style={{width: `${progres}%`}}/>
+                        </div>
+                    </div>
+            )
+        }
+        else if(analysis === "Loading"){
+                            return(
                     <div className="analysis-placeholder">
                         <h4>Analyzing matches...</h4>
                         <div className="lds-dual-ring"></div>

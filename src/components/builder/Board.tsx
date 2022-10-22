@@ -28,13 +28,15 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, remove
   }
   return (
     <div className="builder-board-wrapper">
-      <div className="builder-board-clear-button" onClick={() => clearBoard()}>
-          <img src={deleteIcon} alt="delete"/>
-          <h5>Clear board</h5>
-      </div>
-      <div className="builder-board-copy-button" onClick={() => handleCopy()}>
-          <img src={linkIcon} alt="delete"/>
-          <h5 id="copy-link">Copy link</h5>
+      <div className="builder-board-buttons-container">
+        <div className="builder-board-clear-button" onClick={() => clearBoard()}>
+            <img src={deleteIcon} alt="delete"/>
+            <h5>Clear board</h5>
+        </div>
+        <div className="builder-board-copy-button" onClick={() => handleCopy()}>
+            <img src={linkIcon} alt="delete"/>
+            <h5 id="copy-link">Copy link</h5>
+        </div>
       </div>
       {matrix.map((array, i) => {
         return (

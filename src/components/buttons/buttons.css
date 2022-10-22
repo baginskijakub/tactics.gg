@@ -268,7 +268,15 @@ h6 {
   padding: 11px 20px 12px;
   background-color: #377df7;
   border-radius: 4px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
