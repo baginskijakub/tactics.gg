@@ -148,7 +148,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -199,7 +198,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -250,21 +248,11 @@ h6 {
     line-height: 120%;
   }
 }
-
 .unit-row-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 4px 30px;
   width: 1240px;
   height: 52px;
@@ -277,16 +265,9 @@ h6 {
 }
 
 .unit-row-unit {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   gap: 8px;
   width: 200px;
 }
@@ -298,16 +279,9 @@ h6 {
 
 .unit-row-traits {
   width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -338,7 +312,6 @@ h6 {
     width: 150px;
   }
 }
-
 @media screen and (max-width: 1050px) {
   .unit-row-wrapper {
     padding: 4px 20px;
@@ -361,7 +334,6 @@ h6 {
     width: 120px;
   }
 }
-
 @media screen and (max-width: 850px) {
   .unit-row-wrapper {
     padding: 4px 8px;
@@ -379,5 +351,4 @@ h6 {
   .unit-row-wrapper p {
     width: 80px;
   }
-}
-/*# sourceMappingURL=units.css.map */
+}/*# sourceMappingURL=units.css.map */

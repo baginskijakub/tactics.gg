@@ -2,13 +2,16 @@ import React from 'react'
 import './pages.css'
 import {Helmet} from "react-helmet"
 import ggIcon from '../images/icons/gg_logo.png'
+import {SecondaryButton} from '../components/buttons/SecondaryButton'
 
 interface Props{
     title: string
     text?: string
     canonical?: string
+    buttonText?: string
+    buttonOnClick?: () => void
 }
-export const PageHead:React.FC<Props> = ({title, text, canonical}) => {
+export const PageHead:React.FC<Props> = ({title, text, canonical, buttonText, buttonOnClick}) => {
 
 
     return (
@@ -19,8 +22,11 @@ export const PageHead:React.FC<Props> = ({title, text, canonical}) => {
                 <link rel="canonical" href={canonical}></link>
                 <meta name="description" content={`${text}. Climb faster with our up to date TFT compositions and rankings.`} data-rh="true"></meta>
             </Helmet>
-            <h1>{title}</h1>
-            {text !== undefined && <p className="body">{text}</p>}
+            <div className='page-head-inner'>
+                <h1>{title}</h1>
+                {text !== undefined && <p className="body">{text}</p>}
+            </div>
+            {(buttonText !== undefined && buttonOnClick !== undefined) && <SecondaryButton text={buttonText} fn={buttonOnClick}/>}
         </div>
     )
 }

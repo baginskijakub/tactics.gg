@@ -148,7 +148,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -199,7 +198,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -250,41 +248,22 @@ h6 {
     line-height: 120%;
   }
 }
-
 .comp-how-to-wrapper {
   margin-top: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0px;
   gap: 0px;
   width: 1300px;
 }
 
 .comp-how-to-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 0px;
   width: 1200px;
 }
@@ -294,19 +273,10 @@ h6 {
 }
 
 .comp-how-to-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 0px;
   gap: 20px;
   width: 460px;
@@ -325,42 +295,23 @@ h6 {
 
 .builder-how-to-wrapper {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 72px;
 }
 
 .builder-how-to-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 36px;
   width: 800px;
 }
 
 .builder-how-to-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -389,18 +340,12 @@ h6 {
     margin-left: 16px;
   }
   .builder-how-to-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 36px;
     width: 600px;
   }
 }
-
 @media screen and (max-width: 1050px) {
   .comp-how-to-wrapper {
     width: 800px;
@@ -421,7 +366,6 @@ h6 {
     width: 500px;
   }
 }
-
 @media screen and (max-width: 850px) {
   .comp-how-to-wrapper {
     width: 100%;
@@ -441,5 +385,4 @@ h6 {
     margin-top: 40px;
     width: calc(100% - 32px);
   }
-}
-/*# sourceMappingURL=howToUse.css.map */
+}/*# sourceMappingURL=howToUse.css.map */

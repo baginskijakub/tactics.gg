@@ -148,7 +148,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -199,7 +198,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -250,22 +248,12 @@ h6 {
     line-height: 120%;
   }
 }
-
 .footer-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: 20px 0px;
   gap: 16px;
   background: #0c1a2d;
@@ -283,13 +271,8 @@ h6 {
 }
 
 .footer-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   gap: 16px;
 }
 
@@ -297,5 +280,4 @@ h6 {
   .footer-wrapper p {
     width: calc(100% - 32px);
   }
-}
-/*# sourceMappingURL=footer.css.map */
+}/*# sourceMappingURL=footer.css.map */

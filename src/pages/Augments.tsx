@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 import {AugmentRow} from '../components/augments/AugmentRow'
 import { AugmentRow as Augment } from '../classes'
 import {Dropdown} from '../components/buttons/Dropdown'
@@ -19,6 +20,7 @@ export const Augments:React.FC = () => {
     const[augments, setAugments] = useState<Augment[]>([])
     const[allAugments, setAllAugments] = useState<Augment[]>([])
     const [width, setWidth] = React.useState(window.innerWidth);
+    let navigate = useNavigate();
 
     //change navbar on breakpoint
     React.useEffect(() => {
@@ -199,6 +201,9 @@ export const Augments:React.FC = () => {
     //     handleSort(sort)
     // }, [stage])
 
+    function navigateToCompareAugments(){
+        navigate('/compareAugments')
+    }
     
     return (
         <div className="augments-wrapper">
@@ -206,6 +211,8 @@ export const Augments:React.FC = () => {
                 title="TFT Augments Tier List"
                 text="Data-driven Teamfight Tactics Hextech Augments tier list"
                 canonical="/augments"
+                buttonText='Compare Augments'
+                buttonOnClick={navigateToCompareAugments}
                 />
             <div className="sort-navigation-container">
                 <div className="sort-dropdown-container">

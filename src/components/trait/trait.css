@@ -148,7 +148,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -199,7 +198,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -250,33 +248,18 @@ h6 {
     line-height: 120%;
   }
 }
-
 .trait-small-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   padding: 0px;
   gap: 4px;
 }
 
 .trait-big-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   padding: 0px;
   gap: 8px;
 }
@@ -288,15 +271,9 @@ h6 {
   background-repeat: no-repeat;
   background-size: 24px 27px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .trait-hex-big {
@@ -306,15 +283,9 @@ h6 {
   background-repeat: no-repeat;
   background-size: 36px 41px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .trait-small-icon {
@@ -328,33 +299,21 @@ h6 {
 }
 
 .trait-small-value-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 14px;
   height: 16px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 0px 2px 2px 0px;
   margin-left: -9px;
 }
 
 .trait-big-value-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 16px;
   height: 22px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 0px 2px 2px 0px;
   margin-left: -14px;
 }
@@ -389,7 +348,6 @@ h6 {
     margin-left: -9px;
   }
 }
-
 @media screen and (max-width: 1050px) {
   .trait-hex-big {
     width: 32px;
@@ -420,7 +378,6 @@ h6 {
     margin-left: -9px;
   }
 }
-
 @media screen and (max-width: 850px) {
   .trait-hex-big {
     width: 28px;
@@ -450,5 +407,4 @@ h6 {
     height: 10px;
     margin-left: -9px;
   }
-}
-/*# sourceMappingURL=trait.css.map */
+}/*# sourceMappingURL=trait.css.map */

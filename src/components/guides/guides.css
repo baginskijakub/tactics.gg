@@ -148,7 +148,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -199,7 +198,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -250,21 +248,11 @@ h6 {
     line-height: 120%;
   }
 }
-
 .guide-list-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 12px;
   width: 836px;
   height: 148px;
@@ -272,7 +260,6 @@ h6 {
   border: 1px solid #172c49;
   border-radius: 4px;
   cursor: pointer;
-  -webkit-transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
   transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
 }
 
@@ -281,19 +268,10 @@ h6 {
 }
 
 .guide-list-head {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   height: calc(100% - 24px);
   padding: 0px;
   width: 453px;
@@ -304,19 +282,10 @@ h6 {
 }
 
 .guide-list-head-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 0px;
   gap: 8px;
 }
@@ -330,19 +299,10 @@ h6 {
 }
 
 .guide-list-foot {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 0px;
   gap: 8px;
 }
@@ -361,16 +321,9 @@ h6 {
 }
 
 .copy-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: row;
+  align-items: flex-start;
   padding: 4px 6px;
   background: #1e4c94;
   border-radius: 15px;
@@ -409,7 +362,6 @@ button {
     height: 135px;
   }
 }
-
 @media screen and (max-width: 800px) {
   .guide-list-wrapper {
     padding: 8px;
@@ -424,5 +376,4 @@ button {
     width: 120px;
     height: 100px;
   }
-}
-/*# sourceMappingURL=guides.css.map */
+}/*# sourceMappingURL=guides.css.map */

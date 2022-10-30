@@ -53,6 +53,10 @@ function saveCreatedComp(id: string, composition: any, analysis: any){
   return axios.post(`https://server-tactixgg.com/comps/${id}`, {"composition": composition, "analysis": analysis})
 }
 
+function getComparableAugments(){
+  return axios.get('https://server-tactixgg.com/compare-augments')
+}
 
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp };
+
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp, getComparableAugments};

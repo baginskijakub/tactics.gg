@@ -148,7 +148,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -199,7 +198,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -250,23 +248,13 @@ h6 {
     line-height: 120%;
   }
 }
-
 .leader-row-wrapper {
   width: calc(100% - 60px);
   padding: 8px 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #0c1a2d;
   border-top: 1px solid #172c49;
 }
@@ -280,18 +268,11 @@ h6 {
 }
 
 .leader-row-summoner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   gap: 12px;
   width: 300px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .leader-row-summoner p {
@@ -308,5 +289,4 @@ h6 {
 .leader-row-wrapper p {
   width: 100px;
   text-align: center;
-}
-/*# sourceMappingURL=leaderboard.css.map */
+}/*# sourceMappingURL=leaderboard.css.map */

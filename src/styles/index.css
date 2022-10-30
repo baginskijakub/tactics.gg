@@ -140,7 +140,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 1050px) {
   h1 {
     font-size: 20px;
@@ -191,7 +190,6 @@ h6 {
     line-height: 120%;
   }
 }
-
 @media screen and (max-width: 850px) {
   h1 {
     font-size: 18px;
@@ -241,5 +239,4 @@ h6 {
     font-size: 8px;
     line-height: 120%;
   }
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

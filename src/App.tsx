@@ -16,6 +16,7 @@ import {Leaderboard} from './pages/Leaderboard'
 import {PrivacyPolicy} from './pages/PrivacyPolicy'
 import {Guides} from './pages/Guides'
 import {Contact} from './pages/Contact'
+import { CompareAugments } from "./pages/CompareAugments";
 
 import {Footer} from './components/footer/Footer'
 
@@ -54,6 +55,7 @@ const App:React.FC = () => {
           <Route path='/guides' element={<Guides />}/>
           <Route path='/privacy' element={<PrivacyPolicy />}/>
           <Route path='/contact' element={<Contact />}/>
+          <Route path='/compareAugments' element={<CompareAugments />}/>
         </Routes>
         <Footer />
     </div>
