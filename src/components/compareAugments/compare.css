@@ -260,6 +260,14 @@ h6 {
   background-color: #0e1928;
 }
 
+.augment-search-container .default-search form {
+  width: 90%;
+}
+
+.augment-search-container .default-search form input {
+  width: 100%;
+}
+
 .augment-search-suggested-container {
   position: absolute;
   top: 30px;
@@ -281,7 +289,7 @@ h6 {
   padding: 4px 4px;
   gap: 12px;
   z-index: 2;
-  width: 100%;
+  width: calc(100% - 8px);
   height: 32px;
   /* Background/7 */
   background: #0c1a2d;
@@ -344,6 +352,10 @@ h6 {
 
 .augment-panel-stats tr:nth-child(1) {
   background-color: #0e1928;
+}
+
+.augment-search-suggested-container::-webkit-scrollbar {
+  display: none;
 }
 
 table th, table td {

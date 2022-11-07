@@ -15,6 +15,14 @@
     background-color: $background07;
 }
 
+.augment-search-container .default-search form{
+    width: 90%;
+}
+
+.augment-search-container .default-search form input{
+    width: 100%;
+}
+
 .augment-search-suggested-container{
     position: absolute;
     top: 30px;
@@ -37,7 +45,7 @@
     gap: 12px;
     z-index: 2;
 
-    width: 100%;
+    width: calc(100% - 8px);
     height: 32px;
 
     /* Background/7 */
@@ -107,13 +115,9 @@
     background-color: $background07;
 }
 
-
-// table{
-//     border: 1px solid $divider;
-//     border-collapse: separate;
-//     border-spacing: 0;
-//     border-radius: 0 0 8px 8px;
-// }
+.augment-search-suggested-container::-webkit-scrollbar {
+    display: none;
+  }
 
 table th, table td {
     // border: 1px solid $divider;
@@ -264,6 +268,7 @@ table th, table td {
     .augment-search-container .default-search{
         width: 200px;
     }
+
 
     table th, table td {
         // border: 1px solid $divider;
