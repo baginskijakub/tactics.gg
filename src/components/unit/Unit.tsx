@@ -1,6 +1,17 @@
 import React from "react";
 import star from "../../images/icons/star.svg";
 import "./unit.css";
+import { styled } from "@mui/material/styles";
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+
+const DefaultTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: "#0E1828",
+    border: "1px solid #172C49",
+  },
+}));
 
 interface Item {
   id: number;
@@ -58,11 +69,41 @@ export const Unit: React.FC<Props> = ({
             return <img src={star} alt="star" title="Unit"/>;
           })}
         </div>
+        <DefaultTooltip
+        title={name}
+        placement="top"
+        PopperProps={{
+          modifiers: [
+            {
+              name: "offset",
+              options: {
+                offset: [0, -16],
+              },
+            },
+          ],
+        }}
+      >
         <img className={`unit-image ${borderColor}`} src={url} alt={name} title="Unit"/>
+        </DefaultTooltip>
         <div className="item-container">
           {items !== null &&
             items.map((itemElement) => (
+              <DefaultTooltip
+              title={itemElement.name}
+              placement="top"
+              PopperProps={{
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, -16],
+                    },
+                  },
+                ],
+              }}
+            >
               <img src={itemElement.url} alt={itemElement.name} title="Item"/>
+              </DefaultTooltip>
             ))}
         </div>
       </div>
@@ -75,6 +116,20 @@ export const Unit: React.FC<Props> = ({
             return <img src={star} alt="star" title="Unit"/>;
           })}
         </div>
+        <DefaultTooltip
+        title={name}
+        placement="top"
+        PopperProps={{
+          modifiers: [
+            {
+              name: "offset",
+              options: {
+                offset: [0, -16],
+              },
+            },
+          ],
+        }}
+      >
         <img
           className={`unit-image-medium ${borderColor}`}
           src={url}
@@ -82,10 +137,26 @@ export const Unit: React.FC<Props> = ({
           loading="lazy"
           title="Unit"
         />
+        </DefaultTooltip>
         <div className="item-container-medium">
           {items !== null &&
             items.map((itemElement) => (
+              <DefaultTooltip
+              title={itemElement.name}
+              placement="top"
+              PopperProps={{
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, -16],
+                    },
+                  },
+                ],
+              }}
+            >
               <img src={itemElement.url} alt={itemElement.name} title="Item"/>
+              </DefaultTooltip>
             ))}
         </div>
       </div>
@@ -98,16 +169,46 @@ export const Unit: React.FC<Props> = ({
             return <img src={star} alt="star" title="Unit"/>;
           })}
         </div>
+          <DefaultTooltip
+          title={name}
+          placement="top"
+          PopperProps={{
+            modifiers: [
+              {
+                name: "offset",
+                options: {
+                  offset: [0, -16],
+                },
+              },
+            ],
+          }}
+        >
         <img
           className={`unit-image-small ${borderColor}`}
           src={url}
           alt={name}
           title="Unit"
         />
+        </DefaultTooltip>
         <div className="item-container-small">
           {items !== null &&
             items.map((itemElement) => (
+              <DefaultTooltip
+              title={itemElement.name}
+              placement="top"
+              PopperProps={{
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, -16],
+                    },
+                  },
+                ],
+              }}
+            >
               <img src={itemElement.url} alt={itemElement.name} title="Item"/>
+              </DefaultTooltip>
             ))}
         </div>
       </div>
