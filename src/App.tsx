@@ -17,6 +17,7 @@ import {PrivacyPolicy} from './pages/PrivacyPolicy'
 import {Guides} from './pages/Guides'
 import {Contact} from './pages/Contact'
 import { CompareAugments } from "./pages/CompareAugments";
+import {Set8} from './pages/Set8'
 
 import {Footer} from './components/footer/Footer'
 
@@ -55,6 +56,7 @@ const App:React.FC = () => {
           <Route path='/guides' element={<Guides />}/>
           <Route path='/privacy' element={<PrivacyPolicy />}/>
           <Route path='/contact' element={<Contact />}/>
+          <Route path='/set8' element={<Set8 />}/>
           <Route path='/compareAugments' element={<CompareAugments />}/>
         </Routes>
         <Footer />

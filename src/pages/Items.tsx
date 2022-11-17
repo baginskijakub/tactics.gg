@@ -7,6 +7,7 @@ import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import itemsData from '../components/builder/Items.json'
 import {PageHead} from './PageHead'
+import {AnalyzedCounter} from './AnalyzedCounter'
 import {TableLoader} from '../components/table/TableLoader'
 
 export const Items:React.FC = () => {
@@ -166,8 +167,10 @@ export const Items:React.FC = () => {
                         defaultValue="Normal"
                         onChange={handleType}
                         />
+                    {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
                 </div>
-                {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
+                {width > 1350 && <AnalyzedCounter/>}
+
             </div>
             <div className="augments-container">
                 <div className="augments-titles">

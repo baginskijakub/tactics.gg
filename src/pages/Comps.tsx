@@ -7,6 +7,7 @@ import {Comp} from "../components/comp/Comp"
 import {CompLoader} from "../components/comp/CompLoader"
 import {PageHead} from './PageHead'
 import {CompHowTo} from '../components/howToUse/CompHowTo'
+import {AnalyzedCounter} from './AnalyzedCounter'
 import './pages.css'
 
 
@@ -133,13 +134,16 @@ export const Comps = () => {
                 canonical="/"
                 />
             <div className="sort-navigation-container">
-                <Dropdown 
-                    name="Sort"
-                    values={["Average Placement", "Winrate", "Playrate"]}
-                    defaultValue="Average Placement"
-                    onChange={handleSort}
-                    />
-                {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
+                <div className="sort-dropdown-container">
+                    <Dropdown 
+                        name="Sort"
+                        values={["Average Placement", "Winrate", "Playrate"]}
+                        defaultValue="Average Placement"
+                        onChange={handleSort}
+                        /> 
+                    {width > 500 && <DefaultSearch initialValue="Search unit or trait" inputChange={handleSearch}/>}
+                </div>
+                {width > 1050 && <AnalyzedCounter/>}
             </div>
             {comps.length > 0 ? comps.map((comp) => {
                 return(

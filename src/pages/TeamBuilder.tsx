@@ -128,7 +128,8 @@ export const TeamBuilder: React.FC = () => {
         });
         let augments: Augment[] = []
         res.data.augments.forEach((augment: any) => {
-          augments.push(new Augment(augment.name, augment.name, augment.avgPlace, augment.winRate, augment.playRate))
+          console.log(augment.name)
+          augments.push(new Augment(augment.name, augment.src, augment.avgPlace, augment.winRate, augment.playRate))
         })
         setAnalysis(new AnalysisClass(res.data.top4Ratio, res.data.winRate, res.data.avgPlace, res.data.playRate, units, augments))
         setProgress(undefined)

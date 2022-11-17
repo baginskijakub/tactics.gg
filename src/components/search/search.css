@@ -271,7 +271,7 @@ input {
   padding: 4px 8px 6px 8px;
   background: #0c1a2d;
   border: 1px solid #172c49;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .default-search img {

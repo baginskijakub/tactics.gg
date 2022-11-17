@@ -67,7 +67,7 @@ export const Analysis:React.FC<Props> = ({analysis, progres}) => {
     })
     let augments: Augment[] = []
     analysis.augments.forEach(augment => {
-        augments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.name}.png`, augment.name, augment.avgPlacement, augment.winrate, augment.frequency))
+        augments.push(new Augment( augment.name, augment.src, augment.avgPlacement, augment.winrate, augment.frequency))
     })
     return (
         <div className="analysis-wrapper">

@@ -8,6 +8,7 @@ import unitsData from '../components/builder/units-data.json'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import {PageHead} from './PageHead'
 import {TableLoader} from '../components/table/TableLoader'
+import {AnalyzedCounter} from './AnalyzedCounter'
 
 export const Units:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -148,13 +149,16 @@ export const Units:React.FC = () => {
                 canonical="/units"
                 />
             <div className="sort-navigation-container">
+                <div className="sort-dropdown-container">
                     <Dropdown 
-                        name="Sort"
-                        values={["Average Placement", "Winrate", "Playrate"]}
-                        defaultValue="Average Placement"
-                        onChange={handleSort}
-                        />
-               {width > 500 && <DefaultSearch initialValue="Search unit or trait" inputChange={handleSearch}/>}
+                            name="Sort"
+                            values={["Average Placement", "Winrate", "Playrate"]}
+                            defaultValue="Average Placement"
+                            onChange={handleSort}
+                            />
+                {width > 500 && <DefaultSearch initialValue="Search unit or trait" inputChange={handleSearch}/>}
+                </div>
+                {width > 1050 && <AnalyzedCounter/>}
             </div>
             <div className="augments-container">
                 <div className="units-titles">

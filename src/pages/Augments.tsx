@@ -9,6 +9,7 @@ import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
 import {TableLoader} from '../components/table/TableLoader'
 import {PageHead} from './PageHead'
+import {AnalyzedCounter} from './AnalyzedCounter'
 import data from '../components/augments/augments-data.json'
 
 export const Augments:React.FC = () => {
@@ -234,8 +235,10 @@ export const Augments:React.FC = () => {
                     defaultValue="All"
                     onChange={handleStage}
                     />
+                {width > 500 && <DefaultSearch initialValue="Search augment" inputChange={handleSearch}/>}
                 </div>
-                {width > 500 && <DefaultSearch initialValue="Search item" inputChange={handleSearch}/>}
+
+                {width > 1350 && <AnalyzedCounter/>}
             </div>
             <div className="augments-container">
                 <div className="augments-titles">
