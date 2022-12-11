@@ -7,8 +7,23 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  width: 836px;
-  height: 148px;
+  width: 924px;
+  height: 128px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.guide-list-wrapper-small{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  width: 614px;
+  height: 128px;
   background: $background05;
   border: 1px solid $divider;
   border-radius: 4px;
@@ -25,9 +40,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: calc(100% - 24px);
+  height: 100%;
   padding: 0px;
   width: 453px;
+}
+
+.guide-list-head-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  padding: 0px;
+  width: 336px;
 }
 
 .guide-list-date {
@@ -40,7 +65,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 0px;
-  gap: 8px;
+  gap: 4px;
 }
 
 .guide-list-head-inner p {
@@ -50,6 +75,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .guide-list-foot {
   display: flex;
   flex-direction: row;
@@ -92,13 +118,30 @@ button {
 }
 
 .guide-list-splash {
-  width: 250px;
-  height: 148px;
+  width: 256px;
+  height: 128px;
   border: 1px solid $unit3;
   border-radius: 2px;
   object-fit: cover;
 }
 
+.grey{
+  color: $white600;
+}
+
+.guide-list-author{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-list-author img{
+  width: 20px;
+  height: 20px;
+  border: 1px solid $divider;
+  border-radius: 4px;
+}
 @media screen and (max-width: 1350px) {
   .guide-list-wrapper {
     padding: 12px;

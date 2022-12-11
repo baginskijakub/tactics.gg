@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./navbar.css";
 import {NavbarLinks} from "./NavbarLinks";
 import logo from "../../images/logo.svg";
 import { DefaultSearch } from "../search/DefaultSearch";
 import {SummonerSearch} from "../search/SummonerSearch";
+import {PrimaryButton} from '../buttons/PrimaryButton'
+import { useModalChange } from "../../modal/ModalContext";
+import {NavbarLogin} from "../../login/NavbarLogin"
+import {useUser, useUserChange} from '../../login/LoginContext'
+
+import {getRiotAccount} from '../../modal/LoginModel'
 
 interface Props{
   handleSummonerSearch: (name: string, region:string) => void
 }
 export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
   const [search, setSearch] = useState("open");
+  const openModal = useModalChange()
+
+  const user = useUser()
+  const userChange = useUserChange()
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
 
   function handleSearch() {
     if (search === "open") {
@@ -21,7 +35,6 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
   }
 
   function handleSummoner(name: string, region: string) {
-    console.log("navbar")
     handleSummonerSearch(name, region)
   }
 
@@ -29,15 +42,19 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
     <div className="navbar-container">
       <div className="navbar-inner-container">
         <img src={logo} alt="Tactics.gg"></img>
-        <div onClick={handleSearch} style={{ zIndex: "1" }}>
-          {search === "open" ? (
-            <DefaultSearch
-              initialValue="Search summoner"
-              inputChange={() => {}}
-            />
-          ) : (
-            <SummonerSearch handleInput={handleSummoner} />
-          )}
+        <div className="navbar-inner-in">
+          <div onClick={handleSearch} style={{ zIndex: "1" }}>
+            {search === "open" ? (
+              <DefaultSearch
+                initialValue="Search summoner"
+                inputChange={() => {}}
+              />
+            ) : (
+              <SummonerSearch handleInput={handleSummoner} />
+            )}
+          </div>
+          {(user === null || user.summonerName === undefined || user.icon === undefined) ? <PrimaryButton text="Login" fn={openModal}/>
+          : <NavbarLogin name={user.summonerName} src={user.icon}/>}
         </div>
       </div>
       <NavbarLinks />

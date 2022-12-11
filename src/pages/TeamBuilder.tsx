@@ -11,8 +11,7 @@ import { Item, UnitHex, BuilderTrait, Analysis as AnalysisClass, AnalysisItem, A
 import {Traits} from "../components/builder/Traits";
 import {Analyze} from "../components/builder/Analyze";
 import {Items} from "../components/builder/Items";
-import unitsData from '../components/builder/units-data.json'
-import traitsData from '../components/builder/Tratis.json'
+import { getAllUnits, getAllTraits } from "../model/DataModel";
 import {Analysis} from "../components/builder/Analysis";
 import {PageHead} from './PageHead'
 import { getCreatedComp, saveCreatedComp, postComp} from "../model/Model";
@@ -58,8 +57,6 @@ export const TeamBuilder: React.FC = () => {
 
       try{
           const socket = io("https://server-tactixgg.com/");
-
-          console.log(thisSessionId)
           socket.emit("connectInit", thisSessionId)
           socket.on("uploadProgress", (data) => {
             console.log(data)
@@ -189,50 +186,60 @@ export const TeamBuilder: React.FC = () => {
         })
         return temp;
     }
-    uniqueUnits.forEach(unit => {
-        unitsData.forEach(unitData => {
-            if(unit === unitData.id){
-                unitData.traits.forEach(trait => {
-                    if(isActiveTrait(trait.name)){
-                        tempTraits.forEach((tempTrait, index) => {
-                            if(tempTrait.name === trait.name){
-                                let style = 0;
-                                let tempValue = tempTrait.active
-                                traitsData.traits.forEach(traitData => {
-                                    if(traitData.name === trait.name){
-                                        traitData.effects.forEach(effect => {
-                                            if(effect.minUnits <= (tempValue + trait.value)){
-                                                style = effect.style;
-                                            }
-                                        })
-                                    }
-                                })
-                                tempTraits[index].active = tempValue + trait.value
-                                tempTraits[index].style = style
+
+    getAllTraits().then(allTraits => {
+      getAllUnits().then(allUnits => {
+        uniqueUnits.forEach(unit => {
+            allUnits.forEach(unitData => {
+              if(unit === unitData.apiName){
+                unitData.traits.forEach((unitTrait : any) => {
+                    if(!isActiveTrait(unitTrait)){
+                      allTraits.forEach(traitData => {
+                        if(traitData.name === unitTrait){
+                          let style = 0;
+                          let breakpoints: number[] = []
+                          traitData.effects.forEach((effect:any) => {
+                            breakpoints.push(effect.minUnits)
+                            if(effect.minUnits <= 1){
+                                style = effect.style;
                             }
                         })
+                          let urlArr: string[] = traitData.icon.split("/")
+                          let traitUrl = urlArr[3]
+                          let url = `https://raw.communitydragon.org/latest/game/assets/ux/traiticons/${traitUrl.replace("tex", "png").toLowerCase()}`
+                          tempTraits.push(new BuilderTrait(traitData.name, 1, breakpoints, style, url))
+                        }
+                      })
                     }
                     else{
-                        let breakpoints: any[] = []
-                        let style: number = 0;
-                        traitsData.traits.forEach(traitData => {
-                            if(traitData.name === trait.name){
-                                traitData.effects.forEach(effect => {
-                                    breakpoints.push(effect.minUnits)
-                                    if(effect.minUnits <= trait.value){
+                      tempTraits.forEach((tempTrait, index) => {
+                          if(tempTrait.name === unitTrait){
+                            let style = 0;
+                            let tempValue = tempTrait.active
+                            allTraits.forEach(traitData => {
+                              if(traitData.name === tempTrait.name){
+                                traitData.effects.forEach((effect:any) => {
+                                  if(effect.minUnits <= tempValue + 1 && effect.maxUnits >= tempValue + 1){
                                         style = effect.style;
+                                        console.log("xd")
                                     }
                                 })
-                            }
-                        })
-                        tempTraits.push(new BuilderTrait(trait.name, trait.value, breakpoints, style))
+                              }
+                            })
+                            tempTraits[index].active = tempValue + 1
+                            tempTraits[index].style = style
+                          }
+                    })
                     }
-
                 })
-            }
+              }
+            })
         })
+        console.log(tempTraits)
+        setTraits(tempTraits)  
+      })
     })
-    setTraits(tempTraits)
+     
   }
 
   function dragStart(event: any) {

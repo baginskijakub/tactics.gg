@@ -334,11 +334,13 @@ class BuilderTrait{
   active: number;
   breakpoints: number[];
   style: number;
-  constructor(name: string, active: number, breakpoints: number[], style: number ){
+  icon: string;
+  constructor(name: string, active: number, breakpoints: number[], style: number, icon: string ){
     this.name = name;
     this.active = active;
     this.breakpoints = breakpoints;
     this.style = style;
+    this.icon = icon;
   }
 }
 

@@ -4,7 +4,7 @@ import './pages.css'
 import {Dropdown} from '../components/buttons/Dropdown'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getUnitsRanking } from '../model/Model'
-import unitsData from '../components/builder/units-data.json'
+// import unitsData from '../components/builder/units-data'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import {PageHead} from './PageHead'
 import {TableLoader} from '../components/table/TableLoader'
@@ -89,29 +89,29 @@ export const Units:React.FC = () => {
     }
     
 
-    useEffect(() => {
-        getUnitsRanking().then((res) => {
-            let tempUnits: any[] = []
-            console.log(res)
-            res.data.forEach((unit: any) => {
-                let unitTraits:any[] = []
-                let unitName = unit.id
-                unitsData.forEach(unitData => {
-                    if(unitData.id === unit.id){
-                        unitData.traits.forEach(trait => {
-                            unitTraits.push(trait.name)
-                        })
-                        unitName = unitData.name
-                    }
-                })
-                tempUnits.push({"name": unitName, "id": unit.id, "avgPlacement": unit.avg_place, "winrate": unit.winrate, "playrate": unit.frequency, "traits": unitTraits})
-            })
-            setUnits(tempUnits)
-            setAllUnits(tempUnits)
-            setToRender(20)
-        })
+    // useEffect(() => {
+    //     getUnitsRanking().then((res) => {
+    //         let tempUnits: any[] = []
+    //         console.log(res)
+    //         res.data.forEach((unit: any) => {
+    //             let unitTraits:any[] = []
+    //             let unitName = unit.id
+    //             unitsData.forEach(unitData => {
+    //                 if(unitData.id === unit.id){
+    //                     unitData.traits.forEach(trait => {
+    //                         unitTraits.push(trait.name)
+    //                     })
+    //                     unitName = unitData.name
+    //                 }
+    //             })
+    //             tempUnits.push({"name": unitName, "id": unit.id, "avgPlacement": unit.avg_place, "winrate": unit.winrate, "playrate": unit.frequency, "traits": unitTraits})
+    //         })
+    //         setUnits(tempUnits)
+    //         setAllUnits(tempUnits)
+    //         setToRender(20)
+    //     })
 
-    }, [])
+    // }, [])
 
     function handleRenderMore(){
         let temp  = toRender;

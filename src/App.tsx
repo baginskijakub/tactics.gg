@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
@@ -18,8 +18,13 @@ import {Guides} from './pages/Guides'
 import {Contact} from './pages/Contact'
 import { CompareAugments } from "./pages/CompareAugments";
 import {Set8} from './pages/Set8'
+import {Profile} from './pages/Profile'
 
+//util
 import {Footer} from './components/footer/Footer'
+import { ModalContainer } from './modal/ModalContainer';
+import { ModalContextProvider} from "./modal/ModalContext";
+import { LoginContextProvider } from "./login/LoginContext";
 
 const App:React.FC = () => {
   const window = require('global')
@@ -41,26 +46,32 @@ const App:React.FC = () => {
   }
   
   return(
-    <div className="app-container">
-        { width < 850 ? <NavbarMobile/> : <Navbar handleSummonerSearch={handleSummonerSearch}/>}
-        <Routes >
-          <Route path='/units' element={<Units/>}/>
-          <Route path='/items' element={<Items/>}/>
-          <Route index element={<Comps/>}/>
-          <Route path='/comps' element={<Comps/>}/>
-          <Route path='/augments' element={<Augments/>}/>
-          <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
-          <Route path='/teambuilder/:id' element={<TeamBuilder />}/>
-          <Route path='/teambuilder' element={<TeamBuilder />}/>
-          <Route path='/leaderboard' element={<Leaderboard />}/>
-          <Route path='/guides' element={<Guides />}/>
-          <Route path='/privacy' element={<PrivacyPolicy />}/>
-          <Route path='/contact' element={<Contact />}/>
-          <Route path='/set8' element={<Set8 />}/>
-          <Route path='/compareAugments' element={<CompareAugments />}/>
-        </Routes>
-        <Footer />
-    </div>
+    <ModalContextProvider>
+      <LoginContextProvider>
+      <div className="app-container">
+          { width < 850 ? <NavbarMobile/> : <Navbar handleSummonerSearch={handleSummonerSearch}/>}
+          <Routes >
+            <Route path='/units' element={<Units/>}/>
+            <Route path='/items' element={<Items/>}/>
+            <Route index element={<Comps/>}/>
+            <Route path='/comps' element={<Comps/>}/>
+            <Route path='/augments' element={<Augments/>}/>
+            <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
+            <Route path='/teambuilder/:id' element={<TeamBuilder />}/>
+            <Route path='/teambuilder' element={<TeamBuilder />}/>
+            <Route path='/leaderboard' element={<Leaderboard />}/>
+            <Route path='/guides' element={<Guides />}/>
+            <Route path='/profile' element={<Profile />}/>
+            <Route path='/privacy' element={<PrivacyPolicy />}/>
+            <Route path='/contact' element={<Contact />}/>
+            <Route path='/set8' element={<Set8 />}/>
+            <Route path='/compareAugments' element={<CompareAugments />}/>
+          </Routes>
+           <ModalContainer />
+          <Footer />
+      </div>
+      </LoginContextProvider>
+    </ModalContextProvider>
   )
 }
 

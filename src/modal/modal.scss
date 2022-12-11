@@ -1,0 +1,355 @@
+@import "../variables/colors.scss";
+@import "../styles/index.scss";
+
+.close-button{
+    padding:  6px 10px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: $background08;
+    border: 1px solid $divider;
+    border-radius: 0px 4px;
+    cursor: pointer;
+}
+
+.close-button img{
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.modal-wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 460px;
+    height: 500px;
+
+    /* Background/5 */
+
+    background: #0C1A2D;
+    /* Divider/divider */
+    border: 1px solid #172C49;
+    border-radius: 4px;
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $background08;
+    opacity: 0.8;
+    z-index: 1000
+}
+
+.modal-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+}
+
+.modal-head p{
+    color: $white300;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+}
+
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 6px;
+}
+
+.input-wrapper h5{
+    margin-left: 8px;
+}
+
+.input-wrapper input{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 12px 9px 12px;
+    width: 426px;
+    background: $background08;
+    border: 1px solid $divider;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    color: $white600;
+}
+
+.input-wrapper input:focus{
+    outline: none;
+    border: 1px solid $buttonSelected;
+}
+
+.summoner-input{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 460px;
+}
+
+.summoner-input input{
+    width: 250px;
+}
+
+.summoner-input .dropdown-wrapper-small{
+    height: 37px;
+}
+
+.summoner-input .dropdown-name-small{
+    background-color: $background08;
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+.summoner-input .dropdown-value-small{
+    background-color: $background08;
+    padding-top: 3px;
+    padding-bottom: 4px;
+
+}
+
+.summoner-input .dropdown-buttons-container{
+    background-color: $background08;
+}
+
+.form-completion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+}
+
+.form-completion .caption{
+    color: $white300;
+}
+
+.form-completion .secondary-button{
+    width: 460px;
+}
+
+.underline-button{
+    text-decoration: underline;
+    color: $white900;
+    font-weight: 600;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.error-label{
+    color: $red;
+    margin-left: 8px;
+    height: 12px;
+}
+
+.toggle-wrapper{
+    margin: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    box-sizing: border-box;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $background08;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid $divider;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 0px;
+    bottom: 0px;
+    background-color: $white900;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: $primary;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px $primary;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 12px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .username-wrapper{
+    width: 460px;
+    height: 59px;
+
+  }
+
+  .dot-divider{
+    width: 3px;
+    height: 3px;
+    border-radius: 30px;
+    background-color: $divider;
+  }
+
+  .buttons-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+  }
+
+  .profile-wrapper{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 12px 0px 0px;
+    gap: 16px;
+    background: $background08;
+    border: 1px solid $divider;
+    border-radius: 4px;
+  }
+
+  .profile-wrapper img{
+    width: 78px;
+    height: 78px;
+    border: 1px solid $divider;
+    border-radius: 4px;
+  }
+
+  .profile-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+  }
+
+  .profiole-inner-in{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+  }
+
+  .buttons-container .primary-button{
+    width: 180px;
+    justify-content: center;
+  }
+
+  .buttons-container .primary-button p{
+    text-align: center;
+  }
+
+  .buttons-container .secondary-button{
+    width: 180px;
+    justify-content: center;
+  }
+
+  .email-code-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+  }
+
+  .email-code-form{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+  }
+
+  .email-code-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+
+    letter-spacing: -0.03em;
+
+    color: #FFFFFF;
+
+    width: 64px;
+    height: 64px;
+
+    background: $background08;
+
+    border: 1px solid $divider;
+    border-radius: 2px;
+  }
+
+  .email-code-input:focus{
+    outline: none;
+    border: 1px solid $buttonSelected;
+  }

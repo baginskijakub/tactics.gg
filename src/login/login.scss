@@ -1,0 +1,26 @@
+@import "../variables/colors.scss";
+@import "../styles/index.scss";
+
+.navbar-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 12px 0px 0px;
+    gap: 12px;
+
+    background: $background08;
+
+    border: 1px solid $divider;
+    border-radius: 4px;
+}
+
+.navbar-login img{
+
+    width: 28px;
+    height: 28px;
+    /* Divider/divider */
+
+    border-right: 1px solid $divider;
+    
+}

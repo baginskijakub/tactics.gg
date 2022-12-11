@@ -23,7 +23,6 @@ export const NavbarLinks: React.FC = () => {
   //handling ui to correctly mark selected page on load 
 
   useEffect(()=> {
-    console.log(location.pathname)
     switch(location.pathname){
       case "/teambuilder":
         setSelected([false, true, false, false, false, false, false])

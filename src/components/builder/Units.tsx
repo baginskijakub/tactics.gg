@@ -3,7 +3,8 @@ import "./builder.css";
 import { DefaultSearch } from "../search/DefaultSearch";
 import {Dropdown} from "../buttons/Dropdown";
 import {Unit} from "./Unit";
-import data from './units-data.json'
+
+import {getAllUnits} from '../../model/DataModel'
 
 interface Props{
   onChange: () => void
@@ -11,23 +12,41 @@ interface Props{
 
 export const Units: React.FC<Props> = ({onChange}) => {
   let arr: any = [];
-      data.forEach((unit: any) => {
-        arr.push(
+
+    let tempArr: any[] = []
+
+    useEffect(() => {
+
+      const fetchData = async () => {
+      await getAllUnits().then(res => {
+        res.forEach((unit: any) => {
+        tempArr.push(
           <Unit
-            id={unit.id}
+            id={unit.apiName}
             name={unit.name}
             cost={unit.cost}
             size="small"
-            url={`https://ittledul.sirv.com/Images/units/${unit.id}.png`}
+            url={unit.icon}
             level={0}
             items={[]}
           />
         );
-      });
+  
+      })});
+      setAllUnits(tempArr)
+      setUnits(tempArr)
+    }
+    fetchData()
+    }, [])
+
+
+
   const [searched, setSearched] = useState("");
   const [allUnits, setAllUnits] = useState<any[]>(arr);
   const [units, setUnits] = useState<any[]>(arr);
-  const [sort, setSort] = useState("Cost");
+  const [sort, setSort] = useState("Cost")
+
+
 
   function sortChange(value: string) {
     setSort(value);
@@ -62,7 +81,7 @@ export const Units: React.FC<Props> = ({onChange}) => {
             name={unit.props.name}
             cost={unit.props.cost}
             size="small"
-            url={`https://ittledul.sirv.com/Images/units/${unit.props.id}.png`}
+            url={unit.props.url}
             level={0}
             items={[]}
           />

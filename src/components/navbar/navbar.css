@@ -333,6 +333,24 @@ h6 {
   display: none;
 }
 
+.navbar-inner-in {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.navbar-inner-in .primary-button {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e4c94;
+}
+
+.navbar-inner-in .primary-button p {
+  font-size: 14px;
+}
+
 @media screen and (max-width: 1350px) {
   .navbar-links-container {
     width: 1000px;

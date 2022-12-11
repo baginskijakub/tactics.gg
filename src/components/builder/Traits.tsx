@@ -40,7 +40,7 @@ export const Traits: React.FC<Props> = ({traits}) => {
         <div className="builder-traits-wrapper">
           {traits.map((trait) => {
             return(
-              <Trait style={trait.style} name={trait.name} active={trait.active} breakpoints={trait.breakpoints} />
+              <Trait style={trait.style} name={trait.name} active={trait.active} breakpoints={trait.breakpoints} url={trait.icon}/>
             )
           })}
         </div>

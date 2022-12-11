@@ -6,6 +6,7 @@ interface Props {
   name: string;
   active: number;
   breakpoints: number[];
+  url: string
 }
 
 export const Trait: React.FC<Props> = ({
@@ -13,6 +14,7 @@ export const Trait: React.FC<Props> = ({
   style,
   active,
   breakpoints,
+  url
 }) => {
 
     const [width, setWidth] = React.useState(window.innerWidth);
@@ -70,7 +72,7 @@ export const Trait: React.FC<Props> = ({
       <div className="trait-icon-container">
         <div className="hex" style={{ backgroundColor: `${backgroundColor}` }}>
           <img
-            src={`https://ittledul.sirv.com/Images/traits/${name.toLowerCase()}.png`}
+            src={url}
             alt={name}
             title="Trait"
             loading="lazy"
