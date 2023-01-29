@@ -40,7 +40,7 @@ export const Item: React.FC<Props> = ({ id, name }) => {
       <img
         className="builder-items-item draggable"
         src={`https://ittledul.sirv.com/Images/items/${id}.png`}
-        id={"Item?"+itemObj.changeToJSON()}
+        id={itemObj.changeToJSON()}
         alt="item"
         draggable={true}
         loading="lazy"

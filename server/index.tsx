@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
       return res.status(500).send('Oops, better luck next time!');
     }
     // res.set('location', `https://www.tactix.gg${req.path}`);
-    res.status(301).send()
+    // res.status(301).send()
     
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)

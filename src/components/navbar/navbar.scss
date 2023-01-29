@@ -2,50 +2,41 @@
 @import "../../styles/index.scss";
 
 .navbar-links-wrapper {
-  height: 100%;
-  width: 200px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: $background05;
+  border: 1px solid #172c49;
 }
 
 .navbar-links-container {
-  height: 100%;
-  width: 200px;
+  width: 1300px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbar-container {
-  box-sizing: border-box;
-  position: fixed;
-  height: 100vh;
-  width: 200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  justify-content: space-between;
-  background-color: $background08;
-  border-right: 1px solid $divider;
-  padding-left: 20px;
-  padding-top: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-inner-container {
-  width: 200px;
+  width: 1300px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 12px 0px;
 }
 
-.navbar-container img {
+.navbar-inner-container img {
   height: 24px;
   width: auto;
-  padding-right: 20px;
 }
 
 .nav-mobile-wrapper {
@@ -94,7 +85,6 @@
 .closed {
   display: none;
 }
-<<<<<<< Updated upstream
 
 .navbar-inner-in{
   display: flex;
@@ -134,5 +124,3 @@
 
 @media screen and (max-width: 850px) {
 }
-=======
->>>>>>> Stashed changes

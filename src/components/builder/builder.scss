@@ -74,14 +74,13 @@
 
 .builder-traits-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 0;
   gap: 10px;
-  height: auto;
-  width: 1100px;
-  overflow: scroll;
+  width: 230px;
+  height: 432px;
 }
 
 .builder-analyze-wrapper {
@@ -122,12 +121,12 @@
 
 .builder-traits-wrapper-empty {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 1000px;
-  height: 80px;
+  width: 230px;
+  height: 432px;
   background-color: $background05;
   border: 1px solid $divider;
   border-radius: 4px;
@@ -161,10 +160,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 12px 0px 12px;
+  padding: 6px 0px 6px 16px;
   gap: 12px;
-  width: auto;
-  height: auto;
+  width: 214px;
+  height: 48px;
   background: $background05;
   border: 1px solid $divider;
   border-radius: 4px;
@@ -638,32 +637,6 @@
   height: 8px;
 }
 
-.unit-container{
-  position: relative !important;
-}
-
-.core-button{
-  position: absolute;
-  right: -8px;
-  top: 2px;
-  background-color: $background08;
-  border: 1px solid $divider;
-  border-radius: 16px;
-  padding: 4px 8px;
-  font-size: 12px;
-  cursor: pointer;
-  z-index: 3;
-  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.1s;
-}
-
-.core-button:hover{
-  background-color: $buttonHover;
-}
-
-.core-true{
-  background-color: $buttonSelected !important;
-}
-
 @media screen and (max-width: 1350px) {
   .builder-board-wrapper {
     width: 660px;
@@ -719,11 +692,13 @@
 
   .builder-traits-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 0;
     gap: 10px;
+    width: 143px;
+    height: 432px;
   }
 
   .builder-analyze-wrapper {

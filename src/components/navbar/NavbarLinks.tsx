@@ -52,14 +52,13 @@ export const NavbarLinks: React.FC = () => {
   return (
     <div className="navbar-links-wrapper">
       <div className="navbar-links-container">
-        <NavButton index={0} text="Manage Comps" isSelected={selected[0]} link="" path="/manageComps" handleSelection={handleSelected}/>
-        <NavButton index={1} text="Add Comp" isSelected={selected[1]} link="" path="/addComp" handleSelection={handleSelected}/>
-        {/* <NavButton index={1} text="Team Builder" isSelected={selected[1]} link="" path="/teambuilder" handleSelection={handleSelected}/>
+        <NavButton index={0} text="Comps" isSelected={selected[0]} link="" path="/" handleSelection={handleSelected}/>
+        <NavButton index={1} text="Team Builder" isSelected={selected[1]} link="" path="/teambuilder" handleSelection={handleSelected}/>
         <NavButton index={2} text="Summoner Search " isSelected={selected[2]} link="" path="/summoner" handleSelection={handleSelected}/>
         <NavButton index={3} text="Augments" isSelected={selected[3]} link="" path="/augments" handleSelection={handleSelected}/>
         <NavButton index={4} text="Units" isSelected={selected[4]} link="" path="/units" handleSelection={handleSelected}/>
         <NavButton index={5} text="Items" isSelected={selected[5]} link="" path="/items" handleSelection={handleSelected}/>
-        <NavButton index={6} text="Leaderboards" isSelected={selected[6]} link="" path="/leaderboard" handleSelection={handleSelected}/> */}
+        <NavButton index={6} text="Leaderboards" isSelected={selected[6]} link="" path="/leaderboard" handleSelection={handleSelected}/>
         {/* <NavButton index={7} text="Guides" isSelected={selected[7]} link="" path="/guides" handleSelection={handleSelected}/> */}
       </div>
     </div>
