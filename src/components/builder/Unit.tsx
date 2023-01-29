@@ -23,6 +23,9 @@ interface Props {
   size: "big" | "medium" | "small";
   level: 0 | 1 | 2 | 3;
   items: Item[] | null;
+  index?: number
+  isCore?: boolean
+  onChangeCore?: (index: number) => void
 }
 export const Unit: React.FC<Props> = ({
   id,
@@ -32,8 +35,11 @@ export const Unit: React.FC<Props> = ({
   size,
   level,
   items,
+  index,
+  isCore,
+  onChangeCore
 }) => {
-  const transferUnit = new UnitClass(id, name, cost, url, level, items);
+  const transferUnit = new UnitClass(id, name, cost, url, level, items, isCore);
 
   let stars = new Array<number>();
 
@@ -61,15 +67,34 @@ export const Unit: React.FC<Props> = ({
       break;
   }
 
-  if (size === "big")
-    return (
-      <div className="unit-container">
+  if(name == ""){
+    return(
+      <div className="unit-container droppable" id={index?.toString()}>
         <div className="star-container">
           {stars.map(() => {
             return <img src={star} alt="star" />;
           })}
         </div>
-        <img className={`unit-image ${borderColor}`} src={url} alt={name} />
+        <div className={`unit-image ${borderColor}`} id={index?.toString()}/>
+        <div className="item-container">
+          {items !== null &&
+            items.map((itemElement) => (
+              <img src={itemElement.url} alt={itemElement.name} />
+            ))}
+        </div>
+      </div>
+    )
+  }
+  else if (size === "big")
+    return (
+      <div className="unit-container droppable" id={index?.toString()}>
+        {(!isCore !== undefined && onChangeCore !== undefined && index !== undefined) && <button className={`core-button ${isCore && 'core-true'}`} onClick={() => onChangeCore(index)}>Core</button>}
+        <div className="star-container">
+          {stars.map(() => {
+            return <img src={star} alt="star" />;
+          })}
+        </div>
+        <img className={`unit-image ${borderColor}`} src={url} alt={name} id={index?.toString()}/>
         <div className="item-container">
           {items !== null &&
             items.map((itemElement) => (
@@ -115,7 +140,7 @@ export const Unit: React.FC<Props> = ({
           ],
         }}
       >
-        <div className="unit-container draggable" draggable={true} id={transferUnit.changeToJSON()}>
+        <div className="unit-container draggable" draggable={true} id={"Unit?"+transferUnit.changeToJSON()}>
           <div className="star-container-small">
             {stars.map(() => {
               return <img src={star} alt="star" loading="lazy" title="start"/>;
@@ -126,7 +151,7 @@ export const Unit: React.FC<Props> = ({
             className={`unit-image-small ${borderColor}`}
             src={url}
             alt={name}
-            id={transferUnit.changeToJSON()}
+            id={"Unit?"+transferUnit.changeToJSON()}
             loading="lazy"
             title="Unit"
           />

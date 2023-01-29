@@ -39,6 +39,7 @@
   justify-content: center;
   padding: 15px 12px 16px;
   cursor: pointer;
+  width: calc(100% - 45px);
 }
 
 .navbutton a {
@@ -50,7 +51,7 @@
 }
 
 .navbutton:hover {
-  border-bottom: 1px solid $white900;
+  background-color: $buttonHover;
 }
 
 .navbutton-selected {
@@ -59,8 +60,12 @@
   align-items: center;
   justify-content: center;
   padding: 15px 12px 16px;
-  border-bottom: 1px solid $primary;
-  cursor: default;
+  background-color: $background00;
+  border-width: 1px 0px 1px 1px;
+  border-color: $divider;
+  border-style: solid;
+  border-radius: 2px 0px 0px 2px;
+  width: calc(100% - 45px)
 }
 
 .navbutton-selected a {

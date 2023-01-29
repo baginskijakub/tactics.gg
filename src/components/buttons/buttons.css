@@ -286,6 +286,7 @@ h6 {
   justify-content: center;
   padding: 15px 12px 16px;
   cursor: pointer;
+  width: calc(100% - 45px);
 }
 
 .navbutton a {
@@ -297,7 +298,7 @@ h6 {
 }
 
 .navbutton:hover {
-  border-bottom: 1px solid #ffffff;
+  background-color: #1b2f4a;
 }
 
 .navbutton-selected {
@@ -306,8 +307,12 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 15px 12px 16px;
-  border-bottom: 1px solid #377df7;
-  cursor: default;
+  background-color: #0B1D35;
+  border-width: 1px 0px 1px 1px;
+  border-color: #172c49;
+  border-style: solid;
+  border-radius: 2px 0px 0px 2px;
+  width: calc(100% - 45px);
 }
 
 .navbutton-selected a {

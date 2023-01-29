@@ -6,6 +6,7 @@ import {NavbarMobile} from './components/navbar/NavbarMobile'
 import { Route, Routes, BrowserRouter} from 'react-router-dom'
 
 //pages
+<<<<<<< Updated upstream
 import {Summoner} from "./pages/Summoner";
 import {TeamBuilder} from "./pages/TeamBuilder";
 import  {Augments}  from "./pages/Augments";
@@ -25,27 +26,31 @@ import {Footer} from './components/footer/Footer'
 import { ModalContainer } from './modal/ModalContainer';
 import { ModalContextProvider} from "./modal/ModalContext";
 import { LoginContextProvider } from "./login/LoginContext";
+=======
+import {Home} from './pages/cms/Home'
+import { AddComp } from "./pages/cms/AddComp";
+import { AddPositioning } from "./pages/cms/AddPositioning";
+import { AddVariations } from "./pages/cms/AddVariations";
+import { ManageComps } from "./pages/cms/ManageComps";
+
+//classes
+import {Comp} from './classes'
+>>>>>>> Stashed changes
 
 const App:React.FC = () => {
   const window = require('global')
-  const[summonerName, setSummonerName] = useState<any>(undefined)
-  const[region, setRegion] = useState<any>(undefined)
   let navigate = useNavigate();
-  const [width, setWidth] = React.useState(window.innerWidth);
 
-  //change navbar on breakpoint
-  React.useEffect(() => {
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
-  }, []);
+  const [comp, setComp] = useState<Comp>(new Comp([], [], 0, 0, 0, 0, [], [], [], []))
 
-  //handling searchbar in navbar so that when a summoner is searched the 'summoner' page opens with the result
-  function handleSummonerSearch(name: string, region: string){
-    setRegion(region);
-    setSummonerName(name)
-    navigate("/summoner")
+
+  function updateComp(comp: Comp){
+    setComp(comp)
   }
+  //handling searchbar in navbar so that when a summoner is searched the 'summoner' page opens with the result
   
   return(
+<<<<<<< Updated upstream
     <ModalContextProvider>
       <LoginContextProvider>
       <div className="app-container">
@@ -72,6 +77,30 @@ const App:React.FC = () => {
       </div>
       </LoginContextProvider>
     </ModalContextProvider>
+=======
+    <div className="app-container">
+        <Navbar handleSummonerSearch={()=>{}}/>
+        <Routes >
+        <Route index element={<Home/>}/>
+        <Route path='/addComp' element={<AddComp comp={comp} updateComp={updateComp}/>}/>
+        <Route path='/addPositioning' element={<AddPositioning comp={comp} updateComp={updateComp}/>}/>
+        <Route path='/addVariations' element={<AddVariations comp={comp} updateComp={updateComp}/>}/>
+        <Route path='/manageComps' element={<ManageComps />}/>
+          {/* <Route path='/units' element={<Units/>}/>
+          <Route path='/items' element={<Items/>}/> */}
+          {/* <Route path='/comps' element={<Comps/>}/>
+          <Route path='/augments' element={<Augments/>}/>
+          <Route path='/summoner' element={<Summoner name={summonerName} region={region}/>}/>
+          <Route path='/teambuilder/:id' element={<TeamBuilder />}/>
+          <Route path='/teambuilder' element={<TeamBuilder />}/>
+          <Route path='/leaderboard' element={<Leaderboard />}/>
+          <Route path='/guides' element={<Guides />}/>
+          <Route path='/privacy' element={<PrivacyPolicy />}/>
+          <Route path='/contact' element={<Contact />}/>
+          <Route path='/compareAugments' element={<CompareAugments />}/> */}
+        </Routes>
+    </div>
+>>>>>>> Stashed changes
   )
 }
 

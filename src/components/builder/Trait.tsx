@@ -86,7 +86,7 @@ export const Trait: React.FC<Props> = ({
         </div>
       </div>
       <div className="builder-trait-details">
-        <h4>{name}</h4>
+        <h5>{name}</h5>
         {width > 1350 && <div className="builder-trait-details-inner">{arr}</div>}
       </div>
     </div>

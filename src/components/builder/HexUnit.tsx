@@ -245,7 +245,7 @@ export const HexUnit: React.FC<Props> = ({
       );
     } else {
       return (
-        <div className="unit-hex-container-medium  droppable">
+        <div className="unit-hex-container-medium  droppable" id={`${row}-${column}`}>
           <div className="star-container">
             {stars.map(() => {
               return <img src={star} alt="star" />;

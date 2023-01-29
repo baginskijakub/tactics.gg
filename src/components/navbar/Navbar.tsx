@@ -40,8 +40,8 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
 
   return (
     <div className="navbar-container">
-      <div className="navbar-inner-container">
         <img src={logo} alt="Tactics.gg"></img>
+<<<<<<< Updated upstream
         <div className="navbar-inner-in">
           <div onClick={handleSearch} style={{ zIndex: "1" }}>
             {search === "open" ? (
@@ -55,9 +55,12 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
           </div>
           {(user === null || user.summonerName === undefined || user.icon === undefined) ? <PrimaryButton text="Login" fn={openModal}/>
           : <NavbarLogin name={user.summonerName} src={user.icon}/>}
+=======
+        <div className="navbar-inner-container">
+            <NavbarLinks/>
+>>>>>>> Stashed changes
         </div>
-      </div>
-      <NavbarLinks />
+        <div></div>
     </div>
   );
 };

@@ -245,6 +245,46 @@
       "name": "Mage"
     },
     {
+      "apiName": "Set7_Darkflight",
+      "desc": "Summon a sacrificial altar. Combat start: the unit placed on the altar is sacrificed, granting a copy of one of the items and bonus Health to each Darkflight champion.<br><br><tftitemrules> Emblems and non-craftable items are corrupted when they're copied, instead becoming Darkflight Essence.</tftitemrules><br><br><expandRow>(@MinUnits@) @BonusHealth@ Health</expandRow><br>",
+      "effects": [
+          {
+              "maxUnits": 3,
+              "minUnits": 2,
+              "style": 1,
+              "variables": {
+                  "BonusHealth": 500.0
+              }
+          },
+          {
+              "maxUnits": 5,
+              "minUnits": 4,
+              "style": 2,
+              "variables": {
+                  "BonusHealth": 750.0
+              }
+          },
+          {
+              "maxUnits": 7,
+              "minUnits": 6,
+              "style": 3,
+              "variables": {
+                  "BonusHealth": 1000.0
+              }
+          },
+          {
+              "maxUnits": 25000,
+              "minUnits": 8,
+              "style": 4,
+              "variables": {
+                  "BonusHealth": 1600.0
+              }
+          }
+      ],
+      "icon": "ASSETS/UX/TraitIcons/Trait_Icon_Darkflight.TFT_Set7_Stage2.tex",
+      "name": "Darkflight"
+  },
+    {
       "apiName": "Set7_Lagoon",
       "desc": "Lagoon desc",
       "effects": [
