@@ -7,7 +7,7 @@ import { DefaultSearch } from "../search/DefaultSearch";
 import {SummonerSearch} from "../search/SummonerSearch";
 import {PrimaryButton} from '../buttons/PrimaryButton'
 import { useModalChange } from "../../modal/ModalContext";
-import {NavbarLogin} from "../../login/NavbarLogin"
+// import {NavbarLogin} from "../../login/NavbarLogin"
 import {useUser, useUserChange} from '../../login/LoginContext'
 
 import {getRiotAccount} from '../../modal/LoginModel'
@@ -53,8 +53,7 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
               <SummonerSearch handleInput={handleSummoner} />
             )}
           </div>
-          {(user === null || user.summonerName === undefined || user.icon === undefined) ? <PrimaryButton text="Login" fn={openModal}/>
-          : <NavbarLogin name={user.summonerName} src={user.icon}/>}
+          {(user === null || user.summonerName === undefined || user.icon === undefined) ? <PrimaryButton text="Login" fn={openModal}/> : <></>}
         </div>
       </div>
       <NavbarLinks />

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+ import React, {useState, useEffect} from 'react'
 import ReactDom from 'react-dom'
 import CloseButton from './CloseButton'
 
@@ -71,18 +71,19 @@ useEffect(() => {
     setCurrentState("SignUp")
   }
 
-  let portalDiv = document.getElementById("portal") as HTMLElement;
+  // let portalDiv = document.getElementById("portal") as HTMLElement;
 
-  if(!isOpen) return <></>
+  // if(!isOpen) return <></>
   
-  return ReactDom.createPortal(
-    <>
-      <div className='modal-overlay'/>
-      <div className='modal-wrapper'>
-        <CloseButton closeModal={onModalClose}/>
-        {currentElement}
-      </div>
-    </>,
-    portalDiv
-  )
+  // return ReactDom.createPortal(
+  //   <>
+  //     <div className='modal-overlay'/>
+  //     <div className='modal-wrapper'>
+  //       <CloseButton closeModal={onModalClose}/>
+  //       {currentElement}
+  //     </div>
+  //   </>,
+  //   portalDiv
+  // )
+  return <></>
 }
