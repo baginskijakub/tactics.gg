@@ -2,32 +2,28 @@ import React, {useState, useEffect} from "react";
 import "./builder.css";
 import {Dropdown} from "../buttons/Dropdown";
 import {Item} from "./Item";
-import itemsData from "./Items.json"
+import { getAllItems } from "../../model/DataModel";
 
 export const Items: React.FC = () => {
-  let radiantItems:any[] = []
-  let normalItems: any[] = []
-  let shimmerscaleItems:any[] = []
-  let emblemItems:any[] = []
+  const [items, setItems] = useState<any[]>([])
+  const[normalItems, setNormalItems] = useState<any[]>([])
+  const[emblemItems, setEmblemItems] = useState<any[]>([])
+  const[radiantItems, setRadiantItems] = useState<any[]>([])
 
-    itemsData.items.forEach(item => {
-      switch(item.type){
-        case "normal":
-          normalItems.push(item)
-          break
-        case "radiant":
-          radiantItems.push(item)
-          break
-        case "shimmerscale":
-          shimmerscaleItems.push(item)
-          break
-        case "emblem":
-          emblemItems.push(item)
-          break
-      }
-    })
+  useEffect(()=> {
 
-  const [items, setItems] = useState<any[]>(normalItems)
+    const fetchAllItems = async () => {
+      let allItems = await getAllItems();
+      setRadiantItems(allItems.radiantItems);
+      setNormalItems(allItems.normalItems);
+      setEmblemItems(allItems.emblemItems);
+      setItems(allItems.normalItems)
+    }
+
+    fetchAllItems();
+  }, [])
+
+
 
   function changeState(value: string){
     switch(value){
@@ -37,27 +33,27 @@ export const Items: React.FC = () => {
       case "Emblems":
         setItems(emblemItems)
         break
-      case "Shimmerscale":
-        setItems(shimmerscaleItems)
-        break
       case "Radiant":
         setItems(radiantItems)
       
     }
   }
 
+  useEffect(()=> {
+  }, [items])
+
   return (
     <div className="builder-items-wrapper">
       <Dropdown
         name="Type"
-        values={["Regular", "Emblems", "Shimmerscale", "Radiant"]}
+        values={["Regular", "Emblems", "Radiant"]}
         defaultValue="Regular"
         size="small"
         onChange={changeState}
       />
       <div className="buiilder-items-container">
         {items.map((item) => {
-          return <Item id={item.id} name={item.name} />;
+          return <Item id={item.id} name={item.name} src={item.src}/>;
         })}
       </div>
     </div>

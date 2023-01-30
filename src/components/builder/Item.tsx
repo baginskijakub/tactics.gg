@@ -16,11 +16,11 @@ const DefaultTooltip = styled(({ className, ...props }: TooltipProps) => (
 interface Props {
   id: number;
   name: string;
+  src: string
 }
 
-export const Item: React.FC<Props> = ({ id, name }) => {
-  let url: string = "https://ittledul.sirv.com/Images/items/" + id + ".png";
-  let itemObj: ItemClass = new ItemClass(id, name, url);
+export const Item: React.FC<Props> = ({ id, name, src}) => {
+  let itemObj: ItemClass = new ItemClass(id, name, src);
 
   return (
     <DefaultTooltip
@@ -39,7 +39,7 @@ export const Item: React.FC<Props> = ({ id, name }) => {
     >
       <img
         className="builder-items-item draggable"
-        src={`https://ittledul.sirv.com/Images/items/${id}.png`}
+        src={src}
         id={itemObj.changeToJSON()}
         alt="item"
         draggable={true}

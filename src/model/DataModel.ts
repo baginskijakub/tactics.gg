@@ -33,4 +33,49 @@ async function getAllTraits(){
     return traitArr;
 }
 
-export { getAllUnits, getAllTraits}
+async function getAllItems(){
+    let normalItems: any[] = new Array()
+    let radiantItems: any[] = new Array()
+    let emblemItems: any[] = new Array()
+
+    await axios.get('https://raw.communitydragon.org/latest/cdragon/tft/en_us.json').then((res:any) => {
+        res.data.items.forEach((item: any) => {
+            if(item.apiName.startsWith('TFT_Item') || item.apiName.startsWith('TFT8_Item') || item.apiName.startsWith('TFT5_Item')){
+                let url: string = `https://raw.communitydragon.org/latest/game/${item.icon.replace('.dds', '.png').toLowerCase()}`
+                let iconArr: string[] = item.icon.split("/")
+                //regular item case, id > 10 to remove components, id !== 4441 to remove empty slot
+                if(iconArr[5] === "Standard" && item.id > 10 && item.id !== 4441){
+                    normalItems.push({
+                        id: item.apiName,
+                        name: item.name,
+                        src: url
+                    })
+                }
+                //emblems, no futher checks so far
+                else if(iconArr[5] === "Traits"){
+                    emblemItems.push({
+                        id: item.apiName,
+                        name: item.name,
+                        src: url
+                    })
+                }
+                //radaint
+                else if(iconArr[5] === "Radiant"){
+                    radiantItems.push({
+                        id: item.apiName,
+                        name: item.name,
+                        src: url
+                    })
+                }
+            }
+        })
+    })
+
+    return {
+        normalItems: normalItems,
+        radiantItems: radiantItems,
+        emblemItems: emblemItems
+    }
+}
+
+export { getAllUnits, getAllTraits, getAllItems}
