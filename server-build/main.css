@@ -5901,7 +5901,20 @@ h6 {
   width: 100%;
   padding: 14px 0px 14px 40px;
   overflow-y: scroll;
-  height: calc(100% - 40px);
+  height: calc(100% - 28px);
+}
+
+.analysis-units-items::-webkit-scrollbar {
+  background: #0e1828;
+  border-left: 1px solid #172c49;
+  width: 12px;
+}
+
+.analysis-units-items::-webkit-scrollbar-thumb {
+  background-color: #1e4c94;
+  border-radius: 20px;
+  width: 8px;
+  height: 32px;
 }
 
 .analysis-item-container {
@@ -5974,8 +5987,22 @@ h6 {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   height: calc(100% - 30px);
   overflow-y: scroll;
+}
+
+.analysis-augments-inner::-webkit-scrollbar {
+  background: #0e1828;
+  border-left: 1px solid #172c49;
+  width: 12px;
+}
+
+.analysis-augments-inner::-webkit-scrollbar-thumb {
+  background-color: #1e4c94;
+  border-radius: 20px;
+  width: 8px;
+  height: 32px;
 }
 
 .analysis-augments-row {
