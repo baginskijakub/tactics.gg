@@ -41,7 +41,6 @@ export const TeamBuilder: React.FC = () => {
     if(id !== undefined){
       let tempBoard:UnitHex[][] = initialState;
       getCreatedComp(id).then(res => {
-        console.log(res)
         res.data.composition.forEach((row:any, rowNo:number) => {
           row.forEach((unit:any, columnNo:number) => {
             if(unit.id !== null){
@@ -59,13 +58,12 @@ export const TeamBuilder: React.FC = () => {
           const socket = io("https://server-tactixgg.com/");
           socket.emit("connectInit", thisSessionId)
           socket.on("uploadProgress", (data) => {
-            console.log(data)
             setProgress(data)
             setAnalysis("Loading")
           })
       }
       catch{
-        console.log("Something went wrong")
+
       }
 
   }, [analysis])
@@ -105,6 +103,7 @@ export const TeamBuilder: React.FC = () => {
       )
     })
     postComp(arr, thisSessionId).then((res:any) => {
+      console.log(res)
       if(res.data === ""){
         setAnalysis("Wait")
       }
@@ -125,7 +124,6 @@ export const TeamBuilder: React.FC = () => {
         });
         let augments: Augment[] = []
         res.data.augments.forEach((augment: any) => {
-          console.log(augment.name)
           augments.push(new Augment(augment.name, augment.src, augment.avgPlace, augment.winRate, augment.playRate))
         })
         setAnalysis(new AnalysisClass(res.data.top4Ratio, res.data.winRate, res.data.avgPlace, res.data.playRate, units, augments))
@@ -221,7 +219,6 @@ export const TeamBuilder: React.FC = () => {
                                 traitData.effects.forEach((effect:any) => {
                                   if(effect.minUnits <= tempValue + 1 && effect.maxUnits >= tempValue + 1){
                                         style = effect.style;
-                                        console.log("xd")
                                     }
                                 })
                               }
@@ -235,7 +232,6 @@ export const TeamBuilder: React.FC = () => {
               }
             })
         })
-        console.log(tempTraits)
         setTraits(tempTraits)  
       })
     })

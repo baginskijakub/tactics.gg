@@ -248,6 +248,10 @@ h6 {
     line-height: 120%;
   }
 }
+.bold {
+  font-weight: 600 !important;
+}
+
 .trait-small-container {
   display: flex;
   flex-direction: row;

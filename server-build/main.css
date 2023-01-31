@@ -304,12 +304,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -318,12 +318,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -675,12 +675,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -689,12 +689,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -1350,12 +1350,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -1364,12 +1364,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -1825,12 +1825,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -1839,12 +1839,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -2660,12 +2660,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -2674,12 +2674,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -3833,12 +3833,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -3847,12 +3847,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -4735,6 +4735,10 @@ h6 {
     line-height: 120%;
   }
 }
+.bold {
+  font-weight: 600 !important;
+}
+
 .trait-small-container {
   display: flex;
   flex-direction: row;
@@ -5119,12 +5123,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -5133,12 +5137,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -5509,12 +5513,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -5523,12 +5527,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -6608,12 +6612,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -6622,12 +6626,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -6976,12 +6980,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -6990,12 +6994,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -7332,12 +7336,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -7346,12 +7350,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -8387,12 +8391,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -8401,12 +8405,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -8681,12 +8685,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -8695,12 +8699,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -9105,12 +9109,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -9119,12 +9123,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -9607,12 +9611,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -9621,12 +9625,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -9892,12 +9896,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 115%;
   }
   .body {
@@ -9906,12 +9910,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }

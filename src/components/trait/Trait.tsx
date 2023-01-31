@@ -63,10 +63,10 @@ export const Trait: React.FC<Props> = ({
             className="trait-small-value-container"
             style={{ backgroundColor: `${backgroundColor}` }}
           >
-            <h6>{currentTrait}</h6>
+            <p className="body-small bold">{currentTrait}</p>
           </div>
         )}
-        {hasLabel && <h6>{name}</h6>}
+        {hasLabel && <p className="body-small bold">{name}</p>}
       </div>
     );
   } else {
@@ -83,7 +83,7 @@ export const Trait: React.FC<Props> = ({
             className="trait-big-value-container"
             style={{ backgroundColor: `${backgroundColor}` }}
           >
-            <h5>{currentTrait}</h5>
+            <p className="body-small bold">{currentTrait}</p>
           </div>
         )}
         {hasLabel && <h4>{name}</h4>}

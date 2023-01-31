@@ -46,7 +46,7 @@ async function getAllItems(){
                 //regular item case, id > 10 to remove components, id !== 4441 to remove empty slot
                 if(iconArr[5] === "Standard" && item.id > 10 && item.id !== 4441){
                     normalItems.push({
-                        id: item.apiName,
+                        id: item.id,
                         name: item.name,
                         src: url
                     })
@@ -54,7 +54,7 @@ async function getAllItems(){
                 //emblems, no futher checks so far
                 else if(iconArr[5] === "Traits"){
                     emblemItems.push({
-                        id: item.apiName,
+                        id: item.id,
                         name: item.name,
                         src: url
                     })
@@ -62,7 +62,7 @@ async function getAllItems(){
                 //radaint
                 else if(iconArr[5] === "Radiant"){
                     radiantItems.push({
-                        id: item.apiName,
+                        id: item.id,
                         name: item.name,
                         src: url
                     })

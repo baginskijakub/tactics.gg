@@ -38,6 +38,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
     setPlaceholder("loading");
     setMatches(undefined)
     searchSummoner(region, name).then((res: any) => {
+      console.log(res)
       setProfile(
         new Profile(
           res.data.profile.name,
@@ -75,16 +76,16 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
       setMatches(
         res.data.matches.map((match: any) => {
           let augments = match.augments.map((augment: any) => {
-            return `https://ittledul.sirv.com/Images/augments/${augment}.png`;
+            return augment.icon;
           });
           let traits = match.trait.map((trait: any) => {
             let arr = trait.name.split("_");
-            let traitName = arr[1].toLowerCase();
+            let traitName = arr[1];
             return new Trait(
               arr[1],
               trait.currentTrait,
               trait.style,
-              `https://ittledul.sirv.com/Images/traits/${traitName}.png`
+              trait.icon
             );
           });
 
@@ -93,14 +94,14 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
               return new Item(
                 item.id,
                 item.name,
-                `https://ittledul.sirv.com/Images/items/${item.id}.png`
+                item.icon
               );
             });
             return new Unit(
               unit.id,
-              unit.id /*TODO*/,
+              unit.name,
               unit.cost,
-              `https://ittledul.sirv.com/Images/units/${unit.id}.png`,
+              unit.icon,
               unit.level,
               items
             );
@@ -108,16 +109,16 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
 
           let players = match.players.map((player: any) => {
             let playerAugments = player.augments.map((augment: any) => {
-              return `https://ittledul.sirv.com/Images/augments/${augment}.png`;
+              return augment.icon;
             });
             let playerTraits = player.traits.map((trait: any) => {
               let arr = trait.name.split("_");
-              let traitName = arr[1].toLowerCase();
+              let traitName = arr[1];
               return new Trait(
                 arr[1],
                 trait.currentTrait,
                 trait.style,
-                `https://ittledul.sirv.com/Images/traits/${traitName}.png`
+                trait.icon
               );
             });
 
@@ -126,14 +127,14 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
                 return new Item(
                   item.id,
                   item.name,
-                  `https://ittledul.sirv.com/Images/items/${item.id}.png`
+                  item.icon
                 );
               });
               return new Unit(
                 unit.id,
-                unit.id /*TODO*/,
+                unit.name,
                 unit.cost,
-                `https://ittledul.sirv.com/Images/units/${unit.id}.png`,
+                unit.icon,
                 unit.level,
                 items
               );
@@ -163,7 +164,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
       );
       setPlaceholder("none")
       setSummonerName(res.data.profile.name);   
-    });
+    })
   }
   useEffect(() => {
       if(name !== undefined && region !== undefined){

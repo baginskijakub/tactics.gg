@@ -32,7 +32,7 @@ export const NavButton: React.FC<Props> = ({ text, link, isSelected, path, index
   } else {
     return (
       <div className="navbutton-selected">
-        <a className="body" >{text}</a>
+        <p className="body" >{text}</p>
       </div>
     );
   }

@@ -19,7 +19,7 @@ export const PageHead:React.FC<Props> = ({title, text, canonical, buttonText, bu
             <Helmet>
                 <title>{title}</title>
                 <link rel="icon" href={ggIcon}></link>
-                <link rel="canonical" href={canonical}></link>
+                <link rel="canonical" href={"https://tactix.gg" + canonical}></link>
                 <meta name="description" content={`${text}. Climb faster with our up to date TFT compositions and rankings.`} data-rh="true"></meta>
             </Helmet>
             <div className='page-head-inner'>
