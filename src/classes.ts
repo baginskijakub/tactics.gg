@@ -349,12 +349,14 @@ class AnalysisItem{
   id: number;
   avgPlacement: string;
   playRatio: string; 
+  src: string
 
-  constructor(name: string, id: number, avgPlacement: string, playRatio: string){
+  constructor(name: string, id: number, avgPlacement: string, playRatio: string, src: string){
     this.name = name;
     this.id = id;
     this.avgPlacement = avgPlacement;
     this.playRatio = playRatio;
+    this.src = src;
   }
 }
 
@@ -362,10 +364,12 @@ class AnalysisUnit{
   name: string;
   id: string;
   items: AnalysisItem[];
-  constructor(  name: string, id: string, items: AnalysisItem[]){
+  src: string
+  constructor(  name: string, id: string, items: AnalysisItem[], src: string){
     this.name = name;
     this.id = id;
     this.items = items;
+    this.src = src
   }
 }
 

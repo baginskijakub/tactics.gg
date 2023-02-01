@@ -220,12 +220,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   h5 {
-    font-size: 10px;
+    font-size: 8px;
     line-height: 115%;
     letter-spacing: -0.02em;
   }
   h6 {
-    font-size: 10px;
+    font-size: 8px;
     line-height: 115%;
   }
   .body {
@@ -234,12 +234,12 @@ h6 {
     letter-spacing: -0.02em;
   }
   .body-small {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 130%;
     letter-spacing: -0.01em;
   }
   .caption {
-    font-size: 9px;
+    font-size: 8px;
     line-height: 150%;
     letter-spacing: -0.01em;
   }
@@ -292,7 +292,7 @@ h6 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #0c1a2d;
+  background-color: #0e1928;
   border-bottom: 1px solid #172c49;
 }
 
@@ -365,5 +365,17 @@ h6 {
   }
   .navbar-inner-container {
     width: 800px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .navbar-container {
+    background-color: #0e1928;
+    border-bottom: 1px solid #172c49;
+  }
+  .navbar-inner-container {
+    width: calc(100% - 32px);
+  }
+  .navbar-links-wrapper {
+    display: none;
   }
 }/*# sourceMappingURL=navbar.css.map */

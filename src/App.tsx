@@ -36,6 +36,7 @@ const App:React.FC = () => {
   //change navbar on breakpoint
   React.useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
+    
   }, []);
 
   //handling searchbar in navbar so that when a summoner is searched the 'summoner' page opens with the result

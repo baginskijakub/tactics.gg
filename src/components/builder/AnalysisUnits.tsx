@@ -19,7 +19,7 @@ export const AnalysisUnits:React.FC<Props> = ({units}) => {
             <div className="analysis-units-units">
                 {units.map((unit, index) => {
                     return (
-                        <img className={`${selectedUnit == index && "analysis-unit-selected"}`} src={`https://ittledul.sirv.com/Images/units/${unit.id}.png`} id={unit.name} alt={unit.name} onClick={() => handleUnitSelection(index)}></img>
+                        <img className={`${selectedUnit == index && "analysis-unit-selected"}`} src={unit.src} id={unit.name} alt={unit.name} onClick={() => handleUnitSelection(index)}></img>
                     )
                 })}
             </div>
@@ -33,7 +33,7 @@ export const AnalysisUnits:React.FC<Props> = ({units}) => {
                     
                     return(
                         <div className="analysis-item-container">
-                            <img src={`https://ittledul.sirv.com/Images/items/${item.id}.png`}></img>     
+                            <img src={item.src}></img>     
                             <div className="analysis-item-stats">
                                 <p className="caption">{item.avgPlacement}</p>
                                 <p className="caption-small">{item.playRatio}%</p>

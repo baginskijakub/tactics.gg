@@ -61,9 +61,9 @@ export const Analysis:React.FC<Props> = ({analysis, progres}) => {
     analysis.units.forEach(unit => {
         let items:AnalysisItem[] = [] 
         unit.items.forEach(item => {
-            items.push(new AnalysisItem(item.name, item.id, item.avgPlacement, item.playRatio))
+            items.push(new AnalysisItem(item.name, item.id, item.avgPlacement, item.playRatio, item.src))
         })
-        units.push(new AnalysisUnit(unit.name, unit.name, items))
+        units.push(new AnalysisUnit(unit.name, unit.name, items, unit.src))
     })
     let augments: Augment[] = []
     analysis.augments.forEach(augment => {

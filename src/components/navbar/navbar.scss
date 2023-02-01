@@ -45,7 +45,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: $background05;
+  background-color: $background07;
   border-bottom: 1px solid $divider;
 }
 
@@ -123,4 +123,14 @@
 }
 
 @media screen and (max-width: 850px) {
+  .navbar-container{
+    background-color: $background07;
+    border-bottom: 1px solid $divider;
+  }
+  .navbar-inner-container{
+    width: calc(100% - 32px);
+  }
+  .navbar-links-wrapper{
+    display: none;
+  }
 }

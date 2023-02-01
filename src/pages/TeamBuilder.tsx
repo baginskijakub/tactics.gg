@@ -118,9 +118,9 @@ export const TeamBuilder: React.FC = () => {
         res.data.units.forEach((unit: any) => {
           let items: AnalysisItem[] = [];
           unit.items.forEach((item: any) => {
-            items.push(new AnalysisItem(item.name, item.id, item.avgPlace, item.playRate))
+            items.push(new AnalysisItem(item.name, item.id, item.avgPlace, item.playRate, item.icon))
           })
-          units.push(new AnalysisUnit(unit.name, unit.id, items))
+          units.push(new AnalysisUnit(unit.name, unit.id, items, unit.icon))
         });
         let augments: Augment[] = []
         res.data.augments.forEach((augment: any) => {

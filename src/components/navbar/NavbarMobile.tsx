@@ -45,7 +45,7 @@ export const NavbarMobile:React.FC = () => {
                         <NavButtonMobile text="Augments" isSelected={selected[2]} link="" path="/augments" index={2} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Units" isSelected={selected[3]} link="" path="/units" index={3} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Items" isSelected={selected[4]} link="" path="/items" index={4} handleSelection={handleSelected}/>
-                        <NavButtonMobile text="Leaderboards" isSelected={selected[4]} link="" path="/leaderboard" index={5} handleSelection={handleSelected}/>
+                        <NavButtonMobile text="Leaderboards" isSelected={selected[5]} link="" path="/leaderboard" index={5} handleSelection={handleSelected}/>
                         {/* <NavButtonMobile text="Leaderboards" isSelected={false} link="" path="" /> */}
             </div>
 
