@@ -10,10 +10,11 @@ interface Props{
     winrate: number
     playrate: number
     traits: string[]
+    src: string
 
 }
 
-export const UnitRow:React.FC<Props> = ({name, id, avgPlacement, winrate, playrate, traits}) => {
+export const UnitRow:React.FC<Props> = ({name, id, avgPlacement, winrate, playrate, traits, src}) => {
 
     let isMobile  = window.innerWidth > 1050
 
@@ -48,7 +49,7 @@ export const UnitRow:React.FC<Props> = ({name, id, avgPlacement, winrate, playra
     return (
         <div className="unit-row-wrapper">
             <div className="unit-row-unit">
-                <img src={`https://ittledul.sirv.com/Images/units/${id}.png`} alt={name} title="Unit"/>
+                <img src={src} alt={name} title="Unit"/>
                 <h4>{name}</h4>
             </div>
             {isMobile && <div className="unit-row-traits">

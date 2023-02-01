@@ -34,13 +34,7 @@ export const Augments:React.FC = () => {
             res.data.forEach((augment: any) => {
                 let name = augment.id
                 let tier = 0
-                data.items.forEach(augmentData => {
-                    if(augmentData.apiName === augment.id){
-                        name = augmentData.name
-                        tier = augmentData.tier
-                    }
-                })
-                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, name, augment.avg_place, augment.winrate, augment.frequency, tier))
+                tempAugments.push(new Augment(augment.icon, augment.name, augment.avg_place, augment.winrate, augment.frequency, tier))
             })
             setAugments(tempAugments)
             setAllAugments(tempAugments)

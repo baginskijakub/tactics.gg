@@ -1,4 +1,5 @@
 import React from 'react'
+import { Item } from '../../classes'
 import '../augments/augments.css'
 
 interface Props{
@@ -7,9 +8,10 @@ interface Props{
     avgPlacement: number
     winrate: number
     playrate: number
+    src: string
 }
 
-export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playrate}) => {
+export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playrate, src}) => {
 
     let colors: string[] = []
     if (avgPlacement < 3.7) {
@@ -32,7 +34,7 @@ export const ItemRow:React.FC<Props> = ({id, name, avgPlacement, winrate, playra
     return (
         <div className="augment-row-wrapper">
             <div className="augment-row-inner">
-                <img className="item-row-image" src={`https://ittledul.sirv.com/Images/items/${id}.png`} alt={name} title="Item"/>
+                <img className="item-row-image" src={src} alt={name} title="Item"/>
                 <p className="body">{name}</p>
             </div>
             <p className={colors[0]}>{avgPlacement}</p>

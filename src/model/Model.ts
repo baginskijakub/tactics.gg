@@ -57,6 +57,10 @@ function getComparableAugments(){
   return axios.get('https://server-tactixgg.com/compare-augments')
 }
 
+function getAnalyzedCounterData(){
+  return axios.get('https://server-tactixgg.com/generalData')
+}
 
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp, getComparableAugments};
+
+export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp, getComparableAugments, getAnalyzedCounterData};

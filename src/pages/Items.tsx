@@ -5,7 +5,6 @@ import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getItemsRanking } from '../model/Model'
 import { DefaultSearch } from "../components/search/DefaultSearch";
 import './pages.css'
-import itemsData from '../components/builder/Items.json'
 import {PageHead} from './PageHead'
 import {AnalyzedCounter} from './AnalyzedCounter'
 import {TableLoader} from '../components/table/TableLoader'
@@ -15,7 +14,7 @@ export const Items:React.FC = () => {
     const[toRender, setToRender] = useState(0);
     const[allItems, setAllItems] = useState<any[]>([])
     const[items, setItems] = useState<any[]>([])
-    const[type, setType] = useState("Normal")
+    const[type, setType] = useState("Regular")
     const [searched, setSearched] = useState("");
     const [width, setWidth] = React.useState(window.innerWidth);
 
@@ -29,24 +28,11 @@ export const Items:React.FC = () => {
     
     useEffect(() => {
         getItemsRanking().then((res) => {
-            let tempNormalItems: any[] = []
             let tempItems: any[] = []
-            console.log(res)
             res.data.forEach((item: any) => {
-                let tempName = ""
-                let tempType = ""
-                itemsData.items.forEach(itemData => {
-                    if(itemData.id === item.id){
-                        tempName = itemData.name
-                        tempType = itemData.type
-                    }
-                });
-                tempItems.push({"id": item.id, "name": tempName, "avgPlacement": item.avg_place, "winrate": item.winrate, "playrate": item.frequency, "type": tempType})
-                if(tempType === "normal"){
-                    tempNormalItems.push({"id": item.id, "name": tempName, "avgPlacement": item.avg_place, "winrate": item.winrate, "playrate": item.frequency, "type": tempType})
-                }
+                tempItems.push({"id": item.id, "src": item.icon, "name": item.name, "avgPlacement": item.avg_place, "winrate": item.winrate, "playrate": item.frequency, "type": item.type})
             })
-            setItems(tempNormalItems)
+            setItems(tempItems)
             setAllItems(tempItems)
             setToRender(20)
         })
@@ -55,12 +41,9 @@ export const Items:React.FC = () => {
 
     function handleSort(value: string){
         setSort(value)
-        console.log("sort")
         let tempItems = items
         if(value === "Average Placement"){
-                    console.log("avg")
              for(var i = 0; i < tempItems.length; i++){
-                console.log(tempItems[i])
                 // Last i elements are already in place 
                 for(var j = 0; j < ( tempItems.length - i -1 ); j++){
                     
@@ -77,7 +60,6 @@ export const Items:React.FC = () => {
         }
         }
         else if(value === "Winrate"){
-            console.log("wr")
             for(var i = 0; i < tempItems.length; i++){
                     
                 // Last i elements are already in place 
@@ -86,7 +68,6 @@ export const Items:React.FC = () => {
                     // Checking if the item at present iteration
                     // is greater than the next iteration
                     if(parseFloat(tempItems[j].winrate.toString()) > parseFloat(tempItems[j+1].winrate.toString())){
-                        console.log(typeof tempItems[j].winrate)
                     // If the condition is true then swap them
                     var temp = tempItems[j]
                     tempItems[j] = tempItems[j + 1]
@@ -96,7 +77,6 @@ export const Items:React.FC = () => {
             }
         }
         else if(value === "Playrate"){
-            console.log("pr")
             for(var i = 0; i < tempItems.length; i++){
                 
                 // Last i elements are already in place 
@@ -124,10 +104,19 @@ export const Items:React.FC = () => {
     }
 
     function handleType(value: string){
-        setType(type)
+        let tempValue: string = "standard"
+        if(value === "Emblem"){
+            tempValue = "traits"
+        }
+        else if(value === "Radiant"){
+            tempValue = "radiant"
+        }
+        else if(value === "Ornn"){
+            tempValue = "ornn_items"
+        }
         let tempItems: any[] = []
         allItems.forEach(item => {
-            if(item.type === value.toLowerCase()){
+            if(item.type === tempValue){
                 tempItems.push(item)
             }
         })
@@ -135,6 +124,8 @@ export const Items:React.FC = () => {
     }
 
     function handleSearch(value: string) {
+
+
         setSearched(value);
         let arr: any = [];
         allItems.forEach((item) => {
@@ -163,7 +154,7 @@ export const Items:React.FC = () => {
                         />
                     <Dropdown 
                         name="Type"
-                        values={["Normal", "Emblem", "Radiant", "Shimmerscale"]}
+                        values={["Regular", "Emblem", "Radiant", "Ornn"]}
                         defaultValue="Normal"
                         onChange={handleType}
                         />
@@ -182,7 +173,7 @@ export const Items:React.FC = () => {
                 {items.length > 0 ? items.map((item, index) => {
                     if(index <= toRender){
                         return (
-                        <ItemRow id={item.id} name={item.name} avgPlacement={item.avgPlacement} winrate={item.winrate} playrate={item.playrate}/>
+                        <ItemRow id={item.id} src={item.src} name={item.name} avgPlacement={item.avgPlacement} winrate={item.winrate} playrate={item.playrate}/>
                         )
                     }
                 }) : <TableLoader/>}

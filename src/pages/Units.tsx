@@ -25,12 +25,9 @@ export const Units:React.FC = () => {
 
     function handleSort(value: string){
         setSort(value)
-        console.log("sort")
         let tempUnits = units
         if(value === "Average Placement"){
-                    console.log("avg")
              for(var i = 0; i < tempUnits.length; i++){
-                console.log(tempUnits[i])
                 // Last i elements are already in place 
                 for(var j = 0; j < ( tempUnits.length - i -1 ); j++){
                     
@@ -47,7 +44,6 @@ export const Units:React.FC = () => {
         }
         }
         else if(value === "Winrate"){
-            console.log("wr")
             for(var i = 0; i < tempUnits.length; i++){
                     
                 // Last i elements are already in place 
@@ -66,7 +62,6 @@ export const Units:React.FC = () => {
             }
         }
         else if(value === "Playrate"){
-            console.log("pr")
             for(var i = 0; i < tempUnits.length; i++){
                 
                 // Last i elements are already in place 
@@ -89,29 +84,19 @@ export const Units:React.FC = () => {
     }
     
 
-    // useEffect(() => {
-    //     getUnitsRanking().then((res) => {
-    //         let tempUnits: any[] = []
-    //         console.log(res)
-    //         res.data.forEach((unit: any) => {
-    //             let unitTraits:any[] = []
-    //             let unitName = unit.id
-    //             unitsData.forEach(unitData => {
-    //                 if(unitData.id === unit.id){
-    //                     unitData.traits.forEach(trait => {
-    //                         unitTraits.push(trait.name)
-    //                     })
-    //                     unitName = unitData.name
-    //                 }
-    //             })
-    //             tempUnits.push({"name": unitName, "id": unit.id, "avgPlacement": unit.avg_place, "winrate": unit.winrate, "playrate": unit.frequency, "traits": unitTraits})
-    //         })
-    //         setUnits(tempUnits)
-    //         setAllUnits(tempUnits)
-    //         setToRender(20)
-    //     })
+    useEffect(() => {
+        getUnitsRanking().then((res) => {
+            let tempUnits: any[] = []
+            res.data.forEach((unit: any) => {
+                let unitTraits:any[] = []
+                tempUnits.push({"name": unit.name, "src": unit.icon, "id": unit.id, "avgPlacement": unit.avg_place, "winrate": unit.winrate, "playrate": unit.frequency, "traits": unitTraits})
+            })
+            setUnits(tempUnits)
+            setAllUnits(tempUnits)
+            setToRender(20)
+        })
 
-    // }, [])
+    }, [])
 
     function handleRenderMore(){
         let temp  = toRender;
@@ -171,7 +156,7 @@ export const Units:React.FC = () => {
                 {units.length > 0 ? units.map((unit, index) => {
                     if(index < toRender){
                         return (
-                            <UnitRow name={unit.name} id={unit.id} avgPlacement={unit.avgPlacement} winrate={unit.winrate} playrate={unit.playrate} traits={unit.traits}/>
+                            <UnitRow name={unit.name} src={unit.src} id={unit.id} avgPlacement={unit.avgPlacement} winrate={unit.winrate} playrate={unit.playrate} traits={unit.traits}/>
                         )
                     }
                 }) : <TableLoader />}
