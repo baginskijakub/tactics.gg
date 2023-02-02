@@ -36,10 +36,16 @@ export const AugmentRow:React.FC<Props> = ({augment}) => {
     colors.push("body green");
   }
 
+  let conditionalStyle = ""
+  let urlArr:string[] = augment.src.split("/")
+  if(urlArr[6] === "characters"){
+    conditionalStyle = "hero-augment"
+  }
+
     return (
         <div className="augment-row-wrapper">
             <div className="augment-row-inner">
-                <img src={augment.src} alt={augment.name} title="Augment"/>
+                <img src={augment.src} alt={augment.name} title="Augment" className={conditionalStyle}/>
                  <h4>{augment.name}</h4>
             </div>
             <p className={colors[0]}>{augment.avgPlacement}</p>

@@ -27,13 +27,13 @@ function getComps(){
 }
 
 function getAugmentsRankingByStage(stage: string){
-  if(stage == "2-1 (First)"){
+  if(stage == "2-1"){
     return axios.get('https://server-tactixgg.com/augments-ranking/1')
   }
-  else if(stage == "3-2 (Second)"){
+  else if(stage == "3-2"){
     return axios.get('https://server-tactixgg.com/augments-ranking/2')
   }
-  else if(stage == "4-2 (Third)"){
+  else if(stage == "4-2"){
     return axios.get('https://server-tactixgg.com/augments-ranking/3')
   }
   else{

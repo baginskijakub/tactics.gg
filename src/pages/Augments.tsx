@@ -10,7 +10,6 @@ import './pages.css'
 import {TableLoader} from '../components/table/TableLoader'
 import {PageHead} from './PageHead'
 import {AnalyzedCounter} from './AnalyzedCounter'
-import data from '../components/augments/augments-data.json'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -167,27 +166,20 @@ export const Augments:React.FC = () => {
     }
 
     function handleStage(value: string){
-                    setStage(value);
-        getAugmentsRankingByStage(value).then((res) => {
-            let tempAugments: Augment[] = []
-            res.data.forEach((augment: any) => {
-                let name = augment.id
-                let tier = 0
-                data.items.forEach(augmentData => {
-                    if(augmentData.apiName === augment.id){
-                        name = augmentData.name
-                        tier = augmentData.tier
-                    }
+            setStage(value);
+            getAugmentsRankingByStage(value).then((res) => {
+                console.log(res)
+                let tempAugments: Augment[] = []
+                res.data.forEach((augment: any) => {
+                    tempAugments.push(new Augment(augment.icon, augment.name, augment.avg_place, augment.winrate, augment.frequency, 0))
                 })
-                tempAugments.push(new Augment(`https://ittledul.sirv.com/Images/augments/${augment.id}.png`, name, augment.avg_place, augment.winrate, augment.frequency, tier))
+                let tierApplied = getAugmentsByTier(tempAugments, tier);
+                let sortApplied = sortAugments(tierApplied, sort)
+
+                setAugments(sortApplied)
+                setAllAugments(tempAugments)
+
             })
-            let tierApplied = getAugmentsByTier(tempAugments, tier);
-            let sortApplied = sortAugments(tierApplied, sort)
-
-            setAugments(sortApplied)
-            setAllAugments(tempAugments)
-
-        })
 
     }
 
@@ -225,7 +217,7 @@ export const Augments:React.FC = () => {
                     />
                 <Dropdown 
                     name="Stage"
-                    values={["All", "2-1 (First)", "3-2 (Second)", "4-2 (Third)"]}
+                    values={["All", "2-1", "3-2", "4-2"]}
                     defaultValue="All"
                     onChange={handleStage}
                     />

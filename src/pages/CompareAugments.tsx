@@ -35,8 +35,8 @@ export const CompareAugments:React.FC = () => {
                     }
                 })
                 tempAugments.push({
-                    src: `https://ittledul.sirv.com/Images/augments/${augment.id}.png`,
-                    name: name,
+                    src: augment.icon,
+                    name: augment.name,
                     overallStats:{
                         avgPlace: augment.overall_avg_place,
                         winratio: augment.overall_winrate,
