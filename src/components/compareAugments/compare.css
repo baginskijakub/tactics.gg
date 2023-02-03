@@ -429,6 +429,14 @@ table.rounded-corners > tfoot:not(:last-child) {
   background-color: #1e4c94;
 }
 
+.hero-augment-big {
+  border: 2px solid #1e4c94;
+  border-radius: 4px;
+  width: 120px !important;
+  height: 120px !important;
+  margin: 22px;
+}
+
 @media screen and (max-width: 1350px) {
   .augment-panel-wrapper {
     width: 320px;

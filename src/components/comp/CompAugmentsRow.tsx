@@ -1,6 +1,9 @@
 import React from "react";
 import "./comp.css";
 
+
+
+
 interface Props {
   src: string;
   name: string;
@@ -35,11 +38,17 @@ export const CompAugmentsRow: React.FC<Props> = ({
     colors.push("body red");
   }
 
+  let conditionalStyle = ""
+  let urlArr:string[] = src.split("/")
+  if(urlArr[6] === "characters"){
+    conditionalStyle = "hero-augment-comp"
+  }
+
   return (
     <div className="augments-row-container">
       <div className="augment-name-container">
-        <img src={src} alt="Augment" title="Augment"></img>
-        {/* <h4>{name}</h4> */}
+        <img className={conditionalStyle} src={src} alt="Augment" title="Augment"></img>
+         <h4>{name}</h4>
       </div>
       <p className={`body augemnts-row-cell ${colors[0]}`}>{avgPlacement}</p>
       <p className={`body augemnts-row-cell ${colors[1]}`}>{winrate}%</p>

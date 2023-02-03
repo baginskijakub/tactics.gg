@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import './compare.css'
 import AugmentSearch from './AugmentSearch'
+import { Item } from "../../classes"
 
 interface IComparableAugment{
     src: string
@@ -35,12 +36,19 @@ export const AugmentPanel:React.FC<Props> = ({augments, stageState}) => {
             }
         })
     }
+
+    //hero aug case
+    let conditionalStyle: string = ""
+    let srcArr: string[] = augment.src.split("/")
+    if(srcArr[6] === "characters"){
+        conditionalStyle = "hero-augment-big"
+    }
         
     return(
         <div className="augment-panel-wrapper">
             <AugmentSearch augments={augments} selectAugment={selectAugment}/>
             <div className="augment-panel-augment">
-                <img src={augment.src}/>
+                <img src={augment.src} className={conditionalStyle}/>
                 <h3>{augment.name}</h3>
             </div>
             <table className="augment-panel-stats rounded-corners">

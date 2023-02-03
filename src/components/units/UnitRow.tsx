@@ -9,7 +9,7 @@ interface Props{
     avgPlacement: number
     winrate: number
     playrate: number
-    traits: string[]
+    traits: {src: string, name: string}[]
     src: string
 
 }
@@ -53,16 +53,16 @@ export const UnitRow:React.FC<Props> = ({name, id, avgPlacement, winrate, playra
                 <h4>{name}</h4>
             </div>
             {isMobile && <div className="unit-row-traits">
-                { traits.map((trait) => {
+                { traits.map((trait:any) => {
                     return (
                         <Trait 
                             size="small"
                             hasValue={false}
                             hasLabel={true}
-                            name={trait}
+                            name={trait.name}
                             currentTrait={0}
                             traitStyle={0}
-                            url={`https://ittledul.sirv.com/Images/traits/${trait.toLowerCase()}.png`}
+                            url={trait.src}
                             />
                     )
                 })}

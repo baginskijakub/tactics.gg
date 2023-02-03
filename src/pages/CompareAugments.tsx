@@ -5,7 +5,6 @@ import { getComparableAugments } from '../model/Model'
 import { PageHead } from './PageHead'
 import {AugmentPanel} from '../components/compareAugments/AugmentPanel'
 import { StageToggle } from '../components/compareAugments/StageToggle'
-import data from '../components/augments/augments-data.json'
 
 
 interface IComparableAugment{
@@ -27,13 +26,6 @@ export const CompareAugments:React.FC = () => {
             console.log(res)
             let tempAugments: IComparableAugment[]= []
             res.data.forEach((augment:any) => {
-                let name = augment.id
-                data.items.forEach(augmentData => {
-                    if(augmentData.apiName === augment.id){
-
-                        name = augmentData.name
-                    }
-                })
                 tempAugments.push({
                     src: augment.icon,
                     name: augment.name,

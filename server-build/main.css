@@ -4811,6 +4811,10 @@ h6 {
   margin-left: -9px;
 }
 
+.trait-small-container p {
+  width: auto !important;
+}
+
 .trait-big-value-container {
   display: flex;
   width: 16px;
@@ -6031,7 +6035,6 @@ h6 {
   height: 28px;
   background: #0c1a2d;
   border-bottom: 1px solid #172c49;
-  z-index: -1;
 }
 
 .analysis-augments-row img {
@@ -6721,7 +6724,7 @@ h6 {
   width: 40px !important;
   height: 40px !important;
   border-radius: 3px;
-  border: 1px solid #172c49;
+  border: 1px solid #1e4c94;
   margin: 8px;
 }
 
@@ -7679,6 +7682,14 @@ h6 {
   height: 48px;
 }
 
+.hero-augment-comp {
+  width: 36px !important;
+  height: 36px !important;
+  margin: 6px;
+  border-radius: 2px;
+  border: 1px solid #1e4c94;
+}
+
 .augemnts-row-cell {
   text-align: center;
   width: 110px;
@@ -8009,6 +8020,11 @@ h6 {
   .augment-name-container img {
     width: 28px;
     height: 28px;
+  }
+  .hero-augment-comp {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 4px;
   }
   .augemnts-row-cell {
     width: 100px;
@@ -9351,6 +9367,14 @@ table.rounded-corners > tfoot:not(:last-child) {
   padding: 12px 16px;
   border-radius: 4px;
   background-color: #1e4c94;
+}
+
+.hero-augment-big {
+  border: 2px solid #1e4c94;
+  border-radius: 4px;
+  width: 120px !important;
+  height: 120px !important;
+  margin: 22px;
 }
 
 @media screen and (max-width: 1350px) {

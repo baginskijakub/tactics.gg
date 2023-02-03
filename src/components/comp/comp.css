@@ -528,6 +528,14 @@ h6 {
   height: 48px;
 }
 
+.hero-augment-comp {
+  width: 36px !important;
+  height: 36px !important;
+  margin: 6px;
+  border-radius: 2px;
+  border: 1px solid #1e4c94;
+}
+
 .augemnts-row-cell {
   text-align: center;
   width: 110px;
@@ -858,6 +866,11 @@ h6 {
   .augment-name-container img {
     width: 28px;
     height: 28px;
+  }
+  .hero-augment-comp {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 4px;
   }
   .augemnts-row-cell {
     width: 100px;

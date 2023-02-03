@@ -193,6 +193,15 @@ table th, table td {
     background-color: $buttonSelected;
 }
 
+.hero-augment-big{
+    border: 2px solid $buttonSelected;
+    border-radius: 4px;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 22px;
+
+}
+
 @media screen and (max-width: 1350px) {
     .augment-panel-wrapper{
         width: 320px;

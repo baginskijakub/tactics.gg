@@ -112,7 +112,7 @@ export const Augments:React.FC = () => {
 
             setSearched(value);
             let arr: Augment[] = [];
-            augments.forEach((augment) => {
+            allAugments.forEach((augment) => {
                 try{
                         if(augment.name.toLowerCase().includes(value.toLowerCase())){
                             arr.push(augment);
