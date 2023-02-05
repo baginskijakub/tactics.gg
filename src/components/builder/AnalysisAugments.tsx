@@ -17,6 +17,8 @@ const DefaultTooltip = styled(({ className, ...props }: TooltipProps) => (
 interface Props{
     augments: Augment[]
 }
+
+
 export const AnalysisAugments:React.FC<Props> = ({augments}) => {
     return (
         <div className="analysis-augments-wrapper">

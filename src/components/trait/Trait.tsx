@@ -4,7 +4,6 @@ import bronzeBackground from "../../images/icons/trait-background-bronze.svg";
 import silverBackground from "../../images/icons/trait-background-silver.svg";
 import goldBackground from "../../images/icons/trait-background-gold.svg";
 import chromaticBackground from "../../images/icons/trait-background-chromatic.svg";
-import traitIcon from "../../images/traits/jade.svg";
 
 interface Props {
   size: "small" | "big";
