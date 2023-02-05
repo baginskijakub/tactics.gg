@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.get('/', (req, res) => {
-  console.log(req.url)
+  res.set('Cache-control', 'public, max-age=300')
   const app = ReactDOMServer.renderToString(
     <StaticRouter location={req.url}>
       <App />
