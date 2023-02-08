@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.0e7a6ce0.css",
-    "main.js": "/static/js/main.7c0f4f2c.js",
+    "main.js": "/static/js/main.e56dc861.js",
     "static/js/651.a543a249.chunk.js": "/static/js/651.a543a249.chunk.js",
     "static/media/chall.png": "/static/media/chall.25b321744a2c2e688c6c.png",
     "static/media/logo.svg": "/static/media/logo.1cef1caf6493a3d49c7877e70469026a.svg",
     "static/media/gold.svg": "/static/media/gold.5d2c02215d91ffa2639b6c54f52e61ca.svg",
     "static/media/info.svg": "/static/media/info.f6797ebb01fd2ab8ad51d7d1a0d45a65.svg",
-    "static/media/link.svg": "/static/media/link.9d660bb872907aa5116e8f282e70cab0.svg",
     "index.html": "/index.html",
+    "static/media/link.svg": "/static/media/link.9d660bb872907aa5116e8f282e70cab0.svg",
     "static/media/search.svg": "/static/media/search.89521399fa5d4821e3898fd964cfa1cb.svg",
     "static/media/delete.svg": "/static/media/delete.8368f4c9b6bc3d57a0b36b6a2ff5bfc1.svg",
     "static/media/trait-background-silver.svg": "/static/media/trait-background-silver.f9c508f3cbaf633167e49af3cfd23c1d.svg",
@@ -21,11 +21,11 @@
     "static/media/star-hover.svg": "/static/media/star-hover.1b81d41da8d07628d4a2d2a0df712f6f.svg",
     "static/media/chevron.svg": "/static/media/chevron.9cc551763650eaf9056baf10701eaf16.svg",
     "main.0e7a6ce0.css.map": "/static/css/main.0e7a6ce0.css.map",
-    "main.7c0f4f2c.js.map": "/static/js/main.7c0f4f2c.js.map",
+    "main.e56dc861.js.map": "/static/js/main.e56dc861.js.map",
     "651.a543a249.chunk.js.map": "/static/js/651.a543a249.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e7a6ce0.css",
-    "static/js/main.7c0f4f2c.js"
+    "static/js/main.e56dc861.js"
   ]
 }
