@@ -23,7 +23,7 @@ export const Analyze: React.FC<Props> = ({buttonClick}) => {
       </p>
       <ul className="builder-analyze-list">
         <li className="body-small">Average Placement</li>
-        <li className="body-small">Winratio</li>
+        <li className="body-small">Win Rate</li>
         <li className="body-small">Top4 Ratio</li>
         <li className="body-small">Best Augments</li>
         <li className="body-small">Best Items</li>

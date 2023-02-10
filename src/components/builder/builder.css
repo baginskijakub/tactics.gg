@@ -269,14 +269,14 @@ h6 {
   align-items: flex-start;
   padding: 0px;
   gap: 20px;
-  padding-right: 50px;
+  padding-left: 50px;
   min-height: 95px;
   margin-bottom: -20px;
 }
 
 .builder-board-row:nth-child(even) {
-  padding-right: 0px;
-  padding-left: 50px;
+  padding-right: 50px;
+  padding-left: 0px;
 }
 
 .builder-board-row:nth-child(1) {
@@ -807,6 +807,24 @@ h6 {
   padding: 6px 12px 6px 8px;
   cursor: pointer;
   transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.builder-board-embed-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  border: 1px solid #172c49;
+  background-color: #377df7;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.builder-board-embed-button img {
+  width: 18px;
+  height: 18px;
 }
 
 .builder-board-copy-button:hover {

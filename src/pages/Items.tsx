@@ -59,7 +59,7 @@ export const Items:React.FC = () => {
             }
         }
         }
-        else if(value === "Winrate"){
+        else if(value === "Win Rate"){
             for(var i = 0; i < tempItems.length; i++){
                     
                 // Last i elements are already in place 
@@ -76,7 +76,7 @@ export const Items:React.FC = () => {
             }
             }
         }
-        else if(value === "Playrate"){
+        else if(value === "Play Rate"){
             for(var i = 0; i < tempItems.length; i++){
                 
                 // Last i elements are already in place 
@@ -148,7 +148,7 @@ export const Items:React.FC = () => {
                 <div className="sort-dropdown-container">
                     <Dropdown 
                         name="Sort"
-                        values={["Average Placement", "Winrate", "Playrate"]}
+                        values={["Average Placement", "Win Rate", "Play Rate"]}
                         defaultValue="Average Placement"
                         onChange={handleSort}
                         />
@@ -167,8 +167,8 @@ export const Items:React.FC = () => {
                 <div className="augments-titles">
                     <h4>Augments</h4>
                     <h4>Average Placement</h4>
-                    <h4>Winrate</h4>
-                    <h4>Playrate</h4>
+                    <h4>Win Rate</h4>
+                    <h4>Play Rate</h4>
                 </div>
                 {items.length > 0 ? items.map((item, index) => {
                     if(index <= toRender){

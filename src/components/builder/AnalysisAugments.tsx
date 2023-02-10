@@ -25,8 +25,8 @@ export const AnalysisAugments:React.FC<Props> = ({augments}) => {
             <div className="analysis-augments-titles">
                 <p className="caption">Augment</p>
                 <p className="caption">Average Placement</p>
-                <p className="caption">Winrate</p>
-                <p className="caption">Playrate</p>
+                <p className="caption">Win Rate</p>
+                <p className="caption">Play Rate</p>
             </div>
             <div className="analysis-augments-inner">
                 {augments.map(augment => {

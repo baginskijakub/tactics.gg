@@ -25,7 +25,7 @@ export const CompAugments: React.FC<Props> = ({ augments }) => {
       <div className="comp-augments-titles">
         <h4 className="comp-augments-title">Augment</h4>
         <h4 className="comp-augments-title-cell">{avg}</h4>
-        <h4 className="comp-augments-title-cell">Winrate</h4>
+        <h4 className="comp-augments-title-cell">Win Rate</h4>
         <h4 className="comp-augments-title-cell">Frequency</h4>
       </div>
       <span className="comp-horizontal-separator"></span>

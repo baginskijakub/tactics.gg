@@ -1,9 +1,11 @@
 import React from "react";
+import {renderToStaticMarkup} from 'react-dom/server'
 import "./builder.css";
 import { UnitHex } from "../../classes";
 import {HexUnit} from "./HexUnit";
 import deleteIcon from '../../images/icons/delete.svg'
 import linkIcon from '../../images/icons/link.svg'
+import embedIcon from '../../images/icons/embed.svg'
 
 interface Props {
   matrix: UnitHex[][];
@@ -26,12 +28,25 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, remove
     await sleep(2000);
     element.innerHTML = "Copy link"
   }
+
+  function handleEmbed(){
+    console.log(renderToStaticMarkup(<Board matrix={matrix} changeLevel={() => {}} clearBoard={() => {}} copyLink={() => {}} removeFromBoard={() => {}} />))
+  }
+
+  const func = () => {
+    
+  }
+
   return (
     <div className="builder-board-wrapper">
       <div className="builder-board-buttons-container">
         <div className="builder-board-clear-button" onClick={() => clearBoard()}>
             <img src={deleteIcon} alt="delete"/>
             <h5>Clear board</h5>
+        </div>
+        <div className="builder-board-embed-button" onClick={() => handleEmbed()}>
+            <img src={embedIcon} alt="embed"/>
+            <h5 id="copy-link">Embed</h5>
         </div>
         <div className="builder-board-copy-button" onClick={() => handleCopy()}>
             <img src={linkIcon} alt="delete"/>

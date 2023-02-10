@@ -43,7 +43,7 @@ export const Units:React.FC = () => {
             }
         }
         }
-        else if(value === "Winrate"){
+        else if(value === "Win Rate"){
             for(var i = 0; i < tempUnits.length; i++){
                     
                 // Last i elements are already in place 
@@ -61,7 +61,7 @@ export const Units:React.FC = () => {
             }
             }
         }
-        else if(value === "Playrate"){
+        else if(value === "Play Rate"){
             for(var i = 0; i < tempUnits.length; i++){
                 
                 // Last i elements are already in place 
@@ -142,7 +142,7 @@ export const Units:React.FC = () => {
                 <div className="sort-dropdown-container">
                     <Dropdown 
                             name="Sort"
-                            values={["Average Placement", "Winrate", "Playrate"]}
+                            values={["Average Placement", "Win Rate", "Play Rate"]}
                             defaultValue="Average Placement"
                             onChange={handleSort}
                             />
@@ -155,8 +155,8 @@ export const Units:React.FC = () => {
                     <h4>Unit</h4>
                     {isMobile && <h4>Traits</h4>}
                     <h4>Avg. Placement</h4>
-                    <h4>Winrate</h4>
-                    <h4>Playrate</h4>
+                    <h4>Win Rate</h4>
+                    <h4>Play Rate</h4>
                 </div>
                 {units.length > 0 ? units.map((unit, index) => {
                     if(index < toRender){

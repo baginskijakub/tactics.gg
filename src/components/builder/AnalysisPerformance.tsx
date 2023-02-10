@@ -58,15 +58,15 @@ export const AnalysisPerformance:React.FC<Props> = ({avgPlacement, winrate, play
                     <p className={colors[0]}>{avgPlacement}</p>
                 </div>
                 <div className="analysis-performance-row">
-                    <p className="body">TOP4 Ratio</p>
+                    <p className="body">TOP4 Rate</p>
                     <p className={colors[1]}>{top4Ratio}%</p>
                 </div>
                 <div className="analysis-performance-row">
-                    <p className="body">Winrate</p>
+                    <p className="body">Win Rate</p>
                     <p className={colors[2]}>{winrate}%</p>
                 </div>
                 <div className="analysis-performance-row">
-                    <p className="body">Playrate</p>
+                    <p className="body">Play Rate</p>
                     <p className={colors[3]}>{playrate}</p>
                 </div>
             </div>

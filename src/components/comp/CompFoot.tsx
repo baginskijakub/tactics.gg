@@ -70,16 +70,16 @@ export const CompFoot: React.FC<Props> = ({
         <p className={colors[0]}>{avgPlacement}</p>
       </div>
       <div className="comp-foot-inner">
-        <p className="body-small">TOP4 Ratio:</p>
+        <p className="body-small">TOP4 Rate:</p>
         <p className={colors[1]}>{top4Ratio}%</p>
       </div>
       <div className="comp-foot-inner">
-        <p className="body-small">Winrate:</p>
+        <p className="body-small">Win Rate:</p>
         <p className={colors[2]}>{winrate}%</p>
       </div>
       {!isMobile && (
         <div className="comp-foot-inner">
-          <p className="body-small">Playrate:</p>
+          <p className="body-small">Play Rate:</p>
           <p className={colors[3]}>{playrate}</p>
         </div>
       )}

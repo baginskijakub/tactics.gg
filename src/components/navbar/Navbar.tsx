@@ -53,7 +53,7 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
               <SummonerSearch handleInput={handleSummoner} />
             )}
           </div>
-          {(user === null || user.summonerName === undefined || user.icon === undefined) ? <PrimaryButton text="Login" fn={openModal}/> : <></>}
+          {/* {(user === null || user.summonerName === undefined || user.icon === undefined) ? <PrimaryButton text="Login" fn={openModal}/> : <></>} */}
         </div>
       </div>
       <NavbarLinks />

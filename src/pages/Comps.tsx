@@ -46,7 +46,7 @@ export const Comps = () => {
                     }
             }
         }}
-        else if(value === "Winrate"){
+        else if(value === "Win Rate"){
             for(var i = 0; i < tempComps.length; i++){
                     
                 // Last i elements are already in place 
@@ -63,7 +63,7 @@ export const Comps = () => {
             }
             }
         }
-        else if(value === "Playrate"){
+        else if(value === "Play Rate"){
             for(var i = 0; i < tempComps.length; i++){
                 
                 // Last i elements are already in place 
@@ -122,6 +122,7 @@ export const Comps = () => {
             })
             setAllComps(tempComps)
             setComps(tempComps)
+            handleSort('Average Placement')
         })
 
     }, [])
@@ -137,7 +138,7 @@ export const Comps = () => {
                 <div className="sort-dropdown-container">
                     <Dropdown 
                         name="Sort"
-                        values={["Average Placement", "Winrate", "Playrate"]}
+                        values={["Average Placement", "Win Rate", "Play Rate"]}
                         defaultValue="Average Placement"
                         onChange={handleSort}
                         /> 
