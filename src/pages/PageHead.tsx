@@ -12,8 +12,6 @@ interface Props{
     buttonOnClick?: () => void
 }
 export const PageHead:React.FC<Props> = ({title, text, canonical, buttonText, buttonOnClick}) => {
-
-    console.log(canonical)
     return (
         <div className="page-head-wrapper">
             <Helmet>

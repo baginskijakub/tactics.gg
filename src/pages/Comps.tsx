@@ -122,7 +122,6 @@ export const Comps = () => {
             })
             setAllComps(tempComps)
             setComps(tempComps)
-            handleSort('Average Placement')
         })
 
     }, [])
