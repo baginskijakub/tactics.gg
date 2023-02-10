@@ -20,6 +20,7 @@ import {
   Item,
   Companion,
 } from "../classes";
+import HorizontalAdd from "../components/ads/HorizontalAdd";
 
 interface Props{
   name?: string
@@ -174,6 +175,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
 
   return (
     <div className="summoner-wrapper">
+      <HorizontalAdd/>
       <PageHead 
           title="TFT Summoner Search"
           text="Search a player and analyze his performance."
@@ -237,6 +239,7 @@ export const Summoner: React.FC<Props> = ({name, region}) => {
           )
       })
       }
+      <HorizontalAdd/>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import { DefaultSearch } from "../components/search/DefaultSearch";
 import {PageHead} from './PageHead'
 import {TableLoader} from '../components/table/TableLoader'
 import {AnalyzedCounter} from './AnalyzedCounter'
+import HorizontalAdd from '../components/ads/HorizontalAdd'
 
 export const Units:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -133,6 +134,7 @@ export const Units:React.FC = () => {
     let isMobile  = window.innerWidth > 1050
     return (
         <div className="augments-wrapper">
+            <HorizontalAdd/>
             <PageHead 
                 title="TFT Units Tier List"
                 text="Data-driven Teamfight Tactics units tier list"
@@ -170,6 +172,7 @@ export const Units:React.FC = () => {
                 text="Load more"
                 fn={handleRenderMore}
                 />
+                <HorizontalAdd/>
         </div>
     )
 }

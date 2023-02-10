@@ -15,6 +15,7 @@ import { getAllUnits, getAllTraits } from "../model/DataModel";
 import {Analysis} from "../components/builder/Analysis";
 import {PageHead} from './PageHead'
 import { getCreatedComp, saveCreatedComp, postComp} from "../model/Model";
+import HorizontalAdd from "../components/ads/HorizontalAdd";
 
 
 const thisSessionId = Math.random().toString(36).substring(2,9);
@@ -365,6 +366,7 @@ useEffect(() => {
 
   return (
     <div className="builder-wrapper-outer">
+        <HorizontalAdd/>
         <PageHead 
           title="TFT Team Builder and Analyzer"
           text="Create your own composition and analyze its performance. Drag and drop units to create your own comp!"
@@ -389,6 +391,7 @@ useEffect(() => {
           <Items /></>}
         </div>
       </div>
+      <HorizontalAdd/>
       <BuilderHowTo/>
     </div>
   );

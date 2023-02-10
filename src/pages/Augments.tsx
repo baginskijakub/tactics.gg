@@ -10,6 +10,7 @@ import './pages.css'
 import {TableLoader} from '../components/table/TableLoader'
 import {PageHead} from './PageHead'
 import {AnalyzedCounter} from './AnalyzedCounter'
+import HorizontalAdd from '../components/ads/HorizontalAdd'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -194,6 +195,7 @@ export const Augments:React.FC = () => {
     
     return (
         <div className="augments-wrapper">
+            <HorizontalAdd/>
             <PageHead 
                 title="TFT Augments Tier List"
                 text="Data-driven Teamfight Tactics Hextech Augments tier list"
@@ -245,6 +247,7 @@ export const Augments:React.FC = () => {
                 text="Load more"
                 fn={handleRenderMore}
                 />
+            <HorizontalAdd/>
         </div>
     )
 }

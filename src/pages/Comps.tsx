@@ -8,6 +8,7 @@ import {CompLoader} from "../components/comp/CompLoader"
 import {PageHead} from './PageHead'
 import {CompHowTo} from '../components/howToUse/CompHowTo'
 import {AnalyzedCounter} from './AnalyzedCounter'
+import {HorizontalAdd} from '../components/ads/HorizontalAdd'
 import './pages.css'
 
 
@@ -128,6 +129,7 @@ export const Comps = () => {
 
     return (
         <div className="comps-wrapper">
+            <HorizontalAdd/>
             <PageHead 
                 title="TFT Meta Team Comps"
                 text="Teamfight Tactics data-driven composition tier list based on current meta"
@@ -161,6 +163,7 @@ export const Comps = () => {
                     />
                 )
             }) : <CompLoader/>}
+            <HorizontalAdd/>
             <CompHowTo/>
         </div>
     )

@@ -6,6 +6,7 @@ import {PageHead} from './PageHead'
 import { PrimaryButton } from '../components/buttons/PrimaryButton'
 import { getLeaderboard } from '../model/Model'
 import {TableLoader} from '../components/table/TableLoader'
+import HorizontalAdd from '../components/ads/HorizontalAdd'
 
 export const Leaderboard:React.FC = () => {
     const[region, setRegion] = useState("euw1")
@@ -68,7 +69,8 @@ export const Leaderboard:React.FC = () => {
     }
     
     return (
-        <div className="augments-wrapper">
+        <div className="augments-wrapper">'
+            <HorizontalAdd/>
             <PageHead 
                 title="TFT Leaderboards"
                 text="The best Teamfight Tactics players by region"
@@ -111,6 +113,7 @@ export const Leaderboard:React.FC = () => {
                 text="Load more"
                 fn={handleRenderMore}
                 /> */}
+                <HorizontalAdd/>
         </div>
     )
 }

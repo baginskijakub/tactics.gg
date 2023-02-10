@@ -8,6 +8,7 @@ import './pages.css'
 import {PageHead} from './PageHead'
 import {AnalyzedCounter} from './AnalyzedCounter'
 import {TableLoader} from '../components/table/TableLoader'
+import HorizontalAdd from '../components/ads/HorizontalAdd'
 
 export const Items:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -139,6 +140,7 @@ export const Items:React.FC = () => {
     
     return (
         <div className="augments-wrapper">
+            <HorizontalAdd/>
             <PageHead 
                 title="TFT Items Tier List"
                 text="Data-driven Teamfight Tactics items tier list"
@@ -182,6 +184,7 @@ export const Items:React.FC = () => {
                 text="Load more"
                 fn={handleRenderMore}
                 />
+                <HorizontalAdd/>
         </div>
     )
 }
