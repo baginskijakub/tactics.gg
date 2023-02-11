@@ -29,13 +29,9 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, remove
     element.innerHTML = "Copy link"
   }
 
-  function handleEmbed(){
-    console.log(renderToStaticMarkup(<Board matrix={matrix} changeLevel={() => {}} clearBoard={() => {}} copyLink={() => {}} removeFromBoard={() => {}} />))
-  }
-
-  const func = () => {
-    
-  }
+  // function handleEmbed(){
+  //   console.log(renderToStaticMarkup(<Board matrix={matrix} changeLevel={() => {}} clearBoard={() => {}} copyLink={() => {}} removeFromBoard={() => {}} />))
+  // }
 
   return (
     <div className="builder-board-wrapper">
@@ -44,10 +40,10 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, remove
             <img src={deleteIcon} alt="delete"/>
             <h5>Clear board</h5>
         </div>
-        <div className="builder-board-embed-button" onClick={() => handleEmbed()}>
+        {/* <div className="builder-board-embed-button" onClick={() => handleEmbed()}>
             <img src={embedIcon} alt="embed"/>
             <h5 id="copy-link">Embed</h5>
-        </div>
+        </div> */}
         <div className="builder-board-copy-button" onClick={() => handleCopy()}>
             <img src={linkIcon} alt="delete"/>
             <h5 id="copy-link">Copy link</h5>

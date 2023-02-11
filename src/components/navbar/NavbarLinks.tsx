@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { NavButton } from "../buttons/NavButton";
-import { useLocation } from "react-router";
 import "./navbar.css";
 
 export const NavbarLinks: React.FC = () => {
   const[selected, setSelected] = useState([true, false, false, false, false, false, false]);
-  let location = useLocation();
+  let window = require('global')
 
   function handleSelected(index: number){
     let arr: boolean[] = []
@@ -23,7 +22,7 @@ export const NavbarLinks: React.FC = () => {
   //handling ui to correctly mark selected page on load 
 
   useEffect(()=> {
-    switch(location.pathname){
+    switch(window.location.pathname){
       case "/teambuilder":
         setSelected([false, true, false, false, false, false, false])
         break;

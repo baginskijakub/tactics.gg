@@ -22,10 +22,6 @@ export const Navbar: React.FC<Props> = ({handleSummonerSearch}) => {
   const user = useUser()
   const userChange = useUserChange()
 
-  useEffect(() => {
-    console.log(user)
-  }, [user])
-
   function handleSearch() {
     if (search === "open") {
       setSearch("closed");

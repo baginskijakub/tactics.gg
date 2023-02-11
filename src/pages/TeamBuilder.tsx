@@ -29,7 +29,7 @@ export const TeamBuilder: React.FC = () => {
   const [analysis, setAnalysis] = useState<any>("")
   const [progress, setProgress] = useState(undefined)
   const [unitsSupport, setUnitsSupport] = useState(0)
-  const { id } = useParams();
+  const window = require('global');
   const [width, setWidth] = React.useState(window.innerWidth);
 
   //change view on breakpoint
@@ -37,8 +37,12 @@ export const TeamBuilder: React.FC = () => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
     }, []);
 
+
+
   useEffect(() => {
     //fetching data from server if id of comp that someone has created is passed to url
+    let id: string = window.location.search
+    id = id.slice(1)
     if(id !== undefined){
       let tempBoard:UnitHex[][] = initialState;
       getCreatedComp(id).then(res => {
@@ -104,7 +108,6 @@ export const TeamBuilder: React.FC = () => {
       )
     })
     postComp(arr, thisSessionId).then((res:any) => {
-      console.log(res)
       if(res.data === ""){
         setAnalysis("Wait")
       }

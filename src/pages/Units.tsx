@@ -87,14 +87,12 @@ export const Units:React.FC = () => {
 
     useEffect(() => {
         getUnitsRanking().then((res) => {
-            console.log(res)
             let tempUnits: any[] = []
             res.data.forEach((unit: any) => {
                 let traits: {src: string, name: string}[] = []
                 for(let i = 0; i < unit.traitNames.length; i++){
                     traits.push({src: unit.traitIcons[i], name: unit.traitNames[i]})
                 }
-                console.log(traits)
                 tempUnits.push({"name": unit.name, "src": unit.icon, "id": unit.id, "avgPlacement": unit.avg_place, "winrate": unit.winrate, "playrate": unit.frequency, "traits": traits})
             })
             setUnits(tempUnits)

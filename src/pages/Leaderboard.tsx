@@ -47,7 +47,6 @@ export const Leaderboard:React.FC = () => {
     useEffect(() => {
         setPlayers([])
         getLeaderboard(region).then(res => {
-            console.log(res)
             let tempPlayers:any[] = []
             res.data.forEach((player:any, i:any) => {
                 tempPlayers.push({

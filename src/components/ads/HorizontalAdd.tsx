@@ -7,7 +7,6 @@ export const HorizontalAdd:React.FC = () => {
 
         try {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
-            console.log(window.adsbygoogle)
         }
         catch (e) {
 
@@ -18,7 +17,7 @@ export const HorizontalAdd:React.FC = () => {
 
 
     return (
-        <>
+        <div className='horizontal-ad-container'>
             <ins className="adsbygoogle"
                 style={{ display: "block" }}
                 data-ad-client="ca-pub-4250354979483117"
@@ -26,7 +25,7 @@ export const HorizontalAdd:React.FC = () => {
                 data-ad-format="auto"
                 data-full-width-responsive="true">
             </ins>
-        </>
+        </div>
     );
 }
 

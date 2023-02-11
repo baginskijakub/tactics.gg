@@ -116,7 +116,6 @@ export const Comps = () => {
 
     useEffect(() => {
         getComps().then(res => {
-            console.log(res)
             let tempComps: CompClass[] = []
             res.data.forEach((comp: any) => {
                 tempComps.push(comp)
