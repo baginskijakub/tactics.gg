@@ -68,7 +68,7 @@ export const Leaderboard:React.FC = () => {
     }
     
     return (
-        <div className="augments-wrapper">'
+        <div className="augments-wrapper">
             <HorizontalAdd/>
             <PageHead 
                 title="TFT Leaderboards"

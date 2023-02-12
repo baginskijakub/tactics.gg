@@ -1,3 +1,4 @@
+
 .app-container {
   display: flex;
   position: relative;
@@ -7,4 +8,9 @@
   gap: 60px;
   width: 100%;
   min-height: 100vh;
+  background-color: transparent;
+}
+
+.apply-background{
+  background-color: #0B1D35 !important;
 }

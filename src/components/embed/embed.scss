@@ -1,0 +1,343 @@
+@import "../../variables/colors.scss";
+@import "../../styles/index.scss";
+
+.embed-builder-board-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 8px;
+  gap: 8px;
+  width: calc(100% - 18px);
+  height: 392px;
+  background: $background05;
+  border: 1px solid $divider;
+  border-radius: 4px;
+}
+
+.embed-builder-board-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+  padding-left: 50px;
+  min-height: 95px;
+  margin-bottom: -20px;
+}
+
+.embed-builder-board-row-odd{
+  padding-right: 0px;
+  padding-left: 50px;
+}
+
+.embed-builder-board-row-even{
+  padding-right: 50px;
+  padding-left: 0px;
+}
+
+.embed-builder-board-row:nth-child(1) {
+  margin-top: -20px;
+}
+
+.embed-builder-board-row .unit-hex-container-medium {
+  margin: 0;
+  padding: 0;
+}
+
+.embed-builder-board-buttons-container {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.embed-builder-board-clear-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  border: 1px solid $divider;
+  background-color: $background09;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.embed-builder-board-copy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  border: 1px solid $divider;
+  background-color: $primary;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.embed-builder-board-visit{
+  padding: 6px 16px;
+  background-color: $primary;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.embed-builder-board-visit:hover{
+  background-color: $buttonSelected;
+}
+
+.embed-builder-board-embed-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  border: 1px solid $divider;
+  background-color: $background09;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+}
+
+.embed-builder-board-embed-button img{
+  width: 18px;
+  height: 18px;
+}
+
+.embed-builder-board-copy-button:hover {
+  background-color: $buttonSelected;
+}
+
+.embed-builder-board-clear-button:hover {
+  background-color: $buttonHover;
+}
+
+.embed-builder-board-clear-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.embed-builder-board-copy-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 6px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.traits-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 4px;
+  border: 1px $divider solid;
+  border-radius: 4px;
+  background-color: $background05;
+  width: calc(100% - 10px);
+  overflow-x: scroll;
+}
+
+.trait-container{
+  border: 1px $divider solid;
+  border-radius: 4px;
+  background-color: $background07;
+  padding: 4px 8px 4px 4px;
+  width: max-content;
+}
+
+@media screen and (max-width: 803px) {
+  .embed-builder-board-wrapper {
+    width: calc(100% - 18px);
+    gap: 4px;
+    height: 350px;
+  }
+
+  .embed-builder-board-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    padding-right: 42px;
+    height: 80px;
+  }
+
+  .embed-builder-board-row:nth-child(even) {
+    padding-right: 0px;
+    padding-left: 42px;
+  }
+
+  .embed-builder-board-row:nth-child(1) {
+    margin-top: -20px;
+  }
+
+  .embed-builder-board-buttons-container {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .embed-builder-board-clear-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+    border: 1px solid $divider;
+    background-color: $background09;
+    padding: 4px 8px 4px 6px;
+    cursor: pointer;
+    transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+  }
+
+  .embed-builder-board-copy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+    border: 1px solid $divider;
+    background-color: $primary;
+    padding: 4px 8px 4px 6px;
+    cursor: pointer;
+    transition: all cubic-bezier(0.84, 0.15, 0.21, 0.92) 0.2s;
+  }
+
+  .embed-builder-board-clear-button img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .embed-builder-board-copy-button img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .embed-builder-board-visit{
+    padding: 6px 14px;
+    border-radius: 3px;
+  }
+
+  .embed-builder-board-visit h4{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .embed-builder-board-wrapper {
+    width: calc(100% - 18px);
+    gap: 0px;
+    height: 320px;
+  }
+
+  .embed-builder-board-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    padding-right: 32px;
+    min-height: 70px;
+  }
+
+  .embed-builder-board-row:nth-child(even) {
+    padding-right: 0px;
+    padding-left: 32px;
+  }
+
+  .embed-builder-board-row:nth-child(1) {
+    margin-top: -20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .embed-builder-board-visit h4{
+    font-size: 9px;
+    color: $primary;
+  }
+
+  .embed-builder-board-visit{
+    padding: 0px 0px;
+    border-radius: 2px;
+    background-color: transparent;
+  }
+
+  .embed-builder-board-wrapper {
+    width: calc(100% - 18px);
+    gap: 0px;
+    height: 150px;
+    padding: 12px 8px 4px;
+  }
+
+  .embed-builder-board-row {
+    gap: 8px;
+    padding-right: 18px;
+    min-height: 32px;
+    height: 32px;
+    margin-bottom: 0px;
+  }
+
+  .embed-builder-board-row:nth-child(even) {
+    padding-right: 0px;
+    padding-left: 18px;
+  }
+
+  .embed-builder-board-row:nth-child(1) {
+    margin-top: -20px;
+  }
+
+  .embed-builder-board-clear-button {
+    gap: 4px;
+  }
+
+  .embed-builder-board-copy-button {
+    gap: 4px;
+  }
+
+  .embed-builder-board-clear-button img {
+    width: 10px;
+    height: 10px;
+  }
+
+  .embed-builder-board-copy-button img {
+    width: 10px;
+    height: 10px;
+  }
+}

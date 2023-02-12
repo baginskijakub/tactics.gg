@@ -11,6 +11,14 @@
   width: 1300px;
 }
 
+.embed-wrapper{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .page-head-wrapper {
   width: 100%;
   display: flex;

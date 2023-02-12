@@ -25,6 +25,7 @@ import {Footer} from './components/footer/Footer'
 import { ModalContainer } from './modal/ModalContainer';
 import { ModalContextProvider} from "./modal/ModalContext";
 import { LoginContextProvider } from "./login/LoginContext";
+import EmbedComp from "./pages/EmbedComp";
 
 const App:React.FC = () => {
   const window = require('global')
@@ -32,10 +33,17 @@ const App:React.FC = () => {
   const[region, setRegion] = useState<any>(undefined)
   let navigate = useNavigate();
   const [width, setWidth] = React.useState(window.innerWidth);
+  const [renderUtils, setRenderUtils] = React.useState<boolean>(true)
+  const [conditionalBackground, setConditionalBackground] = React.useState<string>("apply-background")
 
   //change navbar on breakpoint
   React.useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
+    if(window.location.pathname === '/embed'){
+      setConditionalBackground("")
+      setRenderUtils(false)
+      console.log(conditionalBackground)
+    }
     
   }, []);
 
@@ -49,8 +57,8 @@ const App:React.FC = () => {
   return(
     <ModalContextProvider>
       <LoginContextProvider>
-      <div className="app-container">
-          { width < 850 ? <NavbarMobile/> : <Navbar handleSummonerSearch={handleSummonerSearch}/>}
+      <div className={`app-container ${conditionalBackground}`} >
+          { renderUtils && ( width < 850 ? <NavbarMobile/> : <Navbar handleSummonerSearch={handleSummonerSearch}/>)}
           <Routes >
             <Route path='/units' element={<Units/>}/>
             <Route path='/items' element={<Items/>}/>
@@ -67,9 +75,10 @@ const App:React.FC = () => {
             <Route path='/contact' element={<Contact />}/>
             <Route path='/set8' element={<Set8 />}/>
             <Route path='/compareAugments' element={<CompareAugments />}/>
+            <Route path="/embed" element={<EmbedComp/>} />
           </Routes>
            <ModalContainer />
-          <Footer />
+          { renderUtils && <Footer />}
       </div>
       </LoginContextProvider>
     </ModalContextProvider>

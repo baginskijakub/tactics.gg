@@ -17,7 +17,6 @@
 @import url("https://rsms.me/inter/inter.css");
 body {
   margin: 0;
-  background-color: #0B1D35;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -256,6 +255,14 @@ h6 {
   padding: 0px;
   gap: 20px;
   width: 1300px;
+}
+
+.embed-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .page-head-wrapper {
