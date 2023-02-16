@@ -10687,6 +10687,12 @@ h6 {
   background: #0c1a2d;
   border: 1px solid #172c49;
   border-radius: 4px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.embed-builder-board-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .embed-builder-board-row {
@@ -10842,7 +10848,7 @@ h6 {
     transform: rotate(360deg);
   }
 }
-.traits-wrapper {
+.embed-traits-wrapper {
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -10852,9 +10858,15 @@ h6 {
   background-color: #0c1a2d;
   width: calc(100% - 10px);
   overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.trait-container {
+.embed-traits-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.embed-trait-container {
   border: 1px #172c49 solid;
   border-radius: 4px;
   background-color: #0e1928;

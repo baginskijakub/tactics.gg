@@ -9,11 +9,11 @@ interface Props{
 export const Traits:React.FC<Props> = ({traits}) => {
 
   return (
-    <div className='traits-wrapper'>
+    <div className='embed-traits-wrapper'>
         {traits.map((trait) => {
             if(trait.style > 0){
                 return(
-                    <div className='trait-container'>
+                    <div className='embed-trait-container'>
                         <Trait size='small' hasValue={true} hasLabel={true} name={trait.name} currentTrait={trait.active} traitStyle={trait.style} url={trait.icon}/>
                     </div>
                 )
