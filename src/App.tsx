@@ -42,13 +42,9 @@ const App:React.FC = () => {
     if(window.location.pathname.startsWith('/embed') && typeof window !== undefined){
       setConditionalBackground("")
       setRenderUtils(false)
-      console.log(conditionalBackground)
     }
     
   }, []);
-
-  console.log(conditionalBackground)
-  console.log(window.location)
 
   //handling searchbar in navbar so that when a summoner is searched the 'summoner' page opens with the result
   function handleSummonerSearch(name: string, region: string){

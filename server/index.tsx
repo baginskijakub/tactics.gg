@@ -35,9 +35,9 @@ app.get('/', (req, res) => {
 app.use(express.static('./build'));
 app.disable('x-powered-by');
 
-app.use(express.static(path.resolve(__dirname, '../dist')));
+app.use(express.static(path.resolve(__dirname, '../build')));
   app.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+    res.sendFile(path.resolve(__dirname, '../build/index.html'));
   });
 
 app.listen(PORT, () => {

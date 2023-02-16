@@ -40,8 +40,9 @@ export const TeamBuilder: React.FC = () => {
 
   useEffect(() => {
     //fetching data from server if id of comp that someone has created is passed to url
-    let id: string = window.location.search
-    id = id.slice(1)
+    let id: string = window.location.pathname
+    let arr: string[] = id.split('/')
+    id = arr[1]
     if(id !== undefined){
       let tempBoard:UnitHex[][] = initialState;
       getCreatedComp(id).then(res => {
