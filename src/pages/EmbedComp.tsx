@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import { Board } from '../components/embed/Board'
-import { TeamBuilder } from './TeamBuilder'
 import {UnitHex} from "../classes";
 import { getCreatedComp } from "../model/Model";
 import { getAllTraits, getAllUnits } from '../model/DataModel';
 import { BuilderTrait } from '../classes';
 import Traits from '../components/embed/Traits';
+import { useParams } from 'react-router-dom';
 
 export const EmbedComp:React.FC = () => {
     let placeholder: UnitHex = new UnitHex(null, null, null, null, 0, null);
     const initialState = [[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder, placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,],[placeholder,placeholder,placeholder,placeholder,placeholder,placeholder,placeholder]] 
-    const window = require('global');
+    const params = useParams()
     const [board, setBoard] = useState<UnitHex[][]>(initialState)
     const [traits, setTraits] = useState<BuilderTrait[]>([])
 
@@ -28,7 +28,6 @@ export const EmbedComp:React.FC = () => {
       let uniqueUnits = unitIdList.filter((element, index) => {
       return unitIdList.indexOf(element) === index;
       });
-  
   
       let tempTraits: BuilderTrait[] = []
   
@@ -97,11 +96,9 @@ export const EmbedComp:React.FC = () => {
 
     useEffect(() => {
         //fetching data from server if id of comp that someone has created is passed to url
-        let id: string = window.location.search
-        id = id.slice(1)
-        if(id !== undefined){
+        if(params.embedId !== undefined){
           let tempBoard:UnitHex[][] = [];
-          getCreatedComp(id).then(res => {
+          getCreatedComp(params.embedId).then(res => {
             res.data.composition.forEach((row:any, rowNo:number) => {
                 tempBoard.push([])
                 row.forEach((unit:any, columnNo:number) => {

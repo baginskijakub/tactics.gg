@@ -2,21 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./embed.css";
 import { UnitHex } from "../../classes";
 import {HexUnit} from "./HexUnit";
+import { useParams } from 'react-router-dom';
 
 interface Props {
   matrix: UnitHex[][];
 }
 
 export const Board: React.FC<Props> = ({ matrix}) => {
-
-  function sleep(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-  useEffect(()=>{
-    console.log(matrix)
-  })
-
 
 
   return (

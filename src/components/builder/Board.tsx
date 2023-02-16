@@ -34,16 +34,11 @@ export const Board: React.FC<Props> = ({ matrix, changeLevel, clearBoard, remove
     await sleep(2000);
     element.innerHTML = "Copy link"
   }
-
-  useEffect(()=>{
-    console.log(matrix)
-  })
-
   const handleEmbed = () => {
     if(matrix !== initialState ){
       let id = uuidv4();
       saveCreatedComp(id, matrix, undefined);
-      setPlaceholderEmbed(`<iframe width="802" height="434" src="https://www.tactix.gg/embed?${id}" title="Powered by TACTIX.GG" frameborder="0"></iframe>`)
+      setPlaceholderEmbed(`<iframe width="802" height="434" src="https://www.tactix.gg/embed/${id}" title="Powered by TACTIX.GG" frameborder="0"></iframe>`)
       setShowEmbed(true)
     }
     else{

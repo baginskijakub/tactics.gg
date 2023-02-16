@@ -39,13 +39,16 @@ const App:React.FC = () => {
   //change navbar on breakpoint
   React.useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-    if(window.location.pathname === '/embed'){
+    if(window.location.pathname.startsWith('/embed') && typeof window !== undefined){
       setConditionalBackground("")
       setRenderUtils(false)
       console.log(conditionalBackground)
     }
     
   }, []);
+
+  console.log(conditionalBackground)
+  console.log(window.location)
 
   //handling searchbar in navbar so that when a summoner is searched the 'summoner' page opens with the result
   function handleSummonerSearch(name: string, region: string){
@@ -75,7 +78,7 @@ const App:React.FC = () => {
             <Route path='/contact' element={<Contact />}/>
             <Route path='/set8' element={<Set8 />}/>
             <Route path='/compareAugments' element={<CompareAugments />}/>
-            <Route path="/embed" element={<EmbedComp/>} />
+            <Route path="/embed/:embedId" element={<EmbedComp/>} />
           </Routes>
            <ModalContainer />
           { renderUtils && <Footer />}
