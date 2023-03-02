@@ -11,6 +11,7 @@ import {TableLoader} from '../components/table/TableLoader'
 import {PageHead} from './PageHead'
 import {AnalyzedCounter} from './AnalyzedCounter'
 import HorizontalAdd from '../components/ads/HorizontalAdd'
+import AugmentsHowTo from '../components/howToUse/AugmentsHowTo'
 
 export const Augments:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -247,6 +248,8 @@ export const Augments:React.FC = () => {
                 text="Load more"
                 fn={handleRenderMore}
                 />
+            <HorizontalAdd/>
+            <AugmentsHowTo/>
             <HorizontalAdd/>
         </div>
     )

@@ -9,6 +9,7 @@ import {PageHead} from './PageHead'
 import {AnalyzedCounter} from './AnalyzedCounter'
 import {TableLoader} from '../components/table/TableLoader'
 import HorizontalAdd from '../components/ads/HorizontalAdd'
+import ItemsHowTo from '../components/howToUse/ItemsHowTo'
 
 export const Items:React.FC = () => {
     const[sort, setSort] = useState("Average Placement")
@@ -29,6 +30,11 @@ export const Items:React.FC = () => {
     
     useEffect(() => {
         getItemsRanking().then((res) => {
+            const temp = res.data.filter((item:any) => {
+                console.log(parseFloat(item.avg_place))
+                return parseFloat(item.avg_place) > 4.5
+            })
+            console.log(JSON.stringify(temp))
             let tempItems: any[] = []
             res.data.forEach((item: any) => {
                 tempItems.push({"id": item.id, "src": item.icon, "name": item.name, "avgPlacement": item.avg_place, "winrate": item.winrate, "playrate": item.frequency, "type": item.type})
@@ -184,6 +190,8 @@ export const Items:React.FC = () => {
                 text="Load more"
                 fn={handleRenderMore}
                 />
+                <HorizontalAdd/>
+                <ItemsHowTo/>
                 <HorizontalAdd/>
         </div>
     )
