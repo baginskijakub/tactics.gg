@@ -6,29 +6,40 @@
 
       <loc>https://www.tactix.gg/teambuilder</loc>
 
-      <lastmod>2022-11-05</lastmod>
+      <lastmod>2023-03-02</lastmod>
 
       <changefreq>monthly</changefreq>
 
-      <priority>0.8</priority>
+      <priority>1</priority>
 
    </url>
     <url>
 
       <loc>https://www.tactix.gg/augments</loc>
 
-      <lastmod>2022-11-05</lastmod>
+      <lastmod>2023-03-02</lastmod>
 
       <changefreq>monthly</changefreq>
 
-      <priority>0.8</priority>
+      <priority>1</priority>
+
+   </url>
+       <url>
+
+      <loc>https://www.tactix.gg/compareAugments</loc>
+
+      <lastmod>2023-03-02</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>1</priority>
 
    </url>
        <url>
 
       <loc>https://www.tactix.gg/items</loc>
 
-      <lastmod>2022-11-05</lastmod>
+      <lastmod>2023-03-02</lastmod>
 
       <changefreq>monthly</changefreq>
 
@@ -39,7 +50,7 @@
 
       <loc>https://www.tactix.gg/leaderboard</loc>
 
-      <lastmod>2022-11-05</lastmod>
+      <lastmod>2023-03-02</lastmod>
 
       <changefreq>monthly</changefreq>
 
@@ -50,7 +61,7 @@
 
       <loc>https://www.tactix.gg/units</loc>
 
-      <lastmod>2022-11-05</lastmod>
+      <lastmod>2023-03-02</lastmod>
 
       <changefreq>monthly</changefreq>
 

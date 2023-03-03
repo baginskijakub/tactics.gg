@@ -83,7 +83,7 @@ export const Unit: React.FC<Props> = ({
           ],
         }}
       >
-        <img className={`unit-image ${borderColor}`} src={url} alt={name} title="Unit"/>
+        <img className={`unit-image ${borderColor}`} src={url} alt={name} title="Unit" height={86} width={86}/>
         </DefaultTooltip>
         <div className="item-container">
           {items !== null &&
@@ -102,7 +102,7 @@ export const Unit: React.FC<Props> = ({
                 ],
               }}
             >
-              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item" height={24} width={24}/>
               </DefaultTooltip>
             ))}
         </div>
@@ -136,6 +136,8 @@ export const Unit: React.FC<Props> = ({
           alt={name}
           loading="lazy"
           title="Unit"
+          width={72}
+          height={72}
         />
         </DefaultTooltip>
         <div className="item-container-medium">
@@ -155,7 +157,7 @@ export const Unit: React.FC<Props> = ({
                 ],
               }}
             >
-              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item" height={20} width={20}/>
               </DefaultTooltip>
             ))}
         </div>
@@ -188,6 +190,8 @@ export const Unit: React.FC<Props> = ({
           src={url}
           alt={name}
           title="Unit"
+          width={42}
+          height={42}
         />
         </DefaultTooltip>
         <div className="item-container-small">
@@ -207,7 +211,7 @@ export const Unit: React.FC<Props> = ({
                 ],
               }}
             >
-              <img src={itemElement.url} alt={itemElement.name} title="Item"/>
+              <img src={itemElement.url} alt={itemElement.name} title="Item" width={12} height={12}/>
               </DefaultTooltip>
             ))}
         </div>
