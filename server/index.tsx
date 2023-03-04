@@ -5,11 +5,24 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from "react-router-dom/server"
 import express from 'express';
+const compression = require('compresion')
 
 import App from '../src/App';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
+
+app.use(compression({
+  level: 6,
+  threshold: 100*1000,
+  filter: (req, res) => {
+    if(req.headers['x-no-compression']){
+      return false
+    }
+    return compression.filter(req, res)
+  }
+  
+}))
 
 app.get('/', (req, res) => {
   res.set('Cache-control', 'public, max-age=300')

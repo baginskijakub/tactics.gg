@@ -23,6 +23,8 @@ export const CompHowTo: React.FC = () => {
           src="https://ittledul.sirv.com/Images/splashes/comps/positioning.png"
           alt="tft positioning"
           loading="lazy"
+          width={630}
+          height={463}
         />
       </div>
       <div className="comp-how-to-container">
@@ -30,6 +32,8 @@ export const CompHowTo: React.FC = () => {
           src="https://ittledul.sirv.com/Images/splashes/comps/items.png"
           alt="tft positioning"
           loading="lazy"
+          width={630}
+          height={463}
         />
         <div className="comp-how-to-inner">
           <h1>Items</h1>
@@ -60,6 +64,8 @@ export const CompHowTo: React.FC = () => {
           src="https://ittledul.sirv.com/Images/splashes/comps/augments.png"
           alt="tft positioning"
           loading="lazy"
+          width={630}
+          height={463}
         />
       </div>
       <div className="comp-how-to-container">
@@ -67,6 +73,8 @@ export const CompHowTo: React.FC = () => {
           src="https://ittledul.sirv.com/Images/splashes/comps/variations.png"
           alt="tft positioning"
           loading="lazy"
+          width={630}
+          height={463}
         />
         <div className="comp-how-to-inner">
           <h1>Variations</h1>
