@@ -17,7 +17,6 @@ import {PrivacyPolicy} from './pages/PrivacyPolicy'
 import {Guides} from './pages/Guides'
 import {Contact} from './pages/Contact'
 import { CompareAugments } from "./pages/CompareAugments";
-import {Set8} from './pages/Set8'
 import {Profile} from './pages/Profile'
 
 //util
@@ -72,7 +71,6 @@ const App:React.FC = () => {
             <Route path='/profile' element={<Profile />}/>
             <Route path='/privacy' element={<PrivacyPolicy />}/>
             <Route path='/contact' element={<Contact />}/>
-            <Route path='/set8' element={<Set8 />}/>
             <Route path='/compareAugments' element={<CompareAugments />}/>
             <Route path="/embed/:embedId" element={<EmbedComp/>} />
           </Routes>

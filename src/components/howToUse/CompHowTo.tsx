@@ -20,7 +20,8 @@ export const CompHowTo: React.FC = () => {
           </p>
         </div>
         <img
-          src="https://ittledul.sirv.com/Images/splashes/comps/positioning.png"
+          src="https://ittledul.sirv.com/Images/splashes/comps/positioning.png?w=630&h=463"
+          srcSet="https://ittledul.sirv.com/Images/splashes/comps/positioning.png?w=630&h=463 1x, https://ittledul.sirv.com/Images/splashes/comps/positioning.png?w=1260&h=926 2x"
           alt="tft positioning"
           loading="lazy"
           width={630}
@@ -28,9 +29,10 @@ export const CompHowTo: React.FC = () => {
         />
       </div>
       <div className="comp-how-to-container">
-        <img
-          src="https://ittledul.sirv.com/Images/splashes/comps/items.png"
-          alt="tft positioning"
+      <img
+          src="https://ittledul.sirv.com/Images/splashes/comps/items.png?w=630&h=463"
+          srcSet="https://ittledul.sirv.com/Images/splashes/comps/items.png?w=630&h=463 1x, https://ittledul.sirv.com/Images/splashes/comps/items.png?w=1260&h=926 2x"
+          alt="tft items"
           loading="lazy"
           width={630}
           height={463}
@@ -61,17 +63,19 @@ export const CompHowTo: React.FC = () => {
           </p>
         </div>
         <img
-          src="https://ittledul.sirv.com/Images/splashes/comps/augments.png"
-          alt="tft positioning"
+          src="https://ittledul.sirv.com/Images/splashes/comps/augments.png?w=630&h=463"
+          srcSet="https://ittledul.sirv.com/Images/splashes/comps/augments.png?w=630&h=463 1x, https://ittledul.sirv.com/Images/splashes/comps/augments.png?w=1260&h=926 2x"
+          alt="tft augments"
           loading="lazy"
           width={630}
           height={463}
         />
       </div>
       <div className="comp-how-to-container">
-        <img
-          src="https://ittledul.sirv.com/Images/splashes/comps/variations.png"
-          alt="tft positioning"
+      <img
+          src="https://ittledul.sirv.com/Images/splashes/comps/variations.png?w=630&h=463"
+          srcSet="https://ittledul.sirv.com/Images/splashes/comps/variations.png?w=630&h=463 1x, https://ittledul.sirv.com/Images/splashes/comps/variations.png?w=1260&h=926 2x"
+          alt="tft variations"
           loading="lazy"
           width={630}
           height={463}

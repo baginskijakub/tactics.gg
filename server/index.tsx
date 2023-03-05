@@ -15,7 +15,7 @@ const app = express();
 app.use(compression({
   level: 6,
   threshold: 100*1000,
-  filter: (req, res) => {
+  filter: (req:any, res:any) => {
     if(req.headers['x-no-compression']){
       return false
     }
