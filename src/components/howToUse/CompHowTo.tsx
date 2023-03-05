@@ -35,7 +35,7 @@ export const CompHowTo: React.FC = () => {
           alt="tft items"
           loading="lazy"
           width={630}
-          height={463}
+          height={415}
         />
         <div className="comp-how-to-inner">
           <h1>Items</h1>
@@ -68,7 +68,7 @@ export const CompHowTo: React.FC = () => {
           alt="tft augments"
           loading="lazy"
           width={630}
-          height={463}
+          height={415}
         />
       </div>
       <div className="comp-how-to-container">
@@ -78,7 +78,7 @@ export const CompHowTo: React.FC = () => {
           alt="tft variations"
           loading="lazy"
           width={630}
-          height={463}
+          height={415}
         />
         <div className="comp-how-to-inner">
           <h1>Variations</h1>

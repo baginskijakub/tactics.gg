@@ -17,11 +17,11 @@ export const AnalyzedCounter:React.FC = () => {
       <div className='analyzed-counter-wrapper'>
           <div className='analyzed-counter-inner'>
               <p className='body-small'>Analyzed comps:</p>
-              <h5 className="analyzed-counter-value">{comps}</h5>
+              <p className="analyzed-counter-value body-small">{comps}</p>
           </div>
           <div className='analyzed-counter-inner'>
               <p className='body-small'>Last change:</p>
-              <h5 className="analyzed-counter-value">{time}</h5>
+              <p className="analyzed-counter-value body-small">{time}</p>
           </div>
       </div>
     )

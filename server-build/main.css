@@ -2128,6 +2128,7 @@ h6 {
   flex-direction: row;
   align-items: flex-start;
   padding: 6px 12px;
+  font-weight: 600 !important;
   /* Button/disabledBackground */
   background: #102b55;
   /* Divider/divider */
@@ -5204,7 +5205,7 @@ h6 {
 
 .comp-how-to-container img {
   width: 630px;
-  height: 463px;
+  height: 415px;
 }
 
 .comp-how-to-inner {
