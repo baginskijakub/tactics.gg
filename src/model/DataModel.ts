@@ -44,9 +44,9 @@ async function getAllItems(){
                 let url: string = `https://raw.communitydragon.org/latest/game/${item.icon.replace('.dds', '.png').toLowerCase()}`
                 let iconArr: string[] = item.icon.split("/")
                 //regular item case, id > 10 to remove components, id !== 4441 to remove empty slot
-                if(iconArr[5] === "Standard" && item.id > 10 && item.id !== 4441){
+                if(iconArr[5] === "Standard"){
                     normalItems.push({
-                        id: item.id,
+                        id: item.apiName,
                         name: item.name,
                         src: url
                     })
@@ -54,7 +54,7 @@ async function getAllItems(){
                 //emblems, no futher checks so far
                 else if(iconArr[5] === "Traits"){
                     emblemItems.push({
-                        id: item.id,
+                        id: item.apiName,
                         name: item.name,
                         src: url
                     })
@@ -62,13 +62,30 @@ async function getAllItems(){
                 //radaint
                 else if(iconArr[5] === "Radiant"){
                     radiantItems.push({
-                        id: item.id,
+                        id: item.apiName,
                         name: item.name,
                         src: url
                     })
                 }
             }
         })
+    })
+
+    const itemIdsToRemove: string[] = [
+        'TFT_Item_Blank',
+        'TFT_Item_ChainVest',
+        'TFT_Item_RecurveBow',
+        'TFT_Item_TearOfTheGoddess',
+        'TFT_Item_NegatronCloak',
+        'TFT_Item_SparringGloves',
+        'TFT_Item_Spatula',
+        'TFT_Item_BFSword',
+        'TFT_Item_GiantsBelt',
+        'TFT_Item_NeedlesslyLargeRod',
+        'TFT_Item_ForceOfNature',
+    ]
+    normalItems = normalItems.filter(item => {
+        return !itemIdsToRemove.includes(item.id)
     })
 
     return {
