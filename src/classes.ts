@@ -1,4 +1,3 @@
-import json5 from "json5";
 
 class Item {
   id: number;
@@ -439,6 +438,22 @@ class Comp{
 }
 }
 
+export interface Guide{
+  elements: GuideElement[]
+  title: string
+  description: string
+  set: string
+  timeRead: number
+  date: string
+  imageUrl: string
+  borderColorUnitCost: number
+} 
+
+export interface GuideElement{
+  type: 'paragraph' | 'heading' | 'subheading' | 'board' | 'divider'
+  content?: string
+}
+
 export {
   Item,
   Trait,
@@ -460,4 +475,4 @@ export {
   AnalysisAugment,
   Comp,
   AugmentRow
-};
+}

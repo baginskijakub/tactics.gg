@@ -247,6 +247,16 @@ h6 {
     line-height: 120%;
   }
 }
+.guide-page-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+  width: 1300px;
+}
+
 .summoner-wrapper {
   display: flex;
   flex-direction: column;
@@ -255,6 +265,11 @@ h6 {
   padding: 0px;
   gap: 20px;
   width: 1300px;
+}
+
+.vertical-ad-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .embed-wrapper {
@@ -464,7 +479,7 @@ h6 {
   margin-top: 20px;
 }
 
-.guides-wrapper {
+.guides-page-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -509,18 +524,19 @@ h6 {
   border-radius: 4px;
 }
 
-.guides-wrapper {
+.guides-page-wrapper {
   width: 1300px;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
 }
 
 .guides-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 950px;
 }
 
 .guides-side-bar {
@@ -701,6 +717,16 @@ h6 {
   .summoner-wrapper {
     width: 1000px;
   }
+  .guide-page-wrapper {
+    width: 1000px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .guides-page-wrapper {
+    width: 1000px;
+    flex-direction: column;
+    align-items: center;
+  }
   .augments-wrapper {
     gap: 20px;
     width: 1000px;
@@ -749,6 +775,12 @@ h6 {
     gap: 20px;
     width: 800px;
   }
+  .guide-page-wrapper {
+    width: 800px;
+  }
+  .guides-page-wrapper {
+    width: 800px;
+  }
   .augments-container {
     width: 800px;
   }
@@ -786,6 +818,9 @@ h6 {
   .summoner-wrapper {
     width: calc(100% - 32px);
   }
+  .guides-container {
+    width: 100%;
+  }
   .summoner-container-horizontal {
     flex-direction: column;
     justify-content: center;
@@ -810,6 +845,12 @@ h6 {
     width: 100px;
     text-align: left;
   }
+  .guide-page-wrapper {
+    width: calc(100% - 16px);
+  }
+  .guides-page-wrapper {
+    width: calc(100% - 16px);
+  }
   .units-titles {
     padding: 0px 8px;
     width: calc(100% - 16px);
@@ -826,9 +867,6 @@ h6 {
     width: 80px;
   }
   .comps-wrapper {
-    width: calc(100% - 32px);
-  }
-  .guides-wrapper {
     width: calc(100% - 32px);
   }
   .builder-wrapper-outer {

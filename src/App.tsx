@@ -25,6 +25,7 @@ import { ModalContainer } from './modal/ModalContainer';
 import { ModalContextProvider} from "./modal/ModalContext";
 import { LoginContextProvider } from "./login/LoginContext";
 import EmbedComp from "./pages/EmbedComp";
+import { Guide } from "./pages/Guide";
 
 const App:React.FC = () => {
   const window = require('global')
@@ -68,6 +69,7 @@ const App:React.FC = () => {
             <Route path='/teambuilder' element={<TeamBuilder />}/>
             <Route path='/leaderboard' element={<Leaderboard />}/>
             <Route path='/guides' element={<Guides />}/>
+            <Route path='/guide' element={<Guide />}/>
             <Route path='/profile' element={<Profile />}/>
             <Route path='/privacy' element={<PrivacyPolicy />}/>
             <Route path='/contact' element={<Contact />}/>
