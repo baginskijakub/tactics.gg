@@ -69,7 +69,7 @@ const App:React.FC = () => {
             <Route path='/teambuilder' element={<TeamBuilder />}/>
             <Route path='/leaderboard' element={<Leaderboard />}/>
             <Route path='/guides' element={<Guides />}/>
-            <Route path='/guide' element={<Guide />}/>
+            <Route path='/guide/:id' element={<Guide />}/>
             <Route path='/profile' element={<Profile />}/>
             <Route path='/privacy' element={<PrivacyPolicy />}/>
             <Route path='/contact' element={<Contact />}/>

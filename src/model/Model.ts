@@ -61,6 +61,13 @@ function getAnalyzedCounterData(){
   return axios.get('https://server-tactixgg.com/generalData')
 }
 
+function getGuide(title: string){
+  return axios.get(`https://server-tactixgg.com/guides/${title}`)
+}
+
+function getAllGuides(){
+  return axios.get(`https://server-tactixgg.com/guides`)
+}
 
 
-export { searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp, getComparableAugments, getAnalyzedCounterData};
+export { getAllGuides, searchSummoner, postComp, getAugmentsRanking, getUnitsRanking, getItemsRanking, getComps, getLeaderboard, getAugmentsRankingByStage, getCreatedComp, saveCreatedComp, getComparableAugments, getAnalyzedCounterData, getGuide};

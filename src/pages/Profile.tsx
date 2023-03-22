@@ -69,10 +69,6 @@ export const Profile:React.FC = () => {
           </div>
           <div className='profile-vertical-container'>
             <DefaultSearch initialValue='Search post' inputChange={()=>{}}/>
-            <GuideList />
-            <GuideList />
-            <GuideList />
-            <GuideList />
           </div>
       </div>
     )
