@@ -1874,6 +1874,16 @@ h6 {
     line-height: 120%;
   }
 }
+.guide-page-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+  width: 1300px;
+}
+
 .summoner-wrapper {
   display: flex;
   flex-direction: column;
@@ -1882,6 +1892,11 @@ h6 {
   padding: 0px;
   gap: 20px;
   width: 1300px;
+}
+
+.vertical-ad-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .embed-wrapper {
@@ -2091,7 +2106,7 @@ h6 {
   margin-top: 20px;
 }
 
-.guides-wrapper {
+.guides-page-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2136,18 +2151,19 @@ h6 {
   border-radius: 4px;
 }
 
-.guides-wrapper {
+.guides-page-wrapper {
   width: 1300px;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
 }
 
 .guides-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 950px;
 }
 
 .guides-side-bar {
@@ -2328,6 +2344,16 @@ h6 {
   .summoner-wrapper {
     width: 1000px;
   }
+  .guide-page-wrapper {
+    width: 1000px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .guides-page-wrapper {
+    width: 1000px;
+    flex-direction: column;
+    align-items: center;
+  }
   .augments-wrapper {
     gap: 20px;
     width: 1000px;
@@ -2376,6 +2402,12 @@ h6 {
     gap: 20px;
     width: 800px;
   }
+  .guide-page-wrapper {
+    width: 800px;
+  }
+  .guides-page-wrapper {
+    width: 800px;
+  }
   .augments-container {
     width: 800px;
   }
@@ -2413,6 +2445,9 @@ h6 {
   .summoner-wrapper {
     width: calc(100% - 32px);
   }
+  .guides-container {
+    width: 100%;
+  }
   .summoner-container-horizontal {
     flex-direction: column;
     justify-content: center;
@@ -2437,6 +2472,12 @@ h6 {
     width: 100px;
     text-align: left;
   }
+  .guide-page-wrapper {
+    width: calc(100% - 16px);
+  }
+  .guides-page-wrapper {
+    width: calc(100% - 16px);
+  }
   .units-titles {
     padding: 0px 8px;
     width: calc(100% - 16px);
@@ -2453,9 +2494,6 @@ h6 {
     width: 80px;
   }
   .comps-wrapper {
-    width: calc(100% - 32px);
-  }
-  .guides-wrapper {
     width: calc(100% - 32px);
   }
   .builder-wrapper-outer {
@@ -8874,6 +8912,130 @@ h6 {
     line-height: 120%;
   }
 }
+.text-secondary {
+  color: #e0e0e0;
+}
+
+.guide-paragraph {
+  margin: 20px 0;
+}
+
+.guide-list-placeholder {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.guide-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #172c49;
+  margin-bottom: 20px;
+}
+
+.guide-divider-inner {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #172c49;
+  margin: 80px 0;
+}
+
+.guide-heading {
+  margin: 40px 0;
+}
+
+.guide-subheading {
+  margin: 32px 0;
+}
+
+.guide-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 900px;
+  min-height: 250px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background: #0c1a2d;
+  border: 1px solid #172c49;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.guide-head {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.guide-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 36px;
+  width: 60%;
+}
+
+.guide-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+}
+
+.guide-set {
+  padding: 2px 16px 3px;
+  background: #377df7;
+  border: 1px solid #172c49;
+  border-radius: 24px;
+}
+
+.guide-info-divider {
+  width: 4px;
+  height: 4px;
+  background: #172c49;
+  border-radius: 20px;
+}
+
+.guide-head-img {
+  width: 256px;
+  height: 256px;
+}
+
+.border-1 {
+  border-radius: 4px;
+  border: 3px solid #aeaeae;
+}
+
+.border-2 {
+  border-radius: 4px;
+  border: 3px solid #70b173;
+}
+
+.border-3 {
+  border-radius: 4px;
+  border: 3px solid #6483f1;
+}
+
+.border-4 {
+  border-radius: 4px;
+  border: 3px solid #9169c5;
+}
+
+.border-5 {
+  border-radius: 4px;
+  border: 3px solid #b1aa64;
+}
+
 .guide-list-wrapper {
   display: flex;
   flex-direction: row;
@@ -8991,9 +9153,8 @@ button {
 }
 
 .guide-list-splash {
-  width: 256px;
+  width: 128px;
   height: 128px;
-  border: 1px solid #6483f1;
   border-radius: 2px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -9017,6 +9178,11 @@ button {
   border-radius: 4px;
 }
 
+.guide-frame {
+  width: 100%;
+  height: 490px;
+}
+
 @media screen and (max-width: 1350px) {
   .guide-list-wrapper {
     padding: 12px;
@@ -9027,12 +9193,29 @@ button {
     height: 135px;
   }
   .guide-list-splash {
-    width: 220px;
+    width: 135px;
     height: 135px;
+  }
+  .guide-head-img {
+    width: 200px;
+    height: 200px;
+  }
+  .guide-frame {
+    width: 100%;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .guide-wrapper {
+    width: calc(100% - 32px);
+  }
+  .guide-head-img {
+    width: 150px;
+    height: 150px;
   }
 }
 @media screen and (max-width: 800px) {
-  .guide-list-wrapper {
+  .guide-list-wrapper-small {
     padding: 8px;
     width: calc(100% - 16px);
     height: 100px;
@@ -9042,8 +9225,56 @@ button {
     width: 50%;
   }
   .guide-list-splash {
-    width: 120px;
+    width: 100px;
     height: 100px;
+  }
+  .guide-head-img {
+    width: 75px;
+    height: 75px;
+  }
+  .guide-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 70%;
+  }
+  .guide-head {
+    gap: 12px;
+  }
+  .guide-paragraph {
+    margin: 10px 0;
+  }
+  .guide-divider {
+    margin-bottom: 10px;
+  }
+  .guide-divider-inner {
+    margin: 40px 0;
+  }
+  .guide-heading {
+    margin: 20px 0;
+  }
+  .guide-subheading {
+    margin: 16px 0;
+  }
+  .guide-set {
+    padding: 2px 12px 2px;
+  }
+}
+@media screen and (max-width: 803px) {
+  .guide-frame {
+    height: 436px;
+  }
+}
+@media screen and (max-width: 679px) {
+  .guide-frame {
+    height: 406px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .guide-frame {
+    height: 212px;
   }
 }
 /*!**************************************************************************************************!*\

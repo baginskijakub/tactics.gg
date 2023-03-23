@@ -3,7 +3,7 @@ import { NavButton } from "../buttons/NavButton";
 import "./navbar.css";
 
 export const NavbarLinks: React.FC = () => {
-  const[selected, setSelected] = useState([true, false, false, false, false, false, false]);
+  const[selected, setSelected] = useState([true, false, false, false, false, false, false, false]);
   let window = require('global')
 
   function handleSelected(index: number){
@@ -24,22 +24,25 @@ export const NavbarLinks: React.FC = () => {
   useEffect(()=> {
     switch(window.location.pathname){
       case "/teambuilder":
-        setSelected([false, true, false, false, false, false, false])
+        setSelected([false, true, false, false, false, false, false, false])
         break;
       case "/summoner":
-        setSelected([false, false, true, false, false, false, false])
+        setSelected([false, false, true, false, false, false, false, false])
         break;
       case "/augments":
-        setSelected([false, false, false, true, false, false, false])
+        setSelected([false, false, false, true, false, false, false, false])
         break;
       case "/units":
-        setSelected([false, false, false, false, true, false, false])
+        setSelected([false, false, false, false, true, false, false, false])
         break;
       case "/items":
-        setSelected([false, false, false, false, false, true, false])
+        setSelected([false, false, false, false, false, true, false, false])
         break;
       case "/leaderboard":
-        setSelected([false, false, false, false, false, false, true])
+        setSelected([false, false, false, false, false, false, true, false])
+        break;
+      case "/guides":
+        setSelected([false, false, false, false, false, false, false, true])
         break;
 
     }
@@ -58,7 +61,7 @@ export const NavbarLinks: React.FC = () => {
         <NavButton index={4} text="Units" isSelected={selected[4]} link="" path="/units" handleSelection={handleSelected}/>
         <NavButton index={5} text="Items" isSelected={selected[5]} link="" path="/items" handleSelection={handleSelected}/>
         <NavButton index={6} text="Leaderboards" isSelected={selected[6]} link="" path="/leaderboard" handleSelection={handleSelected}/>
-        {/* <NavButton index={7} text="Guides" isSelected={selected[7]} link="" path="/guides" handleSelection={handleSelected}/> */}
+        <NavButton index={7} text="Guides" isSelected={selected[7]} link="" path="/guides" handleSelection={handleSelected}/>
       </div>
     </div>
   );

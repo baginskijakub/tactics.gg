@@ -17,7 +17,7 @@ export const NavbarMobile:React.FC = () => {
             setState("closed")
         }
     }
-    const[selected, setSelected] = useState([true, false, false, false, false]);
+    const[selected, setSelected] = useState([true, false, false, false, false, false, false]);
 
     function handleSelected(index: number){
         let arr: boolean[] = []
@@ -46,6 +46,7 @@ export const NavbarMobile:React.FC = () => {
                         <NavButtonMobile text="Units" isSelected={selected[3]} link="" path="/units" index={3} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Items" isSelected={selected[4]} link="" path="/items" index={4} handleSelection={handleSelected}/>
                         <NavButtonMobile text="Leaderboards" isSelected={selected[5]} link="" path="/leaderboard" index={5} handleSelection={handleSelected}/>
+                        <NavButtonMobile text="Guides" isSelected={selected[6]} link="" path="/guides" index={6} handleSelection={handleSelected}/>
                         {/* <NavButtonMobile text="Leaderboards" isSelected={false} link="" path="" /> */}
             </div>
 

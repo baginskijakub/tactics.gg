@@ -13,8 +13,15 @@ interface Props {
 }
 
 export const GuideList: React.FC<Props> = ({date, title, description , set, minutesRead, src, border}) => {
+  const window = require('global')
+  
+  const redirectToGuide = () => {
+    const titleArray = title.split(" ");
+    window.location.href = `/guide/${titleArray.join("-").toLowerCase()}`;
+  }
+
   return (
-    <div className="guide-list-wrapper-small">
+    <div className="guide-list-wrapper-small" onClick={redirectToGuide}>
       <div className="guide-list-head-small">
         <div className="guide-list-head-inner">
           <h4>{title}</h4>
