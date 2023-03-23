@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Guide as IGuide, GuideElement } from "../classes";
 import HorizontalAdd from "../components/ads/HorizontalAdd";
 import VerticalAd from "../components/ads/VerticalAd";
 import GuideComponent from "../components/guides/Guide";
 import GuidePlaceholder from "../components/guides/GuidePlaceholder";
 import { getGuide } from "../model/Model";
+import ggIcon from '../images/icons/gg_logo.png'
 
 export const Guide = () => {
   const [guide, setGuide] = useState<IGuide>()
@@ -29,6 +31,12 @@ export const Guide = () => {
 
   return (
     <div className="guide-page-wrapper">
+      <Helmet>
+          <title>{guide?.title} TFT Guide</title>
+          <link rel="icon" href={ggIcon}></link>
+          <link rel="canonical" href={`https://tactix.gg/guide/${guide?.title.split(" ").join("-").toLowerCase()}`}></link>
+          <meta name="description" content={guide?.description} data-rh="true"></meta>
+      </Helmet>
       {width > 1000 ? <VerticalAd /> : <HorizontalAdd />}
       {guide !== undefined ? <GuideComponent
         elements={guide.elements}

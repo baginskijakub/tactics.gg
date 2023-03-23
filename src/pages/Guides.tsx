@@ -7,6 +7,9 @@ import HorizontalAdd from "../components/ads/HorizontalAdd";
 import { Guide } from "../classes";
 import { getAllGuides } from "../model/Model";
 import GuideListPlaceholder from "../components/guides/GuideListPlaceholder";
+import { PageHead } from "./PageHead";
+import ggIcon from '../images/icons/gg_logo.png'
+import { Helmet } from "react-helmet";
 
 export const Guides: React.FC = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -32,6 +35,12 @@ export const Guides: React.FC = () => {
 
   return (
     <div className="guides-page-wrapper">
+      <Helmet>
+          <title>TFT Guides</title>
+          <link rel="icon" href={ggIcon}></link>
+          <link rel="canonical" href="https://tactix.gg/guides"></link>
+          <meta name="description" content="Find out how to play your favourite composition with our guides." data-rh="true"></meta>
+      </Helmet>
       {width > 1000 ? <VerticalAd /> : <HorizontalAdd />}
       <div className="guides-container">
         <DefaultSearch
