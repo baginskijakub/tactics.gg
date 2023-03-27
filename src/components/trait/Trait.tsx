@@ -33,14 +33,15 @@ export const Trait: React.FC<Props> = ({
       backgroundColor = "#775A43";
       break;
     case 2:
+    case 3:
       background = silverBackground;
       backgroundColor = "#737E81";
       break;
-    case 3:
+    case 4:
       background = goldBackground;
       backgroundColor = "#A48B4D";
       break;
-    case 4:
+    case 5:
       background = chromaticBackground;
       backgroundColor = "#AEB0D9";
       break;
