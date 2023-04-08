@@ -193,7 +193,7 @@ export const Augments:React.FC = () => {
     function navigateToCompareAugments(){
         navigate('/compareAugments')
     }
-    
+
     return (
         <div className="augments-wrapper">
             <HorizontalAdd/>

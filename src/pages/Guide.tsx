@@ -32,7 +32,7 @@ export const Guide = () => {
   return (
     <div className="guide-page-wrapper">
       <Helmet>
-          <title>{guide?.title} TFT Guide</title>
+          <title>{guide?.title}</title>
           <link rel="icon" href={ggIcon}></link>
           <link rel="canonical" href={`https://tactix.gg/guide/${guide?.title.split(" ").join("-").toLowerCase()}`}></link>
           <meta name="description" content={guide?.description} data-rh="true"></meta>
